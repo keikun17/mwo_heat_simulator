@@ -1,33 +1,14 @@
-%section#heat
-  Heat Level
-  55%
+.container
+  %h1 Mechwarrior Online Weapon Heat Simulator
+  .row
+    .col-md-3
+      #heatmeter
+        Heat Level
+        .progress.vertical.wide.bottom
+          .progress-bar.progress-bar-danger{ aria: {valuetransitiongoal: "55"}}
 
-%section#weapons
-  %ul
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
-    %li
-      Medium Laser
-      %a{href: '#', data: {weapon_id: '1', weapon_class: 'mlas'}} Fire
+    %script
+      $('.progress .progress-bar').progressbar();
 
 %section#actions
   %a{href: '#'} Heat chart
