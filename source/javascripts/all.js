@@ -37,6 +37,12 @@ $(function(){
     });
 
   };
+  console.log('Weapons: Online');
+
+  $('#js-alphastrike').click(function(){
+    console.log("PEEEW!")
+    shoot(20);
+  })
 
   console.log("All Systems: Nominal")
   shoot(55);
