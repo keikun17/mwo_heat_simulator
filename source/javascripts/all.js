@@ -55,5 +55,5 @@ $(function(){
   })
 
   console.log("All Systems: Nominal")
-  shoot(55);
+  shoot(20);
 });
