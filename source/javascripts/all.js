@@ -16,9 +16,17 @@ $(function(){
     return parseInt($('#heatsink-count').val());
   }
 
+  isSingleHeatSink = function(){
+    return $('#heatsink_type').val() == 'single';
+  }
+
   // Run heatsinks
   coolDown = function(){
-    towards = currentHeat() - (.1 * heatSinkCount() );
+    if(isSingleHeatSink()){
+      towards = currentHeat() - (.1 * heatSinkCount() );
+    }else{
+      towards = currentHeat() - (.14 * heatSinkCount() );
+    }
 
     if( currentHeat() > 0 ) {
       $('#heatlevel').attr('aria-valuetransitiongoal', towards);
@@ -30,7 +38,11 @@ $(function(){
   };
 
   var recomputeThreshold = function(){
-    threshold = 30 + (heatSinkCount() - 10);
+    if( isSingleHeatSink() ){
+      threshold = 30 + (heatSinkCount() - 10);
+    }else{
+      threshold = 30 + ((heatSinkCount() - 10) * 1.4);
+    }
     $('#heatlevel').attr('aria-valuemax', threshold)
     $('#heat-threshold').text(threshold)
   }
