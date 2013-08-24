@@ -18,7 +18,6 @@ $(function(){
 
   // Run heatsinks
   coolDown = function(){
-    recomputeThreshold();
     towards = currentHeat() - (.1 * heatSinkCount() );
 
     if( currentHeat() > 0 ) {
@@ -36,16 +35,21 @@ $(function(){
     $('#heat-threshold').text(threshold)
   }
 
-  coolDownRate = function(){
+  tickRate = function(){
     return 1000;
   }
 
-  runHeatsink = function(){
+  var tick = function(){
+    coolDown();
+    recomputeThreshold();
+  }
+
+  runTicker = function(){
     console.log("Sensors: Online")
-    setInterval(coolDown, coolDownRate());
+    setInterval(tick, tickRate());
   };
 
-  runHeatsink();
+  runTicker();
 
   // Shoot at start
   shoot = function(val){
