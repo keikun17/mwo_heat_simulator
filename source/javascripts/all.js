@@ -2,6 +2,7 @@
 
 $(function(){
   console.log("Reactor: Online")
+
   // get heat value
   currentHeat = function(){
     val = parseInt($('#heatlevel').attr('aria-valuetransitiongoal'));
@@ -17,6 +18,7 @@ $(function(){
 
   // Run heatsinks
   coolDown = function(){
+    recomputeThreshold();
     towards = currentHeat() - (.1 * heatSinkCount() );
 
     if( currentHeat() > 0 ) {
@@ -27,6 +29,12 @@ $(function(){
       })
     }
   };
+
+  var recomputeThreshold = function(){
+    threshold = 30 + (heatSinkCount() - 10);
+    $('#heatlevel').attr('aria-valuemax', threshold)
+    $('#heat-threshold').text(threshold)
+  }
 
   coolDownRate = function(){
     return 1000;
