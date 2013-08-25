@@ -80,4 +80,17 @@ $(function(){
 
   console.log("All Systems: Nominal")
   shoot(20);
+
+  function Weapon(el) {
+    a = $(el);
+    $(el).click( function(){
+      shoot($(el).data('weaponHeat'));
+    });
+  };
+
+  weapons = $('.js-fire');
+
+  $.each(weapons, function(i, weapon){
+    new Weapon(weapon);
+  });
 });
