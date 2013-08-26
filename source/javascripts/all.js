@@ -81,25 +81,33 @@ $(function(){
   console.log("All Systems: Nominal")
   shoot(20);
 
-  function Weapon(el) {
-    a = $(el);
-    $(el).click( function(){
-      weapon_name = $(el).data('weaponClass');
-      shoot(weaponHeatTable[weapon_name])
-    });
-  };
-
   weapons = $('.js-fire');
 
-  $.each(weapons, function(i, weapon){
-    new Weapon(weapon);
-  });
+  // $.each(weapons, function(i, weapon){
+  //   $(weapon).click( function(){
+  //     weapon_name = $(weapon).data('weaponClass');
+  //     shoot(weaponHeatTable[weapon_name])
+  //   });
+  // });
+
+
+  fireWeapon = function(event){
+    weapon_name = $(this).data('weaponClass');
+    shoot(weaponHeatTable[weapon_name]);
+  }
+
+  $('.weapon-list').on('click', 'a.js-fire', fireWeapon);
 
   weaponHeatTable = {
     'slas': 2,
     'mlas': 3,
     'llas': 7,
     'ppc' : 9
-  }
+  };
 
+
+  $('.js-add-mlas').click(function(){
+    html = weaponView({name: 'Medium Laser', weaponClass: 'mlas'})
+    $('.weapon-list').append(html);
+  })
 });
