@@ -84,7 +84,9 @@ $(function(){
   function Weapon(el) {
     a = $(el);
     $(el).click( function(){
-      shoot($(el).data('weaponHeat'));
+      weapon_name = $(el).data('weaponClass');
+      console.log(weapon_name);
+      shoot(weaponHeatTable[weapon_name])
     });
   };
 
@@ -93,4 +95,9 @@ $(function(){
   $.each(weapons, function(i, weapon){
     new Weapon(weapon);
   });
+
+  weaponHeatTable = {
+    'mlas': 3
+  }
+
 });
