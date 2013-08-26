@@ -85,7 +85,6 @@ $(function(){
     a = $(el);
     $(el).click( function(){
       weapon_name = $(el).data('weaponClass');
-      console.log(weapon_name);
       shoot(weaponHeatTable[weapon_name])
     });
   };
@@ -97,7 +96,10 @@ $(function(){
   });
 
   weaponHeatTable = {
-    'mlas': 3
+    'slas': 2,
+    'mlas': 3,
+    'llas': 7,
+    'ppc' : 9
   }
 
 });
