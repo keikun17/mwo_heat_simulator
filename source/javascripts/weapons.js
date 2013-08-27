@@ -20,7 +20,17 @@ $(function(){
     'uac5': 1,
     'lb10x': 2,
     'gauss': 1,
-    'mg': 0
+    'mg': 0,
+
+    // Missile
+    'lrm5': 2,
+    'lrm10': 4,
+    'lrm15': 5,
+    'lrm20': 6,
+    'srm2': 2,
+    'srm4': 3,
+    'srm6': 4,
+    'ssrm2': 2
 
   };
 
