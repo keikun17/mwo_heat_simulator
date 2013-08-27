@@ -70,3 +70,6 @@ configure :build do
 end
 
 sprockets.append_path File.join "#{root}", 'source/components'
+activate :relative_assets
+set :relative_links, true
+
