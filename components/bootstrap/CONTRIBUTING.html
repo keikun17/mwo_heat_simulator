@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+
+    <link href="/components/bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/components/bootstrap/dist/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="/components/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/components/underscore/underscore.js" type="text/javascript"></script>
+    <script src="/components/bootstrap-progressbar/bootstrap-progressbar.js" type="text/javascript"></script>
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="components components_bootstrap components_bootstrap_CONTRIBUTING">
+    <h1 id="contributing-to-bootstrap">Contributing to Bootstrap</h1>
+
+<p>Looking to contribute something to Bootstrap? <strong>Here's how you can help.</strong></p>
+
+<h2 id="reporting-issues">Reporting issues</h2>
+
+<p>We only accept issues that are bug reports or feature requests. Bugs must be isolated and reproducible problems that we can fix within the Bootstrap core. Please read the following guidelines before opening any issue.</p>
+
+<ol>
+  <li><strong>Search for existing issues.</strong> We get a lot of duplicate issues, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix available.</li>
+  <li><strong>Create an isolated and reproducible test case.</strong> Be sure the problem exists in Bootstrap's code with a <a href="http://css-tricks.com/reduced-test-cases/">reduced test case</a> that should be included in each bug report.</li>
+  <li><strong>Include a live example.</strong> Make use of jsFiddle or jsBin to share your isolated test cases.</li>
+  <li><strong>Share as much information as possible.</strong> Include operating system and version, browser and version, version of Bootstrap, customized or vanilla build, etc. where appropriate. Also include steps to reproduce the bug.</li>
+</ol>
+
+<h2 id="key-branches">Key branches</h2>
+
+<ul>
+  <li><code>master</code> is the latest, deployed version.</li>
+  <li><code>gh-pages</code> is the hosted docs (not to be used for pull requests).</li>
+  <li><code>*-wip</code> is the official work in progress branch for the next release.</li>
+</ul>
+
+<h2 id="pull-requests">Pull requests</h2>
+
+<ul>
+  <li>Try to submit pull requests against the latest <code>*-wip</code> branch for easier merging</li>
+  <li>CSS changes must be done in .less files first, never just the compiled files</li>
+  <li>If modifying the .less files, always recompile and commit the compiled files bootstrap.css and bootstrap.min.css</li>
+  <li>Try not to pollute your pull request with unintended changes–keep them simple and small</li>
+  <li>Try to share which browsers your code has been tested in before submitting a pull request</li>
+</ul>
+
+<h2 id="coding-standards">Coding standards</h2>
+
+<h3 id="html">HTML</h3>
+
+<ul>
+  <li>Two spaces for indentation, never tabs</li>
+  <li>Double quotes only, never single quotes</li>
+  <li>Always use proper indentation</li>
+  <li>Use tags and elements appropriate for an HTML5 doctype (e.g., self-closing tags)</li>
+</ul>
+
+<h3 id="css">CSS</h3>
+
+<ul>
+  <li>Adhere to the <a href="http://markdotto.com/2011/11/29/css-property-order/">Recess CSS property order</a></li>
+  <li>Multiple-line approach (one property and value per line)</li>
+  <li>Always a space after a property's colon (.e.g, <code>display: block;</code> and not <code>display:block;</code>)</li>
+  <li>End all lines with a semi-colon</li>
+  <li>For multiple, comma-separated selectors, place each selector on its own line</li>
+  <li>Attribute selectors, like <code>input[type="text"]</code> should always wrap the attribute's value in double quotes, for consistency and safety (see this <a href="http://mathiasbynens.be/notes/unquoted-attribute-values">blog post on unquoted attribute values</a> that can lead to XSS attacks).</li>
+</ul>
+
+<h3 id="js">JS</h3>
+
+<ul>
+  <li>No semicolons</li>
+  <li>Comma first</li>
+  <li>2 spaces (no tabs)</li>
+  <li>strict mode</li>
+  <li>"Attractive"</li>
+</ul>
+
+<h2 id="license">License</h2>
+
+<p>By contributing your code, you agree to license your contribution under the terms of the APLv2: https://github.com/twbs/bootstrap/blob/master/LICENSE</p>
+
+  </body>
+</html>

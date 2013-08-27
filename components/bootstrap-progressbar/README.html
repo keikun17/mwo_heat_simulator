@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+
+    <link href="/components/bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/components/bootstrap/dist/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="/components/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/components/underscore/underscore.js" type="text/javascript"></script>
+    <script src="/components/bootstrap-progressbar/bootstrap-progressbar.js" type="text/javascript"></script>
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="components components_bootstrap-progressbar components_bootstrap-progressbar_README">
+    <h1 id="bootstrap-progressbar---060-build-statushttpssecuretravis-ciorgminddustbootstrap-progressbarpnghttptravis-ciorgminddustbootstrap-progressbar">bootstrap-progressbar - 0.6.0 <a href="http://travis-ci.org/minddust/bootstrap-progressbar"><img src="https://secure.travis-ci.org/minddust/bootstrap-progressbar.png" alt="Build Status" /></a></h1>
+
+<p><code>bootstrap-progressbar</code> is a <a href="http://jquery.com">jQuery</a> plugin which extends the basic <a href="https://github.com/twbs/bootstrap">twitter-bootstrap</a> progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.</p>
+
+<h2 id="whats-new-in-v060-tada">What's new in v0.6.0? :tada:</h2>
+
+<ul>
+  <li>bootstrap 3 support</li>
+  <li><code>noConflict</code> fallback</li>
+  <li>aria support</li>
+  <li>custom string formatting</li>
+  <li>reduced lib size by 46% - just 2.2kb minified</li>
+  <li>new demo page</li>
+  <li>now with MIT license</li>
+  <li>code cleanup and style fixes</li>
+</ul>
+
+<blockquote>
+  <p>Note: this version is not 100% backwards compatible - please read the following information</p>
+</blockquote>
+
+<h2 id="demo">Demo</h2>
+
+<ul>
+  <li>http://minddust.github.com/bootstrap-progressbar</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>Download the latest release: <a href="https://github.com/minddust/bootstrap-progressbar/archive/v0.6.0.zip">v0.6.0</a></li>
+  <li>Clone the repository: <code>git clone git@github.com:minddust/bootstrap-progressbar.git</code></li>
+  <li>Install with <a href="http://bower.io">Bower</a>: <code>bower install bootstrap-progressbar</code></li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li>
+    <p>include <code>bootstrap-progressbar.js</code></p>
+
+    <p><code>html
+ &lt;script type="text/javascript" src="bootstrap-progressbar.js"&gt;&lt;/script&gt;
+</code></p>
+  </li>
+  <li>
+    <p>activate <code>bootstrap-progressbar</code> functionality on progressbars of your choice:</p>
+
+    <p><code>javascript
+ $('.progress .bar').progressbar();           // bootstrap 2
+ $('.progress .progress-bar').progressbar();  // bootstrap 3
+</code></p>
+  </li>
+  <li>
+    <p>set the <code>aria</code> attribute and <strong>remove</strong> the <code>width</code> style attribute (alternatively you can set it to 0)</p>
+
+    <ol>
+      <li>
+        <p><code>aria-valuetransitiongoal</code></p>
+
+        <p><code>html
+ &lt;div class="progress"&gt;
+     &lt;div class="progress-bar" aria-valuetransitiongoal="75"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+</code></p>
+      </li>
+      <li>
+        <p><code>aria-valuemin</code> (default: 0) and <code>aria-valuemax</code> (default: 100)</p>
+
+        <p>```html
+ &lt;div class="progress"&gt;
+     &lt;div class="progress-bar" aria-valuetransitiongoal="75" aria-valuemin="-1337" aria-valuemax="9000"&gt;&lt;/div&gt;
+ &lt;/div&gt;</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="usage-extended">Usage Extended</h2>
+
+<ul>
+  <li>
+    <p>Do I need the additional style file?</p>
+
+    <ul>
+      <li>for the horizontal bar with no or filled text: <strong>NO</strong></li>
+      <li>
+        <p>for any vertical bars or the horizontal bar with centered text: <strong>YES</strong></p>
+
+        <p>less:
+ <code>html
+ &lt;link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less"&gt;
+</code></p>
+
+        <p>css:
+ <code>html
+ &lt;link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css"&gt;
+</code></p>
+
+        <p>you can find your needed css or less file inside the css or less folder. </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Multiple trigger</p>
+
+    <p>You can trigger progressbar as much as you want. Just change your <code>aria</code> attribute(s) and trigger <code>.progressbar()</code> again. All settings made before will be kept. </p>
+  </li>
+</ul>
+
+<h2 id="settings">Settings</h2>
+
+<h3 id="default-values">default values</h3>
+
+<p><code>javascript
+Progressbar.defaults = {
+    transition_delay: 300,
+    refresh_speed: 50,
+    display_text: 'none',
+    use_percentage: true,
+    percent_format: function(percent) { return percent + '%'; },
+    amount_format: function(amount_part, amount_total) { return amount_part + ' / ' + amount_total; },
+    update: $.noop,
+    done: $.noop,
+    fail: $.noop
+};
+</code></p>
+
+<h3 id="transitiondelay">transition_delay</h3>
+
+<p>Is the time in milliseconds until the animation starts.</p>
+
+<p>This could be useful to delay the start on the initial page load like:</p>
+
+<p><code>javascript
+$(document).ready(function() {
+    $('.progress .progress-bar').progressbar({
+        transition_delay: 1500
+    });
+});
+</code></p>
+
+<h3 id="refreshspeed">refresh_speed</h3>
+
+<p>Is the time in milliseconds which will elapse between every text refresh, <code>aria-valuenow</code> attribute update and <code>update</code> callback call.</p>
+
+<h3 id="displaytext">display_text</h3>
+
+<p>Determines if and where to display text on the progressbar. Possible options:</p>
+
+<ul>
+  <li><code>none</code> <strong>no text</strong> </li>
+  <li><code>fill</code> <strong>text on filled bar</strong> </li>
+  <li><code>center</code> <strong>text on center</strong> <em>(this mode changes css / html due to styling requirements)</em></li>
+</ul>
+
+<h3 id="usepercentage">use_percentage</h3>
+
+<p>If text will be displayed - this option determines whether to show the percentage value or the amount.</p>
+
+<p>So if <code>use_percentage</code> is false and <code>aria-valuemin</code> and <code>aria-valuemax</code> are not set (or to <code>0</code> and <code>100</code>) the value will be the same but <code>amount_format</code> will be used to format the result. </p>
+
+<p>Example:</p>
+
+<p><code>&lt;div class="progress-bar" aria-valuetransitiongoal="75"&gt;</code> </p>
+
+<p>with <code>use_percentage: true</code> is the final text: <code>75%</code></p>
+
+<p>with <code>use_percentage: false</code> is the final text: <code>75 / 100</code></p>
+
+<h3 id="percentformat">percent_format</h3>
+
+<p>Is a function which returns the text format for progressbar with <code>use_percentage: true</code>.</p>
+
+<p>It takes 1 argument which is the current percent value.</p>
+
+<h3 id="amountformat">amount_format</h3>
+
+<p>Is a function which returns the text format for progressbar with <code>use_percentage: false</code>.</p>
+
+<p>It takes 2 argument which are the current and total amount.</p>
+
+<h3 id="update">update</h3>
+
+<p>Is a callback function which will be called while the progressbar is transitioning ;)</p>
+
+<p>Depends on <code>refresh_speed</code>.</p>
+
+<p>It takes 1 argument which is the current percent value.</p>
+
+<h3 id="done">done</h3>
+
+<p>Is a callback function which will be called when the transition process is done.</p>
+
+<h3 id="fail">fail</h3>
+
+<p>Is a callback function which will be called when an error occurs.</p>
+
+<p>It takes 1 argument which is the error message.</p>
+
+<h2 id="customisation">Customisation</h2>
+
+<h3 id="alignment">alignment</h3>
+<ul>
+  <li>
+    <p>to use a horizontal progressbar which is align to the right you have to add <code>right</code> to the <code>progress</code> element.</p>
+
+    <p><code>html
+ &lt;div class="progress right"&gt;
+</code></p>
+  </li>
+  <li>
+    <p>to use a vertical progressbar you have to add <code>vertical</code> to the <code>progress</code> element.</p>
+
+    <p><code>html
+ &lt;div class="progress vertical"&gt;
+</code></p>
+  </li>
+  <li>
+    <p>to use a vertical progressbar which is align to the bottom you have to add <code>vertical</code> and <code>bottom</code> to the <code>progress</code> element.</p>
+
+    <p><code>html
+ &lt;div class="progress vertical bottom"&gt;
+</code></p>
+  </li>
+</ul>
+
+<h3 id="animation">animation</h3>
+
+<p>to change the animation itself you have to overwrite either less or css</p>
+
+<ol>
+  <li>horizontal
+    <ul>
+      <li>
+        <p>less</p>
+
+        <p><code>css
+  .progress .bar {
+      .transition(width 2s ease-in-out);
+  }
+ </code></p>
+      </li>
+      <li>
+        <p>css</p>
+
+        <p><code>css
+  .progress .bar {
+      -webkit-transition: width 2s ease-in-out;
+      -moz-transition: width 2s ease-in-out;
+      -ms-transition: width 2s ease-in-out;
+      -o-transition: width 2s ease-in-out;
+      transition: width 2s ease-in-out;
+  }
+ </code></p>
+      </li>
+    </ul>
+  </li>
+  <li>vertical
+    <ul>
+      <li>
+        <p>less</p>
+
+        <p><code>css
+  .progress.vertical .bar {
+      .transition(height 2s ease-in-out);
+  }
+ </code></p>
+      </li>
+      <li>
+        <p>css</p>
+
+        <p><code>css
+  .progress.vertical .bar {
+      -webkit-transition: height 2s ease-in-out;
+      -moz-transition: height 2s ease-in-out;
+      -ms-transition: height 2s ease-in-out;
+      -o-transition: height 2s ease-in-out;
+      transition: height 2s ease-in-out;
+  }
+ </code></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="known-problems">Known Problems</h2>
+
+<ul>
+  <li>Looks like iOS Safari is flooring the width of the transition. So if you want to display text with a correct value you have to use a full bar width <strong>greater or equal 100px</strong>.</li>
+</ul>
+
+<h2 id="copyright-and-license">Copyright and license</h2>
+
+<p>Copyright 2013-2013 Stephan Groß, under <a href="LICENSE">MIT license</a>.</p>
+
+<p>Want to appreciate my work? <a href="https://www.gittip.com/minddust/">minddust at Gittip</a></p>
+
+  </body>
+</html>

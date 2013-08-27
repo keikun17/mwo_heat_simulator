@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+
+    <link href="/components/bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/components/bootstrap/dist/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script src="/components/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/components/underscore/underscore.js" type="text/javascript"></script>
+    <script src="/components/bootstrap-progressbar/bootstrap-progressbar.js" type="text/javascript"></script>
+    <script src="/javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="components components_bootstrap components_bootstrap_README">
+    <h1 id="bootstrap-v300httpgetbootstrapcom-build-statushttpssecuretravis-ciorgtwbsbootstrappnghttptravis-ciorgtwbsbootstrap"><a href="http://getbootstrap.com">Bootstrap v3.0.0</a> <a href="http://travis-ci.org/twbs/bootstrap"><img src="https://secure.travis-ci.org/twbs/bootstrap.png" alt="Build Status" /></a></h1>
+
+<p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created and maintained by <a href="http://twitter.com/mdo">Mark Otto</a> and <a href="http://twitter.com/fat">Jacob Thornton</a>.</p>
+
+<p>To get started, check out <a href="http://getbootstrap.com">http://getbootstrap.com</a>!</p>
+
+<h2 id="quick-start">Quick start</h2>
+
+<p>Three quick start options are available:</p>
+
+<ul>
+  <li><a href="https://github.com/twbs/bootstrap/zipball/3.0.0-wip">Download the latest release</a>.</li>
+  <li>Clone the repo: <code>git clone git://github.com/twbs/bootstrap.git</code>.</li>
+  <li>Install with <a href="http://bower.io">Bower</a>: <code>bower install bootstrap</code>.</li>
+</ul>
+
+<p>Read the <a href="http://getbootstrap.com/getting-started/">Getting Started page</a> for information on the framework contents, templates and examples, and more.</p>
+
+<h2 id="bugs-and-feature-requests">Bugs and feature requests</h2>
+
+<p>Have a bug or a feature request? <a href="https://github.com/twbs/bootstrap/issues">Please open a new issue</a>. Before opening any issue, please search for existing issues and read the <a href="https://github.com/necolas/issue-guidelines">Issue Guidelines</a>, written by <a href="https://github.com/necolas/">Nicolas Gallagher</a>.</p>
+
+<p>You may use <a href="http://jsbin.com/aKiCIDO/1/edit">this JS Bin</a> as a template for your bug reports.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Bootstrap's documentation, included in this repo in the root directory, is built with <a href="http://jekyllrb.com">Jekyll</a> and publicly hosted on GitHub Pages at <a href="http://getbootstrap.com">http://getbootstrap.com</a>. The docs may also be run locally.</p>
+
+<h3 id="running-documentation-locally">Running documentation locally</h3>
+
+<ol>
+  <li>If necessary, <a href="http://jekyllrb.com/docs/installation">install Jekyll</a> (requires v1.x).</li>
+  <li>From the root <code>/bootstrap</code> directory, run <code>jekyll serve</code> in the command line.
+    <ul>
+      <li><strong>Windows users:</strong> run <code>chcp 65001</code> first to change the command prompt's character encoding (<a href="http://en.wikipedia.org/wiki/Windows_code_page">code page</a>) to UTF-8 so Jekyll runs without errors.</li>
+    </ul>
+  </li>
+  <li>Open <a href="http://localhost:9001">http://localhost:9001</a> in your browser, and voilà.</li>
+</ol>
+
+<p>Learn more about using Jekyll by reading their <a href="http://jekyllrb.com/docs/home/">documentation</a>.</p>
+
+<h3 id="documentation-for-previous-releases">Documentation for previous releases</h3>
+
+<p>Documentation for v2.3.2 has been made available for the time being at <a href="http://getbootstrap.com/2.3.2/">http://getbootstrap.com/2.3.2/</a> while folks transition to Bootstrap 3.</p>
+
+<p><a href="https://github.com/twbs/bootstrap/releases">Previous releases</a> and their documentation are also available for download.</p>
+
+<h2 id="compiling-css-and-javascript">Compiling CSS and JavaScript</h2>
+
+<p>Bootstrap uses <a href="http://gruntjs.com/">Grunt</a> with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.</p>
+
+<h3 id="install-grunt">Install Grunt</h3>
+
+<p>From the command line:</p>
+
+<ol>
+  <li>Install <code>grunt-cli</code> globally with <code>npm install -g grunt-cli</code>.</li>
+  <li>Install the <a href="package.json">necessary local dependencies</a> via <code>npm install</code></li>
+</ol>
+
+<p>When completed, you'll be able to run the various Grunt commands provided from the command line.</p>
+
+<p><strong>Unfamiliar with <code>npm</code>? Don't have node installed?</strong> That's a-okay. npm stands for <a href="http://npmjs.org/">node packaged modules</a> and is a way to manage development dependencies through node.js. <a href="http://nodejs.org/download/">Download and install node.js</a> before proceeding.</p>
+
+<h3 id="available-grunt-commands">Available Grunt commands</h3>
+
+<h4 id="build---grunt">Build - <code>grunt</code></h4>
+<p>Run <code>grunt</code> to run tests locally and compile the CSS and JavaScript into <code>/dist</code>. <strong>Requires <a href="https://github.com/twitter/recess">recess</a> and <a href="https://github.com/mishoo/UglifyJS">uglify-js</a>.</strong></p>
+
+<h4 id="only-compile-css-and-javascript---grunt-dist">Only compile CSS and JavaScript - <code>grunt dist</code></h4>
+<p><code>grunt dist</code> creates the <code>/dist</code> directory with compiled files. <strong>Requires <a href="https://github.com/twitter/recess">recess</a> and <a href="https://github.com/mishoo/UglifyJS">uglify-js</a>.</strong></p>
+
+<h4 id="tests---grunt-test">Tests - <code>grunt test</code></h4>
+<p>Runs jshint and qunit tests headlessly in <a href="https://github.com/ariya/phantomjs/">phantomjs</a> (used for CI). <strong>Requires <a href="https://github.com/ariya/phantomjs/">phantomjs</a>.</strong></p>
+
+<h4 id="watch---grunt-watch">Watch - <code>grunt watch</code></h4>
+<p>This is a convenience method for watching just Less files and automatically building them whenever you save.</p>
+
+<h3 id="troubleshooting-dependencies">Troubleshooting dependencies</h3>
+
+<p>Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun <code>npm install</code>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Please read through our guidelines for contributing to Bootstrap. Included are directions for opening issues, coding standards, and notes on development.</p>
+
+<p>More over, if your pull request contains JavaScript patches or features, you must include relevant unit tests. All HTML and CSS should conform to the <a href="http://github.com/mdo/code-guide">Code Guide</a>, maintained by <a href="http://github.com/mdo">Mark Otto</a>.</p>
+
+<p>Editor preferences are available in the <a href=".editorconfig">editor config</a> for easy use in common text editors. Read more and download plugins at <a href="http://editorconfig.org">http://editorconfig.org</a>.</p>
+
+<h2 id="community">Community</h2>
+
+<p>Keep track of development and community news.</p>
+
+<ul>
+  <li>Follow <a href="http://twitter.com/twbootstrap">@twbootstrap on Twitter</a>.</li>
+  <li>Read and subscribe to the <a href="http://blog.getbootstrap.com">The Official Bootstrap Blog</a>.</li>
+  <li>Have a question that's not a feature request or bug report? <a href="http://groups.google.com/group/twitter-bootstrap">Ask on the mailing list.</a></li>
+  <li>Chat with fellow Bootstrappers in IRC. On the <code>irc.freenode.net</code> server, in the <code>##twitter-bootstrap</code> channel.</li>
+</ul>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Bootstrap will be maintained under the Semantic Versioning guidelines as much as possible.</p>
+
+<p>Releases will be numbered with the following format:</p>
+
+<p><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code></p>
+
+<p>And constructed with the following guidelines:</p>
+
+<ul>
+  <li>Breaking backward compatibility bumps the major (and resets the minor and patch)</li>
+  <li>New additions without breaking backward compatibility bumps the minor (and resets the patch)</li>
+  <li>Bug fixes and misc changes bumps the patch</li>
+</ul>
+
+<p>For more information on SemVer, please visit <a href="http://semver.org/">http://semver.org/</a>.</p>
+
+<h2 id="authors">Authors</h2>
+
+<p><strong>Mark Otto</strong></p>
+
+<ul>
+  <li><a href="http://twitter.com/mdo">http://twitter.com/mdo</a></li>
+  <li><a href="http://github.com/mdo">http://github.com/mdo</a></li>
+</ul>
+
+<p><strong>Jacob Thornton</strong></p>
+
+<ul>
+  <li><a href="http://twitter.com/fat">http://twitter.com/fat</a></li>
+  <li><a href="http://github.com/fat">http://github.com/fat</a></li>
+</ul>
+
+<h2 id="copyright-and-license">Copyright and license</h2>
+
+<p>Copyright 2012 Twitter, Inc under <a href="LICENSE">the Apache 2.0 license</a>.</p>
+
+  </body>
+</html>

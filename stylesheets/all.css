@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+body {
+  background: #d4d4d4 url("../images/background.png");
+  font-family: sans-serif; }
+
+#heatmeter {
+  padding: 0 15px 0 15px;
+}
+
+.progress.wide{
+  width: 60px;
+}
+
+.progress.vertical{
+  height: 188px;
+}
