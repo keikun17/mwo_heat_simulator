@@ -67,8 +67,8 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+  set :relative_links, true
 end
 
 sprockets.append_path File.join "#{root}", 'source/components'
-set :relative_links, true
 
