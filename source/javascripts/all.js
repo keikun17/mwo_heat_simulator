@@ -93,11 +93,15 @@ $(function(){
     $('.js-fire').click();
   })
 
-  $('.js-armory').on('click','.js-add-weapon',function(){
+  $('.armory').on('click','.js-add-weapon',function(){
     var weaponClass = $(this).data('weaponClass');
     var weaponName = $(this).data('weaponName');
     html = weaponView({name: weaponName, weaponClass: weaponClass})
     $('.weapon-list').append(html);
+  })
+
+  $('.weapon-list').on('click','.js-strip',function(){
+    $(this).parent().remove();
   })
 
   console.log("All Systems: Nominal")
