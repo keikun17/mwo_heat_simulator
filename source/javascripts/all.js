@@ -73,16 +73,7 @@ $(function(){
   };
   console.log('Weapons: Online');
 
-  $('#js-alphastrike').click(function(){
-    console.log("PEEEW!")
-    shoot(20);
-  })
-
-  console.log("All Systems: Nominal")
-  shoot(5);
-
   weapons = $('.js-fire');
-
 
   fireWeapon = function(event){
     weapon_name = $(this).data('weaponClass');
@@ -98,6 +89,9 @@ $(function(){
     'ppc' : 9
   };
 
+  $('#js-alphastrike').click(function(){
+    $('.js-fire').click();
+  })
 
   $('.js-armory').on('click','.js-add-weapon',function(){
     var weaponClass = $(this).data('weaponClass');
@@ -105,4 +99,8 @@ $(function(){
     html = weaponView({name: weaponName, weaponClass: weaponClass})
     $('.weapon-list').append(html);
   })
+
+  console.log("All Systems: Nominal")
+  shoot(5);
+
 });
