@@ -1,4 +1,10 @@
+/*
+ *= require 'bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2'
+ *= require 'bootstrap/dist/css/bootstrap.css'
+ */
+
 @charset "utf-8";
+
 
 body {
   background: #d4d4d4 url("../images/background.png");
