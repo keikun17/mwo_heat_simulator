@@ -1,5 +1,6 @@
 $(function(){
   weaponHeatTable = {
+    // Energy Weapons
     'slas': 2,
     'mlas': 3,
     'llas': 7,
@@ -9,7 +10,18 @@ $(function(){
     'lplas': 8.5,
     'ppc': 9,
     'eppc': 12,
-    'flam': 1  // Flamer heat should actually be 0.6 but bootstrap progress bar can't do >1 values.
+    'flam': 1,  // Flamer heat should actually be 0.6 but bootstrap progress bar can't do >1 values.
+
+    // Balistic Weapons
+    'ac2': 1,
+    'ac5': 1,
+    'ac10': 3,
+    'ac20': 6,
+    'uac5': 1,
+    'lb10x': 2,
+    'gauss': 1,
+    'mg': 0
+
   };
 
   shoot = function(val){
