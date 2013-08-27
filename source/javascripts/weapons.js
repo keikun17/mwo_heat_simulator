@@ -1,12 +1,27 @@
 $(function(){
+  weaponHeatTable = {
+    'slas': 2,
+    'mlas': 3,
+    'llas': 7,
+    'ellas': 8.5,
+    'splas': 2.4,
+    'mplas': 5,
+    'lplas': 8.5,
+    'ppc': 9,
+    'eppc': 12,
+    'flam': 1  // Flamer heat should actually be 0.6 but bootstrap progress bar can't do >1 values.
+  };
+
   shoot = function(val){
+    console.log('-------');
+    console.log('Adding Heat:');
+    console.log(val);
+    console.log('Current Heat Is:');
+    console.log(currentHeat());
+
     towards = val + currentHeat();
     $('#heatlevel').attr('aria-valuetransitiongoal', towards);
-    $('#heatlevel').progressbar({
-      display_text: 'fill'
-    });
   };
-  console.log('Weapons: Online');
 
   weapons = $('.js-fire');
 
@@ -16,13 +31,6 @@ $(function(){
   }
 
   $('.weapon-list').on('click', 'a.js-fire', fireWeapon);
-
-  weaponHeatTable = {
-    'slas': 2,
-    'mlas': 3,
-    'llas': 7,
-    'ppc' : 9
-  };
 
   $('#js-alphastrike').click(function(){
     $('.js-fire').click();
@@ -39,6 +47,5 @@ $(function(){
     $(this).parent().remove();
   })
 
-  console.log("All Systems: Nominal")
-  shoot(5);
+  console.log('Weapons: Online');
 });

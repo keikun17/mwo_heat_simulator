@@ -16,15 +16,7 @@
       %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } Alpha Strike
 
     .col-md-4.armory
-      %ul
-        %li
-          %a{href: '#', class: 'js-add-weapon', data: { weapon_name: 'Small Laser', weapon_class: 'slas' }} Add Small Laser
-        %li
-          %a{href: '#', class: 'js-add-weapon', data: { weapon_name: 'Medium Laser', weapon_class: 'mlas' }} Add Medium Laser
-        %li
-          %a{href: '#', class: 'js-add-weapon', data: { weapon_name: 'Large Laser', weapon_class: 'llas' }} Add Large Laser
-        %li
-          %a{href: '#', class: 'js-add-weapon', data: { weapon_name: 'PPC', weapon_class: 'ppc' }} Add PPC
+      = partial 'weapons/armory'
 
   %section
     %div
