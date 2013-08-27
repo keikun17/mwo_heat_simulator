@@ -1,5 +1,5 @@
 $(function(){
-  weaponView = _.template("<li><a href='#' class='js-fire' data-weapon-class='<%= weaponClass %>'><%= name %></a></li>");
+  weaponView = _.template("<li><%= name %><a href='#' class='js-fire' data-weapon-class='<%= weaponClass %>'> Fire</a></li>");
 })
 
 

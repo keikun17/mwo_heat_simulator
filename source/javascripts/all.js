@@ -79,16 +79,9 @@ $(function(){
   })
 
   console.log("All Systems: Nominal")
-  shoot(20);
+  shoot(5);
 
   weapons = $('.js-fire');
-
-  // $.each(weapons, function(i, weapon){
-  //   $(weapon).click( function(){
-  //     weapon_name = $(weapon).data('weaponClass');
-  //     shoot(weaponHeatTable[weapon_name])
-  //   });
-  // });
 
 
   fireWeapon = function(event){
@@ -106,8 +99,10 @@ $(function(){
   };
 
 
-  $('.js-add-mlas').click(function(){
-    html = weaponView({name: 'Medium Laser', weaponClass: 'mlas'})
+  $('.js-armory').on('click','.js-add-weapon',function(){
+    var weaponClass = $(this).data('weaponClass');
+    var weaponName = $(this).data('weaponName');
+    html = weaponView({name: weaponName, weaponClass: weaponClass})
     $('.weapon-list').append(html);
   })
 });
