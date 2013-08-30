@@ -18,13 +18,24 @@ $(function(){
     return $('#heatsink_type').val() == 'single';
   }
 
+  coolRate = function(){
+    if(isSingleHeatSink()){
+      rate = .1 * heatSinkCount();
+    }else{
+      rate = .14 * heatSinkCount();
+    }
+    return rate
+  }
+
   // Run heatsinks
   coolDown = function(){
-    if(isSingleHeatSink()){
-      towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
-    }else{
-      towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
-    }
+    // if(isSingleHeatSink()){
+    //   towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
+    // }else{
+    //   towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
+    // }
+
+    towards = currentHeat() -  (coolRate() * 100);
 
     if( currentHeat() > 0 ) {
       $('#heatlevel').attr('aria-valuetransitiongoal', towards);
@@ -45,6 +56,7 @@ $(function(){
     threshold = threshold * 100;
     $('#heatlevel').attr('aria-valuemax', threshold);
     $('#heat-threshold').text((threshold / 100));
+    $('#cool-rate').text(coolRate().toPrecision(2));
   }
 
   tickRate = function(){
