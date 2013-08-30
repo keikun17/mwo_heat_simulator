@@ -29,6 +29,7 @@ $(function(){
     if( currentHeat() > 0 ) {
       $('#heatlevel').attr('aria-valuetransitiongoal', towards);
       $('#heatlevel').progressbar({
+        transition_delay: 100,
         refresh_speed: 10,
         display_text: 'fill'
       })
