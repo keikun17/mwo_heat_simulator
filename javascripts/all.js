@@ -12262,14 +12262,15 @@ $(function(){
   // Run heatsinks
   coolDown = function(){
     if(isSingleHeatSink()){
-      towards = currentHeat() - (.1 * heatSinkCount() );
+      towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
     }else{
-      towards = currentHeat() - (.14 * heatSinkCount() );
+      towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
     }
 
     if( currentHeat() > 0 ) {
       $('#heatlevel').attr('aria-valuetransitiongoal', towards);
       $('#heatlevel').progressbar({
+        transition_delay: 100,
         refresh_speed: 10,
         display_text: 'fill'
       })
@@ -12278,12 +12279,13 @@ $(function(){
 
   var recomputeThreshold = function(){
     if( isSingleHeatSink() ){
-      threshold = 30 + (heatSinkCount() - 10);
+      threshold = 30 + (heatSinkCount());
     }else{
-      threshold = 30 + ((heatSinkCount() - 10) * 1.4);
+      threshold = 30 + ((heatSinkCount()) * 1.4);
     }
-    $('#heatlevel').attr('aria-valuemax', threshold)
-    $('#heat-threshold').text(threshold)
+    threshold = threshold * 100;
+    $('#heatlevel').attr('aria-valuemax', threshold);
+    $('#heat-threshold').text((threshold / 100));
   }
 
   tickRate = function(){
@@ -12321,7 +12323,7 @@ $(function(){
     'lplas': 8.5,
     'ppc': 9,
     'eppc': 12,
-    'flam': 1,  // Flamer heat should actually be 0.6 but bootstrap progress bar can't do >1 values.
+    'flam': .6,
 
     // Balistic Weapons
     'ac2': 1,
@@ -12346,6 +12348,7 @@ $(function(){
   };
 
   shoot = function(val){
+    val = val * 100;
     console.log('-------');
     console.log('Adding Heat:');
     console.log(val);
