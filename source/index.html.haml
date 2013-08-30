@@ -1,7 +1,8 @@
 .container
-  %h1 Mechwarrior Online Weapon Heat Simulator
-  .row
-    .col-md-4
+  .row-fluid
+    %h1 Mechwarrior Online Weapon Heat Simulator
+  .row-fluid
+    .col-lg-2
 
       .row
         .progress.vertical.wide.bottom
@@ -32,6 +33,6 @@
           %a{href: '#', class: 'js-strip btn-warning btn-xs'} Strip
       %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } Alpha Strike
 
-    .col-md-4.armory
+    .col-lg-3.armory
       = partial 'weapons/armory'
 
