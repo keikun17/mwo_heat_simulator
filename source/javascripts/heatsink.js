@@ -29,11 +29,6 @@ $(function(){
 
   // Run heatsinks
   coolDown = function(){
-    // if(isSingleHeatSink()){
-    //   towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
-    // }else{
-    //   towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
-    // }
 
     towards = currentHeat() -  (coolRate() * 100);
 
