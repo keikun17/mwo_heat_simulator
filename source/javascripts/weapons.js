@@ -10,7 +10,7 @@ $(function(){
     'lplas': 8.5,
     'ppc': 9,
     'eppc': 12,
-    'flam': 1,  // Flamer heat should actually be 0.6 but bootstrap progress bar can't do >1 values.
+    'flam': .6,
 
     // Balistic Weapons
     'ac2': 1,
