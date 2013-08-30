@@ -21,9 +21,9 @@ $(function(){
   // Run heatsinks
   coolDown = function(){
     if(isSingleHeatSink()){
-      towards = currentHeat() - (.1 * heatSinkCount() );
+      towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
     }else{
-      towards = currentHeat() - (.14 * heatSinkCount() );
+      towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
     }
 
     if( currentHeat() > 0 ) {
@@ -42,8 +42,9 @@ $(function(){
     }else{
       threshold = 30 + ((heatSinkCount()) * 1.4);
     }
-    $('#heatlevel').attr('aria-valuemax', threshold)
-    $('#heat-threshold').text(threshold)
+    threshold = threshold * 100;
+    $('#heatlevel').attr('aria-valuemax', threshold);
+    $('#heat-threshold').text((threshold / 100));
   }
 
   tickRate = function(){

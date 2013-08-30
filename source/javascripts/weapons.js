@@ -35,6 +35,7 @@ $(function(){
   };
 
   shoot = function(val){
+    val = val * 100;
     console.log('-------');
     console.log('Adding Heat:');
     console.log(val);
