@@ -37,9 +37,9 @@ $(function(){
 
   var recomputeThreshold = function(){
     if( isSingleHeatSink() ){
-      threshold = 30 + (heatSinkCount() - 10);
+      threshold = 30 + (heatSinkCount());
     }else{
-      threshold = 30 + ((heatSinkCount() - 10) * 1.4);
+      threshold = 30 + ((heatSinkCount()) * 1.4);
     }
     $('#heatlevel').attr('aria-valuemax', threshold)
     $('#heat-threshold').text(threshold)
