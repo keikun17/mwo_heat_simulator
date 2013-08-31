@@ -12263,18 +12263,19 @@ $(function(){
     if(isSingleHeatSink()){
       rate = .1 * heatSinkCount();
     }else{
-      rate = .14 * heatSinkCount();
+      if(heatSinkCount() >= 10){
+        internal_heat_sink = 10;
+        external_heat_sink = heatSinkCount() - internal_heat_sink;
+        rate = ( internal_heat_sink * .2 ) + ( external_heat_sink * .14 );
+      }else{
+        rate = .14 * heatSinkCount();
+      }
     }
     return rate
   }
 
   // Run heatsinks
   coolDown = function(){
-    // if(isSingleHeatSink()){
-    //   towards = currentHeat() - ((.1 * heatSinkCount() * 100) );
-    // }else{
-    //   towards = currentHeat() - ((.14 * heatSinkCount() * 100) );
-    // }
 
     towards = currentHeat() -  (coolRate() * 100);
 
