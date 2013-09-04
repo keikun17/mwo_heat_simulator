@@ -8,7 +8,7 @@ $(function(){
     'splas': 2.4,
     'mplas': 5,
     'lplas': 8.5,
-    'ppc': 9,
+    'ppc': 10,
     'eppc': 12,
     'flam': .6,
 

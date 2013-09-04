@@ -7006,13 +7006,21 @@ td.visible-print {
 
 
 
+h1 {
+  color: #D48520;
+}
 
 body {
-  background: #d4d4d4 url("../images/background.png");
+  background: #d4d4d4 url("../images/tweed.png");
+  color: #FFF;
   font-family: sans-serif; }
 
 #heatmeter {
   padding: 0 15px 0 15px;
+}
+
+li.weapon-item{
+  padding-bottom: 2px;
 }
 
 .progress.wide{

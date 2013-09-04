@@ -12259,6 +12259,7 @@ $(function(){
     return $('#heatsink_type').val() == 'single';
   }
 
+  /* TODO Internal Heatsink count should be depended on the engine type */
   coolRate = function(){
     if(isSingleHeatSink()){
       rate = .1 * heatSinkCount();
@@ -12334,7 +12335,7 @@ $(function(){
     'splas': 2.4,
     'mplas': 5,
     'lplas': 8.5,
-    'ppc': 9,
+    'ppc': 10,
     'eppc': 12,
     'flam': .6,
 
