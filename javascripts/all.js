@@ -12391,6 +12391,7 @@ $(function(){
     var weaponName = $(this).data('weaponName');
     html = weaponView({name: weaponName, weaponClass: weaponClass})
     $('.weapon-list').append(html);
+    return false;
   })
 
   $('.weapon-list').on('click','.js-strip',function(){
