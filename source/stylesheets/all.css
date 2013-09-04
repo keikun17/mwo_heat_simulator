@@ -5,9 +5,13 @@
 
 @charset "utf-8";
 
+h1 {
+  color: #D48520;
+}
 
 body {
-  background: #d4d4d4 url("../images/background.png");
+  background: #d4d4d4 url("../images/tweed.png");
+  color: #FFF;
   font-family: sans-serif; }
 
 #heatmeter {
