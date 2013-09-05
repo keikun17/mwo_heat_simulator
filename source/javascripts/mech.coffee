@@ -1,39 +1,37 @@
 $ ->
-  class window.Mech
-    instance = null
+  window.mech=
+    heatsink_display_el: '#heatsink-count'
+    heatsink_type_el: '#heatsink_type'
 
-    @get: (@variant = 'default') ->
-      instance ?= new PrivateMechClass(@variant)
+    init: ->
+      $(@heatsink_display_el).on 'input', @refit
+      $(@heatsink_type_el).on 'change', @refit
+      @refit()
 
-    class PrivateMechClass
-      constructor:(@variant) ->
-        $('#heatsink-count').on 'input', @refit
-        $('#heatsink_type').on 'change', @refit
-        @refit()
-
-      heatsink_type: 'single'
-      heatsinks: 0
-      heatsinks: 30
-      weapons: []
-
-      echo: -> @variant
-
-      refit: ->
-        @heatsink_type = $('#heatsink_type').val()
-        @heatsinks = parseInt($('#heatsink-count').val());
-
-        console.log("heatsink type is: " +  @heatsink_type)
-
-        # Compute for threshold
-        if @heatsink_type == 'single'
-          @threshold = 30 + @heatsinks
+    heatsink:
+      getType: -> $('#heatsink_type').val()
+      getCount: -> parseInt($('#heatsink-count').val())
+      getThreshold: ->
+        if @getType() == 'single'
+          val = 30 + @getCount()
+          console.log("1 #{val}")
         else
-          external_heatsinks = @heatsinks - 10
-          internal_heatsinks = @heatsinks - external_heatsinks
-          @threshold = 30 + (external_heatsinks * 1.4) + (internal_heatsinks * 2)
+          external_heatsinks = @getCount() - 10
+          internal_heatsinks = @getCount() - external_heatsinks
+          val = 30 + (external_heatsinks * 1.4) + (internal_heatsinks * 2)
+          console.log("2 #{val}")
 
-        if isNaN(@threshold)
-          @threshold = 0
+        if isNaN(val)
+          console.log("3 #{val}")
+          val = 0
 
-        $('#heat-threshold').text(@threshold)
+
+        console.log("4 #{val}")
+        val
+
+    refit: ->
+      console.log("heattsink type is #{window.mech.heatsink.getType()}")
+      $('#heat-threshold').text(window.mech.heatsink.getThreshold())
+
+    weapons: []
 

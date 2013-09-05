@@ -1,2 +1,2 @@
 $ ->
-  window.Mech.get('default')
+  window.mech.init()
