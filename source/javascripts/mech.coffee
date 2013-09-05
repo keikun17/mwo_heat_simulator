@@ -1,31 +1,39 @@
 $ ->
-  @mech =
-  heatsink_type: 'single'
-  heatsinks: 0
-  threshold: 30
-  weapons: []
+  class window.Mech
+    instance = null
 
-  refit: ->
-    @heatsink_type = $('#heatsink_type').val()
-    @heatsinks = parseInt($('#heatsink-count').val());
+    @get: (@variant = 'default') ->
+      instance ?= new PrivateMechClass(@variant)
 
-    console.log("heatsink type is: " +  @heatsink_type)
+    class PrivateMechClass
+      constructor:(@variant) ->
+        $('#heatsink-count').on 'input', @refit
+        $('#heatsink_type').on 'change', @refit
+        @refit()
 
-    # Compute for threshold
-    if @heatsink_type == 'single'
-      @threshold = 30 + @heatsinks
-    else
-      external_heatsinks = @heatsinks - 10
-      internal_heatsinks = @heatsinks - external_heatsinks
-      @threshold = 30 + (external_heatsinks * 1.4) + (internal_heatsinks * 2)
+      heatsink_type: 'single'
+      heatsinks: 0
+      heatsinks: 30
+      weapons: []
 
-    if isNaN(@threshold)
-      @threshold = 0
+      echo: -> @variant
 
-    $('#heat-threshold').text(@threshold)
+      refit: ->
+        @heatsink_type = $('#heatsink_type').val()
+        @heatsinks = parseInt($('#heatsink-count').val());
 
-  init: ->
-    $('#heatsink-count').on 'input', @refit
-    $('#heatsink_type').on 'change', @refit
+        console.log("heatsink type is: " +  @heatsink_type)
 
-    @refit()
+        # Compute for threshold
+        if @heatsink_type == 'single'
+          @threshold = 30 + @heatsinks
+        else
+          external_heatsinks = @heatsinks - 10
+          internal_heatsinks = @heatsinks - external_heatsinks
+          @threshold = 30 + (external_heatsinks * 1.4) + (internal_heatsinks * 2)
+
+        if isNaN(@threshold)
+          @threshold = 0
+
+        $('#heat-threshold').text(@threshold)
+
