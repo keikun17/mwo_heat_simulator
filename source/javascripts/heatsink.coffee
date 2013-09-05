@@ -26,7 +26,7 @@ $ ->
       if isNaN(val)
         val = 0
 
-      val
+      val * 100
 
     getCoolRate: ->
       if window.heatsink.getType() == 'single'
