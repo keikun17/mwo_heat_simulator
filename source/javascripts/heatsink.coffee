@@ -1,12 +1,11 @@
 $ ->
   window.heatsink=
-    heatsink_display_el: '#heatsink-count'
-    heatsink_type_el: '#heatsink_type'
 
     init: ->
-      console.log("FIRE")
-      $(@heatsink_display_el).on 'input', window.mech.refit
-      $(@heatsink_type_el).on 'change', window.mech.refit
+      heatsink_display_el = '#heatsink-count'
+      heatsink_type_el =  '#heatsink_type'
+      $(heatsink_display_el).on 'input', window.mech.refit
+      $(heatsink_type_el).on 'change', window.mech.refit
 
     getType: -> $('#heatsink_type').val()
     getCount: -> parseInt($('#heatsink-count').val())
