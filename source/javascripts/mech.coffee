@@ -11,5 +11,6 @@ $ ->
 
     refit: ->
       $('#heat-threshold').text(window.mech.heatsink.getThreshold())
+      $('#cool-rate').text(window.mech.heatsink.getCoolRate())
 
     weapons: []
