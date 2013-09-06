@@ -34,3 +34,9 @@ li.weapon-item{
   /* border: 1px solid white; */
   padding: 3px 0 3px 0;
 }
+
+li.weapon-item a{
+  &:hover{
+    background-color: #539627;
+  }
+}
