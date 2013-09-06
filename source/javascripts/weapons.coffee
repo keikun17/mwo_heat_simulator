@@ -1,5 +1,8 @@
 $ ->
   window.weapons=
+    init: ->
+      $('.weapon-list').on "click", "a.js-fire", @fireWeapon
+
     heatTable:
 
       # Energy Weapons
@@ -44,3 +47,11 @@ $ ->
       towards = val + window.mech.heatsink.getCurrentHeat()
       $("#heatlevel").attr "aria-valuetransitiongoal", towards
       val = val * 100
+
+    fireWeapon: (event) ->
+      console.log('fire')
+      weapon_name = $(this).data("weaponClass")
+      window.weapons.shoot(window.weapons.heatTable[weapon_name])
+
+
+    

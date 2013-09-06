@@ -6,6 +6,7 @@ $ ->
 
     init: ->
       window.heatsink.init()
+      window.weapons.init()
       @refit()
 
     heatsink: window.heatsink
