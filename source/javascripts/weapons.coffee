@@ -2,6 +2,8 @@ $ ->
   window.weapons=
     init: ->
       $('.weapon-list').on "click", "a.js-fire", @fireWeapon
+
+      # Equip weapons
       $(".armory").on "click", ".js-add-weapon", ->
         weaponClass = $(this).data("weaponClass")
         weaponName = $(this).data("weaponName")
@@ -11,6 +13,10 @@ $ ->
         )
         $(".weapon-list").append html
         false
+
+      # Fire all Weapons
+      $("#js-alphastrike").click ->
+        $(".js-fire").click()
 
     heatTable:
 
@@ -62,5 +68,3 @@ $ ->
       weapon_name = $(this).data("weaponClass")
       window.weapons.shoot(window.weapons.heatTable[weapon_name])
 
-
-    
