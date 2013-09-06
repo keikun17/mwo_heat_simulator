@@ -2,6 +2,15 @@ $ ->
   window.weapons=
     init: ->
       $('.weapon-list').on "click", "a.js-fire", @fireWeapon
+      $(".armory").on "click", ".js-add-weapon", ->
+        weaponClass = $(this).data("weaponClass")
+        weaponName = $(this).data("weaponName")
+        html = weaponView(
+          name: weaponName
+          weaponClass: weaponClass
+        )
+        $(".weapon-list").append html
+        false
 
     heatTable:
 
