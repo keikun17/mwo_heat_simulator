@@ -3,11 +3,9 @@
     %h1 Mechwarrior Online Weapon Heat Simulator
   .row-fluid
     .col-lg-3
-
       .row
         .progress.vertical.wide.bottom
           #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
-
       .row
         %div
           Heatsink Type
@@ -25,15 +23,15 @@
           %span#cool-rate.label.label-info
           %span heat/sec
 
-
     .col-lg-3
       %h4 Equipped Weapons
-      %ul.weapon-list
-        %li
-          %a{href: '#', class: 'js-fire btn-danger btn-xs', data: { weapon_class: 'slas'}} Fire
-          %a{href: '#', class: 'js-strip btn-warning btn-xs'} Strip
+      %ul.weapon-list.list-unstyled
+        %li.equipped-weapon
+          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'slas'}} Fire
+          %a{href: '#', class: 'js-strip btn-warning btn-sm'} Strip
           Small Laser
       %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } Alpha Strike
+      %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' } Strip All
 
     .col-lg-3.armory
       = partial 'weapons/armory'

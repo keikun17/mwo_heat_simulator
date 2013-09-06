@@ -22,6 +22,10 @@ $ ->
       $(".weapon-list").on "click", ".js-strip", ->
         $(this).parent().remove()
 
+      # Strip all
+      $("#js-stripall").click ->
+        $('.js-strip').click()
+
     heatTable:
 
       # Energy Weapons

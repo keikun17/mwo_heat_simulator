@@ -29,3 +29,8 @@ li.weapon-item{
 .progress.vertical{
   height: 188px;
 }
+
+.equipped-weapon{
+  /* border: 1px solid white; */
+  padding: 3px 0 3px 0;
+}
