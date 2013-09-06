@@ -18,6 +18,10 @@ $ ->
       $("#js-alphastrike").click ->
         $(".js-fire").click()
 
+      # Strip weapon
+      $(".weapon-list").on "click", ".js-strip", ->
+        $(this).parent().remove()
+
     heatTable:
 
       # Energy Weapons
