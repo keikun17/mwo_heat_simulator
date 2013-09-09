@@ -18,6 +18,15 @@ $ ->
       $("#js-alphastrike").click ->
         $(".js-fire").click()
 
+      $('.js-fire_weapon_group').click (e) ->
+        e.preventDefault()
+        group = $(@).data('activateGroup')
+        wgs =  $("[data-weapon-group='#{group}'].weapon_group.assigned")
+
+        _.each wgs, (wg) ->
+          console.log $(wg).siblings('.js-fire').click()
+
+
       # Strip weapon
       $(".weapon-list").on "click", ".js-strip", ->
         $(this).parent().remove()
