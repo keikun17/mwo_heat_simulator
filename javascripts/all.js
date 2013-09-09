@@ -12239,174 +12239,203 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     };
 
 })(window.jQuery);
-$(function(){
-  console.log("Reactor: Online")
+(function() {
+  _.templateSettings = {
+    interpolate: /\{\{=(.+?)\}\}/g,
+    evaluate: /\{\{(.+?)\}\}/g
+  };
 
-  // get heat value
-  currentHeat = function(){
-    val = parseInt($('#heatlevel').attr('aria-valuetransitiongoal'));
-    if( isNaN(val) ) {
-      val = 0;
-    }
-    return val;
-  }
+  this.weaponView = _.template("<li class='equipped-weapon'>  <a href='#' class='js-fire btn-sm btn-danger' data-weapon-class='{{= weaponClass }}'> Fire</a>  <a href='#' class='js-strip btn-sm btn-warning'>Strip</a>  <a href='#' class='js-weapon_group assigned btn-sm btn-info' data-weapon-group='1'>1</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'>2</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon_group='3'>3</a>  {{= name }}  </li>");
 
-  heatSinkCount = function(){
-    return parseInt($('#heatsink-count').val());
-  }
+  this.armoryView = _.template("  <li>    {{= name }}  </li>");
 
-  isSingleHeatSink = function(){
-    return $('#heatsink_type').val() == 'single';
-  }
-
-  /* TODO Internal Heatsink count should be depended on the engine type */
-  coolRate = function(){
-    if(isSingleHeatSink()){
-      rate = .1 * heatSinkCount();
-    }else{
-      if(heatSinkCount() >= 10){
-        internal_heat_sink = 10;
-        external_heat_sink = heatSinkCount() - internal_heat_sink;
-        rate = ( internal_heat_sink * .2 ) + ( external_heat_sink * .14 );
-      }else{
-        rate = .14 * heatSinkCount();
+}).call(this);
+(function() {
+  $(function() {
+    return window.heatsink = {
+      init: function() {
+        var heatsink_display_el, heatsink_type_el;
+        heatsink_display_el = '#heatsink-count';
+        heatsink_type_el = '#heatsink_type';
+        $(heatsink_display_el).on('input', window.mech.refit);
+        $(heatsink_type_el).on('change', window.mech.refit);
+        return this.runTicker();
+      },
+      getType: function() {
+        return $('#heatsink_type').val();
+      },
+      getCount: function() {
+        return parseInt($('#heatsink-count').val());
+      },
+      getCurrentHeat: function() {
+        var val;
+        val = parseInt($("#heatlevel").attr("aria-valuetransitiongoal"));
+        if (isNaN(val)) {
+          val = 0;
+        }
+        return val;
+      },
+      getThreshold: function() {
+        var val;
+        if (window.heatsink.getType() === 'single') {
+          val = 30 + this.getCount();
+        } else {
+          val = 30 + (this.getCount() * 1.4);
+        }
+        if (isNaN(val)) {
+          val = 0;
+        }
+        return val * 100;
+      },
+      getCoolRate: function() {
+        var external_heatsinks, internal_heatsinks, rate;
+        if (window.heatsink.getType() === 'single') {
+          rate = .1 * this.getCount();
+        } else {
+          if (this.getCount() >= 0) {
+            external_heatsinks = this.getCount() - 10;
+            internal_heatsinks = this.getCount() - external_heatsinks;
+            rate = (internal_heatsinks * .2) + (external_heatsinks * .14);
+          } else {
+            rate = .14 * heatSinkCount();
+          }
+        }
+        return rate;
+      },
+      tickRate: 1000,
+      coolDown: function() {
+        var towards;
+        towards = this.getCurrentHeat() - (this.getCoolRate() * 100);
+        if (this.getCurrentHeat() > 0) {
+          $("#heatlevel").attr("aria-valuetransitiongoal", towards);
+          return $("#heatlevel").progressbar({
+            transition_delay: 100,
+            refresh_speed: 10,
+            display_text: "fill"
+          });
+        }
+      },
+      doTick: function() {
+        return window.mech.heatsink.coolDown();
+      },
+      runTicker: function() {
+        return setInterval(this.doTick, this.tickRate);
       }
-    }
-    return rate
-  }
+    };
+  });
 
-  // Run heatsinks
-  coolDown = function(){
+}).call(this);
+(function() {
+  $(function() {
+    return window.weapons = {
+      init: function() {
+        $('.weapon-list').on("click", "a.js-fire", this.fireWeapon);
+        $(".armory").on("click", ".js-add-weapon", function() {
+          var html, weaponClass, weaponName;
+          weaponClass = $(this).data("weaponClass");
+          weaponName = $(this).data("weaponName");
+          html = weaponView({
+            name: weaponName,
+            weaponClass: weaponClass
+          });
+          $(".weapon-list").append(html);
+          return false;
+        });
+        $("#js-alphastrike").click(function() {
+          return $(".js-fire").click();
+        });
+        $('.js-fire_weapon_group').click(function(e) {
+          var group, wgs;
+          e.preventDefault();
+          group = $(this).data('activateGroup');
+          wgs = $("[data-weapon-group='" + group + "'].js-weapon_group.assigned");
+          return _.each(wgs, function(wg) {
+            return $(wg).siblings('.js-fire').click();
+          });
+        });
+        $(".weapon-list").on("click", ".js-strip", function() {
+          return $(this).parent().remove();
+        });
+        return $("#js-stripall").click(function() {
+          return $('.js-strip').click();
+        });
+      },
+      heatTable: {
+        slas: 2,
+        mlas: 3,
+        llas: 7,
+        ellas: 8.5,
+        splas: 2.4,
+        mplas: 5,
+        lplas: 8.5,
+        ppc: 10,
+        eppc: 12,
+        flam: .6,
+        ac2: 1,
+        ac5: 1,
+        ac10: 3,
+        ac20: 6,
+        uac5: 1,
+        lb10x: 2,
+        gauss: 1,
+        mg: 0,
+        lrm5: 2,
+        lrm10: 4,
+        lrm15: 5,
+        lrm20: 6,
+        srm2: 2,
+        srm4: 3,
+        srm6: 4,
+        ssrm2: 2
+      },
+      shoot: function(val) {
+        var towards;
+        val = val * 100;
+        console.log("-------");
+        console.log("Adding Heat:");
+        console.log(val);
+        console.log("Current Heat Is:");
+        console.log(window.mech.heatsink.getCurrentHeat());
+        towards = val + window.mech.heatsink.getCurrentHeat();
+        $("#heatlevel").attr("aria-valuetransitiongoal", towards);
+        return val = val * 100;
+      },
+      fireWeapon: function(event) {
+        var weapon_name;
+        console.log('fire');
+        weapon_name = $(this).data("weaponClass");
+        return window.weapons.shoot(window.weapons.heatTable[weapon_name]);
+      }
+    };
+  });
 
-    towards = currentHeat() -  (coolRate() * 100);
+}).call(this);
+(function() {
+  $(function() {
+    return window.mech = {
+      init: function() {
+        window.heatsink.init();
+        window.weapons.init();
+        return this.refit();
+      },
+      heatsink: window.heatsink,
+      refit: function() {
+        $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);
+        $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
+        return $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
+      },
+      weapons: window.weapons
+    };
+  });
 
-    if( currentHeat() > 0 ) {
-      $('#heatlevel').attr('aria-valuetransitiongoal', towards);
-      $('#heatlevel').progressbar({
-        transition_delay: 100,
-        refresh_speed: 10,
-        display_text: 'fill'
-      })
-    }
-  };
+}).call(this);
+(function() {
+  $(function() {
+    return window.mech.init();
+  });
 
-  var recomputeThreshold = function(){
-    if( isSingleHeatSink() ){
-      threshold = 30 + (heatSinkCount());
-    }else{
-      threshold = 30 + ((heatSinkCount()) * 1.4);
-    }
-    threshold = threshold * 100;
-    $('#heatlevel').attr('aria-valuemax', threshold);
-    $('#heat-threshold').text((threshold / 100));
-    $('#cool-rate').text(coolRate().toPrecision(2));
-  }
-
-  tickRate = function(){
-    return 1000;
-  }
-
-  var tick = function(){
-    coolDown();
-    recomputeThreshold();
-  }
-
-  runTicker = function(){
-    console.log("Sensors: Online")
-    setInterval(tick, tickRate());
-  };
-
-  runTicker();
-
-});
-$(function(){
-  weaponView = _.template("<li> <%= name %> <a href='#' class='js-fire btn-xs btn-danger' data-weapon-class='<%= weaponClass %>'> Fire</a> <a href='#' class='js-strip btn-xs btn-warning'>Strip</a> </li>");
-})
-
-
-;
-$(function(){
-  weaponHeatTable = {
-    // Energy Weapons
-    'slas': 2,
-    'mlas': 3,
-    'llas': 7,
-    'ellas': 8.5,
-    'splas': 2.4,
-    'mplas': 5,
-    'lplas': 8.5,
-    'ppc': 10,
-    'eppc': 12,
-    'flam': .6,
-
-    // Balistic Weapons
-    'ac2': 1,
-    'ac5': 1,
-    'ac10': 3,
-    'ac20': 6,
-    'uac5': 1,
-    'lb10x': 2,
-    'gauss': 1,
-    'mg': 0,
-
-    // Missile
-    'lrm5': 2,
-    'lrm10': 4,
-    'lrm15': 5,
-    'lrm20': 6,
-    'srm2': 2,
-    'srm4': 3,
-    'srm6': 4,
-    'ssrm2': 2
-
-  };
-
-  shoot = function(val){
-    val = val * 100;
-    console.log('-------');
-    console.log('Adding Heat:');
-    console.log(val);
-    console.log('Current Heat Is:');
-    console.log(currentHeat());
-
-    towards = val + currentHeat();
-    $('#heatlevel').attr('aria-valuetransitiongoal', towards);
-  };
-
-  weapons = $('.js-fire');
-
-  fireWeapon = function(event){
-    weapon_name = $(this).data('weaponClass');
-    shoot(weaponHeatTable[weapon_name]);
-  }
-
-  $('.weapon-list').on('click', 'a.js-fire', fireWeapon);
-
-  $('#js-alphastrike').click(function(){
-    $('.js-fire').click();
-  })
-
-  $('.armory').on('click','.js-add-weapon',function(){
-    var weaponClass = $(this).data('weaponClass');
-    var weaponName = $(this).data('weaponName');
-    html = weaponView({name: weaponName, weaponClass: weaponClass})
-    $('.weapon-list').append(html);
-    return false;
-  })
-
-  $('.weapon-list').on('click','.js-strip',function(){
-    $(this).parent().remove();
-  })
-
-  console.log('Weapons: Online');
-});
+}).call(this);
+(function() {
 
 
-
-
-
-
-$(function(){
-  shoot(5);
-  console.log("All Systems: Nominal")
-});
+}).call(this);
