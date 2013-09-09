@@ -4,10 +4,12 @@
   .row-fluid
     .col-lg-3
       .row
-        .progress.vertical.wide.bottom
-          #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
-
+        %p
+          .progress.vertical.wide.bottom
+            #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
       .row
+        %p
+          %a{id: 'flush_coolant', class: 'btn btn-success'} Flush coolant
         %span.glyphicon.glyphicon-dashboard
         %div
           Heatsink Type
