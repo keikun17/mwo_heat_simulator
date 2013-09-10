@@ -18,6 +18,12 @@ $ ->
       $("#js-alphastrike").click ->
         $(".js-fire").click()
 
+      # Assign weapon group
+      $('.weapon-list').on "click", ".js-weapon_group", ->
+        $(@).toggleClass('assigned')
+        $(@).toggleClass('btn-default')
+        $(@).toggleClass('btn-info')
+
       # Fire weapon group
       $('.js-fire_weapon_group').click (e) ->
         e.preventDefault()
@@ -25,6 +31,7 @@ $ ->
 
         # wgs : Weapon Groups
         wgs =  $("[data-weapon-group='#{group}'].js-weapon_group.assigned")
+        console.log "count is " + wgs.length
 
         _.each wgs, (wg) ->
           # Loop through all weapon groups for fired group and click it's weapon sibling
