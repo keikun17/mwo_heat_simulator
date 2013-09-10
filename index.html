@@ -18,16 +18,22 @@
   <body class="index">
     <div class='container'>
   <div class='row-fluid'>
-    <h1>Mechwarrior Online Weapon Heat Simulator</h1>
+    <h1>Mechwarrior Online Weapon Heat Simulator(Beta)</h1>
+    <div class='alert alert-info'>Note : Weapon Cooldown and Ghost heat not yet implemented.</div>
   </div>
   <div class='row-fluid'>
     <div class='col-lg-3'>
       <div class='row'>
-        <div class='progress vertical wide bottom'>
-          <div aria-valuemax='3000' class='progress-bar progress-bar-danger' id='heatlevel'></div>
-        </div>
+        <p>
+          <div class='progress vertical wide bottom'>
+            <div aria-valuemax='3000' class='progress-bar progress-bar-danger' id='heatlevel'></div>
+          </div>
+        </p>
       </div>
       <div class='row'>
+        <p>
+          <a class='btn btn-success' id='flush_coolant'>Flush coolant</a>
+        </p>
         <span class='glyphicon glyphicon-dashboard'></span>
         <div>
           Heatsink Type
@@ -57,9 +63,9 @@
         <li class='equipped-weapon'>
           <a class='js-fire btn-danger btn-sm' data-weapon-class='slas' href='#'>Fire</a>
           <a class='js-strip btn-warning btn-sm' href='#'>Strip</a>
-          <a class='js-weapon_group btn-info btn-sm assigned' data-weapon-group='1' href='#'>1</a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='1' href='#'>1</a>
           <a class='js-weapon_group btn-default btn-sm' data-weapon-group='2' href='#'>2</a>
-          <a class='js-weapon_group strip btn-default btn-sm' data-weapon-group='3' href='#'>3</a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='3' href='#'>3</a>
           Small Laser
         </li>
       </ul>

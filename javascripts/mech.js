@@ -2,11 +2,15 @@
   $(function() {
     return window.heatsink = {
       init: function() {
-        var heatsink_display_el, heatsink_type_el;
+        var coolant_el, heatsink_display_el, heatsink_type_el;
         heatsink_display_el = '#heatsink-count';
         heatsink_type_el = '#heatsink_type';
+        coolant_el = '#flush_coolant';
         $(heatsink_display_el).on('input', window.mech.refit);
         $(heatsink_type_el).on('change', window.mech.refit);
+        $(coolant_el).on('click', function() {
+          return window.mech.setHeat(0);
+        });
         return this.runTicker();
       },
       getType: function() {
@@ -55,12 +59,7 @@
         var towards;
         towards = this.getCurrentHeat() - (this.getCoolRate() * 100);
         if (this.getCurrentHeat() > 0) {
-          $("#heatlevel").attr("aria-valuetransitiongoal", towards);
-          return $("#heatlevel").progressbar({
-            transition_delay: 100,
-            refresh_speed: 10,
-            display_text: "fill"
-          });
+          return window.mech.setHeat(towards);
         }
       },
       doTick: function() {
@@ -92,11 +91,17 @@
         $("#js-alphastrike").click(function() {
           return $(".js-fire").click();
         });
+        $('.weapon-list').on("click", ".js-weapon_group", function() {
+          $(this).toggleClass('assigned');
+          $(this).toggleClass('btn-default');
+          return $(this).toggleClass('btn-info');
+        });
         $('.js-fire_weapon_group').click(function(e) {
           var group, wgs;
           e.preventDefault();
           group = $(this).data('activateGroup');
           wgs = $("[data-weapon-group='" + group + "'].js-weapon_group.assigned");
+          console.log("count is " + wgs.length);
           return _.each(wgs, function(wg) {
             return $(wg).siblings('.js-fire').click();
           });
@@ -145,7 +150,7 @@
         console.log("Current Heat Is:");
         console.log(window.mech.heatsink.getCurrentHeat());
         towards = val + window.mech.heatsink.getCurrentHeat();
-        $("#heatlevel").attr("aria-valuetransitiongoal", towards);
+        window.mech.setHeat(towards);
         return val = val * 100;
       },
       fireWeapon: function(event) {
@@ -172,7 +177,15 @@
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
         return $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
       },
-      weapons: window.weapons
+      weapons: window.weapons,
+      setHeat: function(heatlevel) {
+        $("#heatlevel").attr("aria-valuetransitiongoal", heatlevel);
+        return $("#heatlevel").progressbar({
+          transition_delay: 100,
+          refresh_speed: 10,
+          display_text: "fill"
+        });
+      }
     };
   });
 

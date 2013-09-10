@@ -17,11 +17,17 @@
         $("#js-alphastrike").click(function() {
           return $(".js-fire").click();
         });
+        $('.weapon-list').on("click", ".js-weapon_group", function() {
+          $(this).toggleClass('assigned');
+          $(this).toggleClass('btn-default');
+          return $(this).toggleClass('btn-info');
+        });
         $('.js-fire_weapon_group').click(function(e) {
           var group, wgs;
           e.preventDefault();
           group = $(this).data('activateGroup');
           wgs = $("[data-weapon-group='" + group + "'].js-weapon_group.assigned");
+          console.log("count is " + wgs.length);
           return _.each(wgs, function(wg) {
             return $(wg).siblings('.js-fire').click();
           });
@@ -70,7 +76,7 @@
         console.log("Current Heat Is:");
         console.log(window.mech.heatsink.getCurrentHeat());
         towards = val + window.mech.heatsink.getCurrentHeat();
-        $("#heatlevel").attr("aria-valuetransitiongoal", towards);
+        window.mech.setHeat(towards);
         return val = val * 100;
       },
       fireWeapon: function(event) {

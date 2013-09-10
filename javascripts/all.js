@@ -12245,7 +12245,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     evaluate: /\{\{(.+?)\}\}/g
   };
 
-  this.weaponView = _.template("<li class='equipped-weapon'>  <a href='#' class='js-fire btn-sm btn-danger' data-weapon-class='{{= weaponClass }}'> Fire</a>  <a href='#' class='js-strip btn-sm btn-warning'>Strip</a>  <a href='#' class='js-weapon_group assigned btn-sm btn-info' data-weapon-group='1'>1</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'>2</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon_group='3'>3</a>  {{= name }}  </li>");
+  this.weaponView = _.template("<li class='equipped-weapon'>  <a href='#' class='js-fire btn-sm btn-danger' data-weapon-class='{{= weaponClass }}'> Fire</a>  <a href='#' class='js-strip btn-sm btn-warning'>Strip</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='1'>1</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'>2</a>  <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='3'>3</a>  {{= name }}  </li>");
 
   this.armoryView = _.template("  <li>    {{= name }}  </li>");
 
@@ -12254,11 +12254,15 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   $(function() {
     return window.heatsink = {
       init: function() {
-        var heatsink_display_el, heatsink_type_el;
+        var coolant_el, heatsink_display_el, heatsink_type_el;
         heatsink_display_el = '#heatsink-count';
         heatsink_type_el = '#heatsink_type';
+        coolant_el = '#flush_coolant';
         $(heatsink_display_el).on('input', window.mech.refit);
         $(heatsink_type_el).on('change', window.mech.refit);
+        $(coolant_el).on('click', function() {
+          return window.mech.setHeat(0);
+        });
         return this.runTicker();
       },
       getType: function() {
@@ -12307,12 +12311,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         var towards;
         towards = this.getCurrentHeat() - (this.getCoolRate() * 100);
         if (this.getCurrentHeat() > 0) {
-          $("#heatlevel").attr("aria-valuetransitiongoal", towards);
-          return $("#heatlevel").progressbar({
-            transition_delay: 100,
-            refresh_speed: 10,
-            display_text: "fill"
-          });
+          return window.mech.setHeat(towards);
         }
       },
       doTick: function() {
@@ -12344,11 +12343,17 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         $("#js-alphastrike").click(function() {
           return $(".js-fire").click();
         });
+        $('.weapon-list').on("click", ".js-weapon_group", function() {
+          $(this).toggleClass('assigned');
+          $(this).toggleClass('btn-default');
+          return $(this).toggleClass('btn-info');
+        });
         $('.js-fire_weapon_group').click(function(e) {
           var group, wgs;
           e.preventDefault();
           group = $(this).data('activateGroup');
           wgs = $("[data-weapon-group='" + group + "'].js-weapon_group.assigned");
+          console.log("count is " + wgs.length);
           return _.each(wgs, function(wg) {
             return $(wg).siblings('.js-fire').click();
           });
@@ -12397,7 +12402,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         console.log("Current Heat Is:");
         console.log(window.mech.heatsink.getCurrentHeat());
         towards = val + window.mech.heatsink.getCurrentHeat();
-        $("#heatlevel").attr("aria-valuetransitiongoal", towards);
+        window.mech.setHeat(towards);
         return val = val * 100;
       },
       fireWeapon: function(event) {
@@ -12424,7 +12429,15 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
         return $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
       },
-      weapons: window.weapons
+      weapons: window.weapons,
+      setHeat: function(heatlevel) {
+        $("#heatlevel").attr("aria-valuetransitiongoal", heatlevel);
+        return $("#heatlevel").progressbar({
+          transition_delay: 100,
+          refresh_speed: 10,
+          display_text: "fill"
+        });
+      }
     };
   });
 
