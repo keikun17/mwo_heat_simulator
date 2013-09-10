@@ -49,11 +49,8 @@ $ ->
     coolDown: ->
       towards = @getCurrentHeat() - (@getCoolRate() * 100)
       if @getCurrentHeat() > 0
-        $("#heatlevel").attr "aria-valuetransitiongoal", towards
-        $("#heatlevel").progressbar
-          transition_delay: 100
-          refresh_speed: 10
-          display_text: "fill"
+        window.mech.setHeat(towards)
+
 
     doTick: ->
       window.mech.heatsink.coolDown()
