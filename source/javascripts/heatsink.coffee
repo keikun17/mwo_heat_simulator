@@ -4,8 +4,12 @@ $ ->
     init: ->
       heatsink_display_el = '#heatsink-count'
       heatsink_type_el =  '#heatsink_type'
+      coolant_el = '#flush_coolant'
       $(heatsink_display_el).on 'input', window.mech.refit
       $(heatsink_type_el).on 'change', window.mech.refit
+      $(coolant_el).on 'click', ->
+        window.mech.setHeat(0)
+
       @runTicker()
 
     getType: -> $('#heatsink_type').val()
