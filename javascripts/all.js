@@ -12307,11 +12307,17 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         return rate;
       },
       tickRate: 1000,
+      timeToZero: function() {
+        var time;
+        time = this.getCurrentHeat() / (this.getCoolRate() * 100);
+        return $('#cooldown_time').text(time);
+      },
       coolDown: function() {
         var towards;
         towards = this.getCurrentHeat() - (this.getCoolRate() * 100);
         if (this.getCurrentHeat() > 0) {
-          return window.mech.setHeat(towards);
+          window.mech.setHeat(towards);
+          return this.timeToZero();
         }
       },
       doTick: function() {

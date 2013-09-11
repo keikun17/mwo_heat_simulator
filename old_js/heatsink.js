@@ -59,7 +59,8 @@
     };
     this.tick = function() {
       this.coolDown();
-      return this.recomputeThreshold();
+      this.recomputeThreshold();
+      return this.timeToZero();
     };
     this.runTicker = function() {
       console.log("Sensors: Online");
