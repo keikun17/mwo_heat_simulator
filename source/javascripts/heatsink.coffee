@@ -46,10 +46,15 @@ $ ->
 
     tickRate: 1000
 
+    timeToZero: ->
+      time = @getCurrentHeat() / (@getCoolRate() * 100)
+      $('#cooldown_time').text(time)
+
     coolDown: ->
       towards = @getCurrentHeat() - (@getCoolRate() * 100)
       if @getCurrentHeat() > 0
         window.mech.setHeat(towards)
+        @timeToZero()
 
 
     doTick: ->

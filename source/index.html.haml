@@ -12,17 +12,26 @@
         %p
           %a{id: 'flush_coolant', class: 'btn btn-success'} Flush coolant
         %span.glyphicon.glyphicon-dashboard
+
+        %div
+          Cooling time :
+          %span#cooldown_time.label.label-info 0
+          sec
+
         %div
           Heatsink Type
           %select#heatsink_type
             %option{value: 'single'} Single
             %option{value: 'double'} Double
+
         %div
           Heatsink Count
           %input{type: 'text', id: 'heatsink-count', size: 2, value: 10}
+
         %div
           Heat Threshold :
           %span#heat-threshold.label.label-info
+
         %div
           Cooling Rate :
           %span#cool-rate.label.label-info

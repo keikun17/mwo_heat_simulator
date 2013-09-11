@@ -52,9 +52,11 @@ $ ->
   @tickRate = ->
     1000
 
+
   @tick = ->
     @coolDown()
     @recomputeThreshold()
+    @timeToZero()
 
   @runTicker = ->
     console.log "Sensors: Online"
