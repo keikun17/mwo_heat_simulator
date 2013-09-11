@@ -44,19 +44,49 @@
       %h4 Equipped Weapons
       %ul.weapon-list.list-unstyled
         %li.equipped-weapon
-          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'slas'}} Fire
-          %a{href: '#', class: 'js-strip btn-warning btn-sm'} Strip
-          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} } 1
+          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'slas'}}<
+            %span.glyphicon.glyphicon-screenshot
+          %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
+            %span.glyphicon.glyphicon-remove
+          %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 1} } 1
           %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
           %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} } 3
           Small Laser
+        %li.equipped-weapon
+          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'mlas'}}<
+            %span.glyphicon.glyphicon-screenshot
+          %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
+            %span.glyphicon.glyphicon-remove
+          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} } 1
+          %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 2} } 2
+          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} } 3
+          Medium Laser
+        %li.equipped-weapon
+          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'llas'}}<
+            %span.glyphicon.glyphicon-screenshot
+          %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
+            %span.glyphicon.glyphicon-remove
+          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} } 1
+          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
+          %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 3} } 3
+          Large Laser
       %p
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-info', data: {activate_group: 1} } Fire 1
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-info', data: {activate_group: 2} } Fire 2
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-info', data: {activate_group: 3} } Fire 3
+        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
+          %span.glyphicon.glyphicon-screenshot
+          Group 1
+        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }
+          %span.glyphicon.glyphicon-screenshot
+          Group 2
+        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 3} }
+          %span.glyphicon.glyphicon-screenshot
+          Group 3
       %p
-        %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } Alpha Strike
-        %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' } Strip All
+        %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } 
+          %span.glyphicon.glyphicon-exclamation-sign
+          Alpha Strike
+        %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' }
+          %span.glyphicon.glyphicon-trash
+          Strip All
 
     .col-lg-3.armory
       = partial 'weapons/armory'
