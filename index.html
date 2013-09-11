@@ -32,144 +32,255 @@
       </div>
       <div class='row'>
         <p>
-          <a class='btn btn-success' id='flush_coolant'>Flush coolant</a>
+          <a class='btn btn-success' id='flush_coolant'>
+            <span class='glyphicon glyphicon-tint'></span>
+            Flush coolant
+          </a>
         </p>
-        <span class='glyphicon glyphicon-dashboard'></span>
-        <div>
+        <p>
           Cooling time :
           <span class='label label-info' id='cooldown_time'>0</span>
           sec
-        </div>
-        <div>
+        </p>
+        <p>
           Heatsink Type
           <select id='heatsink_type'>
             <option value='single'>Single</option>
             <option value='double'>Double</option>
           </select>
-        </div>
-        <div>
+        </p>
+        <p>
           Heatsink Count
           <input id='heatsink-count' size='2' type='text' value='10'>
-        </div>
-        <div>
+        </p>
+        <p>
           Heat Threshold :
           <span class='label label-info' id='heat-threshold'></span>
-        </div>
-        <div>
+        </p>
+        <p>
           Cooling Rate :
           <span class='label label-info' id='cool-rate'></span>
           <span>heat/sec</span>
-        </div>
+        </p>
       </div>
     </div>
     <div class='col-lg-6'>
       <h4>Equipped Weapons</h4>
       <ul class='weapon-list list-unstyled'>
         <li class='equipped-weapon'>
-          <a class='js-fire btn-danger btn-sm' data-weapon-class='slas' href='#'>Fire</a>
-          <a class='js-strip btn-warning btn-sm' href='#'>Strip</a>
-          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='1' href='#'>1</a>
+          <a class='js-fire btn-danger btn-sm' data-weapon-class='slas' href='#'><span class='glyphicon glyphicon-screenshot'></span></a>
+          <a class='js-strip btn-warning btn-sm' href='#'><span class='glyphicon glyphicon-remove'></span></a>
+          <a class='js-weapon_group btn-info assigned btn-sm' data-weapon-group='1' href='#'>1</a>
           <a class='js-weapon_group btn-default btn-sm' data-weapon-group='2' href='#'>2</a>
           <a class='js-weapon_group btn-default btn-sm' data-weapon-group='3' href='#'>3</a>
           Small Laser
         </li>
+        <li class='equipped-weapon'>
+          <a class='js-fire btn-danger btn-sm' data-weapon-class='mlas' href='#'><span class='glyphicon glyphicon-screenshot'></span></a>
+          <a class='js-strip btn-warning btn-sm' href='#'><span class='glyphicon glyphicon-remove'></span></a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='1' href='#'>1</a>
+          <a class='js-weapon_group btn-info assigned btn-sm' data-weapon-group='2' href='#'>2</a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='3' href='#'>3</a>
+          Medium Laser
+        </li>
+        <li class='equipped-weapon'>
+          <a class='js-fire btn-danger btn-sm' data-weapon-class='llas' href='#'><span class='glyphicon glyphicon-screenshot'></span></a>
+          <a class='js-strip btn-warning btn-sm' href='#'><span class='glyphicon glyphicon-remove'></span></a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='1' href='#'>1</a>
+          <a class='js-weapon_group btn-default btn-sm' data-weapon-group='2' href='#'>2</a>
+          <a class='js-weapon_group btn-info assigned btn-sm' data-weapon-group='3' href='#'>3</a>
+          Large Laser
+        </li>
       </ul>
       <p>
-        <a class='js-fire_weapon_group btn btn-info' data-activate-group='1' href='#'>Fire 1</a>
-        <a class='js-fire_weapon_group btn btn-info' data-activate-group='2' href='#'>Fire 2</a>
-        <a class='js-fire_weapon_group btn btn-info' data-activate-group='3' href='#'>Fire 3</a>
+        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='1' href='#'>
+          <span class='glyphicon glyphicon-screenshot'></span>
+          Group 1
+        </a>
+        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='2' href='#'>
+          <span class='glyphicon glyphicon-screenshot'></span>
+          Group 2
+        </a>
+        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='3' href='#'>
+          <span class='glyphicon glyphicon-screenshot'></span>
+          Group 3
+        </a>
       </p>
       <p>
-        <a class='btn btn-danger' href='#' id='js-alphastrike'>Alpha Strike</a>
-        <a class='btn btn-warning' href='#' id='js-stripall'>Strip All</a>
+        <a class='btn btn-danger' href='#' id='js-alphastrike'>
+          <span class='glyphicon glyphicon-exclamation-sign'></span>
+          Alpha Strike
+        </a>
+        <a class='btn btn-warning' href='#' id='js-stripall'>
+          <span class='glyphicon glyphicon-trash'></span>
+          Strip All
+        </a>
       </p>
     </div>
     <div class='col-lg-3 armory'>
       <h4>Energy</h4>
       <ul class='list-unstyled nav'>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='slas' data-weapon-name='Small Laser' href='#'>Add Small Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='slas' data-weapon-name='Small Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Small Lasear
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mlas' data-weapon-name='Medium Laser' href='#'>Add Medium Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mlas' data-weapon-name='Medium Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Medium Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='llas' data-weapon-name='Large Laser' href='#'>Add Large Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='llas' data-weapon-name='Large Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Large Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ellas' data-weapon-name='Extended Large Laser' href='#'>Add Extended Large Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ellas' data-weapon-name='Extended Large Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Extended Large Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='splas' data-weapon-name='Small Pulse Laser' href='#'>Add Small Pulse Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='splas' data-weapon-name='Small Pulse Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Small Pulse Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mplas' data-weapon-name='Medium Pulse Laser' href='#'>Add Medium Pulse Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mplas' data-weapon-name='Medium Pulse Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Medium Pulse Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lplas' data-weapon-name='Large Pulse Laser' href='#'>Add Large Pulse Laser</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lplas' data-weapon-name='Large Pulse Laser' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Large Pulse Laser
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ppc' data-weapon-name='PPC' href='#'>Add PPC</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ppc' data-weapon-name='PPC' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add PPC
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='eppc' data-weapon-name='ER PPC' href='#'>Add ER PPC</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='eppc' data-weapon-name='ER PPC' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add ER PPC
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='flam' data-weapon-name='Flamer' href='#'>Add Flamer</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='flam' data-weapon-name='Flamer' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Flamer
+          </a>
         </li>
       </ul>
       <h4>Ballistic</h4>
       <ul class='list-unstyled nav'>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac2' data-weapon-name='Autocannon 2' href='#'>Add Autocannon 2</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac2' data-weapon-name='Autocannon 2' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Autocannon 2
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac5' data-weapon-name='Autocannon 5' href='#'>Add Autocannon 5</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac5' data-weapon-name='Autocannon 5' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Autocannon 5
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac10' data-weapon-name='Autocannon 10' href='#'>Add Autocannon 10</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac10' data-weapon-name='Autocannon 10' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Autocannon 10
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac20' data-weapon-name='Autocannon 20' href='#'>Add Autocannon 20</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ac20' data-weapon-name='Autocannon 20' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Autocannon 20
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='uac5' data-weapon-name='Ultra Autocannon 5' href='#'>Add Ultra Autocannon 5</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='uac5' data-weapon-name='Ultra Autocannon 5' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Ultra Autocannon 5
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lb10x' data-weapon-name='LB 10-X Autocannon' href='#'>Add LB 10-X Autocannon</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lb10x' data-weapon-name='LB 10-X Autocannon' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add LB 10-X Autocannon
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='gauss' data-weapon-name='Gauss Rifle' href='#'>Add Gauss Rifle</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='gauss' data-weapon-name='Gauss Rifle' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Gauss Rifle
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mg' data-weapon-name='Machine Gun' href='#'>Add Machine Gun</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='mg' data-weapon-name='Machine Gun' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Machine Gun
+          </a>
         </li>
       </ul>
       <h4>Missile</h4>
       <ul class='list-unstyled nav'>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm5' data-weapon-name='Long Range Missile 5' href='#'>Add Long Range Missile 5</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm5' data-weapon-name='Long Range Missile 5' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Long Range Missile 5
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm10' data-weapon-name='Long Range Missile 10' href='#'>Add Long Range Missile 10</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm10' data-weapon-name='Long Range Missile 10' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Long Range Missile 10
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm15' data-weapon-name='Long Range Missile 15' href='#'>Add Long Range Missile 15</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm15' data-weapon-name='Long Range Missile 15' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Long Range Missile 15
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm20' data-weapon-name='Long Range Missile 20' href='#'>Add Long Range Missile 20</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='lrm20' data-weapon-name='Long Range Missile 20' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Long Range Missile 20
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm2' data-weapon-name='Short Range Missile 2' href='#'>Add Short Range Missile 2</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm2' data-weapon-name='Short Range Missile 2' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Short Range Missile 2
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm4' data-weapon-name='Short Range Missile 4' href='#'>Add Short Range Missile 4</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm4' data-weapon-name='Short Range Missile 4' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Short Range Missile 4
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm6' data-weapon-name='Short Range Missile 6' href='#'>Add Short Range Missile 6</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='srm6' data-weapon-name='Short Range Missile 6' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Short Range Missile 6
+          </a>
         </li>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ssrm2' data-weapon-name='Streak Short Range Missile 2' href='#'>Add Streak Short Range Missile 2</a>
+          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='ssrm2' data-weapon-name='Streak Short Range Missile 2' href='#'>
+            <span class='glyphicon glyphicon-download-alt'></span>
+            Add Streak Short Range Missile 2
+          </a>
         </li>
       </ul>
     </div>
