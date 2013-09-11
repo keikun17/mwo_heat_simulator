@@ -5,34 +5,37 @@
   .row-fluid
     .col-lg-3
       .row
+
         %p
           .progress.vertical.wide.bottom
             #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
+
       .row
         %p
-          %a{id: 'flush_coolant', class: 'btn btn-success'} Flush coolant
-        %span.glyphicon.glyphicon-dashboard
+          %a{id: 'flush_coolant', class: 'btn btn-success'}
+            %span.glyphicon.glyphicon-tint
+            Flush coolant
 
-        %div
+        %p
           Cooling time :
           %span#cooldown_time.label.label-info 0
           sec
 
-        %div
+        %p
           Heatsink Type
           %select#heatsink_type
             %option{value: 'single'} Single
             %option{value: 'double'} Double
 
-        %div
+        %p
           Heatsink Count
           %input{type: 'text', id: 'heatsink-count', size: 2, value: 10}
 
-        %div
+        %p
           Heat Threshold :
           %span#heat-threshold.label.label-info
 
-        %div
+        %p
           Cooling Rate :
           %span#cool-rate.label.label-info
           %span heat/sec
