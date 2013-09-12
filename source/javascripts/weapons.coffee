@@ -82,14 +82,8 @@ $ ->
 
     shoot: (val) ->
       val = val * 100
-      console.log "-------"
-      console.log "Adding Heat:"
-      console.log val
-      console.log "Current Heat Is:"
-      console.log window.mech.heatsink.getCurrentHeat()
       towards = val + window.mech.heatsink.getCurrentHeat()
       window.mech.setHeat(towards)
-      # $("#heatlevel").attr "aria-valuetransitiongoal", towards
       val = val * 100
 
     fireWeapon: (event) ->
