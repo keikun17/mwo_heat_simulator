@@ -50,8 +50,9 @@ $ ->
       _.each $('.cooldown-meter'), @armWeapon
 
     armWeapon: (progress) ->
+      return true if progress.initialized
+      progress.initialized = true
       progress = $(progress)
-      console.log progress
       progress.progressbar({
         done: ->
           weapon =  progress.parent().parent().siblings().find('.js-fire')
