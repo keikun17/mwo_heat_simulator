@@ -1,0 +1,69 @@
+/* line 14, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.slas-cooldown {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
+
+/* line 18, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.mlas-cooldown {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 22, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.llas-cooldown {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 26, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.ellas-cooldown {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 30, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.splas-cooldown {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
+
+/* line 34, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.mplas-cooldown {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 38, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.lplas-cooldown {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 42, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.ppc-cooldown {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 46, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.eppc-cooldown {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 50, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
+.progress-bar.flam-cooldown {
+  -webkit-transition: width 0.1s ease-in-out;
+  -moz-transition: width 0.1s ease-in-out;
+  -o-transition: width 0.1s ease-in-out;
+  transition: width 0.1s ease-in-out; }
