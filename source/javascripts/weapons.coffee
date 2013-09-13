@@ -10,7 +10,6 @@ $ ->
         html = weaponView(
           name: weaponName
           weaponClass: weaponClass
-          weaponCoolDown: 5
         )
 
         # Append the equipped weapon dom tree
