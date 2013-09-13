@@ -79,6 +79,7 @@ $ ->
 
 
 
+    # NOTE ABOUT COOLDOWN TIMES : it's in the weapon_cooldown.scss
     weaponStats:
 
       # Energy Weapons
@@ -148,7 +149,7 @@ $ ->
     fireWeapon: (event) ->
       console.log('fire')
       weapon_name = $(this).data("weaponClass")
-      window.weapons.shoot(window.weapons.weaponStats[weapon_name].heat)
+      window.weapons.shoot(window.mech.weapons.weaponStats[weapon_name].heat)
       window.mech.weapons.disableWeapon $(this)
       false
 
