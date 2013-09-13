@@ -10,8 +10,17 @@ $ ->
         html = weaponView(
           name: weaponName
           weaponClass: weaponClass
+          weaponCoolDown: 5
         )
+
+        # Append the equipped weapon dom tree
         $(".weapon-list").append html
+
+
+        # Arm the weapon
+        _.each $('.cooldown-meter'), (element, iterator, list) ->
+          window.mech.weapons.armWeapon(element)
+
         false
 
       # Fire all Weapons
@@ -50,7 +59,8 @@ $ ->
       _.each $('.cooldown-meter'), @armWeapon
 
     armWeapon: (progress) ->
-      return true if progress.initialized
+      return true if typeof progress.initialized isnt 'undefined'
+
       progress.initialized = true
       progress = $(progress)
       progress.progressbar({
