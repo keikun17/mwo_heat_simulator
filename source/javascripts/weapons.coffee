@@ -46,9 +46,24 @@ $ ->
       $("#js-stripall").click ->
         $('.js-strip').click()
 
-      # ready all weapons
-      console.log $('.progress .cooldown-meter')
-      $('.cooldown-meter').progressbar()
+      # ready all initial weapons
+      _.each $('.cooldown-meter'), @armWeapon
+
+    armWeapon: (progress) ->
+      progress = $(progress)
+      console.log progress
+      progress.progressbar({
+        done: ->
+          weapon =  progress.parent().parent().siblings().find('.js-fire')
+
+          weapon.removeClass('btn-default')
+          weapon.addClass('btn-danger')
+          weapon.addClass('ready')
+          progress.removeClass('progress-bar-danger').addClass('progress-bar-success')
+
+      })
+
+
 
     heatTable:
 
