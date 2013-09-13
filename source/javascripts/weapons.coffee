@@ -112,24 +112,28 @@ $ ->
       window.mech.weapons.disableWeapon $(this)
 
     disableWeapon: (weapon) ->
-      weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready")
-      progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
+      weapon.removeClass("btn-danger").
+        addClass("btn-default").
+        removeClass("ready")
+      progress = $(weapon).parent().
+        siblings('.weapon-cooldown-container').
+        find('.progress .cooldown-meter')
+      progress.addClass('quick-reset')
       progress.removeClass('progress-bar-success').addClass('progress-bar-danger')
-      progress.attr('aria-valuenow')
-      progress.attr('aria-valuetransitiongoal', 0)
-      progress.progressbar({
-        transition_delay: 0
-        done: =>
-          @enableWeapon(weapon)
-      })
+      progress.attr('aria-valuenow', '0')
+      progress.attr('style', 'width: 0%')
+
+      # have to do this because of 2 consecutive transition's timing issues
+      window.setTimeout (=>
+        @enableWeapon weapon
+      ), 1
 
 
     enableWeapon: (weapon) ->
-      console.log('done')
-      weapon.addClass("btn-danger").removeClass("btn-default").addClass("ready")
       progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
-      progress.removeClass('progress-bar-danger')
-      progress.addClass('progress-bar-success')
+      progress.removeClass('quick-reset')
+      progress.progressbar()
+      true
 
 
 
