@@ -72,14 +72,19 @@
               .progress.horizontal
                 .progress-bar.progress-bar-success.cooldown-meter.mlas-cooldown{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
         %li.equipped-weapon
-          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'llas'}}<
-            %span.glyphicon.glyphicon-screenshot
-          %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
-            %span.glyphicon.glyphicon-remove
-          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} } 1
-          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
-          %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 3} } 3
-          Large Laser
+          .row
+            .col-lg-9
+              %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'llas'}}<
+                %span.glyphicon.glyphicon-screenshot
+              %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
+                %span.glyphicon.glyphicon-remove
+              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} } 1
+              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
+              %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 3} } 3
+              Large Laser
+            .col-lg-3.weapon-cooldown-container
+              .progress.horizontal
+                .progress-bar.progress-bar-success.cooldown-meter.llas-cooldown{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
       %p
         %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
           %span.glyphicon.glyphicon-screenshot
