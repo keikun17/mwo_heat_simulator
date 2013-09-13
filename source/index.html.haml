@@ -44,14 +44,19 @@
       %h4 Equipped Weapons
       %ul.weapon-list.list-unstyled
         %li.equipped-weapon
-          %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'slas'}}<
-            %span.glyphicon.glyphicon-screenshot
-          %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
-            %span.glyphicon.glyphicon-remove
-          %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 1} } 1
-          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
-          %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} } 3
-          Small Laser
+          .row
+            .col-lg-9
+              %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'slas'}}<
+                %span.glyphicon.glyphicon-screenshot
+              %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
+                %span.glyphicon.glyphicon-remove
+              %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 1} } 1
+              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} } 2
+              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} } 3
+              Small Laser
+            .col-lg-3.weapon-cooldown-container
+              .progress.horizontal
+                .progress-bar.progress-bar-danger.cooldown-meter{ role:'progressbar', aria: {valuemax: 10000} }
         %li.equipped-weapon
           %a{href: '#', class: 'js-fire btn-danger btn-sm', data: { weapon_class: 'mlas'}}<
             %span.glyphicon.glyphicon-screenshot
@@ -81,7 +86,7 @@
           %span.glyphicon.glyphicon-screenshot
           Group 3
       %p
-        %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' } 
+        %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' }
           %span.glyphicon.glyphicon-exclamation-sign
           Alpha Strike
         %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' }

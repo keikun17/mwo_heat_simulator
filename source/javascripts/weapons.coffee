@@ -90,4 +90,27 @@ $ ->
       console.log('fire')
       weapon_name = $(this).data("weaponClass")
       window.weapons.shoot(window.weapons.heatTable[weapon_name])
+      window.mech.weapons.disableWeapon $(this)
+
+    disableWeapon: (weapon) ->
+      weapon.removeClass("btn-danger").addClass("btn-default")
+      progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
+      progress.attr('aria-valuenow', 0)
+      progress.attr('aria-valuetransitiongoal', 10000)
+      progress.progressbar({update: @enableWeapon(weapon)})
+
+
+    enableWeapon: (weapon) ->
+      console.log('done')
+      progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
+      console.log(progress.attr('aria-valuenow'))
+      progress.removeClass('progress-bar-danger')
+      progress.addClass('progress-bar-success')
+      weapon.removeClass("btn-default").addClass("btn-danger")
+      progress.attr('aria-valuetransitiongoal', 0)
+      progress.progressbar()
+      console.log "enabled"
+
+
+
 
