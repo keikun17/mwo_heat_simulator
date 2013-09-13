@@ -99,9 +99,11 @@ $ ->
     disableWeapon: (weapon) ->
       weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready")
       progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
-      progress.attr('aria-valuenow', 0)
-      progress.attr('aria-valuetransitiongoal', 5)
+      progress.removeClass('progress-bar-success').addClass('progress-bar-danger')
+      progress.attr('aria-valuenow')
+      progress.attr('aria-valuetransitiongoal', 0)
       progress.progressbar({
+        transition_delay: 0
         done: =>
           @enableWeapon(weapon)
       })
