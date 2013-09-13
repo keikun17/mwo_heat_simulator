@@ -1,7 +1,7 @@
 $ ->
   window.weapons=
     init: ->
-      $('.weapon-list').on "click", "a.js-fire", @fireWeapon
+      $('.weapon-list').on "click", "a.js-fire.ready", @fireWeapon
 
       # Equip weapons
       $(".armory").on "click", ".js-add-weapon", ->
@@ -16,7 +16,7 @@ $ ->
 
       # Fire all Weapons
       $("#js-alphastrike").click ->
-        $(".js-fire").click()
+        $(".js-fire.ready").click()
 
       # Assign weapon group
       $('.weapon-list').on "click", ".js-weapon_group", ->
@@ -35,7 +35,7 @@ $ ->
 
         _.each wgs, (wg) ->
           # Loop through all weapon groups for fired group and click it's weapon sibling
-          $(wg).siblings('.js-fire').click()
+          $(wg).siblings('.js-fire.ready').click()
 
 
       # Strip weapon
