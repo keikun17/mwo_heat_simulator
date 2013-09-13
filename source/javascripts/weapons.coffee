@@ -51,7 +51,8 @@ $ ->
 
       # Strip weapon
       $(".weapon-list").on "click", ".js-strip", ->
-        $(this).parent().remove()
+        $(this).parent().parent().parent().remove()
+        false
 
       # Strip all
       $("#js-stripall").click ->
