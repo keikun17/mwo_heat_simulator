@@ -1,0 +1,53 @@
+@import "compass/css3/transition";
+
+$slas: 2.25s;
+$mlas: 3.00s;
+$llas: 3.25s;
+$ellas: 3.25s;
+$splas: 2.25s;
+$mplas: 3s;
+$lplas: 3.25s;
+$ppc: 4s;
+$eppc: 4s;
+$flam: 0.1s;
+
+.progress-bar.slas-cooldown{
+  @include transition(width $slas ease-in-out );
+}
+
+.progress-bar.mlas-cooldown{
+  @include transition(width $mlas ease-in-out );
+}
+
+.progress-bar.llas-cooldown{
+  @include transition(width $llas ease-in-out );
+}
+
+.progress-bar.ellas-cooldown{
+  @include transition(width $ellas ease-in-out );
+}
+
+.progress-bar.splas-cooldown{
+  @include transition(width $splas ease-in-out );
+}
+
+.progress-bar.mplas-cooldown{
+  @include transition(width $mplas ease-in-out );
+}
+
+.progress-bar.lplas-cooldown{
+  @include transition(width $lplas ease-in-out );
+}
+
+.progress-bar.ppc-cooldown{
+  @include transition(width $ppc ease-in-out );
+}
+
+.progress-bar.eppc-cooldown{
+  @include transition(width $eppc ease-in-out );
+}
+
+.progress-bar.flam-cooldown{
+  @include transition(width $flam ease-in-out );
+}
+

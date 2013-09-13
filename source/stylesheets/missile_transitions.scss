@@ -1,0 +1,45 @@
+@import "compass/css3/transition";
+
+$ac2: 0.52s;
+
+$lrm5: 3.25s;
+$lrm10: 3.75s;
+$lrm15: 4.25s;
+$lrm20: 4.75s;
+$srm2: 2.50s;
+$srm4: 3.25s;
+$srm6: 4.00s;
+$ssrm2: 3.5s;
+
+.progress-bar.lrm5-cooldown{
+  @include transition(width $lrm5 ease-in-out );
+}
+
+.progress-bar.lrm10-cooldown{
+  @include transition(width $lrm10 ease-in-out );
+}
+
+.progress-bar.lrm15-cooldown{
+  @include transition(width $lrm15 ease-in-out );
+}
+
+.progress-bar.lrm20-cooldown{
+  @include transition(width $lrm20 ease-in-out );
+}
+
+.progress-bar.srm2-cooldown{
+  @include transition(width $srm2 ease-in-out );
+}
+
+.progress-bar.srm4-cooldown{
+  @include transition(width $srm4 ease-in-out );
+}
+
+.progress-bar.srm6-cooldown{
+  @include transition(width $srm6 ease-in-out );
+}
+
+.progress-bar.ssrm2-cooldown{
+  @include transition(width $ssrm2 ease-in-out );
+}
+
