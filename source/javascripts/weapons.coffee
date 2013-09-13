@@ -46,6 +46,10 @@ $ ->
       $("#js-stripall").click ->
         $('.js-strip').click()
 
+      # ready all weapons
+      console.log $('.progress .cooldown-meter')
+      $('.cooldown-meter').progressbar()
+
     heatTable:
 
       # Energy Weapons
@@ -93,23 +97,22 @@ $ ->
       window.mech.weapons.disableWeapon $(this)
 
     disableWeapon: (weapon) ->
-      weapon.removeClass("btn-danger").addClass("btn-default")
+      weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready")
       progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
       progress.attr('aria-valuenow', 0)
-      progress.attr('aria-valuetransitiongoal', 10000)
-      progress.progressbar({update: @enableWeapon(weapon)})
+      progress.attr('aria-valuetransitiongoal', 5)
+      progress.progressbar({
+        done: =>
+          @enableWeapon(weapon)
+      })
 
 
     enableWeapon: (weapon) ->
       console.log('done')
+      weapon.addClass("btn-danger").removeClass("btn-default").addClass("ready")
       progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter')
-      console.log(progress.attr('aria-valuenow'))
       progress.removeClass('progress-bar-danger')
       progress.addClass('progress-bar-success')
-      weapon.removeClass("btn-default").addClass("btn-danger")
-      progress.attr('aria-valuetransitiongoal', 0)
-      progress.progressbar()
-      console.log "enabled"
 
 
 
