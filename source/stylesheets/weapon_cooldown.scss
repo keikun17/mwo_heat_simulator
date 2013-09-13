@@ -1,5 +1,17 @@
 @import "compass/css3/transition";
 
-.progress-bar.six-sec{
-  @include transition(width 6s ease-in-out !important);
+$slas: 2.25s;
+$mlas: 3.00s;
+$llas: 3.25s;
+
+.progress-bar.slas-cooldown{
+  @include transition(width $slas ease-in-out !important);
+}
+
+.progress-bar.mlas-cooldown{
+  @include transition(width $mlas ease-in-out !important);
+}
+
+.progress-bar.llas-cooldown{
+  @include transition(width $llas ease-in-out !important);
 }
