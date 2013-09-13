@@ -1,5 +1,6 @@
 /*
  *= require 'bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2'
+ *= require weapon_cooldown
  */
 
 @import 'bootstrap';
@@ -42,7 +43,7 @@ li.weapon-item a{
   }
 }
 
-
 .progress.horizontal{
   margin-bottom: 0px;
 }
+
