@@ -16,7 +16,6 @@ $ ->
         # Append the equipped weapon dom tree
         $(".weapon-list").append html
 
-
         # Arm the weapon
         _.each $('.cooldown-meter'), (element, iterator, list) ->
           window.mech.weapons.armWeapon(element)
@@ -32,6 +31,7 @@ $ ->
         $(@).toggleClass('assigned')
         $(@).toggleClass('btn-default')
         $(@).toggleClass('btn-info')
+        false
 
       # Fire weapon group
       $('.js-fire_weapon_group').click (e) ->
@@ -46,6 +46,8 @@ $ ->
           # Loop through all weapon groups for fired group and click it's weapon sibling
           $(wg).siblings('.js-fire.ready').click()
 
+        false
+
 
       # Strip weapon
       $(".weapon-list").on "click", ".js-strip", ->
@@ -54,6 +56,7 @@ $ ->
       # Strip all
       $("#js-stripall").click ->
         $('.js-strip').click()
+        false
 
       # ready all initial weapons
       _.each $('.cooldown-meter'), @armWeapon
@@ -121,6 +124,7 @@ $ ->
       weapon_name = $(this).data("weaponClass")
       window.weapons.shoot(window.weapons.heatTable[weapon_name])
       window.mech.weapons.disableWeapon $(this)
+      false
 
     disableWeapon: (weapon) ->
       weapon.removeClass("btn-danger").
