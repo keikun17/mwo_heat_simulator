@@ -1,49 +1,6 @@
 /*
  *= require 'bootstrap-progressbar/css/bootstrap-progressbar-3.0.0-rc2'
+ *= require overrides
  *= require weapon_cooldown
  */
-
-@import 'bootstrap';
-
-@charset "utf-8";
-
-h1 {
-  color: #F1AC54;
-}
-
-body {
-  background: #d4d4d4 url("../images/tweed.png");
-  color: #FFF;
-  font-family: sans-serif; }
-
-#heatmeter {
-  padding: 0 15px 0 15px;
-}
-
-li.weapon-item{
-  padding-bottom: 2px;
-}
-
-.progress.wide{
-  width: 60px;
-}
-
-.progress.vertical{
-  height: 188px;
-}
-
-.equipped-weapon{
-  /* border: 1px solid white; */
-  padding: 3px 0 3px 0;
-}
-
-li.weapon-item a{
-  &:hover{
-    background-color: #539627;
-  }
-}
-
-.progress.horizontal{
-  margin-bottom: 0px;
-}
 
