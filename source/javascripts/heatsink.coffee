@@ -14,7 +14,11 @@ $ ->
 
     getType: -> $('#heatsink_type').val()
 
-    external_heatsinks: -> parseInt($('#heatsink-count').val())
+    external_heatsinks: -> 
+      hs = parseInt($('#heatsink-count').val())
+      hs = 0 if isNaN(hs)
+      hs
+
     internal_heatsinks: -> window.mech.engine.internal_heatsink_count()
 
     getCurrentHeat: ->
