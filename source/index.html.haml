@@ -27,15 +27,21 @@
 
         %p.engines
           = partial 'armory/engines'
+
+
+        %p
+          Internal Heatsink Count
+          %span#internal-heatsinks.label.label-success
+
+        %p
+          External Heatsink Count
+          %input{type: 'text', id: 'heatsink-count', size: 2, value: 10}
+
         %p
           Heatsink Type
           %select#heatsink_type
             %option{value: 'single'} Single
             %option{value: 'double'} Double
-
-        %p
-          Heatsink Count
-          %input{type: 'text', id: 'heatsink-count', size: 2, value: 10}
 
         %p
           Heat Threshold :

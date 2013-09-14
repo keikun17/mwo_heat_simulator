@@ -14,7 +14,8 @@ $ ->
 
     getType: -> $('#heatsink_type').val()
 
-    getCount: -> parseInt($('#heatsink-count').val())
+    external_heatsinks: -> parseInt($('#heatsink-count').val())
+    internal_heatsinks: -> window.mech.engine.internal_heatsink_count()
 
     getCurrentHeat: ->
       val = parseInt($("#heatlevel").attr("aria-valuetransitiongoal"))
@@ -23,9 +24,9 @@ $ ->
 
     getThreshold: ->
       if window.heatsink.getType() == 'single'
-        val = 30 + @getCount()
+        val = 30 + @external_heatsinks()
       else
-        val = 30 + (@getCount() * 1.4)
+        val = 30 + (@external_heatsinks() * 1.4)
 
       if isNaN(val)
         val = 0
@@ -34,12 +35,10 @@ $ ->
 
     getCoolRate: ->
       if window.heatsink.getType() == 'single'
-        rate = .1 * @getCount()
+        rate = .1 * (@external_heatsinks() + @internal_heatsinks())
       else
-        if @getCount() >= 0
-          external_heatsinks = @getCount() - 10
-          internal_heatsinks = @getCount() - external_heatsinks
-          rate = (internal_heatsinks * .2) + (external_heatsinks * .14)
+        if @external_heatsinks() >= 0
+          rate = (@internal_heatsink() * .2) + (@external_heatsinks() * .14)
         else
           rate = .14 * heatSinkCount()
       rate
