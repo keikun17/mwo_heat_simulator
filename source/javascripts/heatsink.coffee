@@ -47,6 +47,8 @@ $ ->
 
     timeToZero: ->
       time = @getCurrentHeat() / (@getCoolRate() * 100)
+      time = time.toPrecision(2)
+      time = 0 if time < 0
       $('#cooldown_time').text(time)
 
     coolDown: ->
