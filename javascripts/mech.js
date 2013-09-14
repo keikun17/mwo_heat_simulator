@@ -25,7 +25,12 @@
         return hs;
       },
       internal_heatsinks: function() {
-        return window.mech.engine.internal_heatsink_count();
+        var hs;
+        hs = window.mech.engine.internal_heatsink_count();
+        if (hs > 10) {
+          hs = 10;
+        }
+        return hs;
       },
       getCurrentHeat: function() {
         var val;
