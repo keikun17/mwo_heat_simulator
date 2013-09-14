@@ -12269,7 +12269,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         return $('#heatsink_type').val();
       },
       external_heatsinks: function() {
-        return parseInt($('#heatsink-count').val());
+        var hs;
+        hs = parseInt($('#heatsink-count').val());
+        if (isNaN(hs)) {
+          hs = 0;
+        }
+        return hs;
       },
       internal_heatsinks: function() {
         return window.mech.engine.internal_heatsink_count();
