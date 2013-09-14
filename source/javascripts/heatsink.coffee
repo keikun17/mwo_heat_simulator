@@ -31,9 +31,9 @@ $ ->
 
     getThreshold: ->
       if window.heatsink.getType() == 'single'
-        val = 30 + @external_heatsinks()
+        val = 30 + @external_heatsinks() + @internal_heatsinks()
       else
-        val = 30 + (@external_heatsinks() * 1.4)
+        val = 30 + (@external_heatsinks() * 1.4) + (@internal_heatsinks() * 2)
 
       if isNaN(val)
         val = 0
