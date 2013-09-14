@@ -19,7 +19,10 @@ $ ->
       hs = 0 if isNaN(hs)
       hs
 
-    internal_heatsinks: -> window.mech.engine.internal_heatsink_count()
+    internal_heatsinks: ->
+      hs = window.mech.engine.internal_heatsink_count()
+      hs = 10 if hs > 10
+      hs
 
     getCurrentHeat: ->
       val = parseInt($("#heatlevel").attr("aria-valuetransitiongoal"))
