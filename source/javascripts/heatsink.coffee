@@ -38,7 +38,7 @@ $ ->
         rate = .1 * (@external_heatsinks() + @internal_heatsinks())
       else
         if @external_heatsinks() >= 0
-          rate = (@internal_heatsink() * .2) + (@external_heatsinks() * .14)
+          rate = (@internal_heatsinks() * .2) + (@external_heatsinks() * .14)
         else
           rate = .14 * heatSinkCount()
       rate
