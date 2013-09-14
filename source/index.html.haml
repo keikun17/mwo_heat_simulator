@@ -20,13 +20,12 @@
 
         %p
           Cooling time :
-          %span#cooldown_time.label.label-info
+          %span.label.label-info
             %span#cooldown_time 0
-          sec
+            sec
 
         %p.engines
           = partial 'armory/engines'
-
 
         %p
           Internal Heatsink Count
@@ -48,8 +47,9 @@
 
         %p
           Cooling Rate :
-          %span#cool-rate.label.label-info
-          %span heat/sec
+          %span.label.label-info
+            %span#cool-rate
+            heat/sec
 
     .col-lg-6
       %h4 Equipped Weapons
