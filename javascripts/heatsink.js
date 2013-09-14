@@ -48,7 +48,7 @@
           rate = .1 * (this.external_heatsinks() + this.internal_heatsinks());
         } else {
           if (this.external_heatsinks() >= 0) {
-            rate = (this.internal_heatsink() * .2) + (this.external_heatsinks() * .14);
+            rate = (this.internal_heatsinks() * .2) + (this.external_heatsinks() * .14);
           } else {
             rate = .14 * heatSinkCount();
           }
