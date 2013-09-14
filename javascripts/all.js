@@ -12295,9 +12295,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       getThreshold: function() {
         var val;
         if (window.heatsink.getType() === 'single') {
-          val = 30 + this.external_heatsinks();
+          val = 30 + this.external_heatsinks() + this.internal_heatsinks();
         } else {
-          val = 30 + (this.external_heatsinks() * 1.4);
+          val = 30 + (this.external_heatsinks() * 1.4) + (this.internal_heatsinks() * 2);
         }
         if (isNaN(val)) {
           val = 0;
