@@ -16,8 +16,11 @@
       getType: function() {
         return $('#heatsink_type').val();
       },
-      getCount: function() {
+      external_heatsinks: function() {
         return parseInt($('#heatsink-count').val());
+      },
+      internal_heatsinks: function() {
+        return window.mech.engine.internal_heatsink_count();
       },
       getCurrentHeat: function() {
         var val;
@@ -30,9 +33,9 @@
       getThreshold: function() {
         var val;
         if (window.heatsink.getType() === 'single') {
-          val = 30 + this.getCount();
+          val = 30 + this.external_heatsinks();
         } else {
-          val = 30 + (this.getCount() * 1.4);
+          val = 30 + (this.external_heatsinks() * 1.4);
         }
         if (isNaN(val)) {
           val = 0;
@@ -40,14 +43,12 @@
         return val * 100;
       },
       getCoolRate: function() {
-        var external_heatsinks, internal_heatsinks, rate;
+        var rate;
         if (window.heatsink.getType() === 'single') {
-          rate = .1 * this.getCount();
+          rate = .1 * (this.external_heatsinks() + this.internal_heatsinks());
         } else {
-          if (this.getCount() >= 0) {
-            external_heatsinks = this.getCount() - 10;
-            internal_heatsinks = this.getCount() - external_heatsinks;
-            rate = (internal_heatsinks * .2) + (external_heatsinks * .14);
+          if (this.external_heatsinks() >= 0) {
+            rate = (this.internal_heatsink() * .2) + (this.external_heatsinks() * .14);
           } else {
             rate = .14 * heatSinkCount();
           }
@@ -58,6 +59,10 @@
       timeToZero: function() {
         var time;
         time = this.getCurrentHeat() / (this.getCoolRate() * 100);
+        time = time.toPrecision(2);
+        if (time < 0) {
+          time = 0;
+        }
         return $('#cooldown_time').text(time);
       },
       coolDown: function() {
@@ -265,17 +270,36 @@
 }).call(this);
 (function() {
   $(function() {
+    return window.engine = {
+      init: function() {
+        return $('#engine_type').on('change', window.mech.refit);
+      },
+      rating: function() {
+        return parseInt($('#engine_type').val());
+      },
+      internal_heatsink_count: function() {
+        return Math.floor(this.rating() / 25);
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
     return window.mech = {
       init: function() {
         window.heatsink.init();
         window.weapons.init();
+        window.engine.init();
         return this.refit();
       },
       heatsink: window.heatsink,
+      engine: window.engine,
       refit: function() {
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
-        return $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
+        $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
+        return $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks());
       },
       weapons: window.weapons,
       setHeat: function(heatlevel) {

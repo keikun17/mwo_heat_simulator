@@ -44,8 +44,84 @@
         </p>
         <p>
           Cooling time :
-          <span class='label label-info' id='cooldown_time'>0</span>
+          <span class='label label-info' id='cooldown_time'>
+            <span id='cooldown_time'>0</span>
+          </span>
           sec
+        </p>
+        <p class='engines'>
+          Engine Type
+          <select id='engine_type'>
+            <option value='100'>100std/xl</option>
+            <option value='105'>105std/xl</option>
+            <option value='110'>110std/xl</option>
+            <option value='115'>115std/xl</option>
+            <option value='120'>120std/xl</option>
+            <option value='125'>125std/xl</option>
+            <option value='130'>130std/xl</option>
+            <option value='135'>135std/xl</option>
+            <option value='140'>140std/xl</option>
+            <option value='145'>145std/xl</option>
+            <option value='150'>150std/xl</option>
+            <option value='155'>155std/xl</option>
+            <option value='160'>160std/xl</option>
+            <option value='165'>165std/xl</option>
+            <option value='170'>170std/xl</option>
+            <option value='175'>175std/xl</option>
+            <option value='180'>180std/xl</option>
+            <option value='185'>185std/xl</option>
+            <option value='190'>190std/xl</option>
+            <option value='195'>195std/xl</option>
+            <option selected='selected' value='200'>200std/xl</option>
+            <option value='205'>205std/xl</option>
+            <option value='210'>210std/xl</option>
+            <option value='215'>215std/xl</option>
+            <option value='220'>220std/xl</option>
+            <option value='225'>225std/xl</option>
+            <option value='230'>230std/xl</option>
+            <option value='235'>235std/xl</option>
+            <option value='240'>240std/xl</option>
+            <option value='245'>245std/xl</option>
+            <option value='250'>250std/xl</option>
+            <option value='255'>255std/xl</option>
+            <option value='260'>260std/xl</option>
+            <option value='265'>265std/xl</option>
+            <option value='270'>270std/xl</option>
+            <option value='275'>275std/xl</option>
+            <option value='280'>280std/xl</option>
+            <option value='285'>285std/xl</option>
+            <option value='290'>290std/xl</option>
+            <option value='295'>295std/xl</option>
+            <option value='300'>300std/xl</option>
+            <option value='305'>305std/xl</option>
+            <option value='310'>310std/xl</option>
+            <option value='315'>315std/xl</option>
+            <option value='320'>320std/xl</option>
+            <option value='325'>325std/xl</option>
+            <option value='330'>330std/xl</option>
+            <option value='335'>335std/xl</option>
+            <option value='340'>340std/xl</option>
+            <option value='345'>345std/xl</option>
+            <option value='350'>350std/xl</option>
+            <option value='355'>355std/xl</option>
+            <option value='360'>360std/xl</option>
+            <option value='365'>365std/xl</option>
+            <option value='370'>370std/xl</option>
+            <option value='375'>375std/xl</option>
+            <option value='380'>380std/xl</option>
+            <option value='385'>385std/xl</option>
+            <option value='390'>390std/xl</option>
+            <option value='395'>395std/xl</option>
+            <option value='400'>400std/xl</option>
+          </select>
+        </p>
+        <p>
+          Internal Heatsink Count
+          <span class='label label-success' id='internal-heatsinks'></span>
+        </p>
+        <p>
+          External Heatsink Count
+          <input id='heatsink-count' size='2' type='text' value='0'>
         </p>
         <p>
           Heatsink Type
@@ -53,10 +129,6 @@
             <option value='single'>Single</option>
             <option value='double'>Double</option>
           </select>
-        </p>
-        <p>
-          Heatsink Count
-          <input id='heatsink-count' size='2' type='text' value='10'>
         </p>
         <p>
           Heat Threshold :
