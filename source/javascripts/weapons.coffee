@@ -141,6 +141,9 @@ $ ->
         heat: 2
 
     heatScale:
+      # Returns the heatscale multiplier for the number of shots fired
+      # Parameters:
+      #   count - Number of  weapons fired under a weapon group in an Alpha
       multiplier: (count) ->
         multiplier = switch
           when count < 2 then 0
