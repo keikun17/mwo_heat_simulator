@@ -217,7 +217,7 @@ $ ->
 
             console.log "base heat is #{base_heat}"
 
-            heat_scale = window.mech.weapons.heatScale.scale(index + lrm_max_alpha)
+            heat_scale = window.mech.weapons.ghostHeat.scale(index + lrm_max_alpha)
             console.log "multiplier is #{multiplier}"
 
             lrm_group_ghost_heat = ( base_heat * (heat_scale * multiplier) )
