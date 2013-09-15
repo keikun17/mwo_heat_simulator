@@ -164,7 +164,7 @@ $ ->
         heat: 2
         multiplier: 1
 
-    heatScale:
+    ghostHeat:
       # Returns the heatscale for the number of shots fired
       # Parameters:
       #   count - Number of  weapons fired under a weapon group in an Alpha
@@ -190,6 +190,8 @@ $ ->
       #   list - an array of dom elements with weaponClass data attribute
       #          that represents the weapons fired
       getPenalty: (list) ->
+        list = $(list)
+
         # LRM Linked penalty Group
         lrm_max_alpha = 2
         lrm_linked = []
@@ -198,7 +200,7 @@ $ ->
         lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm15']").toArray()
         lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm10']").toArray()
 
-        console.log "There are #{lrm_linked.length} Weapons linked"
+        console.log "There are #{lrm_linked.length} Lrm-group weapons linked"
 
         if lrm_linked.length > lrm_max_alpha
           _.times lrm_max_alpha, =>
