@@ -182,17 +182,44 @@ $ ->
       #          that represents the weapons fired
       getPenalty: (list) ->
         # LRM Linked penalty Group
-        lrm_linked = 0
-        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm20']").length
-        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm15']").length
-        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm10']").length
-        lrm_linked
+        lrm_max_alpha = 2
+        lrm_linked = []
+
+        lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm20']").toArray()
+        lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm15']").toArray()
+        lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm10']").toArray()
+
+        console.log "There are #{lrm_linked.length} Weapons linked"
+
+        if lrm_linked.length > lrm_max_alpha
+          _.times lrm_max_alpha, =>
+            lrm_linked.shift()
+
+          console.log(lrm_linked)
+          lrm_group_ghost_heat = 0
+          _.each lrm_linked, (element, index, list) =>
+            index = index + 1 + lrm_max_alpha
+            element = $(element)
+
+            base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat
+            multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier
+
+            console.log "base heat is #{base_heat}"
+
+            heat_scale = window.mech.weapons.heatScale.scale(index + lrm_max_alpha)
+            console.log "multiplier is #{multiplier}"
+
+            lrm_group_ghost_heat = ( base_heat * (heat_scale * multiplier) )
+            console.log "ghost heat is #{lrm_group_ghost_heat}"
+
+          ghost_heat = lrm_group_ghost_heat
+
 
         # SRM Linked penalty Group
-        srm_linked = 0
-        srm_linked = srm_linked + list.filter("[data-weapon-class='srm4']").length
-        srm_linked = srm_linked + list.filter("[data-weapon-class='srm6']").length
-        srm_linked
+        # srm_linked = 0
+        # srm_linked = srm_linked + list.filter("[data-weapon-class='srm4']").length
+        # srm_linked = srm_linked + list.filter("[data-weapon-class='srm6']").length
+        # srm_linked
 
     shoot: (val) ->
       val = val * 100
