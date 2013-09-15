@@ -39,11 +39,5 @@ $ ->
           lrm_group_ghost_heat = ( base_heat * (heat_scale * multiplier) )
           # console.log "ghost heat is #{lrm_group_ghost_heat}"
 
-      # SRM Linked penalty Group
-      # srm_linked = 0
-      # srm_linked = srm_linked + list.filter("[data-weapon-class='srm4']").length
-      # srm_linked = srm_linked + list.filter("[data-weapon-class='srm6']").length
-      # srm_linked
-
       lrm_group_ghost_heat
 
