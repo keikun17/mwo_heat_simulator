@@ -87,32 +87,40 @@ $ ->
         heat: 2
       mlas:
         heat: 3
+        multiplier: 1
       llas:
         heat: 7
+        multiplier: 2.8
       ellas:
         heat: 8.5
+        multiplier: 2.8
       splas:
         heat: 2.4
       mplas:
         heat: 5
       lplas:
         heat: 8.5
+        multiplier: 2.8
       ppc:
         heat: 10
+        multiplier: 7.0
       eppc:
         heat: 12
+        multiplier: 4.5
       flam:
         heat: .6
 
       # Balistic Weapons
       ac2:
         heat: 1
+        multiplier: 1
       ac5:
         heat: 1
       ac10:
         heat: 3
       ac20:
         heat: 6
+        multiplier: 24
       uac5:
         heat: 1
       lb10x:
