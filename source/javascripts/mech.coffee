@@ -1,5 +1,6 @@
 #= require heatsink
 #= require weapons
+#= require ghost_heat/all
 #= require engine
 
 $ ->
