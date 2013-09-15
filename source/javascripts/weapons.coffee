@@ -41,9 +41,18 @@ $ ->
         wgs =  $("[data-weapon-group='#{group}'].js-weapon_group.assigned")
         console.log "count is " + wgs.length
 
-        _.each wgs, (wg) ->
-          # Loop through all weapon groups for fired group and click it's weapon sibling
-          $(wg).siblings('.js-fire.ready').click()
+        grouped_weapons = []
+
+        _.each wgs, (wg) =>
+          # Find weapon beside weapon group label
+          weapon = $(wg).siblings('.js-fire.ready')[0]
+          grouped_weapons.push weapon
+
+        console.log grouped_weapons
+        window.mech.weapons.ghostHeat.apply(grouped_weapons)
+
+        _.each grouped_weapons, (weapon) =>
+          weapon.click()
 
         false
 
