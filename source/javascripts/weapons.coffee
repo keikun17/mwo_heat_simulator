@@ -140,22 +140,23 @@ $ ->
       ssrm2:
         heat: 2
 
-    heatMultiplier: (count) ->
-      multiplier = switch
-        when count < 2 then 0
-        when count == 2 then 0.08
-        when count == 3 then 0.18
-        when count ==  4 then 0.30
-        when count ==  5 then 0.45
-        when count ==  6 then 0.60
-        when count ==  7 then 0.80
-        when count ==  9 then 1.10
-        when count ==  9 then 1.50
-        when count ==  10 then 2.00
-        when count ==  11 then 3.00
-        when count <= 12 then 5.00
+    heatScale:
+      multiplier: (count) ->
+        multiplier = switch
+          when count < 2 then 0
+          when count == 2 then 0.08
+          when count == 3 then 0.18
+          when count ==  4 then 0.30
+          when count ==  5 then 0.45
+          when count ==  6 then 0.60
+          when count ==  7 then 0.80
+          when count ==  9 then 1.10
+          when count ==  9 then 1.50
+          when count ==  10 then 2.00
+          when count ==  11 then 3.00
+          when count <= 12 then 5.00
 
-      multiplier
+        multiplier
 
     shoot: (val) ->
       val = val * 100
