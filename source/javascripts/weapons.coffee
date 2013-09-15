@@ -135,18 +135,25 @@ $ ->
         heat: 2
       lrm10:
         heat: 4
+        multiplier: 2.8
       lrm15:
         heat: 5
+        multiplier: 2.8
       lrm20:
         heat: 6
+        multiplier: 2.8
       srm2:
         heat: 2
+        multiplier: 1
       srm4:
         heat: 3
+        multiplier: 1
       srm6:
         heat: 4
+        multiplier: 1
       ssrm2:
         heat: 2
+        multiplier: 1
 
     heatScale:
       # Returns the heatscale multiplier for the number of shots fired
