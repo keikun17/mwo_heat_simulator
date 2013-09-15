@@ -158,6 +158,24 @@ $ ->
 
         multiplier
 
+      # Returns the total heat penalty for the list of weapons fired
+      # Parameters:
+      #   list - an array of dom elements with weaponClass data attribute
+      #          that represents the weapons fired
+      getPenalty: (list) ->
+        # LRM Linked penalty Group
+        lrm_linked = 0
+        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm20']").length
+        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm15']").length
+        lrm_linked = lrm_linked + list.filter("[data-weapon-class='lrm10']").length
+        lrm_linked
+
+        # SRM Linked penalty Group
+        srm_linked = 0
+        srm_linked = srm_linked + list.filter("[data-weapon-class='srm4']").length
+        srm_linked = srm_linked + list.filter("[data-weapon-class='srm6']").length
+        srm_linked
+
     shoot: (val) ->
       val = val * 100
       towards = val + window.mech.heatsink.getCurrentHeat()
