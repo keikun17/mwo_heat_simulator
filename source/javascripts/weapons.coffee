@@ -46,13 +46,13 @@ $ ->
         _.each wgs, (wg) =>
           # Find weapon beside weapon group label
           weapon = $(wg).siblings('.js-fire.ready')[0]
-          grouped_weapons.push weapon
+          grouped_weapons.push weapon if typeof weapon isnt 'undefined'
 
-        console.log grouped_weapons
-        window.mech.weapons.ghostHeat.apply(grouped_weapons)
+        if grouped_weapons.length > 0
+          window.mech.weapons.ghostHeat.apply(grouped_weapons)
 
-        _.each grouped_weapons, (weapon) =>
-          weapon.click()
+          _.each grouped_weapons, (weapon) =>
+            weapon.click()
 
         false
 
