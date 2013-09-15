@@ -243,7 +243,6 @@ $ ->
       val = val * 100
       towards = val + window.mech.heatsink.getCurrentHeat()
       window.mech.setHeat(towards)
-      val = val * 100
 
     fireWeapon: (event) ->
       console.log('fire')
