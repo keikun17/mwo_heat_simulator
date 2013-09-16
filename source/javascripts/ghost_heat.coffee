@@ -85,8 +85,23 @@ $ ->
       srm_max_alpha = 3
       srm_group_ghost_heat = @getPenalty(list, srm_group, srm_max_alpha)
 
-      ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat
+      llas_group = ['llas', 'ellas', 'lplas']
+      llas_max_alpha = 3
+      llas_group_ghost_heat = @getPenalty(list, llas_group, llas_max_alpha)
 
+      ppc_group = ['ppc', 'eppc']
+      ppc_max_alpha = 3
+      ppc_group_ghost_heat = @getPenalty(list, ppc_group, ppc_max_alpha)
+
+      ghost_heat = lrm_group_ghost_heat +
+        srm_group_ghost_heat +
+        llas_group_ghost_heat +
+        ppc_group_ghost_heat +
+        @getPenalty(list, ['ac2'], 3) +
+        @getPenalty(list, ['ac20'], 1) +
+        @getPenalty(list, ['mlas'], 6) +
+        @getPenalty(list, ['srm2'], 4) +
+        @getPenalty(list, ['ssrm2'], 4)
 
       ghost_heat
 
