@@ -4,6 +4,7 @@ $ ->
     # Parameters:
     #   count - Number of  weapons fired under a weapon group in an Alpha
     scale: (count) ->
+      console.log "count is #{count}"
       multiplier = switch
         when count < 2 then 0
         when count == 2 then 0.08
