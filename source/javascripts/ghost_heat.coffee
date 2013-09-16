@@ -115,6 +115,7 @@ $ ->
     apply: (list) ->
       penalty = @computeTotalPenalty(list)
       # console.log "Ghost heat penalty is #{penalty}"
+      $('#ghost_heat_penalty').text(penalty)
       penalty = penalty * 100
       towards = penalty + window.mech.heatsink.getCurrentHeat()
       window.mech.setHeat(towards)
