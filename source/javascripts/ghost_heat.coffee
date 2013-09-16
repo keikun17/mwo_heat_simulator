@@ -92,7 +92,7 @@ $ ->
       srm_group_ghost_heat = @getPenalty(list, srm_group, srm_max_alpha)
 
       llas_group = ['llas', 'ellas', 'lplas']
-      llas_max_alpha = 3
+      llas_max_alpha = 2
       llas_group_ghost_heat = @getPenalty(list, llas_group, llas_max_alpha)
 
       ppc_group = ['ppc', 'eppc']
