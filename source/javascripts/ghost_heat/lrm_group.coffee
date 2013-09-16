@@ -14,8 +14,8 @@ $ ->
       max_alpha = 2
       link_fired = []
 
-      # This must be ordered in descending order accdg to base heat 
-      # to ensure that the lower heat gets shifted out when counting 
+      # This must be ordered in descending order accdg to base heat
+      # to ensure that the lower heat gets shifted out when counting
       # weapons that exceed max alpha
       link_fired = link_fired.concat list.filter("[data-weapon-class='lrm10']").toArray()
       link_fired = link_fired.concat list.filter("[data-weapon-class='lrm15']").toArray()
@@ -31,7 +31,6 @@ $ ->
 
         console.log(link_fired)
         group_ghost_heat = 0
-
 
         _.each link_fired, (element, index, list) =>
           console.log "index is #{index}"
