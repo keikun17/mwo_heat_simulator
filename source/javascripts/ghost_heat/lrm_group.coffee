@@ -11,8 +11,8 @@ $ ->
       group_ghost_heat = 0
 
       # LRM Linked penalty Group
-      lrm_max_alpha = 2
-      lrm_linked = []
+      max_alpha = 2
+      link_fired = []
 
       lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm20']").toArray()
       lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm15']").toArray()
@@ -21,9 +21,6 @@ $ ->
         console.log(link_fired)
         group_ghost_heat = 0
 
-      if lrm_linked.length > lrm_max_alpha
-        _.times lrm_max_alpha, =>
-          lrm_linked.shift()
 
         console.log(lrm_linked)
         lrm_group_ghost_heat = 0
