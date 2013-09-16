@@ -23,7 +23,13 @@ $ ->
 
       # Fire all Weapons
       $("#js-alphastrike").click ->
-        $(".js-fire.ready").click()
+        grouped_weapons = $(".js-fire.ready")
+
+        if grouped_weapons.length > 0
+          window.mech.weapons.ghostHeat.apply(grouped_weapons) if window.weapons.ghostHeat.is_enabled()
+          grouped_weapons.click()
+
+        false
 
       # Assign weapon group
       $('.weapon-list').on "click", ".js-weapon_group", ->
