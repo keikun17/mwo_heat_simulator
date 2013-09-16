@@ -12641,7 +12641,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         srm_max_alpha = 3;
         srm_group_ghost_heat = this.getPenalty(list, srm_group, srm_max_alpha);
         llas_group = ['llas', 'ellas', 'lplas'];
-        llas_max_alpha = 3;
+        llas_max_alpha = 2;
         llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
         ppc_group = ['ppc', 'eppc'];
         ppc_max_alpha = 3;
@@ -12653,6 +12653,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       apply: function(list) {
         var penalty, towards;
         penalty = this.computeTotalPenalty(list);
+        $('#ghost_heat_penalty').text(penalty);
         penalty = penalty * 100;
         towards = penalty + window.mech.heatsink.getCurrentHeat();
         return window.mech.setHeat(towards);
