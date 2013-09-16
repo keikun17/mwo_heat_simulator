@@ -95,7 +95,7 @@ $ ->
       slas:
         heat: 2
       mlas:
-        heat: 3
+        heat: 4
         multiplier: 1
       llas:
         heat: 7
