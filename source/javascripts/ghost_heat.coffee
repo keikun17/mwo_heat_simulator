@@ -83,10 +83,9 @@ $ ->
 
       srm_group = ['srm4', 'srm6']
       srm_max_alpha = 3
-      srm_group_ghost_heat = @getPenalty(list, lrm_group, lrm_max_alpha)
+      srm_group_ghost_heat = @getPenalty(list, srm_group, srm_max_alpha)
 
-      ghost_heat = lrm_group_ghost_heat +
-        srm_group_ghost_heat
+      ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat
 
 
       ghost_heat
