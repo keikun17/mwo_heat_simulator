@@ -1,5 +1,9 @@
 $ ->
   window.weapons.ghostHeat=
+
+    is_enabled: ->
+     $('#ghost_heat').is(':checked')
+
     # Returns the heatscale for the number of shots fired
     # Parameters:
     #   count - Number of  weapons fired under a weapon group in an Alpha
