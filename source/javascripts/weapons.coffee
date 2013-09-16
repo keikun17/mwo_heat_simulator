@@ -55,7 +55,7 @@ $ ->
           grouped_weapons.push weapon if typeof weapon isnt 'undefined'
 
         if grouped_weapons.length > 0
-          window.mech.weapons.ghostHeat.apply(grouped_weapons)
+          window.mech.weapons.ghostHeat.apply(grouped_weapons) if window.weapons.ghostHeat.is_enabled()
 
           _.each grouped_weapons, (weapon) =>
             weapon.click()
