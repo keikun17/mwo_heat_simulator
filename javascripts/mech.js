@@ -113,7 +113,15 @@
           return false;
         });
         $("#js-alphastrike").click(function() {
-          return $(".js-fire.ready").click();
+          var grouped_weapons;
+          grouped_weapons = $(".js-fire.ready");
+          if (grouped_weapons.length > 0) {
+            if (window.weapons.ghostHeat.is_enabled()) {
+              window.mech.weapons.ghostHeat.apply(grouped_weapons);
+            }
+            grouped_weapons.click();
+          }
+          return false;
         });
         $('.weapon-list').on("click", ".js-weapon_group", function() {
           $(this).toggleClass('assigned');
@@ -122,14 +130,27 @@
           return false;
         });
         $('.js-fire_weapon_group').click(function(e) {
-          var group, wgs;
+          var group, grouped_weapons, wgs,
+            _this = this;
           e.preventDefault();
           group = $(this).data('activateGroup');
           wgs = $("[data-weapon-group='" + group + "'].js-weapon_group.assigned");
-          console.log("count is " + wgs.length);
+          grouped_weapons = [];
           _.each(wgs, function(wg) {
-            return $(wg).siblings('.js-fire.ready').click();
+            var weapon;
+            weapon = $(wg).siblings('.js-fire.ready')[0];
+            if (typeof weapon !== 'undefined') {
+              return grouped_weapons.push(weapon);
+            }
           });
+          if (grouped_weapons.length > 0) {
+            if (window.weapons.ghostHeat.is_enabled()) {
+              window.mech.weapons.ghostHeat.apply(grouped_weapons);
+            }
+            _.each(grouped_weapons, function(weapon) {
+              return weapon.click();
+            });
+          }
           return false;
         });
         $(".weapon-list").on("click", ".js-strip", function() {
@@ -164,13 +185,16 @@
           heat: 2
         },
         mlas: {
-          heat: 3
+          heat: 4,
+          multiplier: 1
         },
         llas: {
-          heat: 7
+          heat: 7,
+          multiplier: 2.8
         },
         ellas: {
-          heat: 8.5
+          heat: 8.5,
+          multiplier: 2.8
         },
         splas: {
           heat: 2.4
@@ -179,19 +203,23 @@
           heat: 5
         },
         lplas: {
-          heat: 8.5
+          heat: 8.5,
+          multiplier: 2.8
         },
         ppc: {
-          heat: 10
+          heat: 10,
+          multiplier: 7.0
         },
         eppc: {
-          heat: 12
+          heat: 12,
+          multiplier: 4.5
         },
         flam: {
           heat: .6
         },
         ac2: {
-          heat: 1
+          heat: 1,
+          multiplier: 1
         },
         ac5: {
           heat: 1
@@ -200,7 +228,8 @@
           heat: 3
         },
         ac20: {
-          heat: 6
+          heat: 6,
+          multiplier: 24
         },
         uac5: {
           heat: 1
@@ -218,37 +247,42 @@
           heat: 2
         },
         lrm10: {
-          heat: 4
+          heat: 4,
+          multiplier: 2.8
         },
         lrm15: {
-          heat: 5
+          heat: 5,
+          multiplier: 2.8
         },
         lrm20: {
-          heat: 6
+          heat: 6,
+          multiplier: 2.8
         },
         srm2: {
-          heat: 2
+          heat: 2,
+          multiplier: 1
         },
         srm4: {
-          heat: 3
+          heat: 3,
+          multiplier: 1
         },
         srm6: {
-          heat: 4
+          heat: 4,
+          multiplier: 1
         },
         ssrm2: {
-          heat: 2
+          heat: 2,
+          multiplier: 1
         }
       },
       shoot: function(val) {
         var towards;
         val = val * 100;
         towards = val + window.mech.heatsink.getCurrentHeat();
-        window.mech.setHeat(towards);
-        return val = val * 100;
+        return window.mech.setHeat(towards);
       },
       fireWeapon: function(event) {
         var weapon_name;
-        console.log('fire');
         weapon_name = $(this).data("weaponClass");
         window.weapons.shoot(window.mech.weapons.weaponStats[weapon_name].heat);
         window.mech.weapons.disableWeapon($(this));
@@ -273,6 +307,103 @@
         progress.removeClass('quick-reset');
         progress.progressbar();
         return true;
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
+    return window.weapons.ghostHeat = {
+      is_enabled: function() {
+        return $('#ghost_heat').is(':checked');
+      },
+      scale: function(count) {
+        var multiplier;
+        multiplier = (function() {
+          switch (false) {
+            case !(count < 2):
+              return 0;
+            case count !== 2:
+              return 0.08;
+            case count !== 3:
+              return 0.18;
+            case count !== 4:
+              return 0.30;
+            case count !== 5:
+              return 0.45;
+            case count !== 6:
+              return 0.60;
+            case count !== 7:
+              return 0.80;
+            case count !== 8:
+              return 1.10;
+            case count !== 9:
+              return 1.50;
+            case count !== 10:
+              return 2.00;
+            case count !== 11:
+              return 3.00;
+            case !(count <= 12):
+              return 5.00;
+          }
+        })();
+        return multiplier;
+      },
+      getPenalty: function(list, group, max_alpha) {
+        var group_ghost_heat, link_fired,
+          _this = this;
+        list = $(list);
+        list = $(list);
+        group_ghost_heat = 0;
+        link_fired = [];
+        _.each(group, function(element) {
+          return link_fired = link_fired.concat(list.filter("[data-weapon-class='" + element + "']").toArray());
+        });
+        if (link_fired.length > max_alpha) {
+          _.times(max_alpha, function() {
+            return link_fired.shift();
+          });
+          group_ghost_heat = 0;
+          _.each(link_fired, function(element, index, list) {
+            var base_heat, ghost_heat, heat_scale, multiplier, weapon_position;
+            weapon_position = index + 1 + max_alpha;
+            element = $(element);
+            base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat;
+            multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier;
+            heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position);
+            ghost_heat = base_heat * (heat_scale * multiplier);
+            return group_ghost_heat = group_ghost_heat + ghost_heat;
+          });
+        }
+        return group_ghost_heat;
+      },
+      computeTotalPenalty: function(list) {
+        var ghost_heat, llas_group, llas_group_ghost_heat, llas_max_alpha, lrm_group, lrm_group_ghost_heat, lrm_max_alpha, ppc_group, ppc_group_ghost_heat, ppc_max_alpha, srm_group, srm_group_ghost_heat, srm_max_alpha;
+        list = $(list);
+        ghost_heat = 0;
+        lrm_group = ['lrm10', 'lrm15', 'lrm20'];
+        lrm_max_alpha = 2;
+        lrm_group_ghost_heat = this.getPenalty(list, lrm_group, lrm_max_alpha);
+        srm_group = ['srm4', 'srm6'];
+        srm_max_alpha = 3;
+        srm_group_ghost_heat = this.getPenalty(list, srm_group, srm_max_alpha);
+        llas_group = ['llas', 'ellas', 'lplas'];
+        llas_max_alpha = 3;
+        llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
+        ppc_group = ['ppc', 'eppc'];
+        ppc_max_alpha = 3;
+        ppc_group_ghost_heat = this.getPenalty(list, ppc_group, ppc_max_alpha);
+        ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat + llas_group_ghost_heat + ppc_group_ghost_heat + this.getPenalty(list, ['ac2'], 3) + this.getPenalty(list, ['ac20'], 1) + this.getPenalty(list, ['mlas'], 6) + this.getPenalty(list, ['srm2'], 4) + this.getPenalty(list, ['ssrm2'], 4);
+        console.log("Total Ghost Heat is " + ghost_heat);
+        return ghost_heat;
+      },
+      apply: function(list) {
+        var penalty, towards;
+        penalty = this.computeTotalPenalty(list);
+        penalty = penalty * 100;
+        towards = penalty + window.mech.heatsink.getCurrentHeat();
+        return window.mech.setHeat(towards);
       }
     };
   });
