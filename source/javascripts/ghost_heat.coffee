@@ -21,7 +21,7 @@ $ ->
         when count ==  9 then 1.50
         when count ==  10 then 2.00
         when count ==  11 then 3.00
-        when count <= 12 then 5.00
+        when count >= 12 then 5.00
 
       multiplier
 
