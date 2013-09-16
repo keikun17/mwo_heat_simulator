@@ -12,7 +12,7 @@ $ ->
         when count ==  5 then 0.45
         when count ==  6 then 0.60
         when count ==  7 then 0.80
-        when count ==  9 then 1.10
+        when count ==  8 then 1.10
         when count ==  9 then 1.50
         when count ==  10 then 2.00
         when count ==  11 then 3.00
