@@ -344,7 +344,7 @@
               return 2.00;
             case count !== 11:
               return 3.00;
-            case !(count <= 12):
+            case !(count >= 12):
               return 5.00;
           }
         })();
