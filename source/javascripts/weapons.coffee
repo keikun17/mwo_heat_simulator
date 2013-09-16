@@ -39,7 +39,7 @@ $ ->
 
         # wgs : Weapon Groups
         wgs =  $("[data-weapon-group='#{group}'].js-weapon_group.assigned")
-        console.log "count is " + wgs.length
+        # console.log "count is " + wgs.length
 
         grouped_weapons = []
 
@@ -172,7 +172,7 @@ $ ->
       window.mech.setHeat(towards)
 
     fireWeapon: (event) ->
-      console.log('fire')
+      # console.log('fire')
       weapon_name = $(this).data("weaponClass")
       window.weapons.shoot(window.mech.weapons.weaponStats[weapon_name].heat)
       window.mech.weapons.disableWeapon $(this)

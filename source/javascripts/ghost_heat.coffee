@@ -65,7 +65,7 @@ $ ->
           # console.log "heat scale is #{heat_scale}"
 
           ghost_heat = ( base_heat * (heat_scale * multiplier) )
-          # console.log "ghost heat is #{ghost_heat}"
+          console.log "ghost heat is #{ghost_heat}"
           group_ghost_heat = group_ghost_heat + ghost_heat
 
       group_ghost_heat
