@@ -69,9 +69,10 @@ $ ->
           # console.log "heat scale is #{heat_scale}"
 
           ghost_heat = ( base_heat * (heat_scale * multiplier) )
-          console.log "ghost heat is #{ghost_heat}"
+          # console.log "ghost heat is #{ghost_heat}"
           group_ghost_heat = group_ghost_heat + ghost_heat
 
+      # console.log("Total Group Ghost heat is #{group_ghost_heat}")
       group_ghost_heat
 
     # Returns the total heat penalty for the list of weapons fired
@@ -108,6 +109,7 @@ $ ->
         @getPenalty(list, ['srm2'], 4) +
         @getPenalty(list, ['ssrm2'], 4)
 
+      console.log "Total Ghost Heat is #{ghost_heat}"
       ghost_heat
 
     apply: (list) ->
