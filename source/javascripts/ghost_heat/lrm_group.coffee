@@ -6,7 +6,9 @@ $ ->
     #          that represents the weapons fired
     getPenalty: (list) ->
       list = $(list)
-      lrm_group_ghost_heat = 0
+
+      list = $(list)
+      group_ghost_heat = 0
 
       # LRM Linked penalty Group
       lrm_max_alpha = 2
@@ -16,7 +18,8 @@ $ ->
       lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm15']").toArray()
       lrm_linked = lrm_linked.concat list.filter("[data-weapon-class='lrm10']").toArray()
 
-      console.log "There are #{lrm_linked.length} Lrm-group weapons linked"
+        console.log(link_fired)
+        group_ghost_heat = 0
 
       if lrm_linked.length > lrm_max_alpha
         _.times lrm_max_alpha, =>
@@ -36,8 +39,9 @@ $ ->
           heat_scale = window.mech.weapons.ghostHeat.scale(index + lrm_max_alpha)
           # console.log "heat scale is #{heat_scale}"
 
-          lrm_group_ghost_heat = ( base_heat * (heat_scale * multiplier) )
-          # console.log "ghost heat is #{lrm_group_ghost_heat}"
+          ghost_heat = ( base_heat * (heat_scale * multiplier) )
+          console.log "ghost heat is #{ghost_heat}"
+          group_ghost_heat = group_ghost_heat + ghost_heat
 
-      lrm_group_ghost_heat
+      group_ghost_heat
 
