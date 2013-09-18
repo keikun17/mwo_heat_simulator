@@ -124,7 +124,7 @@
         },
         ac2: {
           heat: 1,
-          multiplier: 1
+          multiplier: 0.6
         },
         ac5: {
           heat: 1
