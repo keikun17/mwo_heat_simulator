@@ -66,14 +66,16 @@
             %option{value: 'double'} Double
 
         %p
-          Heat Threshold :
-          %span#heat-threshold.label.label-info
+          Cool Run Skill
+          %input{type: 'checkbox', id:'skill_coolrun'}
 
         %p
-          Cooling Rate :
-          %span.label.label-info
-            %span#cool-rate
-            heat/sec
+          Heat Containment Skill
+          %input{type: 'checkbox', id:'skill_containment'}
+
+        %p
+          Elite Mech
+          %input{type: 'checkbox', id:'skill_elite'}
 
     .col-lg-6.col-md-6.col-sm-6
       %h4 Equipped Weapons
