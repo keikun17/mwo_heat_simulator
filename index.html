@@ -53,10 +53,23 @@
           </span>
         </p>
         <p>
+          Cooling Rate :
+          <span class='label label-info'>
+            <span id='cool-rate'></span>
+            heat/sec
+          </span>
+        </p>
+        <p>
+          Heat Threshold :
+          <span class='label label-info' id='heat-threshold'></span>
+        </p>
+        <hr>
+        <p>
           Enable Ghost Heat :(
           <input id='ghost_heat' type='checkbox'>
           <span class='label label-danger' id='ghost_heat_penalty'></span>
         </p>
+        <hr>
         <p class='engines'>
           Engine Type
           <select id='engine_type'>
@@ -139,15 +152,16 @@
           </select>
         </p>
         <p>
-          Heat Threshold :
-          <span class='label label-info' id='heat-threshold'></span>
+          Cool Run Skill
+          <input id='skill_coolrun' type='checkbox'>
         </p>
         <p>
-          Cooling Rate :
-          <span class='label label-info'>
-            <span id='cool-rate'></span>
-            heat/sec
-          </span>
+          Heat Containment Skill
+          <input id='skill_containment' type='checkbox'>
+        </p>
+        <p>
+          Elite Mech
+          <input id='skill_elite' type='checkbox'>
         </p>
       </div>
     </div>

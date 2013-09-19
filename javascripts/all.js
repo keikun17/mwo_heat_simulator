@@ -12302,7 +12302,15 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         if (isNaN(val)) {
           val = 0;
         }
-        return val * 100;
+        if (window.mech.skills.heatContainmentEnabled()) {
+          if (window.mech.skills.eliteMechEnabled()) {
+            val = val * 1.20;
+          } else {
+            val = val * 1.10;
+          }
+        }
+        val = val * 100;
+        return val;
       },
       getCoolRate: function() {
         var rate;
@@ -12313,6 +12321,13 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
             rate = (this.internal_heatsinks() * .2) + (this.external_heatsinks() * .14);
           } else {
             rate = .14 * heatSinkCount();
+          }
+        }
+        if (window.mech.skills.coolRunEnabled()) {
+          if (window.mech.skills.eliteMechEnabled()) {
+            rate = rate * 1.15;
+          } else {
+            rate = rate * 1.075;
           }
         }
         return rate;
@@ -12680,11 +12695,33 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }).call(this);
 (function() {
   $(function() {
+    return window.skills = {
+      init: function() {
+        $('#skill_coolrun').on('change', window.mech.refit);
+        $('#skill_containment').on('change', window.mech.refit);
+        return $('#skill_elite').on('change', window.mech.refit);
+      },
+      coolRunEnabled: function() {
+        return $('#skill_coolrun').is(':checked');
+      },
+      heatContainmentEnabled: function() {
+        return $('#skill_containment').is(':checked');
+      },
+      eliteMechEnabled: function() {
+        return $('#skill_elite').is(':checked');
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
     return window.mech = {
       init: function() {
         window.heatsink.init();
         window.weapons.init();
         window.engine.init();
+        window.skills.init();
         return this.refit();
       },
       heatsink: window.heatsink,
@@ -12696,6 +12733,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         return $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks());
       },
       weapons: window.weapons,
+      skills: window.skills,
       setHeat: function(heatlevel) {
         $("#heatlevel").attr("aria-valuetransitiongoal", heatlevel);
         return $("#heatlevel").progressbar({

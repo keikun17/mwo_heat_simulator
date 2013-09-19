@@ -50,7 +50,15 @@
         if (isNaN(val)) {
           val = 0;
         }
-        return val * 100;
+        if (window.mech.skills.heatContainmentEnabled()) {
+          if (window.mech.skills.eliteMechEnabled()) {
+            val = val * 1.20;
+          } else {
+            val = val * 1.10;
+          }
+        }
+        val = val * 100;
+        return val;
       },
       getCoolRate: function() {
         var rate;
@@ -61,6 +69,13 @@
             rate = (this.internal_heatsinks() * .2) + (this.external_heatsinks() * .14);
           } else {
             rate = .14 * heatSinkCount();
+          }
+        }
+        if (window.mech.skills.coolRunEnabled()) {
+          if (window.mech.skills.eliteMechEnabled()) {
+            rate = rate * 1.15;
+          } else {
+            rate = rate * 1.075;
           }
         }
         return rate;
