@@ -2,6 +2,7 @@
 #= require weapons
 #= require ghost_heat
 #= require engine
+#= require skills
 
 $ ->
   window.mech=
@@ -10,6 +11,8 @@ $ ->
       window.heatsink.init()
       window.weapons.init()
       window.engine.init()
+      window.skills.init()
+
       @refit()
 
     heatsink: window.heatsink
@@ -22,6 +25,8 @@ $ ->
       $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks())
 
     weapons: window.weapons
+
+    skills: window.skills
 
     setHeat: (heatlevel) ->
       $("#heatlevel").attr "aria-valuetransitiongoal", heatlevel

@@ -38,7 +38,15 @@ $ ->
       if isNaN(val)
         val = 0
 
-      val * 100
+      if window.mech.skills.heatContainmentEnabled()
+        if window.mech.skills.eliteMechEnabled()
+          val = val * 1.20
+        else
+          val =  val * 1.10
+
+      val = val * 100
+
+      val
 
     getCoolRate: ->
       if window.heatsink.getType() == 'single'
@@ -48,6 +56,13 @@ $ ->
           rate = (@internal_heatsinks() * .2) + (@external_heatsinks() * .14)
         else
           rate = .14 * heatSinkCount()
+
+      if window.mech.skills.coolRunEnabled()
+        if window.mech.skills.eliteMechEnabled()
+          rate = rate * 1.15
+        else
+          rate =  rate * 1.075
+
       rate
 
     tickRate: 1000
