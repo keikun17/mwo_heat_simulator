@@ -29,10 +29,24 @@
             sec
 
         %p
+          Cooling Rate :
+          %span.label.label-info
+            %span#cool-rate
+            heat/sec
+
+        %p
+          Heat Threshold :
+          %span#heat-threshold.label.label-info
+
+        %hr
+
+        %p
           Enable Ghost Heat :(
           %input{type: 'checkbox', id:'ghost_heat'}
           %span.label.label-danger{id: 'ghost_heat_penalty'}
 
+
+        %hr
 
         %p.engines
           = partial 'armory/engines'
