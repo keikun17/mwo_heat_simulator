@@ -2,15 +2,17 @@ $ ->
   window.scraper = {
     scrapedData: ''
 
+    # converts url like these http://mwo.smurfy-net.de/mechlab#i=54&l=a94b1fc8b3943fd6775914e9ebce5d97a67c02b9
+    # to http://mwo.smurfy-net.de/mechlab/loadouts/54/a94b1fc8b3943fd6775914e9ebce5d97a67c02b9
     scrape: (url) ->
       # In the mechlab tooltip, all the required HTML are loaded, whereas in the mechlab,
       # things gets loaded by JS
-      url = url.replace('mwo.smurfy-net.de/mechlab#','mwo.smurfy-net.de/tools/mechtooltip?')
+      url = url.replace('mwo.smurfy-net.de/mechlab#','mwo.smurfy-net.de/mechlab/loadouts')
+      url = url.replace('i=', '/')
+      url = url.replace('&l=', '/')
 
-      # Normally this will not work and yield webserver errors that disallows request from
-      # someplace other than the host. But since we are using the YQL crossdomain ajax Jquery
-      # plugin, we can grab the response.
+      console.log "new url is #{url}"
       $.get url, (response) ->
         console.log(response)
-        window.scraper.scrapedData = response.responseText
+        window.scraper.scrapedData = response.responseJSON
   }
