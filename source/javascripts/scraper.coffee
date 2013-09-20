@@ -12,7 +12,12 @@ $ ->
       url = url.replace('&l=', '/')
 
       console.log "new url is #{url}"
-      $.get url, (response) ->
+      $.get url, (response) =>
         console.log(response)
-        window.scraper.scrapedData = response.responseJSON
+        @scrapedData = response.responseText
+
+
+        @html = ($.parseHTML @scrapedData)[5]
+        @json = $.parseJSON html.innerHtml
+
   }
