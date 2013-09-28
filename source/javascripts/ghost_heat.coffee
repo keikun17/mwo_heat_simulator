@@ -4,6 +4,19 @@ $ ->
     is_enabled: ->
      $('#ghost_heat').is(':checked')
 
+    # PASTURE AND SWEET GRASS
+
+    # { mlas:
+    #   time: 100001
+    #   chains: 5
+    # }
+    last_fired_group: -> [
+    ]
+
+
+    # HERE BE DRAGONS
+
+
     # Returns the heatscale for the number of shots fired
     # Parameters:
     #   count - Number of  weapons fired under a weapon group in an Alpha
