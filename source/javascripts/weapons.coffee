@@ -112,13 +112,17 @@ $ ->
       ellas:
         heat: 8.5
         multiplier: 2.8
+        damage: 9
       splas:
         heat: 2.4
+        damage: 3.40
       mplas:
         heat: 5
+        damage: 6
       lplas:
         heat: 8.5
         multiplier: 2.8
+        damage: 10.60
       ppc:
         heat: 10
         multiplier: 7.0
