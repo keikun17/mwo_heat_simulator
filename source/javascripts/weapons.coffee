@@ -100,12 +100,15 @@ $ ->
       # Energy Weapons
       slas:
         heat: 2
+        damage: 3
       mlas:
         heat: 4
         multiplier: 1
+        damage: 5
       llas:
         heat: 7
         multiplier: 2.8
+        damage: 9
       ellas:
         heat: 8.5
         multiplier: 2.8
