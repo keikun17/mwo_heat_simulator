@@ -203,11 +203,20 @@ $ ->
       towards = val + window.mech.heatsink.getCurrentHeat()
       window.mech.setHeat(towards)
 
+    damage: (val) ->
+      $('#damage').text(val)
+
     fireWeapon: (event) ->
       # console.log('fire')
       weapon_name = $(this).data("weaponClass")
-      window.weapons.shoot(window.mech.weapons.weaponStats[weapon_name].heat)
+      stats = mech.weapons.weaponStats[weapon_name]
+
+      window.weapons.shoot(stats.heat)
       window.mech.weapons.disableWeapon $(this)
+
+      console.log "Damage : #{stats.damage}"
+      window.mech.weapons.damage(stats.damage)
+
       false
 
     disableWeapon: (weapon) ->
