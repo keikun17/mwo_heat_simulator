@@ -126,11 +126,14 @@ $ ->
       ppc:
         heat: 10
         multiplier: 7.0
+        damage: 10
       eppc:
         heat: 12
         multiplier: 4.5
+        damage: 10
       flam:
         heat: .6
+        damage: 0.70
 
       # Balistic Weapons
       ac2:
