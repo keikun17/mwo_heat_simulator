@@ -139,21 +139,29 @@ $ ->
       ac2:
         heat: 1
         multiplier: 0.6
+        damage: 2
       ac5:
         heat: 1
+        damage: 5
       ac10:
         heat: 3
+        damage: 10
       ac20:
         heat: 6
         multiplier: 24
+        damage: 20
       uac5:
         heat: 1
+        damage: 5
       lb10x:
         heat: 2
+        damage: 10
       gauss:
         heat: 1
+        damage: 15
       mg:
         heat: 0
+        damage: 0.1
 
       # Missile
       lrm5:
