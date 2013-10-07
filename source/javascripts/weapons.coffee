@@ -182,15 +182,19 @@ $ ->
       srm2:
         heat: 2
         multiplier: 1
+        damage: 4
       srm4:
         heat: 3
         multiplier: 1
+        damage: 8
       srm6:
         heat: 4
         multiplier: 1
+        damage: 12
       ssrm2:
         heat: 2
         multiplier: 1
+        damage: 5
 
 
 
