@@ -18,6 +18,8 @@ $ ->
     heatsink: window.heatsink
     engine: window.engine
 
+    damage: 0
+
     refit: ->
       $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100)
       $("#heatlevel").attr "aria-valuemax", window.mech.heatsink.getThreshold()

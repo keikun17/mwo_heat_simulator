@@ -204,7 +204,8 @@ $ ->
       window.mech.setHeat(towards)
 
     damage: (val) ->
-      $('#damage').text(val)
+      mech.damage += val
+      $('#damage').text(mech.damage)
 
     fireWeapon: (event) ->
       # console.log('fire')
