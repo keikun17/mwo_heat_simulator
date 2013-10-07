@@ -166,15 +166,19 @@ $ ->
       # Missile
       lrm5:
         heat: 2
+        damage: 5.50
       lrm10:
         heat: 4
         multiplier: 2.8
+        damage: 11
       lrm15:
         heat: 5
         multiplier: 2.8
+        damage: 16.50
       lrm20:
         heat: 6
         multiplier: 2.8
+        damage: 22.0
       srm2:
         heat: 2
         multiplier: 1
