@@ -205,7 +205,7 @@ $ ->
 
     damage: (val) ->
       mech.damage += val
-      $('#damage').text(mech.damage)
+      $('#damage').text(mech.damage.toPrecision(2))
 
     fireWeapon: (event) ->
       # console.log('fire')
