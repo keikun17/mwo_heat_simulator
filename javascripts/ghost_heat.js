@@ -4,6 +4,9 @@
       is_enabled: function() {
         return $('#ghost_heat').is(':checked');
       },
+      last_fired_group: function() {
+        return [];
+      },
       scale: function(count) {
         var multiplier;
         multiplier = (function() {

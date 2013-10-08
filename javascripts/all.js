@@ -12449,97 +12449,123 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       },
       weaponStats: {
         slas: {
-          heat: 2
+          heat: 2,
+          damage: 3
         },
         mlas: {
           heat: 4,
-          multiplier: 1
+          multiplier: 1,
+          damage: 5
         },
         llas: {
           heat: 7,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 9
         },
         ellas: {
           heat: 8.5,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 9
         },
         splas: {
-          heat: 2.4
+          heat: 2.4,
+          damage: 3.40
         },
         mplas: {
-          heat: 5
+          heat: 5,
+          damage: 6
         },
         lplas: {
           heat: 8.5,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 10.60
         },
         ppc: {
           heat: 10,
-          multiplier: 7.0
+          multiplier: 7.0,
+          damage: 10
         },
         eppc: {
           heat: 12,
-          multiplier: 4.5
+          multiplier: 4.5,
+          damage: 10
         },
         flam: {
-          heat: .6
+          heat: .6,
+          damage: 0.70
         },
         ac2: {
           heat: 1,
-          multiplier: 0.6
+          multiplier: 0.6,
+          damage: 2
         },
         ac5: {
-          heat: 1
+          heat: 1,
+          damage: 5
         },
         ac10: {
-          heat: 3
+          heat: 3,
+          damage: 10
         },
         ac20: {
           heat: 6,
-          multiplier: 24
+          multiplier: 24,
+          damage: 20
         },
         uac5: {
-          heat: 1
+          heat: 1,
+          damage: 5
         },
         lb10x: {
-          heat: 2
+          heat: 2,
+          damage: 10
         },
         gauss: {
-          heat: 1
+          heat: 1,
+          damage: 15
         },
         mg: {
-          heat: 0
+          heat: 0,
+          damage: 0.1
         },
         lrm5: {
-          heat: 2
+          heat: 2,
+          damage: 5.50
         },
         lrm10: {
           heat: 4,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 11
         },
         lrm15: {
           heat: 5,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 16.50
         },
         lrm20: {
           heat: 6,
-          multiplier: 2.8
+          multiplier: 2.8,
+          damage: 22.0
         },
         srm2: {
           heat: 2,
-          multiplier: 1
+          multiplier: 1,
+          damage: 4
         },
         srm4: {
           heat: 3,
-          multiplier: 1
+          multiplier: 1,
+          damage: 8
         },
         srm6: {
           heat: 4,
-          multiplier: 1
+          multiplier: 1,
+          damage: 12
         },
         ssrm2: {
           heat: 2,
-          multiplier: 1
+          multiplier: 1,
+          damage: 5
         }
       },
       shoot: function(val) {
@@ -12548,11 +12574,18 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         towards = val + window.mech.heatsink.getCurrentHeat();
         return window.mech.setHeat(towards);
       },
+      damage: function(val) {
+        mech.damage += val;
+        return $('#damage').text(mech.damage.toPrecision(2));
+      },
       fireWeapon: function(event) {
-        var weapon_name;
+        var stats, weapon_name;
         weapon_name = $(this).data("weaponClass");
-        window.weapons.shoot(window.mech.weapons.weaponStats[weapon_name].heat);
+        stats = mech.weapons.weaponStats[weapon_name];
+        window.weapons.shoot(stats.heat);
         window.mech.weapons.disableWeapon($(this));
+        console.log("Damage : " + stats.damage);
+        window.mech.weapons.damage(stats.damage);
         return false;
       },
       disableWeapon: function(weapon) {
@@ -12584,6 +12617,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     return window.weapons.ghostHeat = {
       is_enabled: function() {
         return $('#ghost_heat').is(':checked');
+      },
+      last_fired_group: function() {
+        return [];
       },
       scale: function(count) {
         var multiplier;
@@ -12726,6 +12762,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       },
       heatsink: window.heatsink,
       engine: window.engine,
+      damage: 0,
       refit: function() {
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
@@ -12833,10 +12870,16 @@ jQuery.ajax = (function(_ajax){
     return window.scraper = {
       scrapedData: '',
       scrape: function(url) {
-        url = url.replace('mwo.smurfy-net.de/mechlab#', 'mwo.smurfy-net.de/tools/mechtooltip?');
+        var _this = this;
+        url = url.replace('mwo.smurfy-net.de/mechlab#', 'mwo.smurfy-net.de/mechlab/loadouts');
+        url = url.replace('i=', '/');
+        url = url.replace('&l=', '/');
+        console.log("new url is " + url);
         return $.get(url, function(response) {
           console.log(response);
-          return window.scraper.scrapedData = response.responseText;
+          _this.scrapedData = response.responseText;
+          _this.html = ($.parseHTML(_this.scrapedData))[5];
+          return _this.json = $.parseJSON(html.innerHtml);
         });
       }
     };
