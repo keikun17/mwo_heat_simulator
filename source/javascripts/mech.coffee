@@ -23,7 +23,7 @@ $ ->
     refit: ->
       $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100)
       $("#heatlevel").attr "aria-valuemax", window.mech.heatsink.getThreshold()
-      $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2))
+      $('#cool-rate').text(window.mech.heatsink.getCoolRate().toFixed(2))
       $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks())
 
     weapons: window.weapons
