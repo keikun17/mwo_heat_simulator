@@ -23,8 +23,11 @@
 
         %p
           Total Damage:
-          %span.label.label-danger#damage
-            0
+          %a{class: 'js-reset_damage btn-sm btn-danger'}
+            %span.glyphicon.glyphicon-fast-backward
+            %span#damage
+              0
+
 
         %p
           Cooling time :
