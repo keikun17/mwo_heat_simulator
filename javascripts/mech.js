@@ -176,7 +176,11 @@
           $('.js-strip').click();
           return false;
         });
-        return _.each($('.cooldown-meter'), this.armWeapon);
+        _.each($('.cooldown-meter'), this.armWeapon);
+        return $("#js-reset_damage").click(function(e) {
+          mech.damage = 0;
+          return $('#damage').text(0);
+        });
       },
       armWeapon: function(progress) {
         if (typeof progress.initialized !== 'undefined') {
@@ -324,7 +328,7 @@
       },
       damage: function(val) {
         mech.damage += val;
-        return $('#damage').text(mech.damage.toPrecision(2));
+        return $('#damage').text(mech.damage.toFixed(2));
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
@@ -514,11 +518,14 @@
       refit: function() {
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
-        $('#cool-rate').text(window.mech.heatsink.getCoolRate().toPrecision(2));
+        $('#cool-rate').text(window.mech.heatsink.getCoolRate().toFixed(2));
         return $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks());
       },
       weapons: window.weapons,
       skills: window.skills,
+      resetDamage: function() {
+        return mech.damage = 0;
+      },
       setHeat: function(heatlevel) {
         $("#heatlevel").attr("aria-valuetransitiongoal", heatlevel);
         return $("#heatlevel").progressbar({

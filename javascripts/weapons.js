@@ -66,7 +66,11 @@
           $('.js-strip').click();
           return false;
         });
-        return _.each($('.cooldown-meter'), this.armWeapon);
+        _.each($('.cooldown-meter'), this.armWeapon);
+        return $("#js-reset_damage").click(function(e) {
+          mech.damage = 0;
+          return $('#damage').text(0);
+        });
       },
       armWeapon: function(progress) {
         if (typeof progress.initialized !== 'undefined') {
@@ -214,7 +218,7 @@
       },
       damage: function(val) {
         mech.damage += val;
-        return $('#damage').text(mech.damage.toPrecision(2));
+        return $('#damage').text(mech.damage.toFixed(2));
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
