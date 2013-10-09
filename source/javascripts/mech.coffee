@@ -30,6 +30,9 @@ $ ->
 
     skills: window.skills
 
+    resetDamage: ->
+      mech.damage = 0
+
     setHeat: (heatlevel) ->
       $("#heatlevel").attr "aria-valuetransitiongoal", heatlevel
       $("#heatlevel").progressbar

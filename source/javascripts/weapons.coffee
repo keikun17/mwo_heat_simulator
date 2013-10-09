@@ -76,6 +76,10 @@ $ ->
       # ready all initial weapons
       _.each $('.cooldown-meter'), @armWeapon
 
+      $("#js-reset_damage").click (e) ->
+        mech.damage = 0
+        $('#damage').text(0)
+
     armWeapon: (progress) ->
       return true if typeof progress.initialized isnt 'undefined'
 
