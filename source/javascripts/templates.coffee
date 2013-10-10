@@ -9,9 +9,9 @@ _.templateSettings =
       <div class='col-lg-9'>
         <a href='#' class='js-fire btn-sm btn-danger' data-weapon-class='{{= weaponClass }}'> <span class='glyphicon glyphicon-screenshot'></span></a>
         <a href='#' class='js-strip btn-sm btn-warning'><span class='glyphicon glyphicon-remove'></span></a>
-        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='1'>1</a>
-        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'>2</a>
-        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='3'>3</a>
+        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='1'> <span class='glyphicon glyphicon-link'></span>1</a>
+        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'> <span class='glyphicon glyphicon-link'></span>2</a>
+        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='3'> <span class='glyphicon glyphicon-link'></span>3</a>
         {{= name }}
       </div>
       <div class='col-lg-3 weapon-cooldown-container'>
@@ -19,9 +19,8 @@ _.templateSettings =
           <div class='progress-bar progress-bar-success cooldown-meter {{= weaponClass }}-cooldown quick-reset' role='progressbar' aria-valuemax='100' aria-valuetransitiongoal='100' aria-valuenow='0' ></div>;
         </div>
       </div>
-    </div>
-  </li>"
-)
+  </div>
+</li>")
 
 @armoryView = _.template("
   <li>
