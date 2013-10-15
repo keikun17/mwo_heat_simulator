@@ -238,7 +238,7 @@
           damage: 10
         },
         eppc: {
-          heat: 12,
+          heat: 15,
           multiplier: 4.5,
           damage: 10
         },
