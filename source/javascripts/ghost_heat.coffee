@@ -10,7 +10,6 @@ $ ->
     # Parameters:
     #   count - Number of  weapons fired under a weapon group in an Alpha
     scale: (count) ->
-      # console.log "count is #{count}"
       multiplier = switch
         when count < 2 then 0
         when count == 2 then 0.08
@@ -46,35 +45,26 @@ $ ->
       _.each group, (element) =>
         link_fired = link_fired.concat list.filter("[data-weapon-class='#{element}']").toArray()
 
-      # console.log(link_fired)
 
-      # console.log "There are #{link_fired.length} Lrm-group weapons linked"
 
       if link_fired.length > max_alpha
         _.times max_alpha, =>
           link_fired.shift()
 
-        # console.log(link_fired)
         group_ghost_heat = 0
 
         _.each link_fired, (element, index, list) =>
-          # console.log "index is #{index}"
           weapon_position = index + 1 + max_alpha
           element = $(element)
 
           base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat
           multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier
-          # console.log "base heat is #{base_heat}"
-          # console.log "multiplier is #{multiplier}"
 
           heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position)
-          # console.log "heat scale is #{heat_scale}"
 
           ghost_heat = ( base_heat * (heat_scale * multiplier) )
-          # console.log "ghost heat is #{ghost_heat}"
           group_ghost_heat = group_ghost_heat + ghost_heat
 
-      # console.log("Total Group Ghost heat is #{group_ghost_heat}")
       group_ghost_heat
 
     # Returns the total heat penalty for the list of weapons fired
@@ -111,12 +101,10 @@ $ ->
         @getPenalty(list, ['srm2'], 4) +
         @getPenalty(list, ['ssrm2'], 4)
 
-      console.log "Total Ghost Heat is #{ghost_heat}"
       ghost_heat
 
     apply: (list) ->
       penalty = @computeTotalPenalty(list)
-      # console.log "Ghost heat penalty is #{penalty}"
       $('#ghost_heat_penalty').text(penalty)
       penalty = penalty * 100
       towards = penalty + window.mech.heatsink.getCurrentHeat()
