@@ -4,9 +4,6 @@
       is_enabled: function() {
         return $('#ghost_heat').is(':checked');
       },
-      last_fired_group: function() {
-        return [];
-      },
       scale: function(count) {
         var multiplier;
         multiplier = (function() {
@@ -81,10 +78,9 @@
         llas_max_alpha = 2;
         llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
         ppc_group = ['ppc', 'eppc'];
-        ppc_max_alpha = 3;
+        ppc_max_alpha = 2;
         ppc_group_ghost_heat = this.getPenalty(list, ppc_group, ppc_max_alpha);
         ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat + llas_group_ghost_heat + ppc_group_ghost_heat + this.getPenalty(list, ['ac2'], 3) + this.getPenalty(list, ['ac20'], 1) + this.getPenalty(list, ['mlas'], 6) + this.getPenalty(list, ['srm2'], 4) + this.getPenalty(list, ['ssrm2'], 4);
-        console.log("Total Ghost Heat is " + ghost_heat);
         return ghost_heat;
       },
       apply: function(list) {
