@@ -9,7 +9,8 @@ $ ->
       'Tourmaline Desert',
       'Canyon Network',
       'Terra Therma',
-      'Crimson Strait'
+      'Crimson Strait',
+      'HPG Manifold'
     ]
 
 
