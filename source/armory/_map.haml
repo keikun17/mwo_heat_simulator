@@ -1,13 +1,24 @@
 Map list
 %select#map
-  %option{value: '1'} Alpine Peaks
-  %option{value: '1'} River City
-  %option{value: '1'} Caustic Valley
-  %option{value: '1'} Frozen City
-  %option{value: '1'} Frozen Colony
-  %option{value: '1'} Tourmaline Desert
-  %option{value: '1'} Canyon Network
-  %option{value: '1'} Terra Therma
-  %option{value: '1'} Crimson Strait
-  %option{value: '1'} HPG Manifold
+  %option{data: {dissipation: 0, capacity: 0} } Forest Colony
+  %option{data: {dissipation: 0, capacity: 0} } Canyon Network
+  %option{data: {dissipation: 0, capacity: 0} } River City (Day/Night)
+  %option{data: {dissipation: 0, capacity: 0} } Crimson Strait
 
+  %option{disabled: '', role: 'separator'} Cold Maps --
+
+  %option{data: {dissipation: '.25', capacity: '.25'} } Forest Colony (Snow)
+  %option{data: {dissipation: '.25', capacity: '.25'} } Alpine Peaks
+  %option{data: {dissipation: '.25', capacity: '.25'} } Frozen City
+  %option{data: {dissipation: '.25', capacity: '.25'} } Frozen City (Night)
+
+  %option{disabled: '', role: 'separator'} Hot Maps ----
+
+  %option{data: {dissipation: '-.15', capacity: '-.10'} } Caustic Valley
+  %option{data: {dissipation: '-.25', capacity: '-.20'} } Terra Therma
+  %option{data: {dissipation: '-.15', capacity: '-.10'} } Tourmaline Desert
+
+  %option{disabled: '', role: 'separator'} Uncertain ---
+
+  %option{data: {dissipation: '-.40', capacity: '-.30'} } Caustic Valley Caldera
+  %option{data: {dissipation: '-.60', capacity: '-.12'} } Terra Therma Caldera

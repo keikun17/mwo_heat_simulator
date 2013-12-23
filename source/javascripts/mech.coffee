@@ -3,7 +3,6 @@
 #= require ghost_heat
 #= require engine
 #= require skills
-#= require map
 
 $ ->
   window.mech=
@@ -13,7 +12,6 @@ $ ->
       window.weapons.init()
       window.engine.init()
       window.skills.init()
-      window.map.init()
 
       @refit()
 
