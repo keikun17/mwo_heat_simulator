@@ -1,10 +1,18 @@
 $ ->
   window.map =
     init: ->
-      $('#map').on 'change', window.mech.refit
+      $('#map').on 'change', window.map.changemap
+      window.map.changemap()
+
+
+    changemap: ->
+      window.mech.refit()
+      $('#dissipation').text("#{window.map.modifier.dissipation() * 100}%")
+      $('#capacity').text("#{window.map.modifier.capacity() * 100}%")
 
     modifier:
       capacity: ->
-        parseFloat $('#map').find(':selected').data('capacity')
+        1 + parseFloat($('#map').find(':selected').data('capacity'))
       dissipation: ->
-        parseFloat $('#map').find(':selected').data('dissipation')
+        1 + parseFloat($('#map').find(':selected').data('dissipation'))
+

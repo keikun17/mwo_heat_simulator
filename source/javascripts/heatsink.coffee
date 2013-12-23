@@ -44,7 +44,7 @@ $ ->
         else
           val =  val * 1.10
 
-      val = val * 100 * (1 + window.map.modifier.capacity())
+      val = val * 100 * window.map.modifier.capacity()
 
       val
 
@@ -63,7 +63,7 @@ $ ->
         else
           rate =  rate * 1.075
 
-      rate = rate * (1 + window.map.modifier.dissipation())
+      rate = rate * window.map.modifier.dissipation()
       rate
 
     tickRate: 1000
