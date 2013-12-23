@@ -71,6 +71,37 @@
           Heat Threshold :
           <span class='label label-info' id='heat-threshold'></span>
         </p>
+        <p>
+          Map list
+          <select id='map'>
+            <option data-capacity='0' data-dissipation='0'>Forest Colony</option>
+            <option data-capacity='0' data-dissipation='0'>Canyon Network</option>
+            <option data-capacity='0' data-dissipation='0'>River City (Day/Night)</option>
+            <option data-capacity='0' data-dissipation='0'>Crimson Strait</option>
+            <option disabled='' role='separator'>Cold Maps --</option>
+            <option data-capacity='.25' data-dissipation='.25'>Forest Colony (Snow)</option>
+            <option data-capacity='.25' data-dissipation='.25'>Alpine Peaks</option>
+            <option data-capacity='.25' data-dissipation='.25'>Frozen City</option>
+            <option data-capacity='.25' data-dissipation='.25'>Frozen City (Night)</option>
+            <option disabled='' role='separator'>Hot Maps ----</option>
+            <option data-capacity='-.10' data-dissipation='-.15'>Caustic Valley</option>
+            <option data-capacity='-.20' data-dissipation='-.25'>Terra Therma</option>
+            <option data-capacity='-.10' data-dissipation='-.15'>Tourmaline Desert</option>
+            <option disabled='' role='separator'>Uncertain ---</option>
+            <option data-capacity='-.30' data-dissipation='-.40'>Caustic Valley Caldera</option>
+            <option data-capacity='-.12' data-dissipation='-.60'>Terra Therma Caldera</option>
+          </select>
+          <div id='map-modifier'>
+            <p>
+              Effective Cool Rate from map :
+              <span class='label label-info' id='dissipation'></span>
+            </p>
+            <p>
+              Effective Heat Capacity from map :
+              <span class='label label-info' id='capacity'></span>
+            </p>
+          </div>
+        </p>
         <hr>
         <p>
           Enable Ghost Heat :(

@@ -12309,7 +12309,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
             val = val * 1.10;
           }
         }
-        val = val * 100;
+        val = val * 100 * window.map.modifier.capacity();
         return val;
       },
       getCoolRate: function() {
@@ -12330,6 +12330,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
             rate = rate * 1.075;
           }
         }
+        rate = rate * window.map.modifier.dissipation();
         return rate;
       },
       tickRate: 1000,
@@ -12752,10 +12753,24 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }).call(this);
 (function() {
   $(function() {
-    return window.map = function() {
-      return {
-        selection: ['Alpine Peaks', 'River City', 'Caustic Valley', 'Frozen City', 'Frozen Colony', 'Tourmaline Desert', 'Canyon Network', 'Terra Therma', 'Crimson Strait']
-      };
+    return window.map = {
+      init: function() {
+        $('#map').on('change', window.map.changemap);
+        return window.map.changemap();
+      },
+      changemap: function() {
+        window.mech.refit();
+        $('#dissipation').text("" + (window.map.modifier.dissipation() * 100) + "%");
+        return $('#capacity').text("" + (window.map.modifier.capacity() * 100) + "%");
+      },
+      modifier: {
+        capacity: function() {
+          return 1 + parseFloat($('#map').find(':selected').data('capacity'));
+        },
+        dissipation: function() {
+          return 1 + parseFloat($('#map').find(':selected').data('dissipation'));
+        }
+      }
     };
   });
 

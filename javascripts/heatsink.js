@@ -57,7 +57,7 @@
             val = val * 1.10;
           }
         }
-        val = val * 100;
+        val = val * 100 * window.map.modifier.capacity();
         return val;
       },
       getCoolRate: function() {
@@ -78,6 +78,7 @@
             rate = rate * 1.075;
           }
         }
+        rate = rate * window.map.modifier.dissipation();
         return rate;
       },
       tickRate: 1000,
