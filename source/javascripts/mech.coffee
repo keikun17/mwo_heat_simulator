@@ -3,6 +3,7 @@
 #= require ghost_heat
 #= require engine
 #= require skills
+#= require map
 
 $ ->
   window.mech=
@@ -12,7 +13,7 @@ $ ->
       window.weapons.init()
       window.engine.init()
       window.skills.init()
-      $('#map').on 'change', window.mech.refit
+      window.map.init()
 
       @refit()
 
@@ -21,11 +22,6 @@ $ ->
 
     damage: 0
 
-    map_modifier: ->
-      capacity: ->
-        parseFloat $('#map').find(':selected').data('capacity')
-      dissipation: ->
-        parseFloat $('#map').find(':selected').data('dissipation')
 
     refit: ->
       $('#heat-threshold').text( window.mech.heatsink.getThreshold() / 100 ) 
