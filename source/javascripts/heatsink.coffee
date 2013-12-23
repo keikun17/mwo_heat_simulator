@@ -44,7 +44,7 @@ $ ->
         else
           val =  val * 1.10
 
-      val = val * 100
+      val = val * 100 * (1 + window.mech.map_modifier().capacity())
 
       val
 
@@ -63,6 +63,7 @@ $ ->
         else
           rate =  rate * 1.075
 
+      rate = rate * (1 + window.mech.map_modifier().dissipation())
       rate
 
     tickRate: 1000

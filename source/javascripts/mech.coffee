@@ -12,6 +12,7 @@ $ ->
       window.weapons.init()
       window.engine.init()
       window.skills.init()
+      $('#map').on 'change', window.mech.refit
 
       @refit()
 
@@ -20,8 +21,14 @@ $ ->
 
     damage: 0
 
+    map_modifier: ->
+      capacity: ->
+        parseFloat $('#map').find(':selected').data('capacity')
+      dissipation: ->
+        parseFloat $('#map').find(':selected').data('dissipation')
+
     refit: ->
-      $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100)
+      $('#heat-threshold').text( window.mech.heatsink.getThreshold() / 100 ) 
       $("#heatlevel").attr "aria-valuemax", window.mech.heatsink.getThreshold()
       $('#cool-rate').text(window.mech.heatsink.getCoolRate().toFixed(2))
       $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks())
