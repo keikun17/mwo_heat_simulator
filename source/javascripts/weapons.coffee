@@ -237,7 +237,7 @@ $ ->
       window.weapons.shoot(stats.heat)
       window.mech.weapons.disableWeapon $(this)
 
-      console.log "Damage : #{stats.damage}"
+      # console.log "Damage : #{stats.damage}"
       window.mech.weapons.damage(stats.damage)
 
       false
