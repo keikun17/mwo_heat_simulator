@@ -15,6 +15,7 @@
           _.each($('.cooldown-meter'), function(element, iterator, list) {
             return window.mech.weapons.armWeapon(element);
           });
+          window.persistence.rebuildPermalink();
           return false;
         });
         $("#js-alphastrike").click(function() {
@@ -60,6 +61,7 @@
         });
         $(".weapon-list").on("click", ".js-strip", function() {
           $(this).parent().parent().parent().remove();
+          window.persistence.rebuildPermalink();
           return false;
         });
         $("#js-stripall").click(function() {
@@ -71,6 +73,19 @@
           mech.damage = 0;
           return $('#damage').text(0);
         });
+      },
+      weaponCounts: function() {
+        var counter;
+        counter = {};
+        _.each($('.js-fire'), function(element) {
+          var weapon;
+          weapon = $(element).data('weapon-class');
+          if (counter[weapon] === void 0) {
+            counter[weapon] = 0;
+          }
+          return counter[weapon] = counter[weapon] + 1;
+        });
+        return counter;
       },
       armWeapon: function(progress) {
         if (typeof progress.initialized !== 'undefined') {
@@ -226,7 +241,6 @@
         stats = mech.weapons.weaponStats[weapon_name];
         window.weapons.shoot(stats.heat);
         window.mech.weapons.disableWeapon($(this));
-        console.log("Damage : " + stats.damage);
         window.mech.weapons.damage(stats.damage);
         return false;
       },

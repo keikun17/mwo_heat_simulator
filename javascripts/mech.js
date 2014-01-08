@@ -126,6 +126,7 @@
           _.each($('.cooldown-meter'), function(element, iterator, list) {
             return window.mech.weapons.armWeapon(element);
           });
+          window.persistence.rebuildPermalink();
           return false;
         });
         $("#js-alphastrike").click(function() {
@@ -171,6 +172,7 @@
         });
         $(".weapon-list").on("click", ".js-strip", function() {
           $(this).parent().parent().parent().remove();
+          window.persistence.rebuildPermalink();
           return false;
         });
         $("#js-stripall").click(function() {
@@ -182,6 +184,19 @@
           mech.damage = 0;
           return $('#damage').text(0);
         });
+      },
+      weaponCounts: function() {
+        var counter;
+        counter = {};
+        _.each($('.js-fire'), function(element) {
+          var weapon;
+          weapon = $(element).data('weapon-class');
+          if (counter[weapon] === void 0) {
+            counter[weapon] = 0;
+          }
+          return counter[weapon] = counter[weapon] + 1;
+        });
+        return counter;
       },
       armWeapon: function(progress) {
         if (typeof progress.initialized !== 'undefined') {
@@ -337,7 +352,6 @@
         stats = mech.weapons.weaponStats[weapon_name];
         window.weapons.shoot(stats.heat);
         window.mech.weapons.disableWeapon($(this));
-        console.log("Damage : " + stats.damage);
         window.mech.weapons.damage(stats.damage);
         return false;
       },
@@ -541,6 +555,50 @@
 }).call(this);
 (function() {
   $(function() {
+    return window.persistence = {
+      init: function() {
+        return window.persistence.resetLoadoutFromParams();
+      },
+      resetLoadoutFromParams: function() {
+        var url, url_params, weapon_params;
+        url = $.url(location);
+        url_params = url.param();
+        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.mech.weapons.weaponStats));
+        if (weapon_params.length > 0) {
+          $('#js-stripall').click();
+          return _.each(weapon_params, function(val, key, list) {
+            var count;
+            count = url.param(val);
+            return _(count).times(function() {
+              return $('#armory').find("a[data-weapon-class='" + val + "']").click();
+            });
+          });
+        }
+      },
+      rebuildPermalink: function() {
+        var host, str;
+        host = $.url(location).attr('host');
+        if ($.url(location).attr('port')) {
+          host = host + (":" + ($.url(location).attr('port')));
+        }
+        str = "";
+        _.each(window.weapons.weaponCounts(), function(val, key) {
+          return str = "" + str + key + "=" + val + "&";
+        });
+        host = host + '?' + str;
+        host;
+        $('#permalink').text(host);
+        return $('#permalink').attr('href', host);
+      },
+      generateLink: function() {
+        return window.persistence.rebuildPermalink();
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
     return window.mech = {
       init: function() {
         window.heatsink.init();
@@ -548,6 +606,7 @@
         window.engine.init();
         window.skills.init();
         window.map.init();
+        window.persistence.init();
         return this.refit();
       },
       heatsink: window.heatsink,
@@ -557,7 +616,8 @@
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);
         $("#heatlevel").attr("aria-valuemax", window.mech.heatsink.getThreshold());
         $('#cool-rate').text(window.mech.heatsink.getCoolRate().toFixed(2));
-        return $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks());
+        $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks());
+        return window.persistence.generateLink();
       },
       weapons: window.weapons,
       skills: window.skills,
