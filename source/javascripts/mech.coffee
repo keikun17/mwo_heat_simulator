@@ -4,6 +4,7 @@
 #= require engine
 #= require skills
 #= require map
+#= require persistence
 
 $ ->
   window.mech=
