@@ -13101,7 +13101,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         });
         host = '?' + str;
         host;
-        $('#permalink').text($.url(location).attr('host') + host);
+        $('#permalink').text($.url(location).attr('path') + host);
         return $('#permalink').attr('href', host);
       },
       generateLink: function() {
