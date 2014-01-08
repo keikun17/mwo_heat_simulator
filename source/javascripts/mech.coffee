@@ -15,6 +15,7 @@ $ ->
       window.engine.init()
       window.skills.init()
       window.map.init()
+      window.persistence.init()
 
       @refit()
 
