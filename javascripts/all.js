@@ -13095,17 +13095,13 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       },
       rebuildPermalink: function() {
         var host, str;
-        host = $.url(location).attr('host');
-        if ($.url(location).attr('port')) {
-          host = host + (":" + ($.url(location).attr('port')));
-        }
         str = "";
         _.each(window.weapons.weaponCounts(), function(val, key) {
           return str = "" + str + key + "=" + val + "&";
         });
-        host = host + '?' + str;
+        host = '?' + str;
         host;
-        $('#permalink').text(host);
+        $('#permalink').text($.url(location).attr('host') + host);
         return $('#permalink').attr('href', host);
       },
       generateLink: function() {
