@@ -24,21 +24,15 @@ $ ->
 
     rebuildPermalink: ->
       # weapon_counts = window.weapons.weaponCounts()
-
-      host = $.url(location).attr('host')
-
-      if $.url(location).attr('port')
-        host = host + ":#{$.url(location).attr('port')}"
-
       str = ""
 
       _.each window.weapons.weaponCounts(), (val, key) ->
         str = "#{str}#{key}=#{val}&"
 
-      host = host + '?' + str
+      host =  '?' + str
       host
 
-      $('#permalink').text(host)
+      $('#permalink').text($.url(location).attr('host') + host)
       $('#permalink').attr('href',host)
 
     generateLink: ->
