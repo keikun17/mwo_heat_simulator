@@ -80,6 +80,19 @@ $ ->
         mech.damage = 0
         $('#damage').text(0)
 
+    countWeapons: ->
+      counter = {}
+
+      _.each $('.js-fire'), (element) ->
+        weapon = $(element).data('weapon-class')
+
+        if counter[weapon] == undefined
+          counter[weapon] = 0
+
+        counter[weapon] = counter[weapon] + 1
+
+      counter
+
     armWeapon: (progress) ->
       return true if typeof progress.initialized isnt 'undefined'
 
