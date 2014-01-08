@@ -19,6 +19,8 @@ $ ->
         _.each $('.cooldown-meter'), (element, iterator, list) ->
           window.mech.weapons.armWeapon(element)
 
+        # save permaink
+        window.persistence.rebuildPermalink()
         false
 
       # Fire all Weapons
@@ -66,6 +68,9 @@ $ ->
       # Strip weapon
       $(".weapon-list").on "click", ".js-strip", ->
         $(this).parent().parent().parent().remove()
+
+        window.persistence.rebuildPermalink()
+
         false
 
       # Strip all
@@ -80,7 +85,7 @@ $ ->
         mech.damage = 0
         $('#damage').text(0)
 
-    countWeapons: ->
+    weaponCounts: ->
       counter = {}
 
       _.each $('.js-fire'), (element) ->
