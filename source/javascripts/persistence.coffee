@@ -32,7 +32,7 @@ $ ->
       host =  '?' + str
       host
 
-      $('#permalink').text($.url(location).attr('host') + host)
+      $('#permalink').text($.url(location).attr('path') + host)
       $('#permalink').attr('href',host)
 
     generateLink: ->
