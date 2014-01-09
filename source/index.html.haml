@@ -1,18 +1,26 @@
 .container
   .row
     %h1 Mechwarrior Online Weapon Heat Simulator
-    %small
-      .alert.alert-info
-        Discuss on
-        %a.text-warning{href: "http://mwomercs.com/forums/topic/135725-mechwarrior-online-heat-simulator/"} MWO Heat Simulator Thread
-        %ul
-          %li Last updated January 8, 2014
-          %li Please note that Ghost Heat only works on linked fire / Alpha, not on chainfire
+
+    .col-lg-6
+      .alert.alert-success
+        .row
+          .col-lg-12
+            %p
+              Autosaved link:
+              %span
+                = link_to '...', '/', id: 'permalink'
+
+    .col-lg-6
+      %small
+        .alert.alert-info
+          %ul
+            %li This tool was last updated @ January 8, 2014
+            %li
+              Comment/Discuss on : 
+              %a.alert-link.text-warning{href: "http://mwomercs.com/forums/topic/135725-mechwarrior-online-heat-simulator/"} MWO Heat Simulator Thread
+
   .row
-    .row
-      Autosaved link:
-      %span
-        = link_to '...', '/', id: 'permalink'
     .col-lg-3.col-md-3.col-sm-3
       .row
 
@@ -61,6 +69,9 @@
           %input{type: 'checkbox', id:'ghost_heat'}
           %span.label.label-danger{id: 'ghost_heat_penalty'}
 
+        %small
+          .alert.alert-info
+            Please note that Ghost Heat only works on linked fire / Alpha, not on chainfire
 
         %hr
 
