@@ -13119,7 +13119,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         }
       },
       rebuildPermalink: function() {
-        var host, str;
+        var host, str, url;
         str = "";
         _.each(window.weapons.weaponCounts(), function(val, key) {
           return str = "" + str + key + "=" + val + "&";
@@ -13138,7 +13138,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         str = "" + str + "engine=" + (window.engine.rating());
         host = '?' + str;
         host;
-        $('#permalink').text($.url(location).attr('path') + host);
+        url = $.url(location);
+        $('#permalink').text(url.attr('protocol') + '://' + url.attr('host') + $.url(location).attr('path') + host);
         return $('#permalink').attr('href', host);
       },
       generateLink: function() {
