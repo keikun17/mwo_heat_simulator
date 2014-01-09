@@ -16,24 +16,20 @@ $ ->
       window.skills.init()
       window.map.init()
       window.persistence.init()
-
       @refit()
 
     heatsink: window.heatsink
+
     engine: window.engine
 
     damage: 0
-
 
     refit: ->
       $('#heat-threshold').text( window.mech.heatsink.getThreshold() / 100 )
       $("#heatlevel").attr "aria-valuemax", window.mech.heatsink.getThreshold()
       $('#cool-rate').text(window.mech.heatsink.getCoolRate().toFixed(2))
       $('#internal-heatsinks').text(window.mech.heatsink.internal_heatsinks())
-
       window.persistence.generateLink()
-
-
 
     weapons: window.weapons
 
