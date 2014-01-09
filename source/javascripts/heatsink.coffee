@@ -14,7 +14,7 @@ $ ->
 
     getType: -> $('#heatsink_type').val()
 
-    external_heatsinks: -> 
+    external_heatsinks: ->
       hs = parseInt($('#heatsink-count').val())
       hs = 0 if isNaN(hs)
       hs
