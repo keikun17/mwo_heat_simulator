@@ -88,7 +88,7 @@ $ ->
 
 
       url = $.url(location)
-      $('#permalink').text(url.attr('protocol') + '://' + url.attr('host') + $.url(location).attr('path') + host)
+      # $('#permalink').text(url.attr('protocol') + '://' + url.attr('host') + $.url(location).attr('path') + host)
       $('#permalink').attr('href',host)
 
 
