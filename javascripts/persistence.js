@@ -66,7 +66,6 @@
         host = '?' + str;
         host;
         url = $.url(location);
-        $('#permalink').text(url.attr('protocol') + '://' + url.attr('host') + $.url(location).attr('path') + host);
         return $('#permalink').attr('href', host);
       },
       generateLink: function() {
