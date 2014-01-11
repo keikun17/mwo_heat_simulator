@@ -21,10 +21,10 @@
   .row
     .col-lg-3.col-md-3.col-sm-3
       .row
-
         %p
           .progress.vertical.wide.bottom
             #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
+
       .row
         %p
           Enable Ghost Heat :(
@@ -38,19 +38,19 @@
 
         %p
           Cooling time :
-          %span.label.label-info
+          %span.badge
             %span#cooldown_time 0
             sec
 
         %p
           Cooling Rate :
-          %span.label.label-info
+          %span.badge
             %span#cool-rate
             heat/sec
 
         %p
           Heat Threshold :
-          %span#heat-threshold.label.label-info
+          %span#heat-threshold.badge
 
 
         %p
@@ -66,7 +66,7 @@
 
         %p
           Internal Heatsink Count
-          %span#internal-heatsinks.label.label-success
+          %span#internal-heatsinks.badge
 
         %p
           External Heatsink Count
