@@ -12529,6 +12529,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         $(coolant_el).on('click', function() {
           return window.mech.setHeat(0);
         });
+        $('#ghost_heat').tooltip('show');
         return this.runTicker();
       },
       getType: function() {
@@ -12699,8 +12700,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         });
         _.each($('.cooldown-meter'), this.armWeapon);
         return $("#js-reset_damage").click(function(e) {
-          mech.damage = 0;
-          return $('#damage').text(0);
+          window.mech.resetDamage();
+          return window.mech.dps.resetTimer();
         });
       },
       weaponCounts: function() {
@@ -12862,7 +12863,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       },
       damage: function(val) {
         mech.damage += val;
-        return $('#damage').text(mech.damage.toFixed(2));
+        $('#damage').text(mech.damage.toFixed(2));
+        if (!mech.dps.clock) {
+          console.log("called");
+          mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000);
+        }
+        return mech.dps.recompute();
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
@@ -13075,7 +13081,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   $(function() {
     return window.persistence = {
       init: function() {
-        return window.persistence.resetLoadoutFromParams();
+        window.persistence.resetLoadoutFromParams();
+        return $('#permalink').tooltip('show');
       },
       resetEngineFromParams: function() {},
       resetLoadoutFromParams: function() {
@@ -13150,6 +13157,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }).call(this);
 (function() {
   $(function() {
+    var _this = this;
     return window.mech = {
       init: function() {
         window.heatsink.init();
@@ -13158,6 +13166,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         window.skills.init();
         window.map.init();
         window.persistence.init();
+        $('.js-with_tooltip').tooltip('show');
         return this.refit();
       },
       heatsink: window.heatsink,
@@ -13173,7 +13182,27 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       weapons: window.weapons,
       skills: window.skills,
       resetDamage: function() {
-        return mech.damage = 0;
+        mech.damage = 0;
+        return $('#damage').text(0);
+      },
+      dpsUptime: 0,
+      dps: {
+        uptime: 0,
+        value: 0,
+        incrementTimer: function() {
+          mech.dps.uptime = mech.dps.uptime + 1;
+          return mech.dps.recompute();
+        },
+        resetTimer: function() {
+          mech.dps.value = 0;
+          mech.dps.uptime = 0;
+          mech.dps.clock = clearInterval(mech.dps.clock);
+          return $('#dps').text('0.00');
+        },
+        recompute: function() {
+          mech.dps.value = mech.damage / mech.dps.uptime;
+          return $('#dps').text(mech.dps.value.toFixed(2));
+        }
       },
       setHeat: function(heatlevel) {
         $("#heatlevel").attr("aria-valuetransitiongoal", heatlevel);

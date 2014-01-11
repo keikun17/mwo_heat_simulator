@@ -2,7 +2,8 @@
   $(function() {
     return window.persistence = {
       init: function() {
-        return window.persistence.resetLoadoutFromParams();
+        window.persistence.resetLoadoutFromParams();
+        return $('#permalink').tooltip('show');
       },
       resetEngineFromParams: function() {},
       resetLoadoutFromParams: function() {

@@ -11,6 +11,7 @@
         $(coolant_el).on('click', function() {
           return window.mech.setHeat(0);
         });
+        $('#ghost_heat').tooltip('show');
         return this.runTicker();
       },
       getType: function() {

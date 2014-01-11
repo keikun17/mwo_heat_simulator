@@ -37,7 +37,7 @@
         <div class='row'>
           <div class='col-lg-12'>
             Share this build:
-            <span><a id="permalink" class="btn btn-success" href="/">Right click and copy this link</a></span>
+            <span><a id="permalink" class="btn btn-success" data-toggle="tooltip" data-placement="right" data-original-title="Autosaved as you go" href="/">Right click and copy this link</a></span>
           </div>
         </div>
       </div>
@@ -54,37 +54,33 @@
       </div>
       <div class='row'>
         <p>
+          Enable Ghost Heat :(
+          <input data-original-title='Please note that Ghost Heat only works on linked-fire or Alpha, not on chain-fire' data-placement='right' data-toggle='tooltip' id='ghost_heat' type='checkbox'>
+          <span class='badge' id='ghost_heat_penalty'></span>
+        </p>
+        <p>
           <a class='btn btn-success' id='flush_coolant'>
             <span class='glyphicon glyphicon-tint'></span>
             Flush coolant
           </a>
         </p>
         <p>
-          Total Damage:
-          <a class=' btn-sm btn-danger' id='js-reset_damage'>
-            <span class='glyphicon glyphicon-fast-backward'></span>
-            <span id='damage'>
-              0
-            </span>
-          </a>
-        </p>
-        <p>
           Cooling time :
-          <span class='label label-info'>
+          <span class='badge'>
             <span id='cooldown_time'>0</span>
             sec
           </span>
         </p>
         <p>
           Cooling Rate :
-          <span class='label label-info'>
+          <span class='badge'>
             <span id='cool-rate'></span>
             heat/sec
           </span>
         </p>
         <p>
           Heat Threshold :
-          <span class='label label-info' id='heat-threshold'></span>
+          <span class='badge' id='heat-threshold'></span>
         </p>
         <p>
           Map list
@@ -119,16 +115,6 @@
           </div>
         </p>
         <hr>
-        <p>
-          Enable Ghost Heat :(
-          <input id='ghost_heat' type='checkbox'>
-          <span class='label label-danger' id='ghost_heat_penalty'></span>
-        </p>
-        <small>
-          <div class='alert alert-info'>
-            Please note that Ghost Heat only works on linked fire / Alpha, not on chainfire
-          </div>
-        </small>
         <hr>
         <p class='engines'>
           Engine Type
@@ -198,7 +184,7 @@
         </p>
         <p>
           Internal Heatsink Count
-          <span class='label label-success' id='internal-heatsinks'></span>
+          <span class='badge' id='internal-heatsinks'></span>
         </p>
         <p>
           External Heatsink Count
@@ -235,7 +221,7 @@
               <a class='js-strip btn-warning btn-sm' href='#'><span class='glyphicon glyphicon-remove'></span></a>
               <a class='js-weapon_group btn-info assigned btn-sm' data-weapon-group='1' href='#'><span class='glyphicon glyphicon-link'>1</span></a>
               <a class='js-weapon_group btn-default btn-sm' data-weapon-group='2' href='#'><span class='glyphicon glyphicon-link'>2</span></a>
-              <a class='js-weapon_group btn-default btn-sm' data-weapon-group='3' href='#'><span class='glyphicon glyphicon-link'>3</span></a>
+              <a class='js-with_tooltip js-weapon_group btn-default btn-sm' data-original-title='Click to assign to weapon group' data-placement='top' data-toggle='tooltip' data-weapon-group='3' href='#'><span class='glyphicon glyphicon-link'>3</span></a>
               Small Laser
             </div>
             <div class='col-lg-3 weapon-cooldown-container'>
@@ -280,38 +266,65 @@
           </div>
         </li>
       </ul>
-      <p>
-        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='1' href='#' id='wg1'>
-          <span class='glyphicon glyphicon-screenshot'></span>
-          Group 1
-        </a>
-        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='2' href='#' id='wg2'>
-          <span class='glyphicon glyphicon-screenshot'></span>
-          Group 2
-        </a>
-        <a class='js-fire_weapon_group btn btn-danger' data-activate-group='3' href='#' id='wg3'>
-          <span class='glyphicon glyphicon-screenshot'></span>
-          Group 3
-        </a>
-      </p>
-      <p>
-        <a class='btn btn-danger' href='#' id='js-alphastrike'>
-          <span class='glyphicon glyphicon-exclamation-sign'></span>
-          Alpha Strike
-        </a>
-        <a class='btn btn-warning' href='#' id='js-stripall'>
-          <span class='glyphicon glyphicon-trash'></span>
-          Strip All
-        </a>
-      </p>
+      <div class='row'>
+        <div class='col-lg-8 col-md-8 col-sm-8'>
+          <p>
+            <a class='js-with_tooltip js-fire_weapon_group btn btn-danger' data-activate-group='1' data-original-title='Click to fire weapon group' data-placement='left' data-toggle='tooltip' href='#' id='wg1'>
+              <span class='glyphicon glyphicon-screenshot'></span>
+              Group 1
+            </a>
+            <a class='js-fire_weapon_group btn btn-danger' data-activate-group='2' href='#' id='wg2'>
+              <span class='glyphicon glyphicon-screenshot'></span>
+              Group 2
+            </a>
+            <a class='js-fire_weapon_group btn btn-danger' data-activate-group='3' href='#' id='wg3'>
+              <span class='glyphicon glyphicon-screenshot'></span>
+              Group 3
+            </a>
+          </p>
+          <p>
+            <a class='btn btn-danger' href='#' id='js-alphastrike'>
+              <span class='glyphicon glyphicon-exclamation-sign'></span>
+              Alpha Strike
+            </a>
+            <a class='btn btn-warning' href='#' id='js-stripall'>
+              <span class='glyphicon glyphicon-trash'></span>
+              Strip All
+            </a>
+          </p>
+        </div>
+        <div class='col-lg-4 col-md-4 col-sm-4'>
+          <p class='text-right'>
+            Damage
+            <span class='badge badge-danger'>
+              <span id='damage'>
+                0
+              </span>
+            </span>
+          </p>
+          <p class='text-right'>
+            DPS
+            <span class='badge badge-danger'>
+              <span id='dps'>
+                0.00
+              </span>
+            </span>
+          </p>
+          <p class='text-right'>
+            <a class=' btn-xs btn-danger' id='js-reset_damage'>
+              Reset damage
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
     <div class='col-lg-3 armory col-md-3 col-sm-3' id='armory'>
       <h4>Energy</h4>
       <ul class='list-unstyled nav'>
         <li class='weapon-item'>
-          <a class='btn-sm btn-primary js-add-weapon' data-weapon-class='slas' data-weapon-name='Small Laser' href='#'>
+          <a class='js-with_tooltip btn-sm btn-primary js-add-weapon' data-original-title='Click to equip' data-placement='top' data-toggle='tooltip' data-weapon-class='slas' data-weapon-name='Small Laser' href='#'>
             <span class='glyphicon glyphicon-download-alt'></span>
-            Add Small Lasear
+            Add Small Laser
           </a>
         </li>
         <li class='weapon-item'>

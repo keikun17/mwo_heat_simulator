@@ -70,8 +70,8 @@
         });
         _.each($('.cooldown-meter'), this.armWeapon);
         return $("#js-reset_damage").click(function(e) {
-          mech.damage = 0;
-          return $('#damage').text(0);
+          window.mech.resetDamage();
+          return window.mech.dps.resetTimer();
         });
       },
       weaponCounts: function() {
@@ -233,7 +233,12 @@
       },
       damage: function(val) {
         mech.damage += val;
-        return $('#damage').text(mech.damage.toFixed(2));
+        $('#damage').text(mech.damage.toFixed(2));
+        if (!mech.dps.clock) {
+          console.log("called");
+          mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000);
+        }
+        return mech.dps.recompute();
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
