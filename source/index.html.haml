@@ -157,13 +157,13 @@
               .progress.horizontal
                 .progress-bar.progress-bar-success.cooldown-meter.llas-cooldown.quick-reset{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
       %p
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
+        %a#wg1{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
           %span.glyphicon.glyphicon-screenshot
           Group 1
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }
+        %a#wg2{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }
           %span.glyphicon.glyphicon-screenshot
           Group 2
-        %a{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 3} }
+        %a#wg3{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 3} }
           %span.glyphicon.glyphicon-screenshot
           Group 3
       %p
