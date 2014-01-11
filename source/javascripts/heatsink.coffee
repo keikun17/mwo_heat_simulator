@@ -7,9 +7,10 @@ $ ->
       coolant_el = '#flush_coolant'
       $(heatsink_display_el).on 'input', window.mech.refit
       $(heatsink_type_el).on 'change', window.mech.refit
-      $(coolant_el).on 'click', ->
+      $(coolant_el).on 'click', =>
         window.mech.setHeat(0)
-      
+        @exitOverheat()
+
       # enable tooltip
       $('#ghost_heat').tooltip('show')
 
@@ -79,10 +80,32 @@ $ ->
 
     coolDown: ->
       towards = @getCurrentHeat() - (@getCoolRate() * 100)
+
+
+      # do things when heat is present
       if @getCurrentHeat() > 0
+
+        # 1. cool the mech down
         window.mech.setHeat(towards)
         @timeToZero()
 
+        # 2. Overheat effect when overheated
+        if !$('body').hasClass('overheating') and @isOverheating()
+          @doOverheat()
+
+        else if $('body').hasClass('overheating') and !@isOverheating()
+          @exitOverheat()
+
+    isOverheating: ->
+      @getCurrentHeat() >= @getThreshold()
+
+    doOverheat: ->
+      $('body').addClass('overheating')
+      $('body').removeClass('cool')
+
+    exitOverheat: ->
+      $('body').removeClass('overheating')
+      $('body').addClass('cool')
 
     doTick: ->
       window.mech.heatsink.coolDown()

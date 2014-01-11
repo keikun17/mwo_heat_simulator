@@ -1,16 +1,9 @@
 @import 'bootstrap';
 @import 'compass/css3/filter';
+@import 'compass/css3/transition';
+
 
 @charset "utf-8";
-
-
-@mixin filter($filter-type,$filter-amount) { 
-  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
-  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
-  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
-  -o-filter: $filter-type+unquote('(#{$filter-amount})');
-  filter: $filter-type+unquote('(#{$filter-amount})');
-}
 
 h1 {
   color: #F1AC54;
@@ -23,7 +16,13 @@ body {
 }
 
 .overheating{
-  @include filter(sepia,100%);
+  @include transition(all, 0.8s);
+  @include filter(sepia(100%));
+}
+
+.cool{
+  @include transition(all, 0.8s);
+  @include filter(sepia(0%));
 }
 
 #heatmeter {
