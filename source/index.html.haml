@@ -25,20 +25,11 @@
         %p
           .progress.vertical.wide.bottom
             #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
-
       .row
         %p
           %a{id: 'flush_coolant', class: 'btn btn-success'}
             %span.glyphicon.glyphicon-tint
             Flush coolant
-
-        %p
-          Total Damage:
-          %a{id: 'js-reset_damage', class: ' btn-sm btn-danger'}
-            %span.glyphicon.glyphicon-fast-backward
-            %span#damage
-              0
-
 
         %p
           Cooling time :
@@ -104,6 +95,8 @@
 
     .col-lg-6.col-md-6.col-sm-6
       %h4 Equipped Weapons
+
+
       %ul.weapon-list.list-unstyled
         %li.equipped-weapon
           .row
@@ -156,23 +149,41 @@
             .col-lg-3.weapon-cooldown-container
               .progress.horizontal
                 .progress-bar.progress-bar-success.cooldown-meter.llas-cooldown.quick-reset{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
-      %p
-        %a#wg1{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
-          %span.glyphicon.glyphicon-screenshot
-          Group 1
-        %a#wg2{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }
-          %span.glyphicon.glyphicon-screenshot
-          Group 2
-        %a#wg3{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 3} }
-          %span.glyphicon.glyphicon-screenshot
-          Group 3
-      %p
-        %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' }
-          %span.glyphicon.glyphicon-exclamation-sign
-          Alpha Strike
-        %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' }
-          %span.glyphicon.glyphicon-trash
-          Strip All
+      .row
+        .col-lg-8.col-md-8.col-sm-8
+          %p
+            %a#wg1{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
+              %span.glyphicon.glyphicon-screenshot
+              Group 1
+            %a#wg2{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }
+              %span.glyphicon.glyphicon-screenshot
+              Group 2
+            %a#wg3{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 3} }
+              %span.glyphicon.glyphicon-screenshot
+              Group 3
+          %p
+            %a{href: '#', id: 'js-alphastrike', class: 'btn btn-danger' }
+              %span.glyphicon.glyphicon-exclamation-sign
+              Alpha Strike
+            %a{href: '#', id: 'js-stripall', class: 'btn btn-warning' }
+              %span.glyphicon.glyphicon-trash
+              Strip All
+
+        .col-lg-4.col-md-4.col-sm-4
+          %p.text-right
+            Damage
+            %span.badge.badge-danger
+              %span#damage
+                0
+          %p.text-right
+            DPS
+            %span.badge.badge-danger
+              %span#dps
+                0.00
+
+          %p.text-right
+            %a{id: 'js-reset_damage', class: ' btn-xs btn-danger'}
+              Reset damage
 
     .col-lg-3.armory.col-md-3.col-sm-3#armory
       = partial 'armory/weapons'
