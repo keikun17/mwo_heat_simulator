@@ -106,7 +106,7 @@
                 %span.glyphicon.glyphicon-link 1
               %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} }<
                 %span.glyphicon.glyphicon-link 2
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} }<
+              %a{href: '#', class: 'js-with_tooltip js-weapon_group btn-default btn-sm', data: {weapon_group: 3, toggle: 'tooltip', placement: 'top', 'original-title' => "Click to assign to weapon group"} }<
                 %span.glyphicon.glyphicon-link 3
               Small Laser
             .col-lg-3.weapon-cooldown-container
@@ -149,7 +149,7 @@
       .row
         .col-lg-8.col-md-8.col-sm-8
           %p
-            %a#wg1{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 1} }
+            %a#wg1{href: '#', class: 'js-with_tooltip js-fire_weapon_group btn btn-danger', data: {activate_group: 1, toggle: 'tooltip', placement: 'left', 'original_title' => "Click to fire weapon group"} }
               %span.glyphicon.glyphicon-screenshot
               Group 1
             %a#wg2{href: '#', class: 'js-fire_weapon_group btn btn-danger', data: {activate_group: 2} }

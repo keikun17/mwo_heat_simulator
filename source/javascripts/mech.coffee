@@ -16,6 +16,9 @@ $ ->
       window.skills.init()
       window.map.init()
       window.persistence.init()
+
+      # Show tooltips
+      $('.js-with_tooltip').tooltip('show')
       @refit()
 
     heatsink: window.heatsink
