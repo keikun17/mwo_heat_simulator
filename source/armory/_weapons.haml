@@ -1,9 +1,9 @@
 %h4 Energy
 %ul.list-unstyled.nav
   %li.weapon-item
-    %a{href: '#', class: 'btn-sm btn-primary js-add-weapon', data: { weapon_name: 'Small Laser', weapon_class: 'slas' }}
+    %a#first-weapon{href: '#', class: 'btn-sm btn-primary js-add-weapon', data: { weapon_name: 'Small Laser', weapon_class: 'slas', toggle: 'tooltip', placement: 'top', 'original-title' => "Click to equip"}}
       %span.glyphicon.glyphicon-download-alt
-      Add Small Lasear
+      Add Small Laser
   %li.weapon-item
     %a{href: '#', class: 'btn-sm btn-primary js-add-weapon', data: { weapon_name: 'Medium Laser', weapon_class: 'mlas' }}
       %span.glyphicon.glyphicon-download-alt

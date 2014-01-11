@@ -16,7 +16,7 @@
         .row
           .col-lg-12
             Share this build:
-            %span= link_to 'Right click and copy this link', '/', id: 'permalink', class: 'btn btn-success'
+            %span= link_to 'Right click and copy this link', '/', id: 'permalink', class: 'btn btn-success', data: {toggle: 'tooltip', placement: 'right', 'original-title' => 'Autosaved as you go'}
 
   .row
     .col-lg-3.col-md-3.col-sm-3
@@ -26,6 +26,11 @@
           .progress.vertical.wide.bottom
             #heatlevel.progress-bar.progress-bar-danger{aria: { valuemax: 3000 }}
       .row
+        %p
+          Enable Ghost Heat :(
+          %input{type: 'checkbox', id:'ghost_heat', data: {toggle: 'tooltip', placement: 'right', 'original-title' => 'Please note that Ghost Heat only works on linked-fire or Alpha, not on chain-fire'}}
+          %span.badge{id: 'ghost_heat_penalty'}
+
         %p
           %a{id: 'flush_coolant', class: 'btn btn-success'}
             %span.glyphicon.glyphicon-tint
@@ -53,14 +58,6 @@
 
         %hr
 
-        %p
-          Enable Ghost Heat :(
-          %input{type: 'checkbox', id:'ghost_heat'}
-          %span.label.label-danger{id: 'ghost_heat_penalty'}
-
-        %small
-          .alert.alert-info
-            Please note that Ghost Heat only works on linked fire / Alpha, not on chainfire
 
         %hr
 

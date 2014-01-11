@@ -9,6 +9,9 @@ $ ->
       $(heatsink_type_el).on 'change', window.mech.refit
       $(coolant_el).on 'click', ->
         window.mech.setHeat(0)
+      
+      # enable tooltip
+      $('#ghost_heat').tooltip('show')
 
       @runTicker()
 

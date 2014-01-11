@@ -4,6 +4,9 @@ $ ->
     init: ->
       window.persistence.resetLoadoutFromParams()
 
+      # Show tooltip
+      $('#permalink').tooltip('show')
+
     resetEngineFromParams: ->
 
     resetLoadoutFromParams: ->

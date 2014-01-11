@@ -23,6 +23,8 @@ $ ->
         window.persistence.rebuildPermalink()
         false
 
+      # Show tooltip
+      $('#first-weapon').tooltip('show')
       # Fire all Weapons
       $("#js-alphastrike").click ->
         grouped_weapons = $(".js-fire.ready")
