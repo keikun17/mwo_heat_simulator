@@ -12520,14 +12520,16 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   $(function() {
     return window.heatsink = {
       init: function() {
-        var coolant_el, heatsink_display_el, heatsink_type_el;
+        var coolant_el, heatsink_display_el, heatsink_type_el,
+          _this = this;
         heatsink_display_el = '#heatsink-count';
         heatsink_type_el = '#heatsink_type';
         coolant_el = '#flush_coolant';
         $(heatsink_display_el).on('input', window.mech.refit);
         $(heatsink_type_el).on('change', window.mech.refit);
         $(coolant_el).on('click', function() {
-          return window.mech.setHeat(0);
+          window.mech.setHeat(0);
+          return _this.exitOverheat();
         });
         $('#ghost_heat').tooltip('show');
         return this.runTicker();
@@ -12615,8 +12617,24 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         towards = this.getCurrentHeat() - (this.getCoolRate() * 100);
         if (this.getCurrentHeat() > 0) {
           window.mech.setHeat(towards);
-          return this.timeToZero();
+          this.timeToZero();
+          if (!$('body').hasClass('overheating') && this.isOverheating()) {
+            return this.doOverheat();
+          } else if ($('body').hasClass('overheating') && !this.isOverheating()) {
+            return this.exitOverheat();
+          }
         }
+      },
+      isOverheating: function() {
+        return this.getCurrentHeat() >= this.getThreshold();
+      },
+      doOverheat: function() {
+        $('body').addClass('overheating');
+        return $('body').removeClass('cool');
+      },
+      exitOverheat: function() {
+        $('body').removeClass('overheating');
+        return $('body').addClass('cool');
       },
       doTick: function() {
         return window.mech.heatsink.coolDown();
@@ -13167,7 +13185,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         window.map.init();
         window.persistence.init();
         $('.js-with_tooltip').tooltip('show');
-        return this.refit();
+        return setTimeout((function() {
+          return $('.js-with_tooltip').tooltip('hide');
+        }), 10000);
       },
       heatsink: window.heatsink,
       engine: window.engine,

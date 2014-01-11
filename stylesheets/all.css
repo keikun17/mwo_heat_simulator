@@ -7129,42 +7129,62 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-/* line 5, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 8, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 h1 {
   color: #F1AC54; }
 
-/* line 9, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 body {
   background: #d4d4d4 url("../images/tweed.png");
   color: #FFF;
   font-family: sans-serif; }
 
-/* line 14, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 18, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+.overheating {
+  -webkit-transition: all, 0.8s;
+  -moz-transition: all, 0.8s;
+  -o-transition: all, 0.8s;
+  transition: all, 0.8s;
+  -webkit-filter: sepia(100%);
+  -moz-filter: sepia(100%);
+  filter: sepia(100%); }
+
+/* line 23, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+.cool {
+  -webkit-transition: all, 0.8s;
+  -moz-transition: all, 0.8s;
+  -o-transition: all, 0.8s;
+  transition: all, 0.8s;
+  -webkit-filter: sepia(0%);
+  -moz-filter: sepia(0%);
+  filter: sepia(0%); }
+
+/* line 28, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 #heatmeter {
   padding: 0 15px 0 15px; }
 
-/* line 18, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 32, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 li.weapon-item {
   padding-bottom: 2px; }
 
-/* line 22, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 36, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .progress.wide {
   width: 60px; }
 
-/* line 26, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 40, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .progress.vertical {
   height: 188px; }
 
-/* line 30, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 44, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .equipped-weapon {
   /* border: 1px solid white; */
   padding: 3px 0 3px 0; }
 
-/* line 36, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 50, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 li.weapon-item a:hover {
   background-color: #539627; }
 
-/* line 41, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+/* line 55, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .progress.horizontal {
   margin-bottom: 0px; }
 /* line 14, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
