@@ -52,36 +52,39 @@
           Heat Threshold :
           %span#heat-threshold.badge
 
+        %hr
 
         %p
           = partial 'armory/map'
 
-        .engines
+        %p.engines
           = partial 'armory/engines'
 
-        %div
-          Internal Heatsink Count
-          %span#internal-heatsinks.badge
-
-        %div
-          External Heatsink Count
-          %input{type: 'text', id: 'heatsink-count', size: 2, value: 0}
-
-        %div
+        %p
           Heatsink Type
           %select#heatsink_type
             %option{value: 'single'} Single
             %option{value: 'double'} Double
 
-        %div
+        %p
+          External Heatsink Count
+          %input{type: 'text', id: 'heatsink-count', size: 2, value: 0}
+
+        %p
+          Internal Heatsink Count
+          %span#internal-heatsinks.badge
+
+
+        %hr
+        %p
           Cool Run Skill
           %input{type: 'checkbox', id:'skill_coolrun'}
 
-        %div
+        %p
           Heat Containment Skill
           %input{type: 'checkbox', id:'skill_containment'}
 
-        %div
+        %p
           Elite Mech
           %input{type: 'checkbox', id:'skill_elite'}
 
