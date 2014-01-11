@@ -36,19 +36,19 @@
             %span.glyphicon.glyphicon-tint
             Flush coolant
 
-        %p
+        %div
           Cooling time :
           %span.badge
             %span#cooldown_time 0
             sec
 
-        %p
+        %div
           Cooling Rate :
           %span.badge
             %span#cool-rate
             heat/sec
 
-        %p
+        %div
           Heat Threshold :
           %span#heat-threshold.badge
 
@@ -56,37 +56,32 @@
         %p
           = partial 'armory/map'
 
-        %hr
-
-
-        %hr
-
-        %p.engines
+        .engines
           = partial 'armory/engines'
 
-        %p
+        %div
           Internal Heatsink Count
           %span#internal-heatsinks.badge
 
-        %p
+        %div
           External Heatsink Count
           %input{type: 'text', id: 'heatsink-count', size: 2, value: 0}
 
-        %p
+        %div
           Heatsink Type
           %select#heatsink_type
             %option{value: 'single'} Single
             %option{value: 'double'} Double
 
-        %p
+        %div
           Cool Run Skill
           %input{type: 'checkbox', id:'skill_coolrun'}
 
-        %p
+        %div
           Heat Containment Skill
           %input{type: 'checkbox', id:'skill_containment'}
 
-        %p
+        %div
           Elite Mech
           %input{type: 'checkbox', id:'skill_elite'}
 
