@@ -82,8 +82,8 @@ $ ->
       _.each $('.cooldown-meter'), @armWeapon
 
       $("#js-reset_damage").click (e) ->
-        mech.damage = 0
-        $('#damage').text(0)
+        window.mech.resetDamage()
+        window.mech.dps.resetTimer()
 
     weaponCounts: ->
       counter = {}
@@ -228,6 +228,12 @@ $ ->
     damage: (val) ->
       mech.damage += val
       $('#damage').text(mech.damage.toFixed(2))
+
+      if !mech.dps.clock
+        console.log("called")
+        mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000)
+
+      mech.dps.recompute()
 
     fireWeapon: (event) ->
       # console.log('fire')

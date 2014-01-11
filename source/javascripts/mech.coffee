@@ -37,6 +37,27 @@ $ ->
 
     resetDamage: ->
       mech.damage = 0
+      $('#damage').text(0)
+
+    dpsUptime: 0
+
+    dps:
+      uptime: 0
+      value: 0
+
+      incrementTimer: ->
+        mech.dps.uptime = mech.dps.uptime + 1
+        mech.dps.recompute()
+
+      resetTimer: ->
+        mech.dps.value = 0
+        mech.dps.uptime = 0
+        mech.dps.clock = clearInterval(mech.dps.clock)
+        $('#dps').text('0.00')
+
+      recompute: =>
+        mech.dps.value = mech.damage / mech.dps.uptime
+        $('#dps').text(mech.dps.value.toFixed(2))
 
     setHeat: (heatlevel) ->
       $("#heatlevel").attr "aria-valuetransitiongoal", heatlevel
