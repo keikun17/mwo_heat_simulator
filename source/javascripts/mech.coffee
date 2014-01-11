@@ -19,7 +19,11 @@ $ ->
 
       # Show tooltips
       $('.js-with_tooltip').tooltip('show')
-      @refit()
+
+      # And hide them after 10 seconds
+      setTimeout ( ->
+        $('.js-with_tooltip').tooltip('hide')
+      ), 10000
 
     heatsink: window.heatsink
 
