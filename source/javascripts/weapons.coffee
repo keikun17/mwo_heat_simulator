@@ -142,7 +142,7 @@ $ ->
         heat: 5
         damage: 6
       lplas:
-        heat: 8.5
+        heat: 8.0
         multiplier: 2.8
         damage: 10.60
       ppc:
