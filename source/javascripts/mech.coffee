@@ -14,8 +14,8 @@ $ ->
       window.weapons.init()
       window.engine.init()
       window.skills.init()
-      window.map.init()
       window.persistence.init()
+      window.map.init()
 
       # Show tooltips
       $('.js-with_tooltip').tooltip('show')
