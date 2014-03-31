@@ -664,8 +664,8 @@
         window.weapons.init();
         window.engine.init();
         window.skills.init();
-        window.map.init();
         window.persistence.init();
+        window.map.init();
         $('.js-with_tooltip').tooltip('show');
         return setTimeout((function() {
           return $('.js-with_tooltip').tooltip('hide');
