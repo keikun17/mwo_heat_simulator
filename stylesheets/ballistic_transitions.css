@@ -1,16 +1,16 @@
 /* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac2-cooldown {
-  -webkit-transition: width 0.52s ease-in-out;
-  -moz-transition: width 0.52s ease-in-out;
-  -o-transition: width 0.52s ease-in-out;
-  transition: width 0.52s ease-in-out; }
+  -webkit-transition: width 0.669s ease-in-out;
+  -moz-transition: width 0.669s ease-in-out;
+  -o-transition: width 0.669s ease-in-out;
+  transition: width 0.669s ease-in-out; }
 
 /* line 16, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac5-cooldown {
-  -webkit-transition: width 1.5s ease-in-out;
-  -moz-transition: width 1.5s ease-in-out;
-  -o-transition: width 1.5s ease-in-out;
-  transition: width 1.5s ease-in-out; }
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
 
 /* line 20, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac10-cooldown {

@@ -7258,17 +7258,17 @@ li.weapon-item a:hover {
   transition: width 0.1s ease-in-out; }
 /* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac2-cooldown {
-  -webkit-transition: width 0.52s ease-in-out;
-  -moz-transition: width 0.52s ease-in-out;
-  -o-transition: width 0.52s ease-in-out;
-  transition: width 0.52s ease-in-out; }
+  -webkit-transition: width 0.669s ease-in-out;
+  -moz-transition: width 0.669s ease-in-out;
+  -o-transition: width 0.669s ease-in-out;
+  transition: width 0.669s ease-in-out; }
 
 /* line 16, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac5-cooldown {
-  -webkit-transition: width 1.5s ease-in-out;
-  -moz-transition: width 1.5s ease-in-out;
-  -o-transition: width 1.5s ease-in-out;
-  transition: width 1.5s ease-in-out; }
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
 
 /* line 20, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
 .progress-bar.ac10-cooldown {
@@ -7311,56 +7311,56 @@ li.weapon-item a:hover {
   -moz-transition: width 0.01s ease-in-out;
   -o-transition: width 0.01s ease-in-out;
   transition: width 0.01s ease-in-out; }
-/* line 14, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.lrm5-cooldown {
   -webkit-transition: width 3.25s ease-in-out;
   -moz-transition: width 3.25s ease-in-out;
   -o-transition: width 3.25s ease-in-out;
   transition: width 3.25s ease-in-out; }
 
-/* line 18, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 16, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.lrm10-cooldown {
   -webkit-transition: width 3.75s ease-in-out;
   -moz-transition: width 3.75s ease-in-out;
   -o-transition: width 3.75s ease-in-out;
   transition: width 3.75s ease-in-out; }
 
-/* line 22, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 20, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.lrm15-cooldown {
   -webkit-transition: width 4.25s ease-in-out;
   -moz-transition: width 4.25s ease-in-out;
   -o-transition: width 4.25s ease-in-out;
   transition: width 4.25s ease-in-out; }
 
-/* line 26, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 24, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.lrm20-cooldown {
   -webkit-transition: width 4.75s ease-in-out;
   -moz-transition: width 4.75s ease-in-out;
   -o-transition: width 4.75s ease-in-out;
   transition: width 4.75s ease-in-out; }
 
-/* line 30, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 28, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.srm2-cooldown {
-  -webkit-transition: width 2.5s ease-in-out;
-  -moz-transition: width 2.5s ease-in-out;
-  -o-transition: width 2.5s ease-in-out;
-  transition: width 2.5s ease-in-out; }
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out; }
 
-/* line 34, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 32, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.srm4-cooldown {
-  -webkit-transition: width 3.25s ease-in-out;
-  -moz-transition: width 3.25s ease-in-out;
-  -o-transition: width 3.25s ease-in-out;
-  transition: width 3.25s ease-in-out; }
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
 
-/* line 38, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 36, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.srm6-cooldown {
   -webkit-transition: width 4s ease-in-out;
   -moz-transition: width 4s ease-in-out;
   -o-transition: width 4s ease-in-out;
   transition: width 4s ease-in-out; }
 
-/* line 42, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
+/* line 40, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
 .progress-bar.ssrm2-cooldown {
   -webkit-transition: width 3.5s ease-in-out;
   -moz-transition: width 3.5s ease-in-out;
