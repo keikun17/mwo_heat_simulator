@@ -12777,7 +12777,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
           damage: 3.40
         },
         mplas: {
-          heat: 5,
+          heat: 4.6,
           damage: 6
         },
         lplas: {
@@ -12855,17 +12855,17 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         srm2: {
           heat: 2,
           multiplier: 1,
-          damage: 4
+          damage: 4.3
         },
         srm4: {
           heat: 3,
           multiplier: 1,
-          damage: 8
+          damage: 8.6
         },
         srm6: {
           heat: 4,
           multiplier: 1,
-          damage: 12
+          damage: 12.9
         },
         ssrm2: {
           heat: 2,
