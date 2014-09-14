@@ -187,7 +187,13 @@
               Reset damage
 
     .col-lg-3.armory.col-md-3.col-sm-3#armory
-      = partial 'armory/weapons'
+      Weapon List
+      %input{type: 'checkbox', name: 'weapon_switcher', value: 'is'}
+
+      #innersphere_weapons
+        = partial 'armory/is_weapons'
+      #clan_weapons
+        = partial 'armory/clan_weapons'
 
 .footer.text-center
   This thing ©2014 keikun17. Say Hello to me in-game @ 'Marthe Pryde'.
