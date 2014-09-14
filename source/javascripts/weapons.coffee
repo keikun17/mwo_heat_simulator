@@ -160,102 +160,102 @@ $ ->
 
       # Energy Weapons
       slas:
-        heat: 2
         damage: 3
+        heat: 2
       mlas:
+        damage: 5
         heat: 4
         multiplier: 1
-        damage: 5
       llas:
+        damage: 9
         heat: 7
         multiplier: 2.8
-        damage: 9
       ellas:
+        damage: 9
         heat: 8.5
         multiplier: 2.8
-        damage: 9
       splas:
-        heat: 2.4
         damage: 3.40
+        heat: 2.4
       mplas:
-        heat: 4.6
         damage: 6
+        heat: 4.6
       lplas:
+        damage: 10.60
         heat: 8.0
         multiplier: 2.8
-        damage: 10.60
       ppc:
+        damage: 10
         heat: 10
         multiplier: 7.0
-        damage: 10
       eppc:
+        damage: 10
         heat: 15
         multiplier: 4.5
-        damage: 10
       flam:
-        heat: 1
         damage: .7
+        heat: 1
 
       # Balistic Weapons
       ac2:
+        damage: 2
         heat: 1
         multiplier: 0.6
-        damage: 2
       ac5:
-        heat: 1
         damage: 5
+        heat: 1
       ac10:
-        heat: 3
         damage: 10
+        heat: 3
       ac20:
+        damage: 20
         heat: 6
         multiplier: 24
-        damage: 20
       uac5:
-        heat: 1
         damage: 5
-      lb10x:
-        heat: 2
-        damage: 10
-      gauss:
         heat: 1
+      lb10x:
+        damage: 10
+        heat: 2
+      gauss:
         damage: 15
+        heat: 1
       mg:
-        heat: 0
         damage: 0.1
+        heat: 0
 
       # Missile
       lrm5:
-        heat: 2
         damage: 5.50
+        heat: 2
       lrm10:
+        damage: 11
         heat: 4
         multiplier: 2.8
-        damage: 11
       lrm15:
+        damage: 16.50
         heat: 5
         multiplier: 2.8
-        damage: 16.50
       lrm20:
+        damage: 22.0
         heat: 6
         multiplier: 2.8
-        damage: 22.0
       srm2:
+        damage: 4.3
         heat: 2
         multiplier: 1
-        damage: 4.3
       srm4:
+        damage: 8.6
         heat: 3
         multiplier: 1
-        damage: 8.6
       srm6:
+        damage: 12.9
         heat: 4
         multiplier: 1
-        damage: 12.9
       ssrm2:
+        damage: 5
         heat: 2
         multiplier: 1
-        damage: 5
 
       # ----------------------------------------------
       # Clans
