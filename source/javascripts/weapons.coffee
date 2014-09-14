@@ -154,6 +154,10 @@ $ ->
     # NOTE ABOUT COOLDOWN TIMES : it's in the weapon_cooldown.scss
     weaponStats:
 
+      # ----------------------------------------------
+      # Inner Sphere
+      # ----------------------------------------------
+
       # Energy Weapons
       slas:
         heat: 2
@@ -253,7 +257,116 @@ $ ->
         multiplier: 1
         damage: 5
 
+      # ----------------------------------------------
+      # Clans
+      # ----------------------------------------------
 
+      # Energy Weapons
+      ceslas:
+        damage: 4
+        heat: 3
+      cemlas:
+        damage: 7
+        heat: 6
+      cellas:
+        damage: 11
+        heat: 10
+      csplas:
+        damage: 4.40
+        heat: 3.4
+      cmplas:
+        damage: 7.4
+        heat: 6
+      clplas:
+        damage: 11.6
+        heat: 9
+      ceppc:
+        damage: 15
+        heat: 15
+      cflam:
+        damage: .7
+        heat: .6
+
+      # Balistic Weapons
+      cac2:
+        damage: 2
+        heat: 1
+      cac5:
+        damage: 5
+        heat: 1
+      cac10:
+        damage: 10
+        heat: 2
+      cac20:
+        damage: 20
+        heat: 6
+
+      cuac2:
+        damage: 2
+        heat: 1
+      cuac5:
+        damage: 5
+        heat: 1
+      cuac10:
+        damage: 10
+        heat: 3
+      cuac20:
+        damage: 20
+        heat: 6
+
+      clb2x:
+        damage: 2
+        heat: 1
+      clb5x:
+        damage: 5
+        heat: 1
+      clb10x:
+        damage: 10
+        heat: 2
+      clb20x:
+        damage: 20
+        heat: 6
+
+      cgauss:
+        damage: 15
+        heat: 1
+      cmg:
+        damage: 0.08
+        heat: 0
+
+      # Missile
+      clrm5:
+        damage: 5.50
+        heat: 2
+      clrm10:
+        damage: 11
+        heat: 4
+      clrm15:
+        damage: 16.50
+        heat: 5
+      clrm20:
+        damage: 22.0
+        heat: 6
+
+      csrm2:
+        damage: 4
+        heat: 2
+      csrm4:
+        damage: 8
+        heat: 3
+      csrm6:
+        damage: 12
+        heat: 4
+
+      cssrm2:
+        damage: 4
+        heat: 2
+      cssrm4:
+        damage: 8
+        heat: 3
+      cssrm6:
+        damage: 12
+        heat: 4
 
     shoot: (val) ->
       val = val * 100
