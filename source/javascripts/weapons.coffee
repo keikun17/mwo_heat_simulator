@@ -193,8 +193,8 @@ $ ->
         multiplier: 4.5
         damage: 10
       flam:
-        heat: .6
-        damage: 0.70
+        heat: 1
+        damage: .7
 
       # Balistic Weapons
       ac2:
