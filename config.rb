@@ -70,5 +70,12 @@ configure :build do
   set :relative_links, true
 end
 
+activate :jasmine do |options|
+  # options.fixtures_dir = "spec/javascripts/fixtures"
+  options.jasmine_url  = "/jasmine"
+  # options.config_file  = "spec/config.yml
+  # options.debug_assets = false
+end
+
 sprockets.append_path File.join "#{root}", 'source/components'
 
