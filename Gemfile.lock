@@ -90,7 +90,7 @@ GEM
       sprockets-sass (~> 1.0.0)
     mime-types (2.3)
     multi_json (1.8.1)
-    mwo (0.0.2)
+    mwo (0.0.3)
     netrc (0.7.7)
     pry (0.10.1)
       coderay (~> 1.1.0)
