@@ -1,11 +1,10 @@
-Dir[Dir.pwd + "/utils/**/*.rb"].each { |f| require f }
-
-
 require 'rspec/collection_matchers'
 
 require 'pry'
-require 'mwo'
 require 'vcr'
+require './utils/utils'
+
+# Dir[Dir.pwd + "/utils/**/*.rb"].each { |f| require f }
 
 VCR.configure do |vcr|
   vcr.cassette_library_dir = 'fixtures/cassettes'
