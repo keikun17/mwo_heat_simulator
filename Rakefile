@@ -1,10 +1,8 @@
 require 'middleman-gh-pages'
 
-begin
-  require 'jasmine'
-  load 'jasmine/tasks/jasmine.rake'
-rescue LoadError
-  task :jasmine do
-    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
-  end
+# Default directory to look in is `/specs`
+# Run with `rake spec`
+RSpec::Core::RakeTask.new(:spec) do |task|
+  task.rspec_opts = ['--color', '--format', 'documentation']
 end
+
