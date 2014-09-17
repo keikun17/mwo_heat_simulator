@@ -12,7 +12,7 @@ describe WeaponExtractor do
     context "payload are weapons and the format is yaml" do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
       let(:format) {:yaml}
-      let(:payload) { described_class.pre_format(described_class.get_json, format: format) }
+      let(:payload) { described_class.pre_format(described_class.get_json, format) }
 
       it "extracts to file" do
         described_class.write(filepath, payload)
@@ -20,6 +20,12 @@ describe WeaponExtractor do
 
         f = File.read(filepath)
         expect(f).to_not be_empty
+        expect(YAML.load(f)).
+          to include(
+            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
+            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
+            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+        )
       end
 
     end
@@ -44,7 +50,12 @@ describe WeaponExtractor do
     context "Format is yaml" do
       let(:format) { :yaml }
       it "should be a yaml file" do
-        expect(YAML.load(subject)).to_not be_empty
+        expect(YAML.load(subject)).
+          to include(
+            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
+            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
+            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+        )
       end
     end
   end
