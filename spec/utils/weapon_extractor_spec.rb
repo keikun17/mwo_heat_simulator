@@ -9,9 +9,9 @@ describe WeaponExtractor do
   end
 
   describe ".write(filepath)", vcr: {cassette_name: 'load_weapons_2' } do
-    context "payload are weapons and the format is yaml" do
+    context "payload are weapons and the format is json" do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
-      let(:format) {:yaml}
+      let(:format) {:json}
       let(:payload) { described_class.pre_format(described_class.get_json, format) }
 
       it "extracts to file" do
@@ -20,11 +20,11 @@ describe WeaponExtractor do
 
         f = File.read(filepath)
         expect(f).to_not be_empty
-        expect(YAML.load(f)).
+        expect(JSON.parse(f)).
           to include(
-            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
-            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
-            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2}},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6}}
         )
       end
 
