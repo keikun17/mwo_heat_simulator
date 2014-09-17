@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe WeaponExtractor do
 
-  describe ".get_json(filepath)", vcr: {cassette_name: 'load_weapons'} do
+  describe ".get_json", vcr: {cassette_name: 'load_weapons'} do
     it "extracts to file" do
       expect(described_class.get_json).to_not be_empty
     end
