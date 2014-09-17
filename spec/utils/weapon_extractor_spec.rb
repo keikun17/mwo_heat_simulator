@@ -26,6 +26,14 @@ describe WeaponExtractor do
             {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2}},
             {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6}}
         )
+
+        # a failing example just to see that the above assertion is working
+        expect(JSON.parse(f)).
+          to_not include(
+            {"1004" => {'name' => 'DildoBeam', 'damage' => 20, 'heat' => 6}},
+            {"100j" => {'name' => 'Aidsmissile', 'damage' => 3, 'heat' => 2}},
+            {"1203" => {'name' => 'Pewpew', 'damage' => 20, 'heat' => 6}}
+        )
       end
 
     end

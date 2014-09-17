@@ -15,16 +15,16 @@ class WeaponExtractor
 
   def self.pre_format(weapons_json_collection, format = :hash)
 
-    weapons = get_json.collect do |weapon|
+    weapons = {}
+    get_json.each do |weapon|
       damage = weapon.damage
       damage = weapon.damage * weapon.num_per_shot if weapon.num_per_shot
-      {
-        weapon.weapon_id.to_s => {
-          name: weapon.name,
-          damage: damage,
-          heat: weapon.heat
-        }
+      weapons[weapon.weapon_id.to_s] = {
+        name: weapon.name,
+        damage: damage,
+        heat: weapon.heat
       }
+
     end
 
     formatted_weapons = case format
