@@ -8,13 +8,21 @@ describe WeaponExtractor do
     end
   end
 
-  describe ".write(filepath)" do
-    let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
+  describe ".write(filepath)", vcr: {cassette_name: 'load_weapons_2' } do
+    context "payload are weapons and the format is yaml" do
+      let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
+      let(:format) {:yaml}
+      let(:payload) { described_class.pre_format(described_class.get_json, format: format) }
 
-    it "extracts to file" # do
-    #   expect(File.exists?(filepath)).to eq(false)
-    #   expect(described_class.get_json(filepath)).to_not be_empty
-    # end
+      it "extracts to file" do
+        described_class.write(filepath, payload)
+        expect(File.exists?(filepath)).to eq(true)
+
+        f = File.read(filepath)
+        expect(f).to_not be_empty
+      end
+
+    end
   end
 
   describe ".pre_format", vcr: {cassette_name: 'load_weapons_2'} do

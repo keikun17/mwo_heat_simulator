@@ -1,5 +1,12 @@
 class WeaponExtractor
   def self.write(filepath, payload)
+    dir = filepath.split('/')
+    dir.pop
+    dir = dir.join('/')
+
+    Dir.mkdir(dir) unless Dir.exists?(dir)
+    FileUtils.rm(filepath) if File.exists?(filepath)
+    File.write(filepath, payload)
   end
 
   def self.get_json
