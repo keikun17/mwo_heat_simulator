@@ -29,7 +29,7 @@ $ ->
 
     # Returns the total heat penalty for the list of weapons fired
     # Parameters: (list, group, max_alpha)
-    #   list - an array of dom elements with weaponClass data attribute
+    #   list - an array of dom elements with weaponId data attribute
     #          that represents the weapons fired
     #   group - the weapon group that has linked ghost heat, should be in ascending
     #          order of the ghost heat of the weapons (e.g. ['lrm10', 'lrm15', lrm20'])
@@ -43,7 +43,7 @@ $ ->
       link_fired = []
 
       _.each group, (element) =>
-        link_fired = link_fired.concat list.filter("[data-weapon-class='#{element}']").toArray()
+        link_fired = link_fired.concat list.filter("[data-weapon-id='#{element}']").toArray()
 
 
 
@@ -57,8 +57,8 @@ $ ->
           weapon_position = index + 1 + max_alpha
           element = $(element)
 
-          base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat
-          multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier
+          base_heat = window.mech.weapons.weaponStats[element.data('weaponId')].heat
+          multiplier = window.mech.weapons.weaponStats[element.data('weaponId')].multiplier
 
           heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position)
 
@@ -69,7 +69,7 @@ $ ->
 
     # Returns the total heat penalty for the list of weapons fired
     # Parameters:
-    #   list - an array of dom elements with weaponClass data attribute
+    #   list - an array of dom elements with weaponId data attribute
     #          that represents the weapons fired
     computeTotalPenalty: (list) ->
       list = $(list)

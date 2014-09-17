@@ -40,11 +40,11 @@ $ ->
 
       # Equip weapons
       $(".armory").on "click", ".js-add-weapon", ->
-        weaponClass = $(this).data("weaponClass")
+        weaponId = $(this).data("weaponId")
         weaponName = $(this).data("weaponName")
         html = weaponView(
           name: weaponName
-          weaponClass: weaponClass
+          weaponId: weaponId
         )
 
         # Append the equipped weapon dom tree
@@ -124,7 +124,7 @@ $ ->
       counter = {}
 
       _.each $('.js-fire'), (element) ->
-        weapon = $(element).data('weapon-class')
+        weapon = $(element).data('weapon-id')
 
         if counter[weapon] == undefined
           counter[weapon] = 0
@@ -387,7 +387,7 @@ $ ->
 
     fireWeapon: (event) ->
       # console.log('fire')
-      weapon_name = $(this).data("weaponClass")
+      weapon_name = $(this).data("weaponId")
       stats = mech.weapons.weaponStats[weapon_name]
 
       window.weapons.shoot(stats.heat)

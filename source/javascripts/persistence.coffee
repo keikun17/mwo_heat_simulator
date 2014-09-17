@@ -14,7 +14,7 @@ $ ->
       url_params = url.param()
 
       # Reset weapon
-      weapon_params =  _.intersection(Object.keys(url_params), Object.keys(window.mech.weapons.weaponStats))
+      weapon_params =  _.intersection(Object.keys(url_params), Object.keys(window.weaponsList))
 
       if weapon_params.length > 0
         $('#js-stripall').click()
@@ -26,7 +26,7 @@ $ ->
           # console.log "count #{count}"
 
           _(count).times ->
-            $('#armory').find("a[data-weapon-class='#{val}']").click()
+            $('#armory').find("a[data-weapon-id='#{val}']").click()
 
       # Reset Heatsink
       heatsink_count = url.param('hs')
