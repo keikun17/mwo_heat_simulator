@@ -22,17 +22,17 @@ describe WeaponExtractor do
         expect(f).to_not be_empty
         expect(JSON.parse(f)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2}},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil}},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil}}
         )
 
         # a failing example just to see that the above assertion is working
         expect(JSON.parse(f)).
           to_not include(
-            {"1004" => {'name' => 'DildoBeam', 'damage' => 20, 'heat' => 6}},
-            {"100j" => {'name' => 'Aidsmissile', 'damage' => 3, 'heat' => 2}},
-            {"1203" => {'name' => 'Pewpew', 'damage' => 20, 'heat' => 6}}
+            {"1000" => {'name' => 'Pewpew', 'damage' => 20, 'heat' => 6, 'multiplier' => 24}},
+            {"1003" => {'name' => 'broom', 'damage' => 3, 'heat' => 2, 'multiplier' => nil}},
+            {"1203" => {'name' => 'blambo', 'damage' => 20, 'heat' => 6, 'multiplier' => nil}}
         )
       end
 
@@ -48,9 +48,9 @@ describe WeaponExtractor do
       it "formats the weapon data" do
         expect(subject).
           to include(
-            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
-            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
-            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24}},
+            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil}},
+            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6, :multiplier => nil}}
         )
       end
     end
@@ -60,9 +60,9 @@ describe WeaponExtractor do
       it "should be yaml" do
         expect(YAML.load(subject)).
           to include(
-            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
-            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
-            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24}},
+            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil}},
+            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6, :multiplier => nil}}
         )
       end
     end
@@ -72,9 +72,9 @@ describe WeaponExtractor do
       it "should be json" do
         expect(JSON.parse(subject)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2}},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil}},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil}}
         )
       end
     end

@@ -22,7 +22,8 @@ class WeaponExtractor
       weapons[weapon.weapon_id.to_s] = {
         name: weapon.name,
         damage: damage,
-        heat: weapon.heat
+        heat: weapon.heat,
+        multiplier: weapon.heatpenalty
       }
 
     end
