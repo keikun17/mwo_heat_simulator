@@ -49,12 +49,24 @@ describe WeaponExtractor do
 
     context "Format is yaml" do
       let(:format) { :yaml }
-      it "should be a yaml file" do
+      it "should be yaml" do
         expect(YAML.load(subject)).
           to include(
             {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
             {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
             {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+        )
+      end
+    end
+
+    context "Format is json" do
+      let(:format) { :json }
+      it "should be json" do
+        expect(JSON.parse(subject)).
+          to include(
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2}},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6}}
         )
       end
     end
