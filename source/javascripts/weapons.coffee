@@ -151,6 +151,8 @@ $ ->
 
 
 
+    weaponList: window.weaponList
+
     # NOTE ABOUT COOLDOWN TIMES : it's in the weapon_cooldown.scss
     weaponStats:
 
