@@ -13,10 +13,9 @@ class WeaponExtractor
     MWO::Weapon.all
   end
 
-  def self.pre_format(weapons_json_collection)
-    @weapons = self.get_json
+  def self.pre_format(weapons_json_collection, format = :hash)
 
-    @weapons.collect do |weapon|
+    weapons = get_json.collect do |weapon|
       damage = weapon.damage
       damage = weapon.damage * weapon.num_per_shot if weapon.num_per_shot
       {
@@ -27,10 +26,17 @@ class WeaponExtractor
         }
       }
     end
-    # [
-    #       {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
-    #       {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
-    #       {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
-    # ]
+
+    formatted_weapons = case format
+                        when :json
+                          JSON.generate(weapons)
+                        when :yaml
+                          weapons.to_yaml
+                        else
+                          weapons
+                        end
+
+    return formatted_weapons
+
   end
 end

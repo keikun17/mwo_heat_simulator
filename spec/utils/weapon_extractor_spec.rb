@@ -25,17 +25,27 @@ describe WeaponExtractor do
     end
   end
 
-  describe ".pre_format", vcr: {cassette_name: 'load_weapons_2'} do
-    subject {described_class.pre_format(weapon_collection)}
+  describe ".pre_format", vcr: {cassette_name: 'load_weapons_3'} do
+    subject {described_class.pre_format(weapon_collection, format)}
     let(:weapon_collection) { described_class.get_json }
 
-    it "formats the weapon data" do
-      expect(subject).
-        to include(
-          {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
-          {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
-          {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
-      )
+    context "format is hash" do
+      let(:format) { :hash }
+      it "formats the weapon data" do
+        expect(subject).
+          to include(
+            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6}},
+            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2}},
+            {"1203" => {name: 'ClanLB20XAutoCannon', damage: 20, heat: 6}}
+        )
+      end
+    end
+
+    context "Format is yaml" do
+      let(:format) { :yaml }
+      it "should be a yaml file" do
+        expect(YAML.load(subject)).to_not be_empty
+      end
     end
   end
 
