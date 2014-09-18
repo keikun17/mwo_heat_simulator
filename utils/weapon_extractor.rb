@@ -49,7 +49,9 @@ class WeaponExtractor
         name: weapon.name,
         damage: damage,
         heat: weapon.heat,
-        multiplier: weapon.heatpenalty
+        multiplier: weapon.heatpenalty,
+        ghost_heat_group: weapon.heat_penalty_id,
+        ghost_heat_trigger: weapon.minheatpenaltylevel
       }
 
     end
