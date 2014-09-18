@@ -9,6 +9,24 @@ class WeaponExtractor
     File.write(filepath, payload)
   end
 
+  def self.get_cooldown(weapons_js_collection, format = :json)
+    weapons = {}
+    get_json.each do |weapon|
+      weapons[weapon.weapon_id.to_s] = weapon.cooldown.to_s + 's'
+    end
+
+    formatted_weapons = case format
+                        when :json
+                          JSON.generate(weapons)
+                        when :yaml
+                          weapons.to_yaml
+                        else
+                          weapons
+                        end
+
+    return formatted_weapons
+  end
+
   def self.get_json
     MWO::Weapon.all
   end

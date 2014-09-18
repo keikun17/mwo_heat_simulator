@@ -9,6 +9,33 @@ describe WeaponExtractor do
   end
 
   describe ".write(filepath)", vcr: {cassette_name: 'load_weapons_2' } do
+    context "payload are weapon cooldowns and the format is json" do
+      let(:filepath) { "#{Dir.pwd}/test_extracted/extracted_cooldown.js" }
+      let(:format) {:json}
+      let(:payload) { described_class.get_cooldown(described_class.get_json, format) }
+
+      it "extracts to file" do
+        described_class.write(filepath, payload)
+        expect(File.exists?(filepath)).to eq(true)
+
+        f = File.read(filepath)
+        expect(f).to_not be_empty
+        expect(JSON.parse(f)).
+          to include(
+            {"1229" => '2s' },
+            {"1238" => '0.72s' },
+            {"1241" => '4.7s' },
+        )
+
+        # a failing example just to see that the above assertion is working
+        expect(JSON.parse(f)).
+          to_not include(
+            {"1000" => '999s'}
+        )
+      end
+
+    end
+
     context "payload are weapons and the format is json" do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
       let(:format) {:json}
