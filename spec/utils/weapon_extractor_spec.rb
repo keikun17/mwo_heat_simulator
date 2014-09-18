@@ -22,9 +22,10 @@ describe WeaponExtractor do
         expect(f).to_not be_empty
         expect(JSON.parse(f)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil}},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil  }},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil}},
+            {"1002" => {'name' => 'LRM20', 'damage' => 22, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3}}
         )
 
         # a failing example just to see that the above assertion is working
@@ -48,9 +49,10 @@ describe WeaponExtractor do
       it "formats the weapon data" do
         expect(subject).
           to include(
-            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24}},
-            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil}},
-            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6, :multiplier => nil}}
+            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24  ,:ghost_heat_group => nil, :ghost_heat_trigger => 2}},
+            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil , :ghost_heat_group => nil, :ghost_heat_trigger => nil}},
+            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6 , :multiplier => nil ,:ghost_heat_group => nil, :ghost_heat_trigger => nil}},
+            {"1002" => {:name => 'LRM20', :damage => 22.0, :heat => 6, :multiplier => 2.8 , :ghost_heat_group => 2, :ghost_heat_trigger => 3}}
         )
       end
     end
@@ -60,9 +62,10 @@ describe WeaponExtractor do
       it "should be yaml" do
         expect(YAML.load(subject)).
           to include(
-            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24}},
-            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil}},
-            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6, :multiplier => nil}}
+            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24  ,:ghost_heat_group => nil, :ghost_heat_trigger => 2}},
+            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil , :ghost_heat_group => nil, :ghost_heat_trigger => nil}},
+            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6 , :multiplier => nil ,:ghost_heat_group => nil, :ghost_heat_trigger => nil}},
+            {"1002" => {:name => 'LRM20', :damage => 22.0, :heat => 6, :multiplier => 2.8 , :ghost_heat_group => 2, :ghost_heat_trigger => 3}}
         )
       end
     end
@@ -72,9 +75,10 @@ describe WeaponExtractor do
       it "should be json" do
         expect(JSON.parse(subject)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil}},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil  }},
+            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil}},
+            {"1002" => {'name' => 'LRM20', 'damage' => 22, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3}}
         )
       end
     end

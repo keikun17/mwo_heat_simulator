@@ -18,7 +18,15 @@ class WeaponExtractor
     weapons = {}
     get_json.each do |weapon|
       damage = weapon.damage
-      damage = weapon.damage * weapon.num_per_shot if weapon.num_per_shot
+
+      if !weapon.num_firing.nil?
+        damage = damage * weapon.num_firing
+      end
+
+      if !weapon.num_per_shot.nil?
+        damage = damage * weapon.num_per_shot
+      end
+
       weapons[weapon.weapon_id.to_s] = {
         name: weapon.name,
         damage: damage,
