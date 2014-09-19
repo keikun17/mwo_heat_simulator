@@ -9,6 +9,31 @@ describe WeaponExtractor do
   end
 
   describe ".write(filepath)", vcr: {cassette_name: 'load_weapons_2' } do
+
+    context "payload are ghost heat groups and the format is json" do
+      let(:filepath) { "#{Dir.pwd}/test_extracted/extracted_ghost_heat_groups.js" }
+      let(:format) {:json}
+      let(:payload) { described_class.get_ghost_heat_groupings(described_class.get_json, format) }
+
+      it "extracts to file" do
+        described_class.write(filepath, payload)
+        expect(File.exists?(filepath)).to eq(true)
+
+        f = File.read(filepath)
+        expect(f).to_not be_empty
+        expect(JSON.parse(f)).
+          to include( { "3" => {"weapon_ids" => ['1005', '1008', '1010', '1213', '1216'], "ghost_heat_trigger" => '3' },
+                        "6" => {"weapon_ids" => ['1219', '1220', '1221', '1223', '1224', '1225'], "ghost_heat_trigger" => '3' }}
+                    )
+
+        # negative test
+        expect(JSON.parse(f)).
+          to_not include( { "8" => {"weapon_ids" => ['666', '777'], "ghost_heat_trigger" => '3' },
+                        "9" => {"weapon_ids" => ['69'], "ghost_heat_trigger" => '3' }}
+                    )
+      end
+    end
+
     context "payload are weapon cooldowns and the format is json" do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted_cooldown.js" }
       let(:format) {:json}
