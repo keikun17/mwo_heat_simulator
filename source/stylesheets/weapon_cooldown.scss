@@ -81,7 +81,7 @@ $weapons: (weapon_1000, 4s),
 @each $weapon in $weapons {
   $weapon_id: nth($weapon, 1);
   $cooldown: nth($weapon, 2);
-  .cooldown-meter[data-weapon_id="#{$weapon_id}"]{
+  .cooldown-meter[data-weapon-id="#{$weapon_id}"]{
     @include transition(width $cooldown ease-in-out);
   }
 }

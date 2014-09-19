@@ -16,7 +16,7 @@ _.templateSettings =
       </div>
       <div class='col-lg-3 weapon-cooldown-container'>
         <div class='progress horizontal'>
-          <div class='progress-bar progress-bar-success cooldown-meter {{= weaponId }}-cooldown quick-reset' role='progressbar' aria-valuemax='100' aria-valuetransitiongoal='100' aria-valuenow='0' ></div>;
+          <div class='progress-bar progress-bar-success cooldown-meter {{= weaponId }}-cooldown quick-reset' data-weapon-id='weapon_{{= weaponId }}'   role='progressbar' aria-valuemax='100' aria-valuetransitiongoal='100' aria-valuenow='0' ></div>;
         </div>
       </div>
   </div>
