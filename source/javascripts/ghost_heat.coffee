@@ -10,7 +10,7 @@ $ ->
     # Parameters:
     #   count - Number of  weapons fired under a weapon group in an Alpha
     scale: (count) ->
-      multiplier = switch
+      heat_scale = switch
         when count < 2 then 0
         when count == 2 then 0.08
         when count == 3 then 0.18
@@ -24,7 +24,7 @@ $ ->
         when count ==  11 then 3.00
         when count >= 12 then 5.00
 
-      multiplier
+      heat_scale
 
 
     # Returns the total heat penalty for the list of weapons fired
