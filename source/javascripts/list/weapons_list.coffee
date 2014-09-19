@@ -1,3 +1,4 @@
+# Generated from /test_extracted/extracted.js
 window.weaponsList =
   1000:
     name: "AutoCannon20"
