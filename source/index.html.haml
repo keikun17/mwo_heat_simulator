@@ -100,56 +100,11 @@
 
       %ul.weapon-list.list-unstyled
         %li.equipped-weapon
-          .row
-            .col-lg-9
-              %a{href: '#', class: 'js-fire btn-default btn-sm', data: { weapon_id: '1003'}}<
-                %span.glyphicon.glyphicon-screenshot
-              %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
-                %span.glyphicon.glyphicon-remove
-              %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 1} }<
-                %span.glyphicon.glyphicon-link 1
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} }<
-                %span.glyphicon.glyphicon-link 2
-              %a{href: '#', class: 'js-with_tooltip js-weapon_group btn-default btn-sm', data: {weapon_group: 3, toggle: 'tooltip', placement: 'top', 'original-title' => "Click to assign to weapon group"} }<
-                %span.glyphicon.glyphicon-link 3
-              Small Laser
-            .col-lg-3.weapon-cooldown-container
-              .progress.horizontal
-                .progress-bar.progress-bar-success.cooldown-meter.slas-cooldown.quick-reset{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
+          = partial 'armory/cooldown_meter', locals: {weapon: {weapon_id: '1003', name: 'Small Laser'}, active_group: 1}
         %li.equipped-weapon
-          .row
-            .col-lg-9
-              %a{href: '#', class: 'js-fire btn-default btn-sm', data: { weapon_id: '1001'}}<
-                %span.glyphicon.glyphicon-screenshot
-              %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
-                %span.glyphicon.glyphicon-remove
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} }<
-                %span.glyphicon.glyphicon-link 1
-              %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 2} }<
-                %span.glyphicon.glyphicon-link 2
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 3} }<
-                %span.glyphicon.glyphicon-link 3
-              Medium Laser
-            .col-lg-3.weapon-cooldown-container
-              .progress.horizontal
-                .progress-bar.progress-bar-success.cooldown-meter.mlas-cooldown.quick-reset{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
+          = partial 'armory/cooldown_meter', locals: {weapon: {weapon_id: '1001', name: 'Medium Laser'}, active_group: 2}
         %li.equipped-weapon
-          .row
-            .col-lg-9
-              %a{href: '#', class: 'js-fire btn-default btn-sm', data: { weapon_id: '1008'}}<
-                %span.glyphicon.glyphicon-screenshot
-              %a{href: '#', class: 'js-strip btn-warning btn-sm'}<
-                %span.glyphicon.glyphicon-remove
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 1} }<
-                %span.glyphicon.glyphicon-link 1
-              %a{href: '#', class: 'js-weapon_group btn-default btn-sm', data: {weapon_group: 2} }<
-                %span.glyphicon.glyphicon-link 2
-              %a{href: '#', class: 'js-weapon_group btn-info assigned btn-sm', data: {weapon_group: 3} }<
-                %span.glyphicon.glyphicon-link 3
-              Large Laser
-            .col-lg-3.weapon-cooldown-container
-              .progress.horizontal
-                .progress-bar.progress-bar-success.cooldown-meter.llas-cooldown.quick-reset{ role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
+          = partial 'armory/cooldown_meter', locals: {weapon: {weapon_id: '1008', name: 'Large Laser'}, active_group: 3}
       .row
         .col-lg-8.col-md-8.col-sm-8
           %p
