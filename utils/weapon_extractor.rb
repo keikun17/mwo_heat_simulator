@@ -51,9 +51,9 @@ class WeaponExtractor
     MWO::Weapon.all
   end
 
-  def self.pre_format(weapons_json_collection, format = :hash)
+  def self.pre_format(weapons, format = :hash)
 
-    weapons = {}
+    new_weapons = {}
     get_json.each do |weapon|
       damage = weapon.damage
 
@@ -65,7 +65,7 @@ class WeaponExtractor
         damage = damage * weapon.num_per_shot
       end
 
-      weapons[weapon.weapon_id.to_s] = {
+      new_weapons[weapon.weapon_id.to_s] = {
         name: weapon.name,
         damage: damage,
         heat: weapon.heat,
@@ -78,11 +78,11 @@ class WeaponExtractor
 
     formatted_weapons = case format
                         when :json
-                          JSON.generate(weapons)
+                          JSON.generate(new_weapons)
                         when :yaml
-                          weapons.to_yaml
+                          new_weapons.to_yaml
                         else
-                          weapons
+                          new_weapons
                         end
 
     return formatted_weapons
