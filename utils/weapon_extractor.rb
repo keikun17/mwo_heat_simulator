@@ -66,8 +66,6 @@ class WeaponExtractor
 
   end
 
-  private
-
   def self.reformat(formattable, format)
     case format
       when :json

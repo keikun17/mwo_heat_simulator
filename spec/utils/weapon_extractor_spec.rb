@@ -8,6 +8,19 @@ describe WeaponExtractor do
     end
   end
 
+  describe '.reformat' do
+    let(:formattable) { {name: 'Marthe Pryde'} }
+    it "reformats" do
+      json_format = described_class.reformat(formattable, :json)
+      yaml_format = described_class.reformat(formattable, :yaml)
+      some_format = described_class.reformat(formattable, :something)
+
+      expect(json_format).to be_a_kind_of(String)
+      expect(yaml_format).to be_a_kind_of(String)
+      expect(some_format).to be_a_kind_of(Hash)
+    end
+  end
+
   describe ".write(filepath)", vcr: {cassette_name: 'load_weapons_2' } do
 
     context "payload are ghost heat groups and the format is json" do
