@@ -29,4 +29,4 @@
     = weapon[:name]
   .col-lg-3.weapon-cooldown-container
     .progress.horizontal
-      .progress-bar.progress-bar-success.cooldown-meter.slas-cooldown.quick-reset{data: {weapon_id: weapon[:weapon_id] }, role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
+      .progress-bar.progress-bar-success.cooldown-meter.slas-cooldown.quick-reset{data: {weapon_id: "weapon_#{weapon[:weapon_id]}" }, role:'progressbar', aria: {valuemax: 5, valuetransitiongoal: 5, valuenow: 0} }
