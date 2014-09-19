@@ -1,11 +1,92 @@
-/*
- *= require energy_transitions
- *= require ballistic_transitions
- *= require missile_transitions
- */
-
 @import "compass/css3/transition";
+$weapons: (weapon_1000, 4s),
+          (weapon_1001, 3s),
+          (weapon_1002, 4.75s),
+          (weapon_1003, 2.25s),
+          (weapon_1004, 3s),
+          (weapon_1005, 3.25s),
+          (weapon_1006, 4s),
+          (weapon_1007, 0s),
+          (weapon_1008, 3.25s),
+          (weapon_1009, 4s),
+          (weapon_1010, 3.25s),
+          (weapon_1011, 3s),
+          (weapon_1012, 2.25s),
+          (weapon_1014, 0s),
+          (weapon_1018, 0.72s),
+          (weapon_1019, 1.66s),
+          (weapon_1020, 2.5s),
+          (weapon_1021, 4s),
+          (weapon_1023, 2.5s),
+          (weapon_1024, 0s),
+          (weapon_1025, 1.66s),
+          (weapon_1026, 3.25s),
+          (weapon_1027, 3.75s),
+          (weapon_1028, 4.25s),
+          (weapon_1029, 3.5s),
+          (weapon_1030, 2s),
+          (weapon_1031, 4s),
+          (weapon_1032, 3.5s),
+          (weapon_1037, 0s),
+          (weapon_1038, 2s),
+          (weapon_1039, 3s),
+          (weapon_1040, 4s),
+          (weapon_1041, 3.25s),
+          (weapon_1042, 3.75s),
+          (weapon_1043, 4.25s),
+          (weapon_1044, 4.75s),
+          (weapon_1200, 0.72s),
+          (weapon_1201, 1.66s),
+          (weapon_1202, 2.5s),
+          (weapon_1203, 4s),
+          (weapon_1204, 0.72s),
+          (weapon_1205, 1.66s),
+          (weapon_1206, 2.5s),
+          (weapon_1207, 4s),
+          (weapon_1208, 4s),
+          (weapon_1209, 0s),
+          (weapon_1210, 0s),
+          (weapon_1211, 2.25s),
+          (weapon_1212, 3s),
+          (weapon_1213, 3.25s),
+          (weapon_1214, 2.25s),
+          (weapon_1215, 3s),
+          (weapon_1216, 3.25s),
+          (weapon_1217, 4s),
+          (weapon_1218, 3.5s),
+          (weapon_1219, 4s),
+          (weapon_1220, 4.5s),
+          (weapon_1221, 5s),
+          (weapon_1222, 3.5s),
+          (weapon_1223, 4s),
+          (weapon_1224, 4.5s),
+          (weapon_1225, 5s),
+          (weapon_1226, 2s),
+          (weapon_1227, 3s),
+          (weapon_1228, 4s),
+          (weapon_1229, 2s),
+          (weapon_1230, 3s),
+          (weapon_1231, 4s),
+          (weapon_1232, 3.5s),
+          (weapon_1233, 5s),
+          (weapon_1234, 6s),
+          (weapon_1235, 3.5s),
+          (weapon_1236, 0s),
+          (weapon_1237, 0s),
+          (weapon_1238, 0.72s),
+          (weapon_1239, 1.8s),
+          (weapon_1240, 2.9s),
+          (weapon_1241, 4.7s);
+
+@each $weapon in $weapons {
+  $weapon_id: nth($weapon, 1);
+  $cooldown: nth($weapon, 2);
+  .cooldown-meter[data-weapon_id="#{$weapon_id}"]{
+    @include transition(width $cooldown ease-in-out);
+  }
+}
 
 .progress-bar.quick-reset{
   @include transition(width 0.01s ease-in-out !important );
 }
+
