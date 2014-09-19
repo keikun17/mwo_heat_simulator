@@ -1,4 +1,9 @@
 class WeaponExtractor
+
+  def self.get_json
+    MWO::Weapon.all
+  end
+
   def self.write(filepath, payload)
     dir = filepath.split('/')
     dir.pop
@@ -45,10 +50,6 @@ class WeaponExtractor
                  weapon_groups
                end
     return formatted
-  end
-
-  def self.get_json
-    MWO::Weapon.all
   end
 
   def self.pre_format(weapons, format = :hash)
