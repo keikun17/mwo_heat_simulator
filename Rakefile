@@ -1,5 +1,4 @@
 require "rspec/core/rake_task"
-require "bundler/gem_tasks"
 require 'middleman-gh-pages'
 
 # Default directory to look in is `/specs`
