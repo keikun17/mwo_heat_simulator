@@ -86,44 +86,96 @@ $ ->
       # --------------------
 
       weapons_fired_by_id  = {}
-      group_fire = {}
+      group_fire = {} # for Ghost-linked weapons
+      solo_fire = {}  # for standalone ghost-heat weapons
       #--------------------
       # 1 .Get the weapon ids [1000,1002,1003]
       #--------------------
       weapon_ids = ($(element).data('weaponId') for element in list)
 
-      #--------------------
-      # 2. Get the count for each "ghost heat group" using the collected weapon id
-      # example :  2 ppcs fired, 3 ER PPC fired.
-      #            PPC id is '1009'
-      #            ERPPC id is '1006'
-      #            Firing order is 'PPC', 'ERPPC', 'PPC', 'ERPPC', 'PPC'
-      #            Ghost heat trigger for PPC and ERPPC is `3`
-      #            Ghost heat group id for ERPPC and PPC is `1`
-      #
-      #  Return:  group_fire = {
-      #             {1: { fire_order = [1009, 1006, 1009, 1006, 1009],
-      #                   weapon_ids: {
-      #                                 1006: {
-      #                                         fire_count: 2,
-      #                                         ghost_heat: XXX
-      #                                      },
-      #                                 1009: {
-      #                                         fire_count: 3,
-      #                                         ghost_heat: XXX
-      #                                       }
-      #                               },
-      #                   ghost_heat_trigger: 3,
-      #                   total_fire_count: 5,
-      #                   ghost_heat: XXX
-      #                   } },
-      #            ...}
-      # --------------------
       _.each weapon_ids, (weapon_id, index ) =>
         weapon = window.weaponsList[weapon_id]
         group_id = weapon.ghost_heat_group
 
+        # --------------------
+        # 2A. With Ghost heat but not Ghost-linked
+        #
+        # example :  3 AC20s and 10 autocannon 2 fired
+        #
+        #       Autocannon20 id is 1000
+        #       Autocannon2 id is 1018
+        #       Ghost heat trigger for AC20 is 2
+        #       Ghost heat trigger for AC2 is 4
+        #
+        #   {
+        #     1000: {
+        #       fire_count: 2,
+        #       ghost_heat: XXX,
+        #       ghost_heat_trigger: 2
+        #       },
+        #     1018: {
+        #       fire_count: 3,
+        #       ghost_heat: XXX,
+        #       ghost_heat_trigger: 4
+        #     }
+        #   }
+        #
+        # --------------------
+        if group_id == null and weapon.ghost_heat_trigger != null
 
+          # Initialize if first pass
+          if solo_fire[weapon_id] == undefined
+            solo_fire[weapon_id] = {fire_count: 0, ghost_heat: 0, ghost_heat_trigger: weapon.ghost_heat_trigger}
+
+          # Increment fire count
+          solo_fire[weapon_id].fire_count++
+
+          # Get Ghost heat generated
+          if solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count
+            heat_scale_position = solo_fire[weapon_id].fire_count
+            console.log("Heat scale position is #{heat_scale_position}")
+            heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position)
+            console.log("Heat scale multiplier is #{heat_scale_multiplier}")
+            ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier
+            console.log("Heat scale ghost_heat is #{ghost_heat}")
+
+            # set ghost heat at weapon level
+            solo_fire[weapon_id].ghost_heat += ghost_heat
+
+            # set the value at overall level
+            individual_ghost_heat += ghost_heat
+
+
+        # --------------------
+        # 2B. Ghost-linked weapons
+        # Get the count for each "ghost heat group" using the collected weapon id
+        #
+        # example :  2 ppcs fired, 3 ER PPC fired.
+        #
+        #            PPC id is '1009'
+        #            ERPPC id is '1006'
+        #            Firing order is 'PPC', 'ERPPC', 'PPC', 'ERPPC', 'PPC'
+        #            Ghost heat trigger for PPC and ERPPC is `3`
+        #            Ghost heat group id for ERPPC and PPC is `1`
+        #
+        #  Return:  group_fire = {
+        #             {1: { fire_order = [1009, 1006, 1009, 1006, 1009],
+        #                   weapon_ids: {
+        #                                 1006: {
+        #                                         fire_count: 2,
+        #                                         ghost_heat: XXX
+        #                                      },
+        #                                 1009: {
+        #                                         fire_count: 3,
+        #                                         ghost_heat: XXX
+        #                                       }
+        #                               },
+        #                   ghost_heat_trigger: 3,
+        #                   total_fire_count: 5,
+        #                   ghost_heat: XXX
+        #                   } },
+        #            ...}
+        # --------------------
         if group_id != null
 
           # Initialize
@@ -172,36 +224,28 @@ $ ->
             heat_scale_position = group_fire[group_id].total_fire_count
             heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position)
 
-            console.log(heat_scale_multiplier)
-
             ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier
 
             # set value at the waepon level
             group_fire[group_id].weapon_ids[weapon_id].ghost_heat += ghost_heat
-            # set value at the group level
+
+            # Set value at the group level
+            if group_fire[group_id].ghost_heat == undefined
+              group_fire[group_id].ghost_heat = 0
+
             group_fire[group_id].ghost_heat += ghost_heat
+
             # set the value at the overall level
             group_ghost_heat += ghost_heat
 
       # TODO: remove this debugger
       window.group_fire = group_fire
+      window.solo_fire = solo_fire
 
       total_ghost_heat = group_ghost_heat + individual_ghost_heat
 
 
-      # --------------------
-      # Single penaltyy + group penalty
-      # --------------------
-      # ghost_heat = lrm_group_ghost_heat +
-      #   srm_group_ghost_heat +
-      #   llas_group_ghost_heat +
-      #   ppc_group_ghost_heat +
-      #   @getPenalty(list, ['ac2'], 3) +
-      #   @getPenalty(list, ['ac20'], 1) +
-      #   @getPenalty(list, ['mlas'], 6) +
-      #   @getPenalty(list, ['srm2'], 4) +
-      #   @getPenalty(list, ['ssrm2'], 4)
-
+      # The final value
       total_ghost_heat
 
     apply: (list) ->
