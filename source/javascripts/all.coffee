@@ -3,8 +3,9 @@
 #= require 'underscore/underscore.js'
 #= require 'bootstrap-progressbar/bootstrap-progressbar.js'
 #= require 'bootstrap-switch/dist/js/bootstrap-switch.min.js'
-#= require 'list/weapons_list.js'
 #= require purl
 #= require templates
+#= require 'list/weapons_list.js'
+#= require 'list/ghost_heat_groups'
 #= require mech
 #= require_tree
