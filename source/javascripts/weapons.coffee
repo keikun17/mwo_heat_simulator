@@ -15,14 +15,10 @@ $ ->
       $.fn.bootstrapSwitch.defaults.offColor = 'warning'
 
       $('input[name="weapon_switcher"]').on 'init.bootstrapSwitch', (event,state) ->
-        console.log('gets')
         $('#innersphere_weapons').show()
         $('#clan_weapons').hide()
 
       $('input[name="weapon_switcher"]').on 'switchChange.bootstrapSwitch', (event,state) ->
-        # console.log this
-        # console.log event
-        # console.log state
         if state == true
           $('#innersphere_weapons').hide()
           $('#clan_weapons').show()
@@ -82,7 +78,6 @@ $ ->
 
         # wgs : Weapon Groups
         wgs =  $("[data-weapon-group='#{group}'].js-weapon_group.assigned")
-        # console.log "count is " + wgs.length
 
         grouped_weapons = []
 
@@ -163,20 +158,17 @@ $ ->
       $('#damage').text(mech.damage.toFixed(2))
 
       if !mech.dps.clock
-        console.log("called")
         mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000)
 
       mech.dps.recompute()
 
     fireWeapon: (event) ->
-      # console.log('fire')
       weapon_name = $(this).data("weaponId")
       stats = mech.weapons.weaponStats[weapon_name]
 
       window.weapons.shoot(stats.heat)
       window.mech.weapons.disableWeapon $(this)
 
-      # console.log "Damage : #{stats.damage}"
       window.mech.weapons.damage(stats.damage)
 
       false

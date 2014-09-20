@@ -10,5 +10,4 @@ $(document).keypress (e) ->
 
   #3
   if e.which == 51
-    console.log "3"
     $('#wg3').click()

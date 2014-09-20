@@ -20,11 +20,8 @@ $ ->
         $('#js-stripall').click()
 
         _.each weapon_params,  (val, key, list)  ->
-          # console.log("val #{val}, key #{key}, list #{list}")
 
           count = url.param(val)
-          console.log("COUNT IS #{count}")
-          # console.log "count #{count}"
 
           _(count).times ->
             $('#armory').find("a[data-weapon-id='#{val}']").click()
