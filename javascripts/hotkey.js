@@ -7,7 +7,6 @@
       $('#wg2').click();
     }
     if (e.which === 51) {
-      console.log("3");
       return $('#wg3').click();
     }
   });

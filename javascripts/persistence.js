@@ -10,14 +10,14 @@
         var cool_run, elite_mech, engine_rating, heat_containment, heatsink_count, heatsink_type, url, url_params, weapon_params;
         url = $.url(location);
         url_params = url.param();
-        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.mech.weapons.weaponStats));
+        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.weaponsList));
         if (weapon_params.length > 0) {
           $('#js-stripall').click();
           _.each(weapon_params, function(val, key, list) {
             var count;
             count = url.param(val);
             return _(count).times(function() {
-              return $('#armory').find("a[data-weapon-class='" + val + "']").click();
+              return $('#armory').find("a[data-weapon-id='" + val + "']").click();
             });
           });
         }

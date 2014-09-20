@@ -192,6 +192,29 @@
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
+/* ========================================================================
+ * bootstrap-switch - v3.0.2
+ * http://www.bootstrap-switch.org
+ * ========================================================================
+ * Copyright 2012-2013 Mattia Larentis
+ *
+ * ========================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================================
+ */
+
+
+.bootstrap-switch{display:inline-block;cursor:pointer;border-radius:4px;border:1px solid;border-color:#ccc;position:relative;text-align:left;overflow:hidden;line-height:8px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;vertical-align:middle;min-width:100px;-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.bootstrap-switch.bootstrap-switch-mini{min-width:71px}.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-label{padding-bottom:4px;padding-top:4px;font-size:10px;line-height:9px}.bootstrap-switch.bootstrap-switch-small{min-width:79px}.bootstrap-switch.bootstrap-switch-small .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-small .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-small .bootstrap-switch-label{padding-bottom:3px;padding-top:3px;font-size:12px;line-height:18px}.bootstrap-switch.bootstrap-switch-large{min-width:120px}.bootstrap-switch.bootstrap-switch-large .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-large .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-large .bootstrap-switch-label{padding-bottom:9px;padding-top:9px;font-size:16px;line-height:normal}.bootstrap-switch.bootstrap-switch-animate .bootstrap-switch-container{-webkit-transition:margin-left .5s;transition:margin-left .5s}.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-container{margin-left:0}.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-label{border-bottom-right-radius:3px;border-top-right-radius:3px}.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-container{margin-left:-50%}.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-label{border-bottom-left-radius:3px;border-top-left-radius:3px}.bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-container{margin-left:-25%}.bootstrap-switch.bootstrap-switch-disabled,.bootstrap-switch.bootstrap-switch-readonly,.bootstrap-switch.bootstrap-switch-indeterminate{opacity:.5;filter:alpha(opacity=50);cursor:default!important}.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-handle-on,.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-handle-off,.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-label,.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-label,.bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-label{cursor:default!important}.bootstrap-switch.bootstrap-switch-focused{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.bootstrap-switch .bootstrap-switch-container{display:inline-block;width:150%;top:0;border-radius:4px;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.bootstrap-switch .bootstrap-switch-handle-on,.bootstrap-switch .bootstrap-switch-handle-off,.bootstrap-switch .bootstrap-switch-label{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;cursor:pointer;display:inline-block!important;height:100%;padding-bottom:4px;padding-top:4px;font-size:14px;line-height:20px}.bootstrap-switch .bootstrap-switch-handle-on,.bootstrap-switch .bootstrap-switch-handle-off{text-align:center;z-index:1;width:33.33333333%}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{color:#fff;background:#428bca}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-info,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-info{color:#fff;background:#5bc0de}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-success,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-success{color:#fff;background:#5cb85c}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-warning,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-warning{background:#f0ad4e;color:#fff}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-danger,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-danger{color:#fff;background:#d9534f}.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default{color:#000;background:#eee}.bootstrap-switch .bootstrap-switch-handle-on{border-bottom-left-radius:3px;border-top-left-radius:3px}.bootstrap-switch .bootstrap-switch-handle-off{border-bottom-right-radius:3px;border-top-right-radius:3px}.bootstrap-switch .bootstrap-switch-label{text-align:center;margin-top:-1px;margin-bottom:-1px;z-index:100;width:33.33333333%;color:#333;background:#fff}.bootstrap-switch input[type=radio],.bootstrap-switch input[type=checkbox]{position:absolute!important;top:0;left:0;opacity:0;filter:alpha(opacity=0);z-index:-1}.bootstrap-switch input[type=radio].form-control,.bootstrap-switch input[type=checkbox].form-control{height:auto}
 /*!
  * Bootstrap v3.0.0
  *
@@ -7187,191 +7210,553 @@ li.weapon-item a:hover {
 /* line 55, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .progress.horizontal {
   margin-bottom: 0px; }
-/* line 14, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.slas-cooldown {
-  -webkit-transition: width 2.25s ease-in-out;
-  -moz-transition: width 2.25s ease-in-out;
-  -o-transition: width 2.25s ease-in-out;
-  transition: width 2.25s ease-in-out; }
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1000"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
 
-/* line 18, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.mlas-cooldown {
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1001"] {
   -webkit-transition: width 3s ease-in-out;
   -moz-transition: width 3s ease-in-out;
   -o-transition: width 3s ease-in-out;
   transition: width 3s ease-in-out; }
 
-/* line 22, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.llas-cooldown {
-  -webkit-transition: width 3.25s ease-in-out;
-  -moz-transition: width 3.25s ease-in-out;
-  -o-transition: width 3.25s ease-in-out;
-  transition: width 3.25s ease-in-out; }
-
-/* line 26, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.ellas-cooldown {
-  -webkit-transition: width 3.25s ease-in-out;
-  -moz-transition: width 3.25s ease-in-out;
-  -o-transition: width 3.25s ease-in-out;
-  transition: width 3.25s ease-in-out; }
-
-/* line 30, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.splas-cooldown {
-  -webkit-transition: width 2.25s ease-in-out;
-  -moz-transition: width 2.25s ease-in-out;
-  -o-transition: width 2.25s ease-in-out;
-  transition: width 2.25s ease-in-out; }
-
-/* line 34, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.mplas-cooldown {
-  -webkit-transition: width 3s ease-in-out;
-  -moz-transition: width 3s ease-in-out;
-  -o-transition: width 3s ease-in-out;
-  transition: width 3s ease-in-out; }
-
-/* line 38, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.lplas-cooldown {
-  -webkit-transition: width 3.25s ease-in-out;
-  -moz-transition: width 3.25s ease-in-out;
-  -o-transition: width 3.25s ease-in-out;
-  transition: width 3.25s ease-in-out; }
-
-/* line 42, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.ppc-cooldown {
-  -webkit-transition: width 4s ease-in-out;
-  -moz-transition: width 4s ease-in-out;
-  -o-transition: width 4s ease-in-out;
-  transition: width 4s ease-in-out; }
-
-/* line 46, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.eppc-cooldown {
-  -webkit-transition: width 4s ease-in-out;
-  -moz-transition: width 4s ease-in-out;
-  -o-transition: width 4s ease-in-out;
-  transition: width 4s ease-in-out; }
-
-/* line 50, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/energy_transitions.scss */
-.progress-bar.flam-cooldown {
-  -webkit-transition: width 0.1s ease-in-out;
-  -moz-transition: width 0.1s ease-in-out;
-  -o-transition: width 0.1s ease-in-out;
-  transition: width 0.1s ease-in-out; }
-/* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.ac2-cooldown {
-  -webkit-transition: width 0.669s ease-in-out;
-  -moz-transition: width 0.669s ease-in-out;
-  -o-transition: width 0.669s ease-in-out;
-  transition: width 0.669s ease-in-out; }
-
-/* line 16, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.ac5-cooldown {
-  -webkit-transition: width 1.66s ease-in-out;
-  -moz-transition: width 1.66s ease-in-out;
-  -o-transition: width 1.66s ease-in-out;
-  transition: width 1.66s ease-in-out; }
-
-/* line 20, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.ac10-cooldown {
-  -webkit-transition: width 2.2s ease-in-out;
-  -moz-transition: width 2.2s ease-in-out;
-  -o-transition: width 2.2s ease-in-out;
-  transition: width 2.2s ease-in-out; }
-
-/* line 24, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.ac20-cooldown {
-  -webkit-transition: width 4s ease-in-out;
-  -moz-transition: width 4s ease-in-out;
-  -o-transition: width 4s ease-in-out;
-  transition: width 4s ease-in-out; }
-
-/* line 28, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.uac5-cooldown {
-  -webkit-transition: width 1.5s ease-in-out;
-  -moz-transition: width 1.5s ease-in-out;
-  -o-transition: width 1.5s ease-in-out;
-  transition: width 1.5s ease-in-out; }
-
-/* line 32, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.lb10x-cooldown {
-  -webkit-transition: width 2.5s ease-in-out;
-  -moz-transition: width 2.5s ease-in-out;
-  -o-transition: width 2.5s ease-in-out;
-  transition: width 2.5s ease-in-out; }
-
-/* line 36, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.gauss-cooldown {
-  -webkit-transition: width 4s ease-in-out;
-  -moz-transition: width 4s ease-in-out;
-  -o-transition: width 4s ease-in-out;
-  transition: width 4s ease-in-out; }
-
-/* line 40, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/ballistic_transitions.scss */
-.progress-bar.mg-cooldown {
-  -webkit-transition: width 0.01s ease-in-out;
-  -moz-transition: width 0.01s ease-in-out;
-  -o-transition: width 0.01s ease-in-out;
-  transition: width 0.01s ease-in-out; }
-/* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.lrm5-cooldown {
-  -webkit-transition: width 3.25s ease-in-out;
-  -moz-transition: width 3.25s ease-in-out;
-  -o-transition: width 3.25s ease-in-out;
-  transition: width 3.25s ease-in-out; }
-
-/* line 16, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.lrm10-cooldown {
-  -webkit-transition: width 3.75s ease-in-out;
-  -moz-transition: width 3.75s ease-in-out;
-  -o-transition: width 3.75s ease-in-out;
-  transition: width 3.75s ease-in-out; }
-
-/* line 20, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.lrm15-cooldown {
-  -webkit-transition: width 4.25s ease-in-out;
-  -moz-transition: width 4.25s ease-in-out;
-  -o-transition: width 4.25s ease-in-out;
-  transition: width 4.25s ease-in-out; }
-
-/* line 24, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.lrm20-cooldown {
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1002"] {
   -webkit-transition: width 4.75s ease-in-out;
   -moz-transition: width 4.75s ease-in-out;
   -o-transition: width 4.75s ease-in-out;
   transition: width 4.75s ease-in-out; }
 
-/* line 28, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.srm2-cooldown {
-  -webkit-transition: width 2s ease-in-out;
-  -moz-transition: width 2s ease-in-out;
-  -o-transition: width 2s ease-in-out;
-  transition: width 2s ease-in-out; }
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1003"] {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
 
-/* line 32, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.srm4-cooldown {
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1004"] {
   -webkit-transition: width 3s ease-in-out;
   -moz-transition: width 3s ease-in-out;
   -o-transition: width 3s ease-in-out;
   transition: width 3s ease-in-out; }
 
-/* line 36, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.srm6-cooldown {
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1005"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1006"] {
   -webkit-transition: width 4s ease-in-out;
   -moz-transition: width 4s ease-in-out;
   -o-transition: width 4s ease-in-out;
   transition: width 4s ease-in-out; }
 
-/* line 40, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/missile_transitions.scss */
-.progress-bar.ssrm2-cooldown {
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1007"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1008"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1009"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1010"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1011"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1012"] {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1014"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1018"] {
+  -webkit-transition: width 0.72s ease-in-out;
+  -moz-transition: width 0.72s ease-in-out;
+  -o-transition: width 0.72s ease-in-out;
+  transition: width 0.72s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1019"] {
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1020"] {
+  -webkit-transition: width 2.5s ease-in-out;
+  -moz-transition: width 2.5s ease-in-out;
+  -o-transition: width 2.5s ease-in-out;
+  transition: width 2.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1021"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1023"] {
+  -webkit-transition: width 2.5s ease-in-out;
+  -moz-transition: width 2.5s ease-in-out;
+  -o-transition: width 2.5s ease-in-out;
+  transition: width 2.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1024"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1025"] {
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1026"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1027"] {
+  -webkit-transition: width 3.75s ease-in-out;
+  -moz-transition: width 3.75s ease-in-out;
+  -o-transition: width 3.75s ease-in-out;
+  transition: width 3.75s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1028"] {
+  -webkit-transition: width 4.25s ease-in-out;
+  -moz-transition: width 4.25s ease-in-out;
+  -o-transition: width 4.25s ease-in-out;
+  transition: width 4.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1029"] {
   -webkit-transition: width 3.5s ease-in-out;
   -moz-transition: width 3.5s ease-in-out;
   -o-transition: width 3.5s ease-in-out;
   transition: width 3.5s ease-in-out; }
-/*
 
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1030"] {
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out; }
 
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1031"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
 
- */
-/* line 10, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1032"] {
+  -webkit-transition: width 3.5s ease-in-out;
+  -moz-transition: width 3.5s ease-in-out;
+  -o-transition: width 3.5s ease-in-out;
+  transition: width 3.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1037"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1038"] {
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1039"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1040"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1041"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1042"] {
+  -webkit-transition: width 3.75s ease-in-out;
+  -moz-transition: width 3.75s ease-in-out;
+  -o-transition: width 3.75s ease-in-out;
+  transition: width 3.75s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1043"] {
+  -webkit-transition: width 4.25s ease-in-out;
+  -moz-transition: width 4.25s ease-in-out;
+  -o-transition: width 4.25s ease-in-out;
+  transition: width 4.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1044"] {
+  -webkit-transition: width 4.75s ease-in-out;
+  -moz-transition: width 4.75s ease-in-out;
+  -o-transition: width 4.75s ease-in-out;
+  transition: width 4.75s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1200"] {
+  -webkit-transition: width 0.72s ease-in-out;
+  -moz-transition: width 0.72s ease-in-out;
+  -o-transition: width 0.72s ease-in-out;
+  transition: width 0.72s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1201"] {
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1202"] {
+  -webkit-transition: width 2.5s ease-in-out;
+  -moz-transition: width 2.5s ease-in-out;
+  -o-transition: width 2.5s ease-in-out;
+  transition: width 2.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1203"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1204"] {
+  -webkit-transition: width 0.72s ease-in-out;
+  -moz-transition: width 0.72s ease-in-out;
+  -o-transition: width 0.72s ease-in-out;
+  transition: width 0.72s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1205"] {
+  -webkit-transition: width 1.66s ease-in-out;
+  -moz-transition: width 1.66s ease-in-out;
+  -o-transition: width 1.66s ease-in-out;
+  transition: width 1.66s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1206"] {
+  -webkit-transition: width 2.5s ease-in-out;
+  -moz-transition: width 2.5s ease-in-out;
+  -o-transition: width 2.5s ease-in-out;
+  transition: width 2.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1207"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1208"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1209"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1210"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1211"] {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1212"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1213"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1214"] {
+  -webkit-transition: width 2.25s ease-in-out;
+  -moz-transition: width 2.25s ease-in-out;
+  -o-transition: width 2.25s ease-in-out;
+  transition: width 2.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1215"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1216"] {
+  -webkit-transition: width 3.25s ease-in-out;
+  -moz-transition: width 3.25s ease-in-out;
+  -o-transition: width 3.25s ease-in-out;
+  transition: width 3.25s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1217"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1218"] {
+  -webkit-transition: width 3.5s ease-in-out;
+  -moz-transition: width 3.5s ease-in-out;
+  -o-transition: width 3.5s ease-in-out;
+  transition: width 3.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1219"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1220"] {
+  -webkit-transition: width 4.5s ease-in-out;
+  -moz-transition: width 4.5s ease-in-out;
+  -o-transition: width 4.5s ease-in-out;
+  transition: width 4.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1221"] {
+  -webkit-transition: width 5s ease-in-out;
+  -moz-transition: width 5s ease-in-out;
+  -o-transition: width 5s ease-in-out;
+  transition: width 5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1222"] {
+  -webkit-transition: width 3.5s ease-in-out;
+  -moz-transition: width 3.5s ease-in-out;
+  -o-transition: width 3.5s ease-in-out;
+  transition: width 3.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1223"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1224"] {
+  -webkit-transition: width 4.5s ease-in-out;
+  -moz-transition: width 4.5s ease-in-out;
+  -o-transition: width 4.5s ease-in-out;
+  transition: width 4.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1225"] {
+  -webkit-transition: width 5s ease-in-out;
+  -moz-transition: width 5s ease-in-out;
+  -o-transition: width 5s ease-in-out;
+  transition: width 5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1226"] {
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1227"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1228"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1229"] {
+  -webkit-transition: width 2s ease-in-out;
+  -moz-transition: width 2s ease-in-out;
+  -o-transition: width 2s ease-in-out;
+  transition: width 2s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1230"] {
+  -webkit-transition: width 3s ease-in-out;
+  -moz-transition: width 3s ease-in-out;
+  -o-transition: width 3s ease-in-out;
+  transition: width 3s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1231"] {
+  -webkit-transition: width 4s ease-in-out;
+  -moz-transition: width 4s ease-in-out;
+  -o-transition: width 4s ease-in-out;
+  transition: width 4s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1232"] {
+  -webkit-transition: width 3.5s ease-in-out;
+  -moz-transition: width 3.5s ease-in-out;
+  -o-transition: width 3.5s ease-in-out;
+  transition: width 3.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1233"] {
+  -webkit-transition: width 5s ease-in-out;
+  -moz-transition: width 5s ease-in-out;
+  -o-transition: width 5s ease-in-out;
+  transition: width 5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1234"] {
+  -webkit-transition: width 6s ease-in-out;
+  -moz-transition: width 6s ease-in-out;
+  -o-transition: width 6s ease-in-out;
+  transition: width 6s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1235"] {
+  -webkit-transition: width 3.5s ease-in-out;
+  -moz-transition: width 3.5s ease-in-out;
+  -o-transition: width 3.5s ease-in-out;
+  transition: width 3.5s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1236"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1237"] {
+  -webkit-transition: width 0s ease-in-out;
+  -moz-transition: width 0s ease-in-out;
+  -o-transition: width 0s ease-in-out;
+  transition: width 0s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1238"] {
+  -webkit-transition: width 0.72s ease-in-out;
+  -moz-transition: width 0.72s ease-in-out;
+  -o-transition: width 0.72s ease-in-out;
+  transition: width 0.72s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1239"] {
+  -webkit-transition: width 1.8s ease-in-out;
+  -moz-transition: width 1.8s ease-in-out;
+  -o-transition: width 1.8s ease-in-out;
+  transition: width 1.8s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1240"] {
+  -webkit-transition: width 2.9s ease-in-out;
+  -moz-transition: width 2.9s ease-in-out;
+  -o-transition: width 2.9s ease-in-out;
+  transition: width 2.9s ease-in-out; }
+
+/* line 86, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
+.cooldown-meter[data-weapon-id="weapon_1241"] {
+  -webkit-transition: width 4.7s ease-in-out;
+  -moz-transition: width 4.7s ease-in-out;
+  -o-transition: width 4.7s ease-in-out;
+  transition: width 4.7s ease-in-out; }
+
+/* line 91, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/weapon_cooldown.scss */
 .progress-bar.quick-reset {
   -webkit-transition: width 0.01s ease-in-out;
   -webkit-transition-delay: !important;
@@ -7379,6 +7764,7 @@ li.weapon-item a:hover {
   -o-transition: width 0.01s ease-in-out !important;
   transition: width 0.01s ease-in-out !important; }
 /*
+
 
 
 

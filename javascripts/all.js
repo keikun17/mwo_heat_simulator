@@ -12239,6 +12239,29 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     };
 
 })(window.jQuery);
+/* ========================================================================
+ * bootstrap-switch - v3.0.2
+ * http://www.bootstrap-switch.org
+ * ========================================================================
+ * Copyright 2012-2013 Mattia Larentis
+ *
+ * ========================================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================================
+ */
+
+
+(function(){var t=[].slice;!function(e,s){"use strict";var o;return o=function(){function t(t,s){null==s&&(s={}),this.$element=e(t),this.options=e.extend({},e.fn.bootstrapSwitch.defaults,{state:this.$element.is(":checked"),size:this.$element.data("size"),animate:this.$element.data("animate"),disabled:this.$element.is(":disabled"),readonly:this.$element.is("[readonly]"),indeterminate:this.$element.data("indeterminate"),onColor:this.$element.data("on-color"),offColor:this.$element.data("off-color"),onText:this.$element.data("on-text"),offText:this.$element.data("off-text"),labelText:this.$element.data("label-text"),baseClass:this.$element.data("base-class"),wrapperClass:this.$element.data("wrapper-class"),radioAllOff:this.$element.data("radio-all-off")},s),this.$wrapper=e("<div>",{"class":function(t){return function(){var e;return e=[""+t.options.baseClass].concat(t._getClasses(t.options.wrapperClass)),e.push(t.options.state?""+t.options.baseClass+"-on":""+t.options.baseClass+"-off"),null!=t.options.size&&e.push(""+t.options.baseClass+"-"+t.options.size),t.options.animate&&e.push(""+t.options.baseClass+"-animate"),t.options.disabled&&e.push(""+t.options.baseClass+"-disabled"),t.options.readonly&&e.push(""+t.options.baseClass+"-readonly"),t.options.indeterminate&&e.push(""+t.options.baseClass+"-indeterminate"),t.$element.attr("id")&&e.push(""+t.options.baseClass+"-id-"+t.$element.attr("id")),e.join(" ")}}(this)()}),this.$container=e("<div>",{"class":""+this.options.baseClass+"-container"}),this.$on=e("<span>",{html:this.options.onText,"class":""+this.options.baseClass+"-handle-on "+this.options.baseClass+"-"+this.options.onColor}),this.$off=e("<span>",{html:this.options.offText,"class":""+this.options.baseClass+"-handle-off "+this.options.baseClass+"-"+this.options.offColor}),this.$label=e("<label>",{html:this.options.labelText,"class":""+this.options.baseClass+"-label"}),this.options.indeterminate&&this.$element.prop("indeterminate",!0),this.$element.on("init.bootstrapSwitch",function(e){return function(){return e.options.onInit.apply(t,arguments)}}(this)),this.$element.on("switchChange.bootstrapSwitch",function(e){return function(){return e.options.onSwitchChange.apply(t,arguments)}}(this)),this.$container=this.$element.wrap(this.$container).parent(),this.$wrapper=this.$container.wrap(this.$wrapper).parent(),this.$element.before(this.$on).before(this.$label).before(this.$off).trigger("init.bootstrapSwitch"),this._elementHandlers(),this._handleHandlers(),this._labelHandlers(),this._formHandler()}return t.prototype._constructor=t,t.prototype.state=function(t,e){return"undefined"==typeof t?this.options.state:this.options.disabled||this.options.readonly||this.options.indeterminate?this.$element:this.options.state&&!this.options.radioAllOff&&this.$element.is(":radio")?this.$element:(t=!!t,this.$element.prop("checked",t).trigger("change.bootstrapSwitch",e),this.$element)},t.prototype.toggleState=function(t){return this.options.disabled||this.options.readonly||this.options.indeterminate?this.$element:this.$element.prop("checked",!this.options.state).trigger("change.bootstrapSwitch",t)},t.prototype.size=function(t){return"undefined"==typeof t?this.options.size:(null!=this.options.size&&this.$wrapper.removeClass(""+this.options.baseClass+"-"+this.options.size),t&&this.$wrapper.addClass(""+this.options.baseClass+"-"+t),this.options.size=t,this.$element)},t.prototype.animate=function(t){return"undefined"==typeof t?this.options.animate:(t=!!t,this.$wrapper[t?"addClass":"removeClass"](""+this.options.baseClass+"-animate"),this.options.animate=t,this.$element)},t.prototype.disabled=function(t){return"undefined"==typeof t?this.options.disabled:(t=!!t,this.$wrapper[t?"addClass":"removeClass"](""+this.options.baseClass+"-disabled"),this.$element.prop("disabled",t),this.options.disabled=t,this.$element)},t.prototype.toggleDisabled=function(){return this.$element.prop("disabled",!this.options.disabled),this.$wrapper.toggleClass(""+this.options.baseClass+"-disabled"),this.options.disabled=!this.options.disabled,this.$element},t.prototype.readonly=function(t){return"undefined"==typeof t?this.options.readonly:(t=!!t,this.$wrapper[t?"addClass":"removeClass"](""+this.options.baseClass+"-readonly"),this.$element.prop("readonly",t),this.options.readonly=t,this.$element)},t.prototype.toggleReadonly=function(){return this.$element.prop("readonly",!this.options.readonly),this.$wrapper.toggleClass(""+this.options.baseClass+"-readonly"),this.options.readonly=!this.options.readonly,this.$element},t.prototype.indeterminate=function(t){return"undefined"==typeof t?this.options.indeterminate:(t=!!t,this.$wrapper[t?"addClass":"removeClass"](""+this.options.baseClass+"-indeterminate"),this.$element.prop("indeterminate",t),this.options.indeterminate=t,this.$element)},t.prototype.toggleIndeterminate=function(){return this.$element.prop("indeterminate",!this.options.indeterminate),this.$wrapper.toggleClass(""+this.options.baseClass+"-indeterminate"),this.options.indeterminate=!this.options.indeterminate,this.$element},t.prototype.onColor=function(t){var e;return e=this.options.onColor,"undefined"==typeof t?e:(null!=e&&this.$on.removeClass(""+this.options.baseClass+"-"+e),this.$on.addClass(""+this.options.baseClass+"-"+t),this.options.onColor=t,this.$element)},t.prototype.offColor=function(t){var e;return e=this.options.offColor,"undefined"==typeof t?e:(null!=e&&this.$off.removeClass(""+this.options.baseClass+"-"+e),this.$off.addClass(""+this.options.baseClass+"-"+t),this.options.offColor=t,this.$element)},t.prototype.onText=function(t){return"undefined"==typeof t?this.options.onText:(this.$on.html(t),this.options.onText=t,this.$element)},t.prototype.offText=function(t){return"undefined"==typeof t?this.options.offText:(this.$off.html(t),this.options.offText=t,this.$element)},t.prototype.labelText=function(t){return"undefined"==typeof t?this.options.labelText:(this.$label.html(t),this.options.labelText=t,this.$element)},t.prototype.baseClass=function(){return this.options.baseClass},t.prototype.wrapperClass=function(t){return"undefined"==typeof t?this.options.wrapperClass:(t||(t=e.fn.bootstrapSwitch.defaults.wrapperClass),this.$wrapper.removeClass(this._getClasses(this.options.wrapperClass).join(" ")),this.$wrapper.addClass(this._getClasses(t).join(" ")),this.options.wrapperClass=t,this.$element)},t.prototype.radioAllOff=function(t){return"undefined"==typeof t?this.options.radioAllOff:(this.options.radioAllOff=t,this.$element)},t.prototype.onInit=function(t){return"undefined"==typeof t?this.options.onInit:(t||(t=e.fn.bootstrapSwitch.defaults.onInit),this.options.onInit=t,this.$element)},t.prototype.onSwitchChange=function(t){return"undefined"==typeof t?this.options.onSwitchChange:(t||(t=e.fn.bootstrapSwitch.defaults.onSwitchChange),this.options.onSwitchChange=t,this.$element)},t.prototype.destroy=function(){var t;return t=this.$element.closest("form"),t.length&&t.off("reset.bootstrapSwitch").removeData("bootstrap-switch"),this.$container.children().not(this.$element).remove(),this.$element.unwrap().unwrap().off(".bootstrapSwitch").removeData("bootstrap-switch"),this.$element},t.prototype._elementHandlers=function(){return this.$element.on({"change.bootstrapSwitch":function(t){return function(s,o){var n;return s.preventDefault(),s.stopImmediatePropagation(),n=t.$element.is(":checked"),n!==t.options.state?(t.options.state=n,t.$wrapper.removeClass(n?""+t.options.baseClass+"-off":""+t.options.baseClass+"-on").addClass(n?""+t.options.baseClass+"-on":""+t.options.baseClass+"-off"),o?void 0:(t.$element.is(":radio")&&e("[name='"+t.$element.attr("name")+"']").not(t.$element).prop("checked",!1).trigger("change.bootstrapSwitch",!0),t.$element.trigger("switchChange.bootstrapSwitch",[n]))):void 0}}(this),"focus.bootstrapSwitch":function(t){return function(e){return e.preventDefault(),t.$wrapper.addClass(""+t.options.baseClass+"-focused")}}(this),"blur.bootstrapSwitch":function(t){return function(e){return e.preventDefault(),t.$wrapper.removeClass(""+t.options.baseClass+"-focused")}}(this),"keydown.bootstrapSwitch":function(t){return function(e){if(e.which&&!t.options.disabled&&!t.options.readonly&&!t.options.indeterminate)switch(e.which){case 37:return e.preventDefault(),e.stopImmediatePropagation(),t.state(!1);case 39:return e.preventDefault(),e.stopImmediatePropagation(),t.state(!0)}}}(this)})},t.prototype._handleHandlers=function(){return this.$on.on("click.bootstrapSwitch",function(t){return function(){return t.state(!1),t.$element.trigger("focus.bootstrapSwitch")}}(this)),this.$off.on("click.bootstrapSwitch",function(t){return function(){return t.state(!0),t.$element.trigger("focus.bootstrapSwitch")}}(this))},t.prototype._labelHandlers=function(){return this.$label.on({"mousemove.bootstrapSwitch touchmove.bootstrapSwitch":function(t){return function(e){var s,o,n,i;if(t.isLabelDragging)return e.preventDefault(),t.isLabelDragged=!0,o=e.pageX||e.originalEvent.touches[0].pageX,n=(o-t.$wrapper.offset().left)/t.$wrapper.width()*100,s=25,i=75,t.options.animate&&t.$wrapper.removeClass(""+t.options.baseClass+"-animate"),s>n?n=s:n>i&&(n=i),t.$container.css("margin-left",""+(n-i)+"%"),t.$element.trigger("focus.bootstrapSwitch")}}(this),"mousedown.bootstrapSwitch touchstart.bootstrapSwitch":function(t){return function(e){return t.isLabelDragging||t.options.disabled||t.options.readonly||t.options.indeterminate?void 0:(e.preventDefault(),t.isLabelDragging=!0,t.$element.trigger("focus.bootstrapSwitch"))}}(this),"mouseup.bootstrapSwitch touchend.bootstrapSwitch":function(t){return function(e){return t.isLabelDragging?(e.preventDefault(),t.isLabelDragged?(t.isLabelDragged=!1,t.state(parseInt(t.$container.css("margin-left"),10)>-(t.$container.width()/6)),t.options.animate&&t.$wrapper.addClass(""+t.options.baseClass+"-animate"),t.$container.css("margin-left","")):t.state(!t.options.state),t.isLabelDragging=!1):void 0}}(this),"mouseleave.bootstrapSwitch":function(t){return function(){return t.$label.trigger("mouseup.bootstrapSwitch")}}(this)})},t.prototype._formHandler=function(){var t;return t=this.$element.closest("form"),t.data("bootstrap-switch")?void 0:t.on("reset.bootstrapSwitch",function(){return s.setTimeout(function(){return t.find("input").filter(function(){return e(this).data("bootstrap-switch")}).each(function(){return e(this).bootstrapSwitch("state",this.checked)})},1)}).data("bootstrap-switch",!0)},t.prototype._getClasses=function(t){var s,o,n,i;if(!e.isArray(t))return[""+this.options.baseClass+"-"+t];for(o=[],n=0,i=t.length;i>n;n++)s=t[n],o.push(""+this.options.baseClass+"-"+s);return o},t}(),e.fn.bootstrapSwitch=function(){var s,n,i;return n=arguments[0],s=2<=arguments.length?t.call(arguments,1):[],i=this,this.each(function(){var t,a;return t=e(this),a=t.data("bootstrap-switch"),a||t.data("bootstrap-switch",a=new o(this,n)),"string"==typeof n?i=a[n].apply(a,s):void 0}),i},e.fn.bootstrapSwitch.Constructor=o,e.fn.bootstrapSwitch.defaults={state:!0,size:null,animate:!0,disabled:!1,readonly:!1,indeterminate:!1,onColor:"primary",offColor:"default",onText:"ON",offText:"OFF",labelText:"&nbsp;",baseClass:"bootstrap-switch",wrapperClass:"wrapper",radioAllOff:!1,onInit:function(){},onSwitchChange:function(){}}}(window.jQuery,window)}).call(this);
 /*
  * Purl (A JavaScript URL parser) v2.3.1
  * Developed and maintanined by Mark Perkins, mark@allmarkedup.com
@@ -12511,9 +12534,683 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     evaluate: /\{\{(.+?)\}\}/g
   };
 
-  this.weaponView = _.template("  <li class='equipped-weapon'>    <div class='row'>      <div class='col-lg-9'>        <a href='#' class='js-fire btn-sm btn-danger' data-weapon-class='{{= weaponClass }}'> <span class='glyphicon glyphicon-screenshot'></span></a>        <a href='#' class='js-strip btn-sm btn-warning'><span class='glyphicon glyphicon-remove'></span></a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='1'> <span class='glyphicon glyphicon-link'></span>1</a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'> <span class='glyphicon glyphicon-link'></span>2</a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='3'> <span class='glyphicon glyphicon-link'></span>3</a>        {{= name }}      </div>      <div class='col-lg-3 weapon-cooldown-container'>        <div class='progress horizontal'>          <div class='progress-bar progress-bar-success cooldown-meter {{= weaponClass }}-cooldown quick-reset' role='progressbar' aria-valuemax='100' aria-valuetransitiongoal='100' aria-valuenow='0' ></div>;        </div>      </div>  </div></li>");
+  this.weaponView = _.template("  <li class='equipped-weapon'>    <div class='row'>      <div class='col-lg-9'>        <a href='#' class='js-fire btn-sm btn-danger' data-weapon-id='{{= weaponId }}'> <span class='glyphicon glyphicon-screenshot'></span></a>        <a href='#' class='js-strip btn-sm btn-warning'><span class='glyphicon glyphicon-remove'></span></a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='1'> <span class='glyphicon glyphicon-link'></span>1</a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='2'> <span class='glyphicon glyphicon-link'></span>2</a>        <a href='#' class='js-weapon_group btn-sm btn-default' data-weapon-group='3'> <span class='glyphicon glyphicon-link'></span>3</a>        {{= name }}      </div>      <div class='col-lg-3 weapon-cooldown-container'>        <div class='progress horizontal'>          <div class='progress-bar progress-bar-success cooldown-meter {{= weaponId }}-cooldown quick-reset' data-weapon-id='weapon_{{= weaponId }}'   role='progressbar' aria-valuemax='100' aria-valuetransitiongoal='100' aria-valuenow='0' ></div>;        </div>      </div>  </div></li>");
 
   this.armoryView = _.template("  <li>    {{= name }}  </li>");
+
+}).call(this);
+(function() {
+  window.weaponsList = {
+    1000: {
+      name: "AutoCannon20",
+      damage: 20,
+      heat: 6,
+      multiplier: 24,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 2
+    },
+    1001: {
+      name: "MediumLaser",
+      damage: 5,
+      heat: 4,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 7
+    },
+    1002: {
+      name: "LRM20",
+      damage: 22.0,
+      heat: 6,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1003: {
+      name: "SmallLaser",
+      damage: 3,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1004: {
+      name: "SRM4",
+      damage: 8.6,
+      heat: 3,
+      multiplier: 1,
+      ghost_heat_group: 4,
+      ghost_heat_trigger: 4
+    },
+    1005: {
+      name: "ERLargeLaser",
+      damage: 9,
+      heat: 8,
+      multiplier: 2.8,
+      ghost_heat_group: 3,
+      ghost_heat_trigger: 3
+    },
+    1006: {
+      name: "ERPPC",
+      damage: 10,
+      heat: 15,
+      multiplier: 4.5,
+      ghost_heat_group: 1,
+      ghost_heat_trigger: 3
+    },
+    1007: {
+      name: "Flamer",
+      damage: 0.7,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1008: {
+      name: "LargeLaser",
+      damage: 9,
+      heat: 7,
+      multiplier: 2.8,
+      ghost_heat_group: 3,
+      ghost_heat_trigger: 3
+    },
+    1009: {
+      name: "PPC",
+      damage: 10,
+      heat: 10,
+      multiplier: 7,
+      ghost_heat_group: 1,
+      ghost_heat_trigger: 3
+    },
+    1010: {
+      name: "LargePulseLaser",
+      damage: 10.6,
+      heat: 8,
+      multiplier: 2.8,
+      ghost_heat_group: 3,
+      ghost_heat_trigger: 3
+    },
+    1011: {
+      name: "MediumPulseLaser",
+      damage: 6,
+      heat: 4.6,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1012: {
+      name: "SmallPulseLaser",
+      damage: 3.4,
+      heat: 2.4,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1014: {
+      name: "Anti_Missile_System",
+      damage: 3.5,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1018: {
+      name: "AutoCannon2",
+      damage: 2,
+      heat: 1,
+      multiplier: 0.6,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 4
+    },
+    1019: {
+      name: "AutoCannon5",
+      damage: 5,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1020: {
+      name: "AutoCannon10",
+      damage: 10,
+      heat: 3,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1021: {
+      name: "GaussRifle",
+      damage: 15,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1023: {
+      name: "LB10XAutoCannon",
+      damage: 10,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1024: {
+      name: "MachineGun",
+      damage: 0.08,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1025: {
+      name: "UltraAutoCannon5",
+      damage: 5,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1026: {
+      name: "LRM5",
+      damage: 5.5,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1027: {
+      name: "LRM10",
+      damage: 11.0,
+      heat: 4,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1028: {
+      name: "LRM15",
+      damage: 16.5,
+      heat: 5,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1029: {
+      name: "NarcBeacon",
+      damage: 0,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1030: {
+      name: "SRM2",
+      damage: 4.3,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1031: {
+      name: "SRM6",
+      damage: 12.899999999999999,
+      heat: 4,
+      multiplier: 1,
+      ghost_heat_group: 4,
+      ghost_heat_trigger: 4
+    },
+    1032: {
+      name: "StreakSRM2",
+      damage: 4,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1037: {
+      name: "TAG",
+      damage: 0,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1038: {
+      name: "SRM2_Artemis",
+      damage: 4.3,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1039: {
+      name: "SRM4_Artemis",
+      damage: 8.6,
+      heat: 3,
+      multiplier: 1,
+      ghost_heat_group: 4,
+      ghost_heat_trigger: 4
+    },
+    1040: {
+      name: "SRM6_Artemis",
+      damage: 12.899999999999999,
+      heat: 4,
+      multiplier: 1,
+      ghost_heat_group: 4,
+      ghost_heat_trigger: 4
+    },
+    1041: {
+      name: "LRM5_Artemis",
+      damage: 5.5,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1042: {
+      name: "LRM10_Artemis",
+      damage: 11.0,
+      heat: 4,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1043: {
+      name: "LRM15_Artemis",
+      damage: 16.5,
+      heat: 5,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1044: {
+      name: "LRM20_Artemis",
+      damage: 22.0,
+      heat: 6,
+      multiplier: 2.8,
+      ghost_heat_group: 2,
+      ghost_heat_trigger: 3
+    },
+    1200: {
+      name: "ClanLB2XAutoCannon",
+      damage: 2,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1201: {
+      name: "ClanLB5XAutoCannon",
+      damage: 5,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1202: {
+      name: "ClanLB10XAutoCannon",
+      damage: 10,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1203: {
+      name: "ClanLB20XAutoCannon",
+      damage: 20,
+      heat: 6,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1204: {
+      name: "ClanUltraAutoCannon2",
+      damage: 2,
+      heat: 1,
+      multiplier: 0.6,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 4
+    },
+    1205: {
+      name: "ClanUltraAutoCannon5",
+      damage: 5.001,
+      heat: 1,
+      multiplier: 0.8,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 4
+    },
+    1206: {
+      name: "ClanUltraAutoCannon10",
+      damage: 10.0,
+      heat: 3,
+      multiplier: 1,
+      ghost_heat_group: 8,
+      ghost_heat_trigger: 3
+    },
+    1207: {
+      name: "ClanUltraAutoCannon20",
+      damage: 20,
+      heat: 7,
+      multiplier: 30,
+      ghost_heat_group: 9,
+      ghost_heat_trigger: 2
+    },
+    1208: {
+      name: "ClanGaussRifle",
+      damage: 15,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1209: {
+      name: "ClanMachineGun",
+      damage: 0.08,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1210: {
+      name: "ClanFlamer",
+      damage: 0.7,
+      heat: 1,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1211: {
+      name: "ClanERSmallLaser",
+      damage: 4,
+      heat: 3,
+      multiplier: 1.4,
+      ghost_heat_group: 10,
+      ghost_heat_trigger: 7
+    },
+    1212: {
+      name: "ClanERMediumLaser",
+      damage: 7,
+      heat: 6,
+      multiplier: 1.4,
+      ghost_heat_group: 10,
+      ghost_heat_trigger: 7
+    },
+    1213: {
+      name: "ClanERLargeLaser",
+      damage: 11,
+      heat: 10,
+      multiplier: 4,
+      ghost_heat_group: 3,
+      ghost_heat_trigger: 3
+    },
+    1214: {
+      name: "ClanSmallPulseLaser",
+      damage: 4.4,
+      heat: 3.4,
+      multiplier: 1,
+      ghost_heat_group: 10,
+      ghost_heat_trigger: 7
+    },
+    1215: {
+      name: "ClanMediumPulseLaser",
+      damage: 7.4,
+      heat: 6,
+      multiplier: 1,
+      ghost_heat_group: 10,
+      ghost_heat_trigger: 7
+    },
+    1216: {
+      name: "ClanLargePulseLaser",
+      damage: 11.6,
+      heat: 9,
+      multiplier: 4,
+      ghost_heat_group: 3,
+      ghost_heat_trigger: 3
+    },
+    1217: {
+      name: "ClanERPPC",
+      damage: 10,
+      heat: 15,
+      multiplier: 4.5,
+      ghost_heat_group: 1,
+      ghost_heat_trigger: 3
+    },
+    1218: {
+      name: "ClanLRM5",
+      damage: 5.5,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1219: {
+      name: "ClanLRM10",
+      damage: 11.0,
+      heat: 4,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1220: {
+      name: "ClanLRM15",
+      damage: 16.5,
+      heat: 5,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1221: {
+      name: "ClanLRM20",
+      damage: 22.0,
+      heat: 6,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1222: {
+      name: "ClanLRM5_Artemis",
+      damage: 5.5,
+      heat: 2,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1223: {
+      name: "ClanLRM10_Artemis",
+      damage: 11.0,
+      heat: 4,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1224: {
+      name: "ClanLRM15_Artemis",
+      damage: 16.5,
+      heat: 5,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1225: {
+      name: "ClanLRM20_Artemis",
+      damage: 22.0,
+      heat: 6,
+      multiplier: 3.1,
+      ghost_heat_group: 6,
+      ghost_heat_trigger: 3
+    },
+    1226: {
+      name: "ClanSRM2",
+      damage: 4,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1227: {
+      name: "ClanSRM4",
+      damage: 8,
+      heat: 3,
+      multiplier: 1,
+      ghost_heat_group: 7,
+      ghost_heat_trigger: 4
+    },
+    1228: {
+      name: "ClanSRM6",
+      damage: 12,
+      heat: 4,
+      multiplier: 1,
+      ghost_heat_group: 7,
+      ghost_heat_trigger: 4
+    },
+    1229: {
+      name: "ClanSRM2_Artemis",
+      damage: 4,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1230: {
+      name: "ClanSRM4_Artemis",
+      damage: 8,
+      heat: 3,
+      multiplier: 1,
+      ghost_heat_group: 7,
+      ghost_heat_trigger: 4
+    },
+    1231: {
+      name: "ClanSRM6_Artemis",
+      damage: 12,
+      heat: 4,
+      multiplier: 1,
+      ghost_heat_group: 7,
+      ghost_heat_trigger: 4
+    },
+    1232: {
+      name: "ClanStreakSRM2",
+      damage: 4,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 5
+    },
+    1233: {
+      name: "ClanStreakSRM4",
+      damage: 8,
+      heat: 3,
+      multiplier: 1.1,
+      ghost_heat_group: 5,
+      ghost_heat_trigger: 4
+    },
+    1234: {
+      name: "ClanStreakSRM6",
+      damage: 12,
+      heat: 4,
+      multiplier: 1.1,
+      ghost_heat_group: 5,
+      ghost_heat_trigger: 4
+    },
+    1235: {
+      name: "ClanNarcBeacon",
+      damage: 0,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1236: {
+      name: "ClanTAG",
+      damage: 0,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1237: {
+      name: "ClanAnti_Missile_System",
+      damage: 3.5,
+      heat: 0,
+      multiplier: null,
+      ghost_heat_group: null,
+      ghost_heat_trigger: null
+    },
+    1238: {
+      name: "ClanAutoCannon2",
+      damage: 2,
+      heat: 1,
+      multiplier: 0.6,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 4
+    },
+    1239: {
+      name: "ClanAutoCannon5",
+      damage: 5.001,
+      heat: 1,
+      multiplier: 0.8,
+      ghost_heat_group: null,
+      ghost_heat_trigger: 4
+    },
+    1240: {
+      name: "ClanAutoCannon10",
+      damage: 10.0,
+      heat: 2,
+      multiplier: 1,
+      ghost_heat_group: 8,
+      ghost_heat_trigger: 3
+    },
+    1241: {
+      name: "ClanAutoCannon20",
+      damage: 20,
+      heat: 6,
+      multiplier: 30,
+      ghost_heat_group: 9,
+      ghost_heat_trigger: 2
+    }
+  };
+
+}).call(this);
+(function() {
+  window.ghostHeatGroups = {
+    2: {
+      weapon_ids: ["1002", "1027", "1028", "1042", "1043", "1044"],
+      ghost_heat_trigger: "3"
+    },
+    4: {
+      weapon_ids: ["1004", "1031", "1039", "1040"],
+      ghost_heat_trigger: "4"
+    },
+    3: {
+      weapon_ids: ["1005", "1008", "1010", "1213", "1216"],
+      ghost_heat_trigger: "3"
+    },
+    1: {
+      weapon_ids: ["1006", "1009", "1217"],
+      ghost_heat_trigger: "3"
+    },
+    8: {
+      weapon_ids: ["1206", "1240"],
+      ghost_heat_trigger: "3"
+    },
+    9: {
+      weapon_ids: ["1207", "1241"],
+      ghost_heat_trigger: "2"
+    },
+    10: {
+      weapon_ids: ["1211", "1212", "1214", "1215"],
+      ghost_heat_trigger: "7"
+    },
+    6: {
+      weapon_ids: ["1219", "1220", "1221", "1223", "1224", "1225"],
+      ghost_heat_trigger: "3"
+    },
+    7: {
+      weapon_ids: ["1227", "1228", "1230", "1231"],
+      ghost_heat_trigger: "4"
+    },
+    5: {
+      weapon_ids: ["1233", "1234"],
+      ghost_heat_trigger: "4"
+    }
+  };
 
 }).call(this);
 (function() {
@@ -12650,14 +13347,33 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   $(function() {
     return window.weapons = {
       init: function() {
+        $.fn.bootstrapSwitch.defaults.size = 'normal';
+        $.fn.bootstrapSwitch.defaults.onText = 'Clan';
+        $.fn.bootstrapSwitch.defaults.onColor = 'primary';
+        $.fn.bootstrapSwitch.defaults.offText = 'I.S.';
+        $.fn.bootstrapSwitch.defaults.offColor = 'warning';
+        $('input[name="weapon_switcher"]').on('init.bootstrapSwitch', function(event, state) {
+          $('#innersphere_weapons').show();
+          return $('#clan_weapons').hide();
+        });
+        $('input[name="weapon_switcher"]').on('switchChange.bootstrapSwitch', function(event, state) {
+          if (state === true) {
+            $('#innersphere_weapons').hide();
+            return $('#clan_weapons').show();
+          } else if (state === false) {
+            $('#innersphere_weapons').show();
+            return $('#clan_weapons').hide();
+          }
+        });
+        $('input[name="weapon_switcher"]').bootstrapSwitch('state', false);
         $('.weapon-list').on("click", "a.js-fire.ready", this.fireWeapon);
         $(".armory").on("click", ".js-add-weapon", function() {
-          var html, weaponClass, weaponName;
-          weaponClass = $(this).data("weaponClass");
+          var html, weaponId, weaponName;
+          weaponId = $(this).data("weaponId");
           weaponName = $(this).data("weaponName");
           html = weaponView({
             name: weaponName,
-            weaponClass: weaponClass
+            weaponId: weaponId
           });
           $(".weapon-list").append(html);
           _.each($('.cooldown-meter'), function(element, iterator, list) {
@@ -12727,7 +13443,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         counter = {};
         _.each($('.js-fire'), function(element) {
           var weapon;
-          weapon = $(element).data('weapon-class');
+          weapon = $(element).data('weapon-id');
           if (counter[weapon] === void 0) {
             counter[weapon] = 0;
           }
@@ -12752,127 +13468,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
           }
         });
       },
-      weaponStats: {
-        slas: {
-          heat: 2,
-          damage: 3
-        },
-        mlas: {
-          heat: 4,
-          multiplier: 1,
-          damage: 5
-        },
-        llas: {
-          heat: 7,
-          multiplier: 2.8,
-          damage: 9
-        },
-        ellas: {
-          heat: 8.5,
-          multiplier: 2.8,
-          damage: 9
-        },
-        splas: {
-          heat: 2.4,
-          damage: 3.40
-        },
-        mplas: {
-          heat: 4.6,
-          damage: 6
-        },
-        lplas: {
-          heat: 8.0,
-          multiplier: 2.8,
-          damage: 10.60
-        },
-        ppc: {
-          heat: 10,
-          multiplier: 7.0,
-          damage: 10
-        },
-        eppc: {
-          heat: 15,
-          multiplier: 4.5,
-          damage: 10
-        },
-        flam: {
-          heat: .6,
-          damage: 0.70
-        },
-        ac2: {
-          heat: 1,
-          multiplier: 0.6,
-          damage: 2
-        },
-        ac5: {
-          heat: 1,
-          damage: 5
-        },
-        ac10: {
-          heat: 3,
-          damage: 10
-        },
-        ac20: {
-          heat: 6,
-          multiplier: 24,
-          damage: 20
-        },
-        uac5: {
-          heat: 1,
-          damage: 5
-        },
-        lb10x: {
-          heat: 2,
-          damage: 10
-        },
-        gauss: {
-          heat: 1,
-          damage: 15
-        },
-        mg: {
-          heat: 0,
-          damage: 0.1
-        },
-        lrm5: {
-          heat: 2,
-          damage: 5.50
-        },
-        lrm10: {
-          heat: 4,
-          multiplier: 2.8,
-          damage: 11
-        },
-        lrm15: {
-          heat: 5,
-          multiplier: 2.8,
-          damage: 16.50
-        },
-        lrm20: {
-          heat: 6,
-          multiplier: 2.8,
-          damage: 22.0
-        },
-        srm2: {
-          heat: 2,
-          multiplier: 1,
-          damage: 4.3
-        },
-        srm4: {
-          heat: 3,
-          multiplier: 1,
-          damage: 8.6
-        },
-        srm6: {
-          heat: 4,
-          multiplier: 1,
-          damage: 12.9
-        },
-        ssrm2: {
-          heat: 2,
-          multiplier: 1,
-          damage: 5
-        }
-      },
+      weaponStats: window.weaponsList,
       shoot: function(val) {
         var towards;
         val = val * 100;
@@ -12883,14 +13479,13 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         mech.damage += val;
         $('#damage').text(mech.damage.toFixed(2));
         if (!mech.dps.clock) {
-          console.log("called");
           mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000);
         }
         return mech.dps.recompute();
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
-        weapon_name = $(this).data("weaponClass");
+        weapon_name = $(this).data("weaponId");
         stats = mech.weapons.weaponStats[weapon_name];
         window.weapons.shoot(stats.heat);
         window.mech.weapons.disableWeapon($(this));
@@ -12928,8 +13523,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         return $('#ghost_heat').is(':checked');
       },
       scale: function(count) {
-        var multiplier;
-        multiplier = (function() {
+        var heat_scale;
+        heat_scale = (function() {
           switch (false) {
             case !(count < 2):
               return 0;
@@ -12957,57 +13552,93 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
               return 5.00;
           }
         })();
-        return multiplier;
-      },
-      getPenalty: function(list, group, max_alpha) {
-        var group_ghost_heat, link_fired,
-          _this = this;
-        list = $(list);
-        list = $(list);
-        group_ghost_heat = 0;
-        link_fired = [];
-        _.each(group, function(element) {
-          return link_fired = link_fired.concat(list.filter("[data-weapon-class='" + element + "']").toArray());
-        });
-        if (link_fired.length > max_alpha) {
-          _.times(max_alpha, function() {
-            return link_fired.shift();
-          });
-          group_ghost_heat = 0;
-          _.each(link_fired, function(element, index, list) {
-            var base_heat, ghost_heat, heat_scale, multiplier, weapon_position;
-            weapon_position = index + 1 + max_alpha;
-            element = $(element);
-            base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat;
-            multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier;
-            heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position);
-            ghost_heat = base_heat * (heat_scale * multiplier);
-            return group_ghost_heat = group_ghost_heat + ghost_heat;
-          });
-        }
-        return group_ghost_heat;
+        return heat_scale;
       },
       computeTotalPenalty: function(list) {
-        var ghost_heat, llas_group, llas_group_ghost_heat, llas_max_alpha, lrm_group, lrm_group_ghost_heat, lrm_max_alpha, ppc_group, ppc_group_ghost_heat, ppc_max_alpha, srm_group, srm_group_ghost_heat, srm_max_alpha;
+        var element, group_fire, group_ghost_heat, individual_ghost_heat, solo_fire, total_ghost_heat, weapon_ids, weapons_fired_by_id,
+          _this = this;
+        console.log('called `computeTotalPenalty`');
         list = $(list);
-        ghost_heat = 0;
-        lrm_group = ['lrm10', 'lrm15', 'lrm20'];
-        lrm_max_alpha = 2;
-        lrm_group_ghost_heat = this.getPenalty(list, lrm_group, lrm_max_alpha);
-        srm_group = ['srm4', 'srm6'];
-        srm_max_alpha = 3;
-        srm_group_ghost_heat = this.getPenalty(list, srm_group, srm_max_alpha);
-        llas_group = ['llas', 'ellas', 'lplas'];
-        llas_max_alpha = 2;
-        llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
-        ppc_group = ['ppc', 'eppc'];
-        ppc_max_alpha = 2;
-        ppc_group_ghost_heat = this.getPenalty(list, ppc_group, ppc_max_alpha);
-        ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat + llas_group_ghost_heat + ppc_group_ghost_heat + this.getPenalty(list, ['ac2'], 3) + this.getPenalty(list, ['ac20'], 1) + this.getPenalty(list, ['mlas'], 6) + this.getPenalty(list, ['srm2'], 4) + this.getPenalty(list, ['ssrm2'], 4);
-        return ghost_heat;
+        group_ghost_heat = 0;
+        individual_ghost_heat = 0;
+        weapons_fired_by_id = {};
+        group_fire = {};
+        solo_fire = {};
+        weapon_ids = (function() {
+          var _i, _len, _results;
+          _results = [];
+          for (_i = 0, _len = list.length; _i < _len; _i++) {
+            element = list[_i];
+            _results.push($(element).data('weaponId'));
+          }
+          return _results;
+        })();
+        _.each(weapon_ids, function(weapon_id, index) {
+          var ghost_heat, group_id, heat_scale_multiplier, heat_scale_position, weapon;
+          weapon = window.weaponsList[weapon_id];
+          group_id = weapon.ghost_heat_group;
+          if (group_id === null && weapon.ghost_heat_trigger !== null) {
+            if (solo_fire[weapon_id] === void 0) {
+              solo_fire[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0,
+                ghost_heat_trigger: weapon.ghost_heat_trigger
+              };
+            }
+            solo_fire[weapon_id].fire_count++;
+            if (solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count) {
+              heat_scale_position = solo_fire[weapon_id].fire_count;
+              console.log("Heat scale position is " + heat_scale_position);
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              console.log("Heat scale multiplier is " + heat_scale_multiplier);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              console.log("Heat scale ghost_heat is " + ghost_heat);
+              solo_fire[weapon_id].ghost_heat += ghost_heat;
+              individual_ghost_heat += ghost_heat;
+            }
+          }
+          if (group_id !== null) {
+            if (group_fire[group_id] === void 0) {
+              group_fire[group_id] = {};
+            }
+            if (group_fire[group_id].fire_order === void 0) {
+              group_fire[group_id].fire_order = [];
+            }
+            group_fire[group_id].fire_order.push(weapon_id);
+            if (group_fire[group_id].weapon_ids === void 0) {
+              group_fire[group_id].weapon_ids = {};
+            }
+            if (group_fire[group_id].weapon_ids[weapon_id] === void 0) {
+              group_fire[group_id].weapon_ids[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0
+              };
+            }
+            group_fire[group_id].weapon_ids[weapon_id].fire_count++;
+            if (group_fire[group_id].total_fire_count === void 0) {
+              group_fire[group_id].total_fire_count = 0;
+            }
+            group_fire[group_id].total_fire_count++;
+            group_fire[group_id].ghost_heat_trigger = window.ghostHeatGroups[group_id].ghost_heat_trigger;
+            if (group_fire[group_id].ghost_heat_trigger <= group_fire[group_id].total_fire_count) {
+              heat_scale_position = group_fire[group_id].total_fire_count;
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              group_fire[group_id].weapon_ids[weapon_id].ghost_heat += ghost_heat;
+              if (group_fire[group_id].ghost_heat === void 0) {
+                group_fire[group_id].ghost_heat = 0;
+              }
+              group_fire[group_id].ghost_heat += ghost_heat;
+              return group_ghost_heat += ghost_heat;
+            }
+          }
+        });
+        total_ghost_heat = group_ghost_heat + individual_ghost_heat;
+        return total_ghost_heat;
       },
       apply: function(list) {
         var penalty, towards;
+        console.log('called `apply`');
         penalty = this.computeTotalPenalty(list);
         $('#ghost_heat_penalty').text(penalty);
         penalty = penalty * 100;
@@ -13107,14 +13738,14 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         var cool_run, elite_mech, engine_rating, heat_containment, heatsink_count, heatsink_type, url, url_params, weapon_params;
         url = $.url(location);
         url_params = url.param();
-        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.mech.weapons.weaponStats));
+        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.weaponsList));
         if (weapon_params.length > 0) {
           $('#js-stripall').click();
           _.each(weapon_params, function(val, key, list) {
             var count;
             count = url.param(val);
             return _(count).times(function() {
-              return $('#armory').find("a[data-weapon-class='" + val + "']").click();
+              return $('#armory').find("a[data-weapon-id='" + val + "']").click();
             });
           });
         }
@@ -13245,7 +13876,6 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       $('#wg2').click();
     }
     if (e.which === 51) {
-      console.log("3");
       return $('#wg3').click();
     }
   });

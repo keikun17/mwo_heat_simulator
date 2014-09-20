@@ -132,14 +132,33 @@
   $(function() {
     return window.weapons = {
       init: function() {
+        $.fn.bootstrapSwitch.defaults.size = 'normal';
+        $.fn.bootstrapSwitch.defaults.onText = 'Clan';
+        $.fn.bootstrapSwitch.defaults.onColor = 'primary';
+        $.fn.bootstrapSwitch.defaults.offText = 'I.S.';
+        $.fn.bootstrapSwitch.defaults.offColor = 'warning';
+        $('input[name="weapon_switcher"]').on('init.bootstrapSwitch', function(event, state) {
+          $('#innersphere_weapons').show();
+          return $('#clan_weapons').hide();
+        });
+        $('input[name="weapon_switcher"]').on('switchChange.bootstrapSwitch', function(event, state) {
+          if (state === true) {
+            $('#innersphere_weapons').hide();
+            return $('#clan_weapons').show();
+          } else if (state === false) {
+            $('#innersphere_weapons').show();
+            return $('#clan_weapons').hide();
+          }
+        });
+        $('input[name="weapon_switcher"]').bootstrapSwitch('state', false);
         $('.weapon-list').on("click", "a.js-fire.ready", this.fireWeapon);
         $(".armory").on("click", ".js-add-weapon", function() {
-          var html, weaponClass, weaponName;
-          weaponClass = $(this).data("weaponClass");
+          var html, weaponId, weaponName;
+          weaponId = $(this).data("weaponId");
           weaponName = $(this).data("weaponName");
           html = weaponView({
             name: weaponName,
-            weaponClass: weaponClass
+            weaponId: weaponId
           });
           $(".weapon-list").append(html);
           _.each($('.cooldown-meter'), function(element, iterator, list) {
@@ -209,7 +228,7 @@
         counter = {};
         _.each($('.js-fire'), function(element) {
           var weapon;
-          weapon = $(element).data('weapon-class');
+          weapon = $(element).data('weapon-id');
           if (counter[weapon] === void 0) {
             counter[weapon] = 0;
           }
@@ -234,127 +253,7 @@
           }
         });
       },
-      weaponStats: {
-        slas: {
-          heat: 2,
-          damage: 3
-        },
-        mlas: {
-          heat: 4,
-          multiplier: 1,
-          damage: 5
-        },
-        llas: {
-          heat: 7,
-          multiplier: 2.8,
-          damage: 9
-        },
-        ellas: {
-          heat: 8.5,
-          multiplier: 2.8,
-          damage: 9
-        },
-        splas: {
-          heat: 2.4,
-          damage: 3.40
-        },
-        mplas: {
-          heat: 4.6,
-          damage: 6
-        },
-        lplas: {
-          heat: 8.0,
-          multiplier: 2.8,
-          damage: 10.60
-        },
-        ppc: {
-          heat: 10,
-          multiplier: 7.0,
-          damage: 10
-        },
-        eppc: {
-          heat: 15,
-          multiplier: 4.5,
-          damage: 10
-        },
-        flam: {
-          heat: .6,
-          damage: 0.70
-        },
-        ac2: {
-          heat: 1,
-          multiplier: 0.6,
-          damage: 2
-        },
-        ac5: {
-          heat: 1,
-          damage: 5
-        },
-        ac10: {
-          heat: 3,
-          damage: 10
-        },
-        ac20: {
-          heat: 6,
-          multiplier: 24,
-          damage: 20
-        },
-        uac5: {
-          heat: 1,
-          damage: 5
-        },
-        lb10x: {
-          heat: 2,
-          damage: 10
-        },
-        gauss: {
-          heat: 1,
-          damage: 15
-        },
-        mg: {
-          heat: 0,
-          damage: 0.1
-        },
-        lrm5: {
-          heat: 2,
-          damage: 5.50
-        },
-        lrm10: {
-          heat: 4,
-          multiplier: 2.8,
-          damage: 11
-        },
-        lrm15: {
-          heat: 5,
-          multiplier: 2.8,
-          damage: 16.50
-        },
-        lrm20: {
-          heat: 6,
-          multiplier: 2.8,
-          damage: 22.0
-        },
-        srm2: {
-          heat: 2,
-          multiplier: 1,
-          damage: 4.3
-        },
-        srm4: {
-          heat: 3,
-          multiplier: 1,
-          damage: 8.6
-        },
-        srm6: {
-          heat: 4,
-          multiplier: 1,
-          damage: 12.9
-        },
-        ssrm2: {
-          heat: 2,
-          multiplier: 1,
-          damage: 5
-        }
-      },
+      weaponStats: window.weaponsList,
       shoot: function(val) {
         var towards;
         val = val * 100;
@@ -365,14 +264,13 @@
         mech.damage += val;
         $('#damage').text(mech.damage.toFixed(2));
         if (!mech.dps.clock) {
-          console.log("called");
           mech.dps.clock = setInterval(mech.dps.incrementTimer, 1000);
         }
         return mech.dps.recompute();
       },
       fireWeapon: function(event) {
         var stats, weapon_name;
-        weapon_name = $(this).data("weaponClass");
+        weapon_name = $(this).data("weaponId");
         stats = mech.weapons.weaponStats[weapon_name];
         window.weapons.shoot(stats.heat);
         window.mech.weapons.disableWeapon($(this));
@@ -410,8 +308,8 @@
         return $('#ghost_heat').is(':checked');
       },
       scale: function(count) {
-        var multiplier;
-        multiplier = (function() {
+        var heat_scale;
+        heat_scale = (function() {
           switch (false) {
             case !(count < 2):
               return 0;
@@ -439,57 +337,93 @@
               return 5.00;
           }
         })();
-        return multiplier;
-      },
-      getPenalty: function(list, group, max_alpha) {
-        var group_ghost_heat, link_fired,
-          _this = this;
-        list = $(list);
-        list = $(list);
-        group_ghost_heat = 0;
-        link_fired = [];
-        _.each(group, function(element) {
-          return link_fired = link_fired.concat(list.filter("[data-weapon-class='" + element + "']").toArray());
-        });
-        if (link_fired.length > max_alpha) {
-          _.times(max_alpha, function() {
-            return link_fired.shift();
-          });
-          group_ghost_heat = 0;
-          _.each(link_fired, function(element, index, list) {
-            var base_heat, ghost_heat, heat_scale, multiplier, weapon_position;
-            weapon_position = index + 1 + max_alpha;
-            element = $(element);
-            base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat;
-            multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier;
-            heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position);
-            ghost_heat = base_heat * (heat_scale * multiplier);
-            return group_ghost_heat = group_ghost_heat + ghost_heat;
-          });
-        }
-        return group_ghost_heat;
+        return heat_scale;
       },
       computeTotalPenalty: function(list) {
-        var ghost_heat, llas_group, llas_group_ghost_heat, llas_max_alpha, lrm_group, lrm_group_ghost_heat, lrm_max_alpha, ppc_group, ppc_group_ghost_heat, ppc_max_alpha, srm_group, srm_group_ghost_heat, srm_max_alpha;
+        var element, group_fire, group_ghost_heat, individual_ghost_heat, solo_fire, total_ghost_heat, weapon_ids, weapons_fired_by_id,
+          _this = this;
+        console.log('called `computeTotalPenalty`');
         list = $(list);
-        ghost_heat = 0;
-        lrm_group = ['lrm10', 'lrm15', 'lrm20'];
-        lrm_max_alpha = 2;
-        lrm_group_ghost_heat = this.getPenalty(list, lrm_group, lrm_max_alpha);
-        srm_group = ['srm4', 'srm6'];
-        srm_max_alpha = 3;
-        srm_group_ghost_heat = this.getPenalty(list, srm_group, srm_max_alpha);
-        llas_group = ['llas', 'ellas', 'lplas'];
-        llas_max_alpha = 2;
-        llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
-        ppc_group = ['ppc', 'eppc'];
-        ppc_max_alpha = 2;
-        ppc_group_ghost_heat = this.getPenalty(list, ppc_group, ppc_max_alpha);
-        ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat + llas_group_ghost_heat + ppc_group_ghost_heat + this.getPenalty(list, ['ac2'], 3) + this.getPenalty(list, ['ac20'], 1) + this.getPenalty(list, ['mlas'], 6) + this.getPenalty(list, ['srm2'], 4) + this.getPenalty(list, ['ssrm2'], 4);
-        return ghost_heat;
+        group_ghost_heat = 0;
+        individual_ghost_heat = 0;
+        weapons_fired_by_id = {};
+        group_fire = {};
+        solo_fire = {};
+        weapon_ids = (function() {
+          var _i, _len, _results;
+          _results = [];
+          for (_i = 0, _len = list.length; _i < _len; _i++) {
+            element = list[_i];
+            _results.push($(element).data('weaponId'));
+          }
+          return _results;
+        })();
+        _.each(weapon_ids, function(weapon_id, index) {
+          var ghost_heat, group_id, heat_scale_multiplier, heat_scale_position, weapon;
+          weapon = window.weaponsList[weapon_id];
+          group_id = weapon.ghost_heat_group;
+          if (group_id === null && weapon.ghost_heat_trigger !== null) {
+            if (solo_fire[weapon_id] === void 0) {
+              solo_fire[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0,
+                ghost_heat_trigger: weapon.ghost_heat_trigger
+              };
+            }
+            solo_fire[weapon_id].fire_count++;
+            if (solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count) {
+              heat_scale_position = solo_fire[weapon_id].fire_count;
+              console.log("Heat scale position is " + heat_scale_position);
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              console.log("Heat scale multiplier is " + heat_scale_multiplier);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              console.log("Heat scale ghost_heat is " + ghost_heat);
+              solo_fire[weapon_id].ghost_heat += ghost_heat;
+              individual_ghost_heat += ghost_heat;
+            }
+          }
+          if (group_id !== null) {
+            if (group_fire[group_id] === void 0) {
+              group_fire[group_id] = {};
+            }
+            if (group_fire[group_id].fire_order === void 0) {
+              group_fire[group_id].fire_order = [];
+            }
+            group_fire[group_id].fire_order.push(weapon_id);
+            if (group_fire[group_id].weapon_ids === void 0) {
+              group_fire[group_id].weapon_ids = {};
+            }
+            if (group_fire[group_id].weapon_ids[weapon_id] === void 0) {
+              group_fire[group_id].weapon_ids[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0
+              };
+            }
+            group_fire[group_id].weapon_ids[weapon_id].fire_count++;
+            if (group_fire[group_id].total_fire_count === void 0) {
+              group_fire[group_id].total_fire_count = 0;
+            }
+            group_fire[group_id].total_fire_count++;
+            group_fire[group_id].ghost_heat_trigger = window.ghostHeatGroups[group_id].ghost_heat_trigger;
+            if (group_fire[group_id].ghost_heat_trigger <= group_fire[group_id].total_fire_count) {
+              heat_scale_position = group_fire[group_id].total_fire_count;
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              group_fire[group_id].weapon_ids[weapon_id].ghost_heat += ghost_heat;
+              if (group_fire[group_id].ghost_heat === void 0) {
+                group_fire[group_id].ghost_heat = 0;
+              }
+              group_fire[group_id].ghost_heat += ghost_heat;
+              return group_ghost_heat += ghost_heat;
+            }
+          }
+        });
+        total_ghost_heat = group_ghost_heat + individual_ghost_heat;
+        return total_ghost_heat;
       },
       apply: function(list) {
         var penalty, towards;
+        console.log('called `apply`');
         penalty = this.computeTotalPenalty(list);
         $('#ghost_heat_penalty').text(penalty);
         penalty = penalty * 100;
@@ -589,14 +523,14 @@
         var cool_run, elite_mech, engine_rating, heat_containment, heatsink_count, heatsink_type, url, url_params, weapon_params;
         url = $.url(location);
         url_params = url.param();
-        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.mech.weapons.weaponStats));
+        weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.weaponsList));
         if (weapon_params.length > 0) {
           $('#js-stripall').click();
           _.each(weapon_params, function(val, key, list) {
             var count;
             count = url.param(val);
             return _(count).times(function() {
-              return $('#armory').find("a[data-weapon-class='" + val + "']").click();
+              return $('#armory').find("a[data-weapon-id='" + val + "']").click();
             });
           });
         }

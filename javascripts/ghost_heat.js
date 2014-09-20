@@ -5,8 +5,8 @@
         return $('#ghost_heat').is(':checked');
       },
       scale: function(count) {
-        var multiplier;
-        multiplier = (function() {
+        var heat_scale;
+        heat_scale = (function() {
           switch (false) {
             case !(count < 2):
               return 0;
@@ -34,57 +34,93 @@
               return 5.00;
           }
         })();
-        return multiplier;
-      },
-      getPenalty: function(list, group, max_alpha) {
-        var group_ghost_heat, link_fired,
-          _this = this;
-        list = $(list);
-        list = $(list);
-        group_ghost_heat = 0;
-        link_fired = [];
-        _.each(group, function(element) {
-          return link_fired = link_fired.concat(list.filter("[data-weapon-class='" + element + "']").toArray());
-        });
-        if (link_fired.length > max_alpha) {
-          _.times(max_alpha, function() {
-            return link_fired.shift();
-          });
-          group_ghost_heat = 0;
-          _.each(link_fired, function(element, index, list) {
-            var base_heat, ghost_heat, heat_scale, multiplier, weapon_position;
-            weapon_position = index + 1 + max_alpha;
-            element = $(element);
-            base_heat = window.mech.weapons.weaponStats[element.data('weaponClass')].heat;
-            multiplier = window.mech.weapons.weaponStats[element.data('weaponClass')].multiplier;
-            heat_scale = window.mech.weapons.ghostHeat.scale(weapon_position);
-            ghost_heat = base_heat * (heat_scale * multiplier);
-            return group_ghost_heat = group_ghost_heat + ghost_heat;
-          });
-        }
-        return group_ghost_heat;
+        return heat_scale;
       },
       computeTotalPenalty: function(list) {
-        var ghost_heat, llas_group, llas_group_ghost_heat, llas_max_alpha, lrm_group, lrm_group_ghost_heat, lrm_max_alpha, ppc_group, ppc_group_ghost_heat, ppc_max_alpha, srm_group, srm_group_ghost_heat, srm_max_alpha;
+        var element, group_fire, group_ghost_heat, individual_ghost_heat, solo_fire, total_ghost_heat, weapon_ids, weapons_fired_by_id,
+          _this = this;
+        console.log('called `computeTotalPenalty`');
         list = $(list);
-        ghost_heat = 0;
-        lrm_group = ['lrm10', 'lrm15', 'lrm20'];
-        lrm_max_alpha = 2;
-        lrm_group_ghost_heat = this.getPenalty(list, lrm_group, lrm_max_alpha);
-        srm_group = ['srm4', 'srm6'];
-        srm_max_alpha = 3;
-        srm_group_ghost_heat = this.getPenalty(list, srm_group, srm_max_alpha);
-        llas_group = ['llas', 'ellas', 'lplas'];
-        llas_max_alpha = 2;
-        llas_group_ghost_heat = this.getPenalty(list, llas_group, llas_max_alpha);
-        ppc_group = ['ppc', 'eppc'];
-        ppc_max_alpha = 2;
-        ppc_group_ghost_heat = this.getPenalty(list, ppc_group, ppc_max_alpha);
-        ghost_heat = lrm_group_ghost_heat + srm_group_ghost_heat + llas_group_ghost_heat + ppc_group_ghost_heat + this.getPenalty(list, ['ac2'], 3) + this.getPenalty(list, ['ac20'], 1) + this.getPenalty(list, ['mlas'], 6) + this.getPenalty(list, ['srm2'], 4) + this.getPenalty(list, ['ssrm2'], 4);
-        return ghost_heat;
+        group_ghost_heat = 0;
+        individual_ghost_heat = 0;
+        weapons_fired_by_id = {};
+        group_fire = {};
+        solo_fire = {};
+        weapon_ids = (function() {
+          var _i, _len, _results;
+          _results = [];
+          for (_i = 0, _len = list.length; _i < _len; _i++) {
+            element = list[_i];
+            _results.push($(element).data('weaponId'));
+          }
+          return _results;
+        })();
+        _.each(weapon_ids, function(weapon_id, index) {
+          var ghost_heat, group_id, heat_scale_multiplier, heat_scale_position, weapon;
+          weapon = window.weaponsList[weapon_id];
+          group_id = weapon.ghost_heat_group;
+          if (group_id === null && weapon.ghost_heat_trigger !== null) {
+            if (solo_fire[weapon_id] === void 0) {
+              solo_fire[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0,
+                ghost_heat_trigger: weapon.ghost_heat_trigger
+              };
+            }
+            solo_fire[weapon_id].fire_count++;
+            if (solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count) {
+              heat_scale_position = solo_fire[weapon_id].fire_count;
+              console.log("Heat scale position is " + heat_scale_position);
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              console.log("Heat scale multiplier is " + heat_scale_multiplier);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              console.log("Heat scale ghost_heat is " + ghost_heat);
+              solo_fire[weapon_id].ghost_heat += ghost_heat;
+              individual_ghost_heat += ghost_heat;
+            }
+          }
+          if (group_id !== null) {
+            if (group_fire[group_id] === void 0) {
+              group_fire[group_id] = {};
+            }
+            if (group_fire[group_id].fire_order === void 0) {
+              group_fire[group_id].fire_order = [];
+            }
+            group_fire[group_id].fire_order.push(weapon_id);
+            if (group_fire[group_id].weapon_ids === void 0) {
+              group_fire[group_id].weapon_ids = {};
+            }
+            if (group_fire[group_id].weapon_ids[weapon_id] === void 0) {
+              group_fire[group_id].weapon_ids[weapon_id] = {
+                fire_count: 0,
+                ghost_heat: 0
+              };
+            }
+            group_fire[group_id].weapon_ids[weapon_id].fire_count++;
+            if (group_fire[group_id].total_fire_count === void 0) {
+              group_fire[group_id].total_fire_count = 0;
+            }
+            group_fire[group_id].total_fire_count++;
+            group_fire[group_id].ghost_heat_trigger = window.ghostHeatGroups[group_id].ghost_heat_trigger;
+            if (group_fire[group_id].ghost_heat_trigger <= group_fire[group_id].total_fire_count) {
+              heat_scale_position = group_fire[group_id].total_fire_count;
+              heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
+              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              group_fire[group_id].weapon_ids[weapon_id].ghost_heat += ghost_heat;
+              if (group_fire[group_id].ghost_heat === void 0) {
+                group_fire[group_id].ghost_heat = 0;
+              }
+              group_fire[group_id].ghost_heat += ghost_heat;
+              return group_ghost_heat += ghost_heat;
+            }
+          }
+        });
+        total_ghost_heat = group_ghost_heat + individual_ghost_heat;
+        return total_ghost_heat;
       },
       apply: function(list) {
         var penalty, towards;
+        console.log('called `apply`');
         penalty = this.computeTotalPenalty(list);
         $('#ghost_heat_penalty').text(penalty);
         penalty = penalty * 100;
