@@ -192,10 +192,6 @@ $ ->
             # set the value at the overall level
             group_ghost_heat += ghost_heat
 
-      # TODO: remove this debugger
-      window.group_fire = group_fire
-      window.solo_fire = solo_fire
-
       total_ghost_heat = group_ghost_heat + individual_ghost_heat
 
 
