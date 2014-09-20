@@ -5,6 +5,7 @@
 - weapon_group_1_state ||= 'btn-default'
 - weapon_group_2_state ||= 'btn-default'
 - weapon_group_3_state ||= 'btn-default'
+- with_tooltip ||= false
 
 - case active_group
 - when 1
@@ -13,6 +14,14 @@
   - weapon_group_2_state = 'btn-info assigned'
 - when 3
   - weapon_group_3_state = 'btn-info assigned'
+
+- case with_tooltip
+- when 1
+  - weapon_group_1_state = weapon_group_1_state + ' js-with_tooltip'
+- when 2
+  - weapon_group_2_state = weapon_group_2_state + ' js-with_tooltip'
+- when 3
+  - weapon_group_3_state = weapon_group_3_state + ' js-with_tooltip'
 
 .row
   .col-lg-9
@@ -24,7 +33,7 @@
       %span.glyphicon.glyphicon-link 1
     %a{href: '#', class: "js-weapon_group #{weapon_group_2_state} btn-sm", data: {weapon_group: 2} }<
       %span.glyphicon.glyphicon-link 2
-    %a{href: '#', class: "js-weapon_group #{weapon_group_3_state} btn-sm js-with_tooltip", data: {weapon_group: 3, toggle: 'tooltip', placement: 'top', 'original-title' => "Click to assign to weapon group"} }<
+    %a{href: '#', class: "js-weapon_group #{weapon_group_3_state} btn-sm", data: {weapon_group: 3, toggle: 'tooltip', placement: 'top', 'original-title' => "Click to assign to weapon group"} }<
       %span.glyphicon.glyphicon-link 3
     = weapon[:name]
   .col-lg-3.weapon-cooldown-container
