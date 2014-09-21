@@ -11,9 +11,6 @@ $ ->
         window.mech.setHeat(0)
         @exitOverheat()
 
-      # enable tooltip
-      $('#ghost_heat').tooltip('show')
-
       @runTicker()
 
     getType: -> $('#heatsink_type').val()
