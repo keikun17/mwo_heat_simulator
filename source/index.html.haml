@@ -32,7 +32,7 @@
           .form-group
             .checkbox-inline
               %input{type: 'checkbox', id:'ghost_heat', data: {toggle: 'tooltip', placement: 'left', 'original-title' => 'Please note that Ghost Heat only works on linked-fire or Alpha, not on chain-fire'}}
-              Enable Ghost Heat :( 
+              Enable Ghost Heat :(
               %span.badge{id: 'ghost_heat_penalty'}
           %a{id: 'flush_coolant', class: 'btn btn-success'}
             %span.glyphicon.glyphicon-tint
@@ -78,17 +78,16 @@
 
 
         %hr
-        %div
-          Cool Run Skill
-          %input{type: 'checkbox', id:'skill_coolrun'}
-
-        %div
-          Heat Containment Skill
-          %input{type: 'checkbox', id:'skill_containment'}
-
-        %div
-          Elite Mech
-          %input{type: 'checkbox', id:'skill_elite'}
+        .form-group
+          .checkbox
+            %input{type: 'checkbox', id:'skill_coolrun'}
+            Cool Run Skill
+          .checkbox
+            %input{type: 'checkbox', id:'skill_containment'}
+            Heat Containment Skill
+          .checkbox
+            %input{type: 'checkbox', id:'skill_elite'}
+            Elite Mech
 
     .col-lg-6.col-md-6.col-sm-6
       %h4 Equipped Weapons
