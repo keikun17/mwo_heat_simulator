@@ -13,7 +13,6 @@
           window.mech.setHeat(0);
           return _this.exitOverheat();
         });
-        $('#ghost_heat').tooltip('show');
         return this.runTicker();
       },
       getType: function() {
@@ -342,7 +341,6 @@
       computeTotalPenalty: function(list) {
         var element, group_fire, group_ghost_heat, individual_ghost_heat, solo_fire, total_ghost_heat, weapon_ids, weapons_fired_by_id,
           _this = this;
-        console.log('called `computeTotalPenalty`');
         list = $(list);
         group_ghost_heat = 0;
         individual_ghost_heat = 0;
@@ -373,11 +371,8 @@
             solo_fire[weapon_id].fire_count++;
             if (solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count) {
               heat_scale_position = solo_fire[weapon_id].fire_count;
-              console.log("Heat scale position is " + heat_scale_position);
               heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
-              console.log("Heat scale multiplier is " + heat_scale_multiplier);
               ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
-              console.log("Heat scale ghost_heat is " + ghost_heat);
               solo_fire[weapon_id].ghost_heat += ghost_heat;
               individual_ghost_heat += ghost_heat;
             }
@@ -423,7 +418,6 @@
       },
       apply: function(list) {
         var penalty, towards;
-        console.log('called `apply`');
         penalty = this.computeTotalPenalty(list);
         $('#ghost_heat_penalty').text(penalty);
         penalty = penalty * 100;

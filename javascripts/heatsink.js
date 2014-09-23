@@ -13,7 +13,6 @@
           window.mech.setHeat(0);
           return _this.exitOverheat();
         });
-        $('#ghost_heat').tooltip('show');
         return this.runTicker();
       },
       getType: function() {
