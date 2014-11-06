@@ -91,15 +91,15 @@ window.weaponsList =
   1011:
     name: "MediumPulseLaser"
     damage: 6
-    heat: 4.6
+    heat: 4
     multiplier: null
     ghost_heat_group: null
     ghost_heat_trigger: null
 
   1012:
     name: "SmallPulseLaser"
-    damage: 3.4
-    heat: 2.4
+    damage: 4
+    heat: 2
     multiplier: null
     ghost_heat_group: null
     ghost_heat_trigger: null
