@@ -82,8 +82,8 @@ window.weaponsList =
 
   1010:
     name: "LargePulseLaser"
-    damage: 10.6
-    heat: 8
+    damage: 11
+    heat: 7
     multiplier: 2.8
     ghost_heat_group: 3
     ghost_heat_trigger: 3
@@ -378,7 +378,7 @@ window.weaponsList =
 
   1211:
     name: "ClanERSmallLaser"
-    damage: 4
+    damage: 5
     heat: 3
     multiplier: 1.4
     ghost_heat_group: 10
@@ -402,15 +402,15 @@ window.weaponsList =
 
   1214:
     name: "ClanSmallPulseLaser"
-    damage: 4.4
-    heat: 3.4
+    damage: 6
+    heat: 3
     multiplier: 1
     ghost_heat_group: 10
     ghost_heat_trigger: 7
 
   1215:
     name: "ClanMediumPulseLaser"
-    damage: 7.4
+    damage: 8
     heat: 6
     multiplier: 1
     ghost_heat_group: 10
@@ -418,8 +418,8 @@ window.weaponsList =
 
   1216:
     name: "ClanLargePulseLaser"
-    damage: 11.6
-    heat: 9
+    damage: 13
+    heat: 10
     multiplier: 4
     ghost_heat_group: 3
     ghost_heat_trigger: 3
