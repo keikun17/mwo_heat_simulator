@@ -12559,7 +12559,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1002: {
       name: "LRM20",
-      damage: 22.0,
+      damage: 20.0,
       heat: 6,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12623,8 +12623,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1010: {
       name: "LargePulseLaser",
-      damage: 10.6,
-      heat: 8,
+      damage: 11,
+      heat: 7,
       multiplier: 2.8,
       ghost_heat_group: 3,
       ghost_heat_trigger: 3
@@ -12632,15 +12632,15 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     1011: {
       name: "MediumPulseLaser",
       damage: 6,
-      heat: 4.6,
+      heat: 4,
       multiplier: null,
       ghost_heat_group: null,
       ghost_heat_trigger: null
     },
     1012: {
       name: "SmallPulseLaser",
-      damage: 3.4,
-      heat: 2.4,
+      damage: 4,
+      heat: 2,
       multiplier: null,
       ghost_heat_group: null,
       ghost_heat_trigger: null
@@ -12711,7 +12711,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1026: {
       name: "LRM5",
-      damage: 5.5,
+      damage: 5,
       heat: 2,
       multiplier: null,
       ghost_heat_group: null,
@@ -12719,7 +12719,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1027: {
       name: "LRM10",
-      damage: 11.0,
+      damage: 10,
       heat: 4,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12727,7 +12727,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1028: {
       name: "LRM15",
-      damage: 16.5,
+      damage: 15,
       heat: 5,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12799,7 +12799,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1041: {
       name: "LRM5_Artemis",
-      damage: 5.5,
+      damage: 5,
       heat: 2,
       multiplier: null,
       ghost_heat_group: null,
@@ -12807,7 +12807,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1042: {
       name: "LRM10_Artemis",
-      damage: 11.0,
+      damage: 10,
       heat: 4,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12815,7 +12815,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1043: {
       name: "LRM15_Artemis",
-      damage: 16.5,
+      damage: 15,
       heat: 5,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12823,7 +12823,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1044: {
       name: "LRM20_Artemis",
-      damage: 22.0,
+      damage: 20,
       heat: 6,
       multiplier: 2.8,
       ghost_heat_group: 2,
@@ -12919,7 +12919,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1211: {
       name: "ClanERSmallLaser",
-      damage: 4,
+      damage: 5,
       heat: 3,
       multiplier: 1.4,
       ghost_heat_group: 10,
@@ -12943,15 +12943,15 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1214: {
       name: "ClanSmallPulseLaser",
-      damage: 4.4,
-      heat: 3.4,
+      damage: 6,
+      heat: 3,
       multiplier: 1,
       ghost_heat_group: 10,
       ghost_heat_trigger: 7
     },
     1215: {
       name: "ClanMediumPulseLaser",
-      damage: 7.4,
+      damage: 8,
       heat: 6,
       multiplier: 1,
       ghost_heat_group: 10,
@@ -12959,8 +12959,8 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1216: {
       name: "ClanLargePulseLaser",
-      damage: 11.6,
-      heat: 9,
+      damage: 13,
+      heat: 10,
       multiplier: 4,
       ghost_heat_group: 3,
       ghost_heat_trigger: 3
@@ -12975,7 +12975,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1218: {
       name: "ClanLRM5",
-      damage: 5.5,
+      damage: 5,
       heat: 2,
       multiplier: null,
       ghost_heat_group: null,
@@ -12983,7 +12983,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1219: {
       name: "ClanLRM10",
-      damage: 11.0,
+      damage: 10,
       heat: 4,
       multiplier: 3.1,
       ghost_heat_group: 6,
@@ -12991,7 +12991,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1220: {
       name: "ClanLRM15",
-      damage: 16.5,
+      damage: 15,
       heat: 5,
       multiplier: 3.1,
       ghost_heat_group: 6,
@@ -12999,7 +12999,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1221: {
       name: "ClanLRM20",
-      damage: 22.0,
+      damage: 20,
       heat: 6,
       multiplier: 3.1,
       ghost_heat_group: 6,
@@ -13007,7 +13007,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1222: {
       name: "ClanLRM5_Artemis",
-      damage: 5.5,
+      damage: 5,
       heat: 2,
       multiplier: null,
       ghost_heat_group: null,
@@ -13015,7 +13015,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1223: {
       name: "ClanLRM10_Artemis",
-      damage: 11.0,
+      damage: 10,
       heat: 4,
       multiplier: 3.1,
       ghost_heat_group: 6,
@@ -13023,7 +13023,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1224: {
       name: "ClanLRM15_Artemis",
-      damage: 16.5,
+      damage: 15,
       heat: 5,
       multiplier: 3.1,
       ghost_heat_group: 6,
@@ -13031,7 +13031,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     },
     1225: {
       name: "ClanLRM20_Artemis",
-      damage: 22.0,
+      damage: 20,
       heat: 6,
       multiplier: 3.1,
       ghost_heat_group: 6,
