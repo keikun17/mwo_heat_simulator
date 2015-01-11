@@ -163,8 +163,8 @@ $ ->
       mech.dps.recompute()
 
     fireWeapon: (event) ->
-      weapon_name = $(this).data("weaponId")
-      stats = mech.weapons.weaponStats[weapon_name]
+      weapon_id = $(this).data("weaponId")
+      stats = mech.weapons.weaponStats[weapon_id]
 
       window.weapons.shoot(stats.heat)
       window.mech.weapons.disableWeapon $(this)
