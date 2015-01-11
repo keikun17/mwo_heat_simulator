@@ -148,7 +148,7 @@ $ ->
     # NOTE ABOUT COOLDOWN TIMES : it's in the weapon_cooldown.scss
     weaponStats: window.weaponsList
 
-    shoot: (val) ->
+    applyHeat: (val) ->
       val = val * 100
       towards = val + window.mech.heatsink.getCurrentHeat()
       window.mech.setHeat(towards)
@@ -166,7 +166,7 @@ $ ->
       weapon_id = $(this).data("weaponId")
       stats = mech.weapons.weaponStats[weapon_id]
 
-      window.weapons.shoot(stats.heat)
+      window.weapons.applyHeat(stats.heat)
       window.mech.weapons.disableWeapon $(this)
 
       window.mech.weapons.damage(stats.damage)
