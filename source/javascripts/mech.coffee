@@ -4,6 +4,7 @@
 #= require engine
 #= require skills
 #= require map
+#= require quirk
 #= require persistence
 
 $ ->
@@ -12,6 +13,7 @@ $ ->
     init: ->
       window.heatsink.init()
       window.weapons.init()
+      window.quirks.init()
       window.engine.init()
       window.skills.init()
       window.persistence.init()
@@ -28,6 +30,8 @@ $ ->
     heatsink: window.heatsink
 
     engine: window.engine
+
+    quirks: window.quirks
 
     damage: 0
 

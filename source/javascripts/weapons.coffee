@@ -164,11 +164,14 @@ $ ->
 
     fireWeapon: (event) ->
       weapon_id = $(this).data("weaponId")
+
       stats = mech.weapons.weaponStats[weapon_id]
+      heat_to_apply = stats.heat - (stats.heat * quirks.weaponheat(weapon_id))
 
-      window.weapons.applyHeat(stats.heat)
+      console.log "heat to apply is #{heat_to_apply}"
+
+      window.weapons.applyHeat(heat_to_apply)
       window.mech.weapons.disableWeapon $(this)
-
       window.mech.weapons.damage(stats.damage)
 
       false
