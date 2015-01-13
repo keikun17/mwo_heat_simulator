@@ -29,14 +29,25 @@
 
       .row
         %p
+          %a{id: 'flush_coolant', class: 'btn btn-success'}
+            %span.glyphicon.glyphicon-tint
+            Flush coolant
+
+        %div
+          Current Heat :
+          %span.badge#current-heat-text 0
+
+        %div
+          Heat Threshold :
+          %span#heat-threshold.badge
+
+        %div
           .form-group
             .checkbox-inline
               %input{type: 'checkbox', id:'ghost_heat', data: {toggle: 'tooltip', placement: 'top', 'original-title' => 'Please note that Ghost Heat only works on linked-fire or Alpha, not on chain-fire'}}
               Enable Ghost Heat
               %span.badge{id: 'ghost_heat_penalty'}
-          %a{id: 'flush_coolant', class: 'btn btn-success'}
-            %span.glyphicon.glyphicon-tint
-            Flush coolant
+        %hr
 
         %div
           Cooling time :
@@ -50,9 +61,6 @@
             %span#cool-rate
             heat/sec
 
-        %div
-          Heat Threshold :
-          %span#heat-threshold.badge
 
         %hr
 
@@ -75,7 +83,6 @@
         %p
           Internal Heatsink Count
           %span#internal-heatsinks.badge
-
 
         %hr
         .form-group
