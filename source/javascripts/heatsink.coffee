@@ -9,6 +9,7 @@ $ ->
       $(heatsink_type_el).on 'change', window.mech.refit
       $(coolant_el).on 'click', =>
         window.mech.setHeat(0)
+        $('#current-heat-text').text('0.0')
         @exitOverheat()
 
       @runTicker()
