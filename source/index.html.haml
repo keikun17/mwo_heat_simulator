@@ -61,7 +61,6 @@
             %span#cool-rate
             heat/sec
 
-
         %hr
 
         %p
@@ -97,8 +96,32 @@
             Elite Mech
 
         %hr
-        Quirks List
-        = link_to "Add Quirk", '#', class: 'btn btn-primary', id: 'addQuirk'
+        %h4 Add Quirks
+        .form-group
+          %fieldset
+            %form#add_quirk
+              %label
+                Quirk
+                %select#quirked
+                  %option Energy Weapons
+                  %option Ballistic Weapons
+                  %option Missiles
+                  %option Small Laser
+                  %option Medium Laser
+              %br
+              %label
+                Quirk Type
+                %select.span6#quirk_type
+                  %option Heat
+                  %option{disabled: 'disabled'} Cooldown
+              %br
+              %label
+                \% reduction
+                %input#quirk_value{type: 'number', size: '3'}
+              %br
+              = submit_tag "Add Quirk", class: 'btn btn-primary'
+              -# = link_to "Add Quirk", '#', class: 'btn btn-primary', id: 'addQuirk'
+
         %ul#quirks-list
 
 
