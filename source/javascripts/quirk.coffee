@@ -1,19 +1,32 @@
 $ ->
   window.quirks =
+    form:
+      weapon_id: ->
+        $('#quirked').val()
+      quirk_type: ->
+        $('#quirk_type').val()
+      reduction_value: ->
+        parseInt($('#quirk_value').val())
+
     init: ->
 
       $('#add_quirk').submit (e) ->
         console.log 'something'
         e.preventDefault()
-        weapon_id = 1000
+
+        weapon_id  = quirks.form.weapon_id()
+        quirk_type = quirks.form.quirk_type()
+        value      = quirks.form.reduction_value()
+
         weapon_name = window.weaponsList[weapon_id].name
-        quirk_type = 'heat'
-        value = 10
+
         quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
         quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
         compiled = "<li id='#{ quirk_id }' data-value='#{ value }'>#{quirk_text}</li>"
 
-        unless document.getElementById(quirk_id)
+        unless document.getElementById(quirk_id) or isNaN(value)
+          window.kek = e
+          console.log e
           $('ul#quirks-list').append(compiled)
 
       # $('#addQuirk').on 'click', ->
