@@ -87,7 +87,6 @@ $ ->
         @timeToZero()
         $('#current-heat-text').text(@getCurrentHeat() / 100)
 
-
         # 2. Overheat effect when overheated
         if !$('body').hasClass('overheating') and @isOverheating()
           @doOverheat()
