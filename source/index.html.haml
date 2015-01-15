@@ -96,29 +96,7 @@
             Elite Mech
 
         %hr
-        %h4 Add Quirks
-        .form-group
-          %fieldset
-            %form#add_quirk
-              %label
-                Quirk
-                %select#quirked
-                  %option{value: '1003'} IS Small Laser
-                  %option{value: '1001'} IS Medium Laser
-                  %option{value: '1008'} IS Large Laser
-              %br
-              %label
-                Quirk Type
-                %select.span6#quirk_type
-                  %option{value: 'heat'} Heat
-                  %option{disabled: 'disabled'} Cooldown
-              %br
-              %label
-                \% reduction
-                %input#quirk_value{type: 'number', size: '3'}
-              %br
-              = submit_tag "Add Quirk", class: 'btn btn-primary'
-              -# = link_to "Add Quirk", '#', class: 'btn btn-primary', id: 'addQuirk'
+        = partial 'armory/quirks'
 
         %h5 List of Weapon Quirks
         %ul.list-unstyled#quirks-list
