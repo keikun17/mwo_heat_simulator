@@ -22,21 +22,17 @@ $ ->
 
         quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
         quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
-        compiled = "<li id='#{ quirk_id }' data-value='#{ value }'>#{quirk_text}</li>"
+        remove_link = "<a href='#' class='js_remove_quirk' >(Remove)</a>"
+        compiled = "<li id='#{ quirk_id }' data-value='#{ value }'>#{quirk_text} #{remove_link}</li>"
 
         unless document.getElementById(quirk_id) or isNaN(value)
           window.kek = e
           console.log e
           $('ul#quirks-list').append(compiled)
 
-      # $('#addQuirk').on 'click', ->
-      #
-      #   weapon_id = 1000
-      #   quirk_type = 'heat'
-      #   value = 10
-      #   compiled = "<li id='#{ quirk_type }-quirk-#{ weapon_id }' data-value='#{ value }'>something</li>"
-      #
-      #   $('ul#quirks-list').append(compiled)
+      $('#quirks-list').on "click", ".js_remove_quirk", ->
+        console.log $(this).parent().remove()
+        false
 
     weaponheat: (weapon_id) ->
       weapon_quirk = $("#heat-quirk-#{weapon_id}")
