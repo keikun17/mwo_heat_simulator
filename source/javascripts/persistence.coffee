@@ -79,8 +79,20 @@ $ ->
         str = "#{str}ms_heatc=1&"
 
       # collect engine
-      str = "#{str}engine=#{window.engine.rating()}"
+      str = "#{str}engine=#{window.engine.rating()}&"
 
+      # collect quirks
+      quirks_str = ""
+      _.each window.quirks.listAll(), (quirk) ->
+        console.log "Callhed"
+        console.log quirk
+        quirks_str += "["
+        quirks_str += "weapon_id=#{quirk.weapon_id}&"
+        quirks_str += "quirk_type=#{quirk.quirk_type}&"
+        quirks_str += "reduction_value=#{quirk.reduction_value}"
+        quirks_str += "]"
+
+      str = "#{str}quirks=[#{quirks_str}]"
 
       # build link
       host =  '?' + str
