@@ -8,6 +8,18 @@ $ ->
       reduction_value: ->
         parseInt($('#quirk_value').val())
 
+    insert_quirk: (weapon_id, quirk_type, value) ->
+      weapon_name = window.weaponsList[weapon_id].name
+
+      quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
+      quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
+      remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>"
+      compiled = "<li class='js-quirk_item' id='#{ quirk_id }' data-value='#{ value }' data-quirk_type='#{quirk_type}' data-weapon_id='#{weapon_id}'>#{quirk_text} #{remove_link}</li>"
+
+      unless document.getElementById(quirk_id) or isNaN(value)
+        $('ul#quirks-list').append(compiled)
+        window.mech.refit()
+
     init: ->
 
       $('#add_quirk').submit (e) ->
@@ -18,18 +30,7 @@ $ ->
         quirk_type = quirks.form.quirk_type()
         value      = quirks.form.reduction_value()
 
-        weapon_name = window.weaponsList[weapon_id].name
-
-        quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
-        quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
-        remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>"
-        compiled = "<li class='js-quirk_item' id='#{ quirk_id }' data-value='#{ value }' data-quirk_type='#{quirk_type}' data-weapon_id='#{weapon_id}'>#{quirk_text} #{remove_link}</li>"
-
-        unless document.getElementById(quirk_id) or isNaN(value)
-          $('ul#quirks-list').append(compiled)
-          window.mech.refit()
-
-
+        window.mech.quirks.insert_quirk(weapon_id, quirk_type, value)
 
       $('#quirks-list').on "click", ".js_remove_quirk", ->
         console.log $(this).parent().remove()
