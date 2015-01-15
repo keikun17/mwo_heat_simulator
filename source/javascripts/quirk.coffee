@@ -22,7 +22,7 @@ $ ->
 
         quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
         quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
-        remove_link = "<a href='#' class='js_remove_quirk' >(Remove)</a>"
+        remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>"
         compiled = "<li id='#{ quirk_id }' data-value='#{ value }'>#{quirk_text} #{remove_link}</li>"
 
         unless document.getElementById(quirk_id) or isNaN(value)
