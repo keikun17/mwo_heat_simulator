@@ -83,16 +83,15 @@ $ ->
 
       # collect quirks
       quirks_str = ""
-      _.each window.quirks.listAll(), (quirk) ->
+      quirks_list = window.quirks.listAll()
+      _.each quirks_list, (quirk) ->
         console.log "Callhed"
         console.log quirk
-        quirks_str += "["
-        quirks_str += "weapon_id=#{quirk.weapon_id}&"
-        quirks_str += "quirk_type=#{quirk.quirk_type}&"
-        quirks_str += "reduction_value=#{quirk.reduction_value}"
-        quirks_str += "]"
+        quirks_str += "quirks[#{quirks_list.indexOf(quirk)}][weapon_id]=#{quirk.weapon_id}&"
+        quirks_str += "quirks[#{quirks_list.indexOf(quirk)}][quirk_type]=#{quirk.quirk_type}&"
+        quirks_str += "quirks[#{quirks_list.indexOf(quirk)}][reduction_value]=#{quirk.reduction_value}&"
 
-      str = "#{str}quirks=[#{quirks_str}]"
+      str = "#{str}#{quirks_str}"
 
       # build link
       host =  '?' + str
