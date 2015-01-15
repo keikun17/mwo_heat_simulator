@@ -56,6 +56,11 @@ $ ->
       if elite_mech
         $('#skill_elite').prop('checked', true)
 
+      # Reset Mech quirks
+      _.each url.param('quirks'), (quirk) ->
+        window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value)
+
+
     rebuildPermalink: ->
       # weapon_counts = window.weapons.weaponCounts()
       str = ""
