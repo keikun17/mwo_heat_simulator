@@ -33,6 +33,7 @@ $ ->
       # Equipped Weapons' list initialization
       # ----------------------------------------------
       $('.weapon-list').on "click", "a.js-fire.ready", @fireWeapon
+      $('.weapon-list').on "click", "a.js-fire.not_ready", -> false
 
       # Equip weapons
       $(".armory").on "click", ".js-add-weapon", ->
@@ -140,6 +141,7 @@ $ ->
           weapon.removeClass('btn-default')
           weapon.addClass('btn-danger')
           weapon.addClass('ready')
+          weapon.removeClass('not_ready')
           progress.removeClass('progress-bar-danger').addClass('progress-bar-success')
 
       })
@@ -179,7 +181,8 @@ $ ->
     disableWeapon: (weapon) ->
       weapon.removeClass("btn-danger").
         addClass("btn-default").
-        removeClass("ready")
+        removeClass("ready").
+        addClass("not_ready")
       progress = $(weapon).parent().
         siblings('.weapon-cooldown-container').
         find('.progress .cooldown-meter')
