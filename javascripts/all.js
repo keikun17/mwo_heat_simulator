@@ -12540,632 +12540,634 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
 }).call(this);
 (function() {
-  window.weaponsList = {
-    1000: {
-      name: "AutoCannon20",
-      damage: 20,
-      heat: 6,
-      multiplier: 24,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 2
-    },
-    1001: {
-      name: "MediumLaser",
-      damage: 5,
-      heat: 4,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 7
-    },
-    1002: {
-      name: "LRM20",
-      damage: 20.0,
-      heat: 6,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1003: {
-      name: "SmallLaser",
-      damage: 3,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1004: {
-      name: "SRM4",
-      damage: 8.6,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 4,
-      ghost_heat_trigger: 4
-    },
-    1005: {
-      name: "ERLargeLaser",
-      damage: 9,
-      heat: 8,
-      multiplier: 2.8,
-      ghost_heat_group: 3,
-      ghost_heat_trigger: 3
-    },
-    1006: {
-      name: "ERPPC",
-      damage: 10,
-      heat: 15,
-      multiplier: 4.5,
-      ghost_heat_group: 1,
-      ghost_heat_trigger: 3
-    },
-    1007: {
-      name: "Flamer",
-      damage: 0.7,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1008: {
-      name: "LargeLaser",
-      damage: 9,
-      heat: 7,
-      multiplier: 2.8,
-      ghost_heat_group: 3,
-      ghost_heat_trigger: 3
-    },
-    1009: {
-      name: "PPC",
-      damage: 10,
-      heat: 10,
-      multiplier: 7,
-      ghost_heat_group: 1,
-      ghost_heat_trigger: 3
-    },
-    1010: {
-      name: "LargePulseLaser",
-      damage: 11,
-      heat: 7,
-      multiplier: 2.8,
-      ghost_heat_group: 3,
-      ghost_heat_trigger: 3
-    },
-    1011: {
-      name: "MediumPulseLaser",
-      damage: 6,
-      heat: 4,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1012: {
-      name: "SmallPulseLaser",
-      damage: 4,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1014: {
-      name: "Anti_Missile_System",
-      damage: 3.5,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1018: {
-      name: "AutoCannon2",
-      damage: 2,
-      heat: 1,
-      multiplier: 0.6,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 4
-    },
-    1019: {
-      name: "AutoCannon5",
-      damage: 5,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1020: {
-      name: "AutoCannon10",
-      damage: 10,
-      heat: 3,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1021: {
-      name: "GaussRifle",
-      damage: 15,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1023: {
-      name: "LB10XAutoCannon",
-      damage: 10,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1024: {
-      name: "MachineGun",
-      damage: 0.08,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1025: {
-      name: "UltraAutoCannon5",
-      damage: 5,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1026: {
-      name: "LRM5",
-      damage: 5,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1027: {
-      name: "LRM10",
-      damage: 10,
-      heat: 4,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1028: {
-      name: "LRM15",
-      damage: 15,
-      heat: 5,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1029: {
-      name: "NarcBeacon",
-      damage: 0,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1030: {
-      name: "SRM2",
-      damage: 4.3,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1031: {
-      name: "SRM6",
-      damage: 12.899999999999999,
-      heat: 4,
-      multiplier: 1,
-      ghost_heat_group: 4,
-      ghost_heat_trigger: 4
-    },
-    1032: {
-      name: "StreakSRM2",
-      damage: 4,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1037: {
-      name: "TAG",
-      damage: 0,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1038: {
-      name: "SRM2_Artemis",
-      damage: 4.3,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1039: {
-      name: "SRM4_Artemis",
-      damage: 8.6,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 4,
-      ghost_heat_trigger: 4
-    },
-    1040: {
-      name: "SRM6_Artemis",
-      damage: 12.899999999999999,
-      heat: 4,
-      multiplier: 1,
-      ghost_heat_group: 4,
-      ghost_heat_trigger: 4
-    },
-    1041: {
-      name: "LRM5_Artemis",
-      damage: 5,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1042: {
-      name: "LRM10_Artemis",
-      damage: 10,
-      heat: 4,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1043: {
-      name: "LRM15_Artemis",
-      damage: 15,
-      heat: 5,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1044: {
-      name: "LRM20_Artemis",
-      damage: 20,
-      heat: 6,
-      multiplier: 2.8,
-      ghost_heat_group: 2,
-      ghost_heat_trigger: 3
-    },
-    1200: {
-      name: "ClanLB2XAutoCannon",
-      damage: 2,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1201: {
-      name: "ClanLB5XAutoCannon",
-      damage: 5,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1202: {
-      name: "ClanLB10XAutoCannon",
-      damage: 10,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1203: {
-      name: "ClanLB20XAutoCannon",
-      damage: 20,
-      heat: 6,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1204: {
-      name: "ClanUltraAutoCannon2",
-      damage: 2,
-      heat: 1,
-      multiplier: 0.6,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 4
-    },
-    1205: {
-      name: "ClanUltraAutoCannon5",
-      damage: 5.001,
-      heat: 1,
-      multiplier: 0.8,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 4
-    },
-    1206: {
-      name: "ClanUltraAutoCannon10",
-      damage: 10.0,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 8,
-      ghost_heat_trigger: 3
-    },
-    1207: {
-      name: "ClanUltraAutoCannon20",
-      damage: 20,
-      heat: 7,
-      multiplier: 30,
-      ghost_heat_group: 9,
-      ghost_heat_trigger: 2
-    },
-    1208: {
-      name: "ClanGaussRifle",
-      damage: 15,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1209: {
-      name: "ClanMachineGun",
-      damage: 0.08,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1210: {
-      name: "ClanFlamer",
-      damage: 0.7,
-      heat: 1,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1211: {
-      name: "ClanERSmallLaser",
-      damage: 5,
-      heat: 3,
-      multiplier: 1.4,
-      ghost_heat_group: 10,
-      ghost_heat_trigger: 7
-    },
-    1212: {
-      name: "ClanERMediumLaser",
-      damage: 7,
-      heat: 6,
-      multiplier: 1.4,
-      ghost_heat_group: 10,
-      ghost_heat_trigger: 7
-    },
-    1213: {
-      name: "ClanERLargeLaser",
-      damage: 11,
-      heat: 10,
-      multiplier: 4,
-      ghost_heat_group: 3,
-      ghost_heat_trigger: 3
-    },
-    1214: {
-      name: "ClanSmallPulseLaser",
-      damage: 6,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 10,
-      ghost_heat_trigger: 7
-    },
-    1215: {
-      name: "ClanMediumPulseLaser",
-      damage: 8,
-      heat: 6,
-      multiplier: 1,
-      ghost_heat_group: 10,
-      ghost_heat_trigger: 7
-    },
-    1216: {
-      name: "ClanLargePulseLaser",
-      damage: 13,
-      heat: 10,
-      multiplier: 4,
-      ghost_heat_group: 3,
-      ghost_heat_trigger: 3
-    },
-    1217: {
-      name: "ClanERPPC",
-      damage: 10,
-      heat: 15,
-      multiplier: 4.5,
-      ghost_heat_group: 1,
-      ghost_heat_trigger: 3
-    },
-    1218: {
-      name: "ClanLRM5",
-      damage: 5,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1219: {
-      name: "ClanLRM10",
-      damage: 10,
-      heat: 4,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1220: {
-      name: "ClanLRM15",
-      damage: 15,
-      heat: 5,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1221: {
-      name: "ClanLRM20",
-      damage: 20,
-      heat: 6,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1222: {
-      name: "ClanLRM5_Artemis",
-      damage: 5,
-      heat: 2,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1223: {
-      name: "ClanLRM10_Artemis",
-      damage: 10,
-      heat: 4,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1224: {
-      name: "ClanLRM15_Artemis",
-      damage: 15,
-      heat: 5,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1225: {
-      name: "ClanLRM20_Artemis",
-      damage: 20,
-      heat: 6,
-      multiplier: 3.1,
-      ghost_heat_group: 6,
-      ghost_heat_trigger: 3
-    },
-    1226: {
-      name: "ClanSRM2",
-      damage: 4,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1227: {
-      name: "ClanSRM4",
-      damage: 8,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 7,
-      ghost_heat_trigger: 4
-    },
-    1228: {
-      name: "ClanSRM6",
-      damage: 12,
-      heat: 4,
-      multiplier: 1,
-      ghost_heat_group: 7,
-      ghost_heat_trigger: 4
-    },
-    1229: {
-      name: "ClanSRM2_Artemis",
-      damage: 4,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1230: {
-      name: "ClanSRM4_Artemis",
-      damage: 8,
-      heat: 3,
-      multiplier: 1,
-      ghost_heat_group: 7,
-      ghost_heat_trigger: 4
-    },
-    1231: {
-      name: "ClanSRM6_Artemis",
-      damage: 12,
-      heat: 4,
-      multiplier: 1,
-      ghost_heat_group: 7,
-      ghost_heat_trigger: 4
-    },
-    1232: {
-      name: "ClanStreakSRM2",
-      damage: 4,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 5
-    },
-    1233: {
-      name: "ClanStreakSRM4",
-      damage: 8,
-      heat: 3,
-      multiplier: 1.1,
-      ghost_heat_group: 5,
-      ghost_heat_trigger: 4
-    },
-    1234: {
-      name: "ClanStreakSRM6",
-      damage: 12,
-      heat: 4,
-      multiplier: 1.1,
-      ghost_heat_group: 5,
-      ghost_heat_trigger: 4
-    },
-    1235: {
-      name: "ClanNarcBeacon",
-      damage: 0,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1236: {
-      name: "ClanTAG",
-      damage: 0,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1237: {
-      name: "ClanAnti_Missile_System",
-      damage: 3.5,
-      heat: 0,
-      multiplier: null,
-      ghost_heat_group: null,
-      ghost_heat_trigger: null
-    },
-    1238: {
-      name: "ClanAutoCannon2",
-      damage: 2,
-      heat: 1,
-      multiplier: 0.6,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 4
-    },
-    1239: {
-      name: "ClanAutoCannon5",
-      damage: 5.001,
-      heat: 1,
-      multiplier: 0.8,
-      ghost_heat_group: null,
-      ghost_heat_trigger: 4
-    },
-    1240: {
-      name: "ClanAutoCannon10",
-      damage: 10.0,
-      heat: 2,
-      multiplier: 1,
-      ghost_heat_group: 8,
-      ghost_heat_trigger: 3
-    },
-    1241: {
-      name: "ClanAutoCannon20",
-      damage: 20,
-      heat: 6,
-      multiplier: 30,
-      ghost_heat_group: 9,
-      ghost_heat_trigger: 2
-    }
-  };
+  $(function() {
+    return window.weaponsList = {
+      1000: {
+        name: "AutoCannon20",
+        damage: 20,
+        heat: 6,
+        multiplier: 24,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 2
+      },
+      1001: {
+        name: "MediumLaser",
+        damage: 5,
+        heat: 4,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 7
+      },
+      1002: {
+        name: "LRM20",
+        damage: 20.0,
+        heat: 6,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1003: {
+        name: "SmallLaser",
+        damage: 3,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1004: {
+        name: "SRM4",
+        damage: 8.6,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 4,
+        ghost_heat_trigger: 4
+      },
+      1005: {
+        name: "ERLargeLaser",
+        damage: 9,
+        heat: 8,
+        multiplier: 2.8,
+        ghost_heat_group: 3,
+        ghost_heat_trigger: 3
+      },
+      1006: {
+        name: "ERPPC",
+        damage: 10,
+        heat: 15,
+        multiplier: 4.5,
+        ghost_heat_group: 1,
+        ghost_heat_trigger: 3
+      },
+      1007: {
+        name: "Flamer",
+        damage: 0.7,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1008: {
+        name: "LargeLaser",
+        damage: 9,
+        heat: 7,
+        multiplier: 2.8,
+        ghost_heat_group: 3,
+        ghost_heat_trigger: 3
+      },
+      1009: {
+        name: "PPC",
+        damage: 10,
+        heat: 10,
+        multiplier: 7,
+        ghost_heat_group: 1,
+        ghost_heat_trigger: 3
+      },
+      1010: {
+        name: "LargePulseLaser",
+        damage: 11,
+        heat: 7,
+        multiplier: 2.8,
+        ghost_heat_group: 3,
+        ghost_heat_trigger: 3
+      },
+      1011: {
+        name: "MediumPulseLaser",
+        damage: 6,
+        heat: 4,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1012: {
+        name: "SmallPulseLaser",
+        damage: 4,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1014: {
+        name: "Anti_Missile_System",
+        damage: 3.5,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1018: {
+        name: "AutoCannon2",
+        damage: 2,
+        heat: 1,
+        multiplier: 0.6,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 4
+      },
+      1019: {
+        name: "AutoCannon5",
+        damage: 5,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1020: {
+        name: "AutoCannon10",
+        damage: 10,
+        heat: 3,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1021: {
+        name: "GaussRifle",
+        damage: 15,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1023: {
+        name: "LB10XAutoCannon",
+        damage: 10,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1024: {
+        name: "MachineGun",
+        damage: 0.08,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1025: {
+        name: "UltraAutoCannon5",
+        damage: 5,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1026: {
+        name: "LRM5",
+        damage: 5,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1027: {
+        name: "LRM10",
+        damage: 10,
+        heat: 4,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1028: {
+        name: "LRM15",
+        damage: 15,
+        heat: 5,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1029: {
+        name: "NarcBeacon",
+        damage: 0,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1030: {
+        name: "SRM2",
+        damage: 4.3,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1031: {
+        name: "SRM6",
+        damage: 12.899999999999999,
+        heat: 4,
+        multiplier: 1,
+        ghost_heat_group: 4,
+        ghost_heat_trigger: 4
+      },
+      1032: {
+        name: "StreakSRM2",
+        damage: 4,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1037: {
+        name: "TAG",
+        damage: 0,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1038: {
+        name: "SRM2_Artemis",
+        damage: 4.3,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1039: {
+        name: "SRM4_Artemis",
+        damage: 8.6,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 4,
+        ghost_heat_trigger: 4
+      },
+      1040: {
+        name: "SRM6_Artemis",
+        damage: 12.899999999999999,
+        heat: 4,
+        multiplier: 1,
+        ghost_heat_group: 4,
+        ghost_heat_trigger: 4
+      },
+      1041: {
+        name: "LRM5_Artemis",
+        damage: 5,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1042: {
+        name: "LRM10_Artemis",
+        damage: 10,
+        heat: 4,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1043: {
+        name: "LRM15_Artemis",
+        damage: 15,
+        heat: 5,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1044: {
+        name: "LRM20_Artemis",
+        damage: 20,
+        heat: 6,
+        multiplier: 2.8,
+        ghost_heat_group: 2,
+        ghost_heat_trigger: 3
+      },
+      1200: {
+        name: "ClanLB2XAutoCannon",
+        damage: 2,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1201: {
+        name: "ClanLB5XAutoCannon",
+        damage: 5,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1202: {
+        name: "ClanLB10XAutoCannon",
+        damage: 10,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1203: {
+        name: "ClanLB20XAutoCannon",
+        damage: 20,
+        heat: 6,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1204: {
+        name: "ClanUltraAutoCannon2",
+        damage: 2,
+        heat: 1,
+        multiplier: 0.6,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 4
+      },
+      1205: {
+        name: "ClanUltraAutoCannon5",
+        damage: 5.001,
+        heat: 1,
+        multiplier: 0.8,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 4
+      },
+      1206: {
+        name: "ClanUltraAutoCannon10",
+        damage: 10.0,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 8,
+        ghost_heat_trigger: 3
+      },
+      1207: {
+        name: "ClanUltraAutoCannon20",
+        damage: 20,
+        heat: 7,
+        multiplier: 30,
+        ghost_heat_group: 9,
+        ghost_heat_trigger: 2
+      },
+      1208: {
+        name: "ClanGaussRifle",
+        damage: 15,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1209: {
+        name: "ClanMachineGun",
+        damage: 0.08,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1210: {
+        name: "ClanFlamer",
+        damage: 0.7,
+        heat: 1,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1211: {
+        name: "ClanERSmallLaser",
+        damage: 5,
+        heat: 3,
+        multiplier: 1.4,
+        ghost_heat_group: 10,
+        ghost_heat_trigger: 7
+      },
+      1212: {
+        name: "ClanERMediumLaser",
+        damage: 7,
+        heat: 6,
+        multiplier: 1.4,
+        ghost_heat_group: 10,
+        ghost_heat_trigger: 7
+      },
+      1213: {
+        name: "ClanERLargeLaser",
+        damage: 11,
+        heat: 10,
+        multiplier: 4,
+        ghost_heat_group: 3,
+        ghost_heat_trigger: 3
+      },
+      1214: {
+        name: "ClanSmallPulseLaser",
+        damage: 6,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 10,
+        ghost_heat_trigger: 7
+      },
+      1215: {
+        name: "ClanMediumPulseLaser",
+        damage: 8,
+        heat: 6,
+        multiplier: 1,
+        ghost_heat_group: 10,
+        ghost_heat_trigger: 7
+      },
+      1216: {
+        name: "ClanLargePulseLaser",
+        damage: 13,
+        heat: 10,
+        multiplier: 4,
+        ghost_heat_group: 3,
+        ghost_heat_trigger: 3
+      },
+      1217: {
+        name: "ClanERPPC",
+        damage: 10,
+        heat: 15,
+        multiplier: 4.5,
+        ghost_heat_group: 1,
+        ghost_heat_trigger: 3
+      },
+      1218: {
+        name: "ClanLRM5",
+        damage: 5,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1219: {
+        name: "ClanLRM10",
+        damage: 10,
+        heat: 4,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1220: {
+        name: "ClanLRM15",
+        damage: 15,
+        heat: 5,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1221: {
+        name: "ClanLRM20",
+        damage: 20,
+        heat: 6,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1222: {
+        name: "ClanLRM5_Artemis",
+        damage: 5,
+        heat: 2,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1223: {
+        name: "ClanLRM10_Artemis",
+        damage: 10,
+        heat: 4,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1224: {
+        name: "ClanLRM15_Artemis",
+        damage: 15,
+        heat: 5,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1225: {
+        name: "ClanLRM20_Artemis",
+        damage: 20,
+        heat: 6,
+        multiplier: 3.1,
+        ghost_heat_group: 6,
+        ghost_heat_trigger: 3
+      },
+      1226: {
+        name: "ClanSRM2",
+        damage: 4,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1227: {
+        name: "ClanSRM4",
+        damage: 8,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 7,
+        ghost_heat_trigger: 4
+      },
+      1228: {
+        name: "ClanSRM6",
+        damage: 12,
+        heat: 4,
+        multiplier: 1,
+        ghost_heat_group: 7,
+        ghost_heat_trigger: 4
+      },
+      1229: {
+        name: "ClanSRM2_Artemis",
+        damage: 4,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1230: {
+        name: "ClanSRM4_Artemis",
+        damage: 8,
+        heat: 3,
+        multiplier: 1,
+        ghost_heat_group: 7,
+        ghost_heat_trigger: 4
+      },
+      1231: {
+        name: "ClanSRM6_Artemis",
+        damage: 12,
+        heat: 4,
+        multiplier: 1,
+        ghost_heat_group: 7,
+        ghost_heat_trigger: 4
+      },
+      1232: {
+        name: "ClanStreakSRM2",
+        damage: 4,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 5
+      },
+      1233: {
+        name: "ClanStreakSRM4",
+        damage: 8,
+        heat: 3,
+        multiplier: 1.1,
+        ghost_heat_group: 5,
+        ghost_heat_trigger: 4
+      },
+      1234: {
+        name: "ClanStreakSRM6",
+        damage: 12,
+        heat: 4,
+        multiplier: 1.1,
+        ghost_heat_group: 5,
+        ghost_heat_trigger: 4
+      },
+      1235: {
+        name: "ClanNarcBeacon",
+        damage: 0,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1236: {
+        name: "ClanTAG",
+        damage: 0,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1237: {
+        name: "ClanAnti_Missile_System",
+        damage: 3.5,
+        heat: 0,
+        multiplier: null,
+        ghost_heat_group: null,
+        ghost_heat_trigger: null
+      },
+      1238: {
+        name: "ClanAutoCannon2",
+        damage: 2,
+        heat: 1,
+        multiplier: 0.6,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 4
+      },
+      1239: {
+        name: "ClanAutoCannon5",
+        damage: 5.001,
+        heat: 1,
+        multiplier: 0.8,
+        ghost_heat_group: null,
+        ghost_heat_trigger: 4
+      },
+      1240: {
+        name: "ClanAutoCannon10",
+        damage: 10.0,
+        heat: 2,
+        multiplier: 1,
+        ghost_heat_group: 8,
+        ghost_heat_trigger: 3
+      },
+      1241: {
+        name: "ClanAutoCannon20",
+        damage: 20,
+        heat: 6,
+        multiplier: 30,
+        ghost_heat_group: 9,
+        ghost_heat_trigger: 2
+      }
+    };
+  });
 
 }).call(this);
 (function() {
@@ -13226,6 +13228,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         $(heatsink_type_el).on('change', window.mech.refit);
         $(coolant_el).on('click', function() {
           window.mech.setHeat(0);
+          $('#current-heat-text').text('0.0');
           return _this.exitOverheat();
         });
         return this.runTicker();
@@ -13314,6 +13317,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         if (this.getCurrentHeat() > 0) {
           window.mech.setHeat(towards);
           this.timeToZero();
+          $('#current-heat-text').text(this.getCurrentHeat() / 100);
           if (!$('body').hasClass('overheating') && this.isOverheating()) {
             return this.doOverheat();
           } else if ($('body').hasClass('overheating') && !this.isOverheating()) {
@@ -13366,6 +13370,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         });
         $('input[name="weapon_switcher"]').bootstrapSwitch('state', false);
         $('.weapon-list').on("click", "a.js-fire.ready", this.fireWeapon);
+        $('.weapon-list').on("click", "a.js-fire.not_ready", function() {
+          return false;
+        });
         $(".armory").on("click", ".js-add-weapon", function() {
           var html, weaponId, weaponName;
           weaponId = $(this).data("weaponId");
@@ -13463,12 +13470,13 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
             weapon.removeClass('btn-default');
             weapon.addClass('btn-danger');
             weapon.addClass('ready');
+            weapon.removeClass('not_ready');
             return progress.removeClass('progress-bar-danger').addClass('progress-bar-success');
           }
         });
       },
       weaponStats: window.weaponsList,
-      shoot: function(val) {
+      applyHeat: function(val) {
         var towards;
         val = val * 100;
         towards = val + window.mech.heatsink.getCurrentHeat();
@@ -13483,10 +13491,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         return mech.dps.recompute();
       },
       fireWeapon: function(event) {
-        var stats, weapon_name;
-        weapon_name = $(this).data("weaponId");
-        stats = mech.weapons.weaponStats[weapon_name];
-        window.weapons.shoot(stats.heat);
+        var heat_to_apply, stats, weapon_id;
+        weapon_id = $(this).data("weaponId");
+        stats = mech.weapons.weaponStats[weapon_id];
+        heat_to_apply = stats.heat - (stats.heat * quirks.weaponheat(weapon_id));
+        console.log("heat to apply is " + heat_to_apply);
+        window.weapons.applyHeat(heat_to_apply);
         window.mech.weapons.disableWeapon($(this));
         window.mech.weapons.damage(stats.damage);
         return false;
@@ -13494,7 +13504,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       disableWeapon: function(weapon) {
         var progress,
           _this = this;
-        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready");
+        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');
@@ -13722,6 +13732,79 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 }).call(this);
 (function() {
   $(function() {
+    return window.quirks = {
+      form: {
+        weapon_id: function() {
+          return $('#quirked').val();
+        },
+        quirk_type: function() {
+          return $('#quirk_type').val();
+        },
+        reduction_value: function() {
+          return parseInt($('#quirk_value').val());
+        }
+      },
+      insert_quirk: function(weapon_id, quirk_type, value) {
+        var compiled, quirk_id, quirk_text, remove_link, weapon_name;
+        weapon_name = window.weaponsList[weapon_id].name;
+        quirk_id = "" + quirk_type + "-quirk-" + weapon_id;
+        quirk_text = "" + weapon_name + " " + value + "% " + quirk_type + " reduction";
+        remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>";
+        compiled = "<li class='js-quirk_item' id='" + quirk_id + "' data-value='" + value + "' data-quirk_type='" + quirk_type + "' data-weapon_id='" + weapon_id + "'>" + quirk_text + " " + remove_link + "</li>";
+        if (!(document.getElementById(quirk_id) || isNaN(value))) {
+          $('ul#quirks-list').append(compiled);
+          return window.mech.refit();
+        }
+      },
+      init: function() {
+        $('#add_quirk').submit(function(e) {
+          var quirk_type, value, weapon_id;
+          console.log('something');
+          e.preventDefault();
+          weapon_id = quirks.form.weapon_id();
+          quirk_type = quirks.form.quirk_type();
+          value = quirks.form.reduction_value();
+          return window.mech.quirks.insert_quirk(weapon_id, quirk_type, value);
+        });
+        return $('#quirks-list').on("click", ".js_remove_quirk", function() {
+          console.log($(this).parent().remove());
+          window.mech.refit();
+          return false;
+        });
+      },
+      weaponheat: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#heat-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          modifier = quirk_value / 100;
+        }
+        console.log("modifier is " + modifier);
+        return modifier;
+      },
+      listAll: function() {
+        var quirk_collection, quirk_views;
+        quirk_views = $('.js-quirk_item');
+        return quirk_collection = _.collect(quirk_views, function(quirk_view) {
+          return {
+            weapon_id: $(quirk_view).data('weapon_id'),
+            quirk_type: $(quirk_view).data('quirk_type'),
+            reduction_value: $(quirk_view).data('value')
+          };
+        });
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
     return window.persistence = {
       init: function() {
         window.persistence.resetLoadoutFromParams();
@@ -13765,11 +13848,14 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
           $('#skill_containment').prop('checked', true);
         }
         if (elite_mech) {
-          return $('#skill_elite').prop('checked', true);
+          $('#skill_elite').prop('checked', true);
         }
+        return _.each(url.param('quirks'), function(quirk) {
+          return window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value);
+        });
       },
       rebuildPermalink: function() {
-        var host, str, url;
+        var host, quirks_list, quirks_str, str, url;
         str = "";
         _.each(window.weapons.weaponCounts(), function(val, key) {
           return str = "" + str + key + "=" + val + "&";
@@ -13785,7 +13871,17 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         if (window.mech.skills.heatContainmentEnabled()) {
           str = "" + str + "ms_heatc=1&";
         }
-        str = "" + str + "engine=" + (window.engine.rating());
+        str = "" + str + "engine=" + (window.engine.rating()) + "&";
+        quirks_str = "";
+        quirks_list = window.quirks.listAll();
+        _.each(quirks_list, function(quirk) {
+          console.log("Callhed");
+          console.log(quirk);
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][weapon_id]=" + quirk.weapon_id + "&";
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][quirk_type]=" + quirk.quirk_type + "&";
+          return quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][reduction_value]=" + quirk.reduction_value + "&";
+        });
+        str = "" + str + quirks_str;
         host = '?' + str;
         host;
         url = $.url(location);
@@ -13805,6 +13901,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       init: function() {
         window.heatsink.init();
         window.weapons.init();
+        window.quirks.init();
         window.engine.init();
         window.skills.init();
         window.persistence.init();
@@ -13816,6 +13913,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       },
       heatsink: window.heatsink,
       engine: window.engine,
+      quirks: window.quirks,
       damage: 0,
       refit: function() {
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);

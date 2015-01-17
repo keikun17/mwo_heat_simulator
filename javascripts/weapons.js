@@ -22,6 +22,9 @@
         });
         $('input[name="weapon_switcher"]').bootstrapSwitch('state', false);
         $('.weapon-list').on("click", "a.js-fire.ready", this.fireWeapon);
+        $('.weapon-list').on("click", "a.js-fire.not_ready", function() {
+          return false;
+        });
         $(".armory").on("click", ".js-add-weapon", function() {
           var html, weaponId, weaponName;
           weaponId = $(this).data("weaponId");
@@ -119,12 +122,13 @@
             weapon.removeClass('btn-default');
             weapon.addClass('btn-danger');
             weapon.addClass('ready');
+            weapon.removeClass('not_ready');
             return progress.removeClass('progress-bar-danger').addClass('progress-bar-success');
           }
         });
       },
       weaponStats: window.weaponsList,
-      shoot: function(val) {
+      applyHeat: function(val) {
         var towards;
         val = val * 100;
         towards = val + window.mech.heatsink.getCurrentHeat();
@@ -139,10 +143,12 @@
         return mech.dps.recompute();
       },
       fireWeapon: function(event) {
-        var stats, weapon_name;
-        weapon_name = $(this).data("weaponId");
-        stats = mech.weapons.weaponStats[weapon_name];
-        window.weapons.shoot(stats.heat);
+        var heat_to_apply, stats, weapon_id;
+        weapon_id = $(this).data("weaponId");
+        stats = mech.weapons.weaponStats[weapon_id];
+        heat_to_apply = stats.heat - (stats.heat * quirks.weaponheat(weapon_id));
+        console.log("heat to apply is " + heat_to_apply);
+        window.weapons.applyHeat(heat_to_apply);
         window.mech.weapons.disableWeapon($(this));
         window.mech.weapons.damage(stats.damage);
         return false;
@@ -150,7 +156,7 @@
       disableWeapon: function(weapon) {
         var progress,
           _this = this;
-        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready");
+        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');

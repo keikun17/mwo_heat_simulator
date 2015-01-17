@@ -11,6 +11,7 @@
         $(heatsink_type_el).on('change', window.mech.refit);
         $(coolant_el).on('click', function() {
           window.mech.setHeat(0);
+          $('#current-heat-text').text('0.0');
           return _this.exitOverheat();
         });
         return this.runTicker();
@@ -99,6 +100,7 @@
         if (this.getCurrentHeat() > 0) {
           window.mech.setHeat(towards);
           this.timeToZero();
+          $('#current-heat-text').text(this.getCurrentHeat() / 100);
           if (!$('body').hasClass('overheating') && this.isOverheating()) {
             return this.doOverheat();
           } else if ($('body').hasClass('overheating') && !this.isOverheating()) {
@@ -151,6 +153,9 @@
         });
         $('input[name="weapon_switcher"]').bootstrapSwitch('state', false);
         $('.weapon-list').on("click", "a.js-fire.ready", this.fireWeapon);
+        $('.weapon-list').on("click", "a.js-fire.not_ready", function() {
+          return false;
+        });
         $(".armory").on("click", ".js-add-weapon", function() {
           var html, weaponId, weaponName;
           weaponId = $(this).data("weaponId");
@@ -248,12 +253,13 @@
             weapon.removeClass('btn-default');
             weapon.addClass('btn-danger');
             weapon.addClass('ready');
+            weapon.removeClass('not_ready');
             return progress.removeClass('progress-bar-danger').addClass('progress-bar-success');
           }
         });
       },
       weaponStats: window.weaponsList,
-      shoot: function(val) {
+      applyHeat: function(val) {
         var towards;
         val = val * 100;
         towards = val + window.mech.heatsink.getCurrentHeat();
@@ -268,10 +274,12 @@
         return mech.dps.recompute();
       },
       fireWeapon: function(event) {
-        var stats, weapon_name;
-        weapon_name = $(this).data("weaponId");
-        stats = mech.weapons.weaponStats[weapon_name];
-        window.weapons.shoot(stats.heat);
+        var heat_to_apply, stats, weapon_id;
+        weapon_id = $(this).data("weaponId");
+        stats = mech.weapons.weaponStats[weapon_id];
+        heat_to_apply = stats.heat - (stats.heat * quirks.weaponheat(weapon_id));
+        console.log("heat to apply is " + heat_to_apply);
+        window.weapons.applyHeat(heat_to_apply);
         window.mech.weapons.disableWeapon($(this));
         window.mech.weapons.damage(stats.damage);
         return false;
@@ -279,7 +287,7 @@
       disableWeapon: function(weapon) {
         var progress,
           _this = this;
-        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready");
+        weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');
@@ -507,6 +515,79 @@
 }).call(this);
 (function() {
   $(function() {
+    return window.quirks = {
+      form: {
+        weapon_id: function() {
+          return $('#quirked').val();
+        },
+        quirk_type: function() {
+          return $('#quirk_type').val();
+        },
+        reduction_value: function() {
+          return parseInt($('#quirk_value').val());
+        }
+      },
+      insert_quirk: function(weapon_id, quirk_type, value) {
+        var compiled, quirk_id, quirk_text, remove_link, weapon_name;
+        weapon_name = window.weaponsList[weapon_id].name;
+        quirk_id = "" + quirk_type + "-quirk-" + weapon_id;
+        quirk_text = "" + weapon_name + " " + value + "% " + quirk_type + " reduction";
+        remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>";
+        compiled = "<li class='js-quirk_item' id='" + quirk_id + "' data-value='" + value + "' data-quirk_type='" + quirk_type + "' data-weapon_id='" + weapon_id + "'>" + quirk_text + " " + remove_link + "</li>";
+        if (!(document.getElementById(quirk_id) || isNaN(value))) {
+          $('ul#quirks-list').append(compiled);
+          return window.mech.refit();
+        }
+      },
+      init: function() {
+        $('#add_quirk').submit(function(e) {
+          var quirk_type, value, weapon_id;
+          console.log('something');
+          e.preventDefault();
+          weapon_id = quirks.form.weapon_id();
+          quirk_type = quirks.form.quirk_type();
+          value = quirks.form.reduction_value();
+          return window.mech.quirks.insert_quirk(weapon_id, quirk_type, value);
+        });
+        return $('#quirks-list').on("click", ".js_remove_quirk", function() {
+          console.log($(this).parent().remove());
+          window.mech.refit();
+          return false;
+        });
+      },
+      weaponheat: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#heat-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          modifier = quirk_value / 100;
+        }
+        console.log("modifier is " + modifier);
+        return modifier;
+      },
+      listAll: function() {
+        var quirk_collection, quirk_views;
+        quirk_views = $('.js-quirk_item');
+        return quirk_collection = _.collect(quirk_views, function(quirk_view) {
+          return {
+            weapon_id: $(quirk_view).data('weapon_id'),
+            quirk_type: $(quirk_view).data('quirk_type'),
+            reduction_value: $(quirk_view).data('value')
+          };
+        });
+      }
+    };
+  });
+
+}).call(this);
+(function() {
+  $(function() {
     return window.persistence = {
       init: function() {
         window.persistence.resetLoadoutFromParams();
@@ -550,11 +631,14 @@
           $('#skill_containment').prop('checked', true);
         }
         if (elite_mech) {
-          return $('#skill_elite').prop('checked', true);
+          $('#skill_elite').prop('checked', true);
         }
+        return _.each(url.param('quirks'), function(quirk) {
+          return window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value);
+        });
       },
       rebuildPermalink: function() {
-        var host, str, url;
+        var host, quirks_list, quirks_str, str, url;
         str = "";
         _.each(window.weapons.weaponCounts(), function(val, key) {
           return str = "" + str + key + "=" + val + "&";
@@ -570,7 +654,17 @@
         if (window.mech.skills.heatContainmentEnabled()) {
           str = "" + str + "ms_heatc=1&";
         }
-        str = "" + str + "engine=" + (window.engine.rating());
+        str = "" + str + "engine=" + (window.engine.rating()) + "&";
+        quirks_str = "";
+        quirks_list = window.quirks.listAll();
+        _.each(quirks_list, function(quirk) {
+          console.log("Callhed");
+          console.log(quirk);
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][weapon_id]=" + quirk.weapon_id + "&";
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][quirk_type]=" + quirk.quirk_type + "&";
+          return quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][reduction_value]=" + quirk.reduction_value + "&";
+        });
+        str = "" + str + quirks_str;
         host = '?' + str;
         host;
         url = $.url(location);
@@ -590,6 +684,7 @@
       init: function() {
         window.heatsink.init();
         window.weapons.init();
+        window.quirks.init();
         window.engine.init();
         window.skills.init();
         window.persistence.init();
@@ -601,6 +696,7 @@
       },
       heatsink: window.heatsink,
       engine: window.engine,
+      quirks: window.quirks,
       damage: 0,
       refit: function() {
         $('#heat-threshold').text(window.mech.heatsink.getThreshold() / 100);

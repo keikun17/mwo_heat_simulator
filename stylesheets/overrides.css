@@ -6936,7 +6936,7 @@ td.visible-print {
   td.hidden-print {
     display: none !important; } }
 /* line 8, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
-h1 {
+h1, h2, h3, h4, h5 {
   color: #F1AC54; }
 
 /* line 12, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
@@ -6993,3 +6993,7 @@ li.weapon-item a:hover {
 /* line 55, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
 .progress.horizontal {
   margin-bottom: 0px; }
+
+/* line 59, /Users/Valerian/Projects/mwo_heat_simulator/source/stylesheets/overrides.scss */
+#quirk_value {
+  width: 3em; }

@@ -43,11 +43,14 @@
           $('#skill_containment').prop('checked', true);
         }
         if (elite_mech) {
-          return $('#skill_elite').prop('checked', true);
+          $('#skill_elite').prop('checked', true);
         }
+        return _.each(url.param('quirks'), function(quirk) {
+          return window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value);
+        });
       },
       rebuildPermalink: function() {
-        var host, str, url;
+        var host, quirks_list, quirks_str, str, url;
         str = "";
         _.each(window.weapons.weaponCounts(), function(val, key) {
           return str = "" + str + key + "=" + val + "&";
@@ -63,7 +66,17 @@
         if (window.mech.skills.heatContainmentEnabled()) {
           str = "" + str + "ms_heatc=1&";
         }
-        str = "" + str + "engine=" + (window.engine.rating());
+        str = "" + str + "engine=" + (window.engine.rating()) + "&";
+        quirks_str = "";
+        quirks_list = window.quirks.listAll();
+        _.each(quirks_list, function(quirk) {
+          console.log("Callhed");
+          console.log(quirk);
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][weapon_id]=" + quirk.weapon_id + "&";
+          quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][quirk_type]=" + quirk.quirk_type + "&";
+          return quirks_str += "quirks[" + (quirks_list.indexOf(quirk)) + "][reduction_value]=" + quirk.reduction_value + "&";
+        });
+        str = "" + str + quirks_str;
         host = '?' + str;
         host;
         url = $.url(location);

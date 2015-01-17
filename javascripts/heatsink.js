@@ -11,6 +11,7 @@
         $(heatsink_type_el).on('change', window.mech.refit);
         $(coolant_el).on('click', function() {
           window.mech.setHeat(0);
+          $('#current-heat-text').text('0.0');
           return _this.exitOverheat();
         });
         return this.runTicker();
@@ -99,6 +100,7 @@
         if (this.getCurrentHeat() > 0) {
           window.mech.setHeat(towards);
           this.timeToZero();
+          $('#current-heat-text').text(this.getCurrentHeat() / 100);
           if (!$('body').hasClass('overheating') && this.isOverheating()) {
             return this.doOverheat();
           } else if ($('body').hasClass('overheating') && !this.isOverheating()) {
