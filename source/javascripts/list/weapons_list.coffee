@@ -8,6 +8,7 @@ $ ->
       multiplier: 24
       ghost_heat_group: null
       ghost_heat_trigger: 2
+      cooldown: 4
 
     1001:
       name: "MediumLaser"
@@ -16,14 +17,16 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 7
+      cooldown: 3
 
     1002:
       name: "LRM20"
-      damage: 20.0
+      damage: 20
       heat: 6
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 4.75
 
     1003:
       name: "SmallLaser"
@@ -32,6 +35,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 2.25
 
     1004:
       name: "SRM4"
@@ -40,6 +44,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 4
       ghost_heat_trigger: 4
+      cooldown: 3
 
     1005:
       name: "ERLargeLaser"
@@ -48,14 +53,16 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 3
       ghost_heat_trigger: 3
+      cooldown: 3.25
 
     1006:
       name: "ERPPC"
       damage: 10
       heat: 15
-      multiplier: 4.5
+      multiplier: 7
       ghost_heat_group: 1
       ghost_heat_trigger: 3
+      cooldown: 4
 
     1007:
       name: "Flamer"
@@ -64,6 +71,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1008:
       name: "LargeLaser"
@@ -72,6 +80,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 3
       ghost_heat_trigger: 3
+      cooldown: 3.25
 
     1009:
       name: "PPC"
@@ -80,6 +89,7 @@ $ ->
       multiplier: 7
       ghost_heat_group: 1
       ghost_heat_trigger: 3
+      cooldown: 4
 
     1010:
       name: "LargePulseLaser"
@@ -88,6 +98,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 3
       ghost_heat_trigger: 3
+      cooldown: 3.25
 
     1011:
       name: "MediumPulseLaser"
@@ -96,6 +107,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 3
 
     1012:
       name: "SmallPulseLaser"
@@ -104,14 +116,16 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 2.25
 
     1014:
-      name: "Anti_Missile_System"
+      name: "AntiMissileSystem"
       damage: 3.5
       heat: 0
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1018:
       name: "AutoCannon2"
@@ -120,6 +134,7 @@ $ ->
       multiplier: 0.6
       ghost_heat_group: null
       ghost_heat_trigger: 4
+      cooldown: 0.72
 
     1019:
       name: "AutoCannon5"
@@ -128,6 +143,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 1.66
 
     1020:
       name: "AutoCannon10"
@@ -136,6 +152,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 2.5
 
     1021:
       name: "GaussRifle"
@@ -144,14 +161,16 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 4
 
     1023:
-      name: "LB10XAutoCannon"
+      name: "LBXAutoCannon10"
       damage: 10
       heat: 2
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 2.5
 
     1024:
       name: "MachineGun"
@@ -160,6 +179,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1025:
       name: "UltraAutoCannon5"
@@ -168,14 +188,16 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 1.66
 
     1026:
       name: "LRM5"
       damage: 5
       heat: 2
-      multiplier: null
-      ghost_heat_group: null
-      ghost_heat_trigger: null
+      multiplier: 2.8
+      ghost_heat_group: 2
+      ghost_heat_trigger: 4
+      cooldown: 3.25
 
     1027:
       name: "LRM10"
@@ -184,6 +206,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 3.75
 
     1028:
       name: "LRM15"
@@ -192,6 +215,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 4.25
 
     1029:
       name: "NarcBeacon"
@@ -200,6 +224,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 3.5
 
     1030:
       name: "SRM2"
@@ -208,6 +233,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 2
 
     1031:
       name: "SRM6"
@@ -216,6 +242,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 4
       ghost_heat_trigger: 4
+      cooldown: 4
 
     1032:
       name: "StreakSRM2"
@@ -224,6 +251,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 3.5
 
     1037:
       name: "TAG"
@@ -232,6 +260,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1038:
       name: "SRM2_Artemis"
@@ -240,6 +269,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 2
 
     1039:
       name: "SRM4_Artemis"
@@ -248,6 +278,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 4
       ghost_heat_trigger: 4
+      cooldown: 3
 
     1040:
       name: "SRM6_Artemis"
@@ -256,14 +287,16 @@ $ ->
       multiplier: 1
       ghost_heat_group: 4
       ghost_heat_trigger: 4
+      cooldown: 4
 
     1041:
       name: "LRM5_Artemis"
       damage: 5
       heat: 2
-      multiplier: null
-      ghost_heat_group: null
-      ghost_heat_trigger: null
+      multiplier: 2.8
+      ghost_heat_group: 2
+      ghost_heat_trigger: 4
+      cooldown: 3.25
 
     1042:
       name: "LRM10_Artemis"
@@ -272,6 +305,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 3.75
 
     1043:
       name: "LRM15_Artemis"
@@ -280,6 +314,7 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 4.25
 
     1044:
       name: "LRM20_Artemis"
@@ -288,38 +323,43 @@ $ ->
       multiplier: 2.8
       ghost_heat_group: 2
       ghost_heat_trigger: 3
+      cooldown: 4.75
 
     1200:
-      name: "ClanLB2XAutoCannon"
+      name: "ClanLBXAutoCannon2"
       damage: 2
       heat: 1
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0.72
 
     1201:
-      name: "ClanLB5XAutoCannon"
+      name: "ClanLBXAutoCannon5"
       damage: 5
       heat: 1
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 1.66
 
     1202:
-      name: "ClanLB10XAutoCannon"
+      name: "ClanLBXAutoCannon10"
       damage: 10
       heat: 2
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 2.5
 
     1203:
-      name: "ClanLB20XAutoCannon"
+      name: "ClanLBXAutoCannon20"
       damage: 20
       heat: 6
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 4
 
     1204:
       name: "ClanUltraAutoCannon2"
@@ -328,6 +368,7 @@ $ ->
       multiplier: 0.6
       ghost_heat_group: null
       ghost_heat_trigger: 4
+      cooldown: 0.72
 
     1205:
       name: "ClanUltraAutoCannon5"
@@ -336,6 +377,7 @@ $ ->
       multiplier: 0.8
       ghost_heat_group: null
       ghost_heat_trigger: 4
+      cooldown: 1.66
 
     1206:
       name: "ClanUltraAutoCannon10"
@@ -344,6 +386,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 8
       ghost_heat_trigger: 3
+      cooldown: 2.5
 
     1207:
       name: "ClanUltraAutoCannon20"
@@ -352,6 +395,7 @@ $ ->
       multiplier: 30
       ghost_heat_group: 9
       ghost_heat_trigger: 2
+      cooldown: 4
 
     1208:
       name: "ClanGaussRifle"
@@ -360,6 +404,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 4
 
     1209:
       name: "ClanMachineGun"
@@ -368,6 +413,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1210:
       name: "ClanFlamer"
@@ -376,6 +422,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1211:
       name: "ClanERSmallLaser"
@@ -384,6 +431,7 @@ $ ->
       multiplier: 1.4
       ghost_heat_group: 10
       ghost_heat_trigger: 7
+      cooldown: 2.25
 
     1212:
       name: "ClanERMediumLaser"
@@ -392,6 +440,7 @@ $ ->
       multiplier: 1.4
       ghost_heat_group: 10
       ghost_heat_trigger: 7
+      cooldown: 3
 
     1213:
       name: "ClanERLargeLaser"
@@ -400,6 +449,7 @@ $ ->
       multiplier: 4
       ghost_heat_group: 3
       ghost_heat_trigger: 3
+      cooldown: 3.25
 
     1214:
       name: "ClanSmallPulseLaser"
@@ -408,6 +458,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 10
       ghost_heat_trigger: 7
+      cooldown: 2.25
 
     1215:
       name: "ClanMediumPulseLaser"
@@ -416,6 +467,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 10
       ghost_heat_trigger: 7
+      cooldown: 3
 
     1216:
       name: "ClanLargePulseLaser"
@@ -424,22 +476,25 @@ $ ->
       multiplier: 4
       ghost_heat_group: 3
       ghost_heat_trigger: 3
+      cooldown: 3.25
 
     1217:
       name: "ClanERPPC"
       damage: 10
       heat: 15
-      multiplier: 4.5
+      multiplier: 7
       ghost_heat_group: 1
       ghost_heat_trigger: 3
+      cooldown: 4
 
     1218:
       name: "ClanLRM5"
       damage: 5
       heat: 2
-      multiplier: null
-      ghost_heat_group: null
-      ghost_heat_trigger: null
+      multiplier: 3.1
+      ghost_heat_group: 6
+      ghost_heat_trigger: 4
+      cooldown: 3.5
 
     1219:
       name: "ClanLRM10"
@@ -448,6 +503,7 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 4
 
     1220:
       name: "ClanLRM15"
@@ -456,6 +512,7 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 4.5
 
     1221:
       name: "ClanLRM20"
@@ -464,14 +521,16 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 5
 
     1222:
       name: "ClanLRM5_Artemis"
       damage: 5
       heat: 2
-      multiplier: null
-      ghost_heat_group: null
-      ghost_heat_trigger: null
+      multiplier: 3.1
+      ghost_heat_group: 6
+      ghost_heat_trigger: 4
+      cooldown: 3.5
 
     1223:
       name: "ClanLRM10_Artemis"
@@ -480,6 +539,7 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 4
 
     1224:
       name: "ClanLRM15_Artemis"
@@ -488,6 +548,7 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 4.5
 
     1225:
       name: "ClanLRM20_Artemis"
@@ -496,6 +557,7 @@ $ ->
       multiplier: 3.1
       ghost_heat_group: 6
       ghost_heat_trigger: 3
+      cooldown: 5
 
     1226:
       name: "ClanSRM2"
@@ -504,6 +566,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 2
 
     1227:
       name: "ClanSRM4"
@@ -512,6 +575,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 7
       ghost_heat_trigger: 4
+      cooldown: 3
 
     1228:
       name: "ClanSRM6"
@@ -520,6 +584,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 7
       ghost_heat_trigger: 4
+      cooldown: 4
 
     1229:
       name: "ClanSRM2_Artemis"
@@ -528,6 +593,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 2
 
     1230:
       name: "ClanSRM4_Artemis"
@@ -536,6 +602,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 7
       ghost_heat_trigger: 4
+      cooldown: 3
 
     1231:
       name: "ClanSRM6_Artemis"
@@ -544,6 +611,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 7
       ghost_heat_trigger: 4
+      cooldown: 4
 
     1232:
       name: "ClanStreakSRM2"
@@ -552,6 +620,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: null
       ghost_heat_trigger: 5
+      cooldown: 3.5
 
     1233:
       name: "ClanStreakSRM4"
@@ -560,6 +629,7 @@ $ ->
       multiplier: 1.1
       ghost_heat_group: 5
       ghost_heat_trigger: 4
+      cooldown: 5
 
     1234:
       name: "ClanStreakSRM6"
@@ -568,6 +638,7 @@ $ ->
       multiplier: 1.1
       ghost_heat_group: 5
       ghost_heat_trigger: 4
+      cooldown: 6
 
     1235:
       name: "ClanNarcBeacon"
@@ -576,6 +647,7 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 3.5
 
     1236:
       name: "ClanTAG"
@@ -584,14 +656,16 @@ $ ->
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1237:
-      name: "ClanAnti_Missile_System"
+      name: "ClanAntiMissileSystem"
       damage: 3.5
       heat: 0
       multiplier: null
       ghost_heat_group: null
       ghost_heat_trigger: null
+      cooldown: 0
 
     1238:
       name: "ClanAutoCannon2"
@@ -600,6 +674,7 @@ $ ->
       multiplier: 0.6
       ghost_heat_group: null
       ghost_heat_trigger: 4
+      cooldown: 0.72
 
     1239:
       name: "ClanAutoCannon5"
@@ -608,6 +683,7 @@ $ ->
       multiplier: 0.8
       ghost_heat_group: null
       ghost_heat_trigger: 4
+      cooldown: 1.8
 
     1240:
       name: "ClanAutoCannon10"
@@ -616,6 +692,7 @@ $ ->
       multiplier: 1
       ghost_heat_group: 8
       ghost_heat_trigger: 3
+      cooldown: 2.9
 
     1241:
       name: "ClanAutoCannon20"
@@ -624,3 +701,4 @@ $ ->
       multiplier: 30
       ghost_heat_group: 9
       ghost_heat_trigger: 2
+      cooldown: 4.7
