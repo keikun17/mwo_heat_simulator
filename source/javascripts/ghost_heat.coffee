@@ -87,7 +87,9 @@ $ ->
           if solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count
             heat_scale_position = solo_fire[weapon_id].fire_count
             heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position)
-            ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier
+
+            quirked_weapon_heat = weapon.heat - (weapon.heat * quirks.weaponheat(weapon_id))
+            ghost_heat = quirked_weapon_heat * heat_scale_multiplier * weapon.multiplier
 
             # set ghost heat at weapon level
             solo_fire[weapon_id].ghost_heat += ghost_heat
