@@ -372,7 +372,7 @@
           return _results;
         })();
         _.each(weapon_ids, function(weapon_id, index) {
-          var ghost_heat, group_id, heat_scale_multiplier, heat_scale_position, weapon;
+          var ghost_heat, group_id, heat_scale_multiplier, heat_scale_position, quirked_weapon_heat, weapon;
           weapon = window.weaponsList[weapon_id];
           group_id = weapon.ghost_heat_group;
           if (group_id === null && weapon.ghost_heat_trigger !== null) {
@@ -387,7 +387,8 @@
             if (solo_fire[weapon_id].ghost_heat_trigger <= solo_fire[weapon_id].fire_count) {
               heat_scale_position = solo_fire[weapon_id].fire_count;
               heat_scale_multiplier = weapons.ghostHeat.scale(heat_scale_position);
-              ghost_heat = weapon.heat * heat_scale_multiplier * weapon.multiplier;
+              quirked_weapon_heat = weapon.heat - (weapon.heat * quirks.weaponheat(weapon_id));
+              ghost_heat = quirked_weapon_heat * heat_scale_multiplier * weapon.multiplier;
               solo_fire[weapon_id].ghost_heat += ghost_heat;
               individual_ghost_heat += ghost_heat;
             }
