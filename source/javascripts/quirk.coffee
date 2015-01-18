@@ -37,6 +37,45 @@ $ ->
         window.mech.refit()
         false
 
+    cooldown: (weapon_id) ->
+      weapon_quirk = $("#cooldown-quirk-#{weapon_id}")
+      modifier = 0
+
+      if weapon_quirk.length == 0
+        # If weapon quirks are present
+
+        modifier = 0
+      else
+        # If weapon heat quirks are present
+
+        quirk_value = weapon_quirk.data("value")
+
+        if quirk_value > 100
+          quirk_value = 100
+
+        modifier = quirk_value / 100
+
+    weaponcooldown: (weapon_id) ->
+      weapon_quirk = $("#cooldown-quirk-#{weapon_id}")
+      modifier = 0
+
+      if weapon_quirk.length == 0
+        # If weapon quirks are present
+
+        modifier = 0
+      else
+        # If weapon heat quirks are present
+
+        quirk_value = weapon_quirk.data("value")
+
+        if quirk_value > 100
+          quirk_value = 100
+
+        modifier = quirk_value / 100
+
+      console.log "modifier is #{modifier}"
+      modifier
+
     weaponheat: (weapon_id) ->
       weapon_quirk = $("#heat-quirk-#{weapon_id}")
       modifier = 0
