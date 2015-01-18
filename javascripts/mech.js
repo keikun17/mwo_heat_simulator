@@ -166,6 +166,9 @@
           });
           $(".weapon-list").append(html);
           _.each($('.cooldown-meter'), function(element, iterator, list) {
+            var cstime;
+            cstime = window.weaponsList[weaponId].cooldown;
+            $(element).css(Modernizr.prefixed('transition'), "width " + cstime + "s ease-in-out");
             return window.mech.weapons.armWeapon(element);
           });
           window.persistence.rebuildPermalink();
@@ -285,14 +288,16 @@
         return false;
       },
       disableWeapon: function(weapon) {
-        var progress,
+        var cstime, progress,
           _this = this;
         weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');
         progress.attr('aria-valuenow', '0');
-        progress.attr('style', 'width: 0%');
+        cstime = window.weaponsList[$(weapon).data('weapon-id')].cooldown;
+        $(progress).css(Modernizr.prefixed('transition'), "width " + cstime + "s ease-in-out");
+        $(progress).css('width', '0%');
         return window.setTimeout((function() {
           return _this.enableWeapon(weapon);
         }), 1);
