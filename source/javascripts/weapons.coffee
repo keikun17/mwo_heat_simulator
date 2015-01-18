@@ -49,6 +49,8 @@ $ ->
 
         # Arm the weapon
         _.each $('.cooldown-meter'), (element, iterator, list) ->
+          cstime = window.weaponsList[weaponId].cooldown
+          $(element).css(Modernizr.prefixed('transition'), "width #{cstime}s ease-in-out")
           window.mech.weapons.armWeapon(element)
 
         # save permaink
@@ -146,8 +148,6 @@ $ ->
 
       })
 
-
-    # NOTE ABOUT COOLDOWN TIMES : it's in the weapon_cooldown.scss
     weaponStats: window.weaponsList
 
     applyHeat: (val) ->
@@ -189,7 +189,10 @@ $ ->
       progress.addClass('quick-reset')
       progress.removeClass('progress-bar-success').addClass('progress-bar-danger')
       progress.attr('aria-valuenow', '0')
-      progress.attr('style', 'width: 0%')
+
+      cstime = window.weaponsList[$(weapon).data('weapon-id')].cooldown
+      $(progress).css(Modernizr.prefixed('transition'), "width #{cstime}s ease-in-out")
+      $(progress).css('width', '0%')
 
       # have to do this because of 2 consecutive transition's timing issues
       window.setTimeout (=>
