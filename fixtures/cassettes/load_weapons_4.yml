@@ -26,14 +26,14 @@ http_interactions:
       - max-age=0
       Pragma:
       - public
-      Cache-Control:
-      - public, must-revalidate, max-age=8645
-      Expires:
-      - Sun, 18 Jan 2015 16:33:31 GMT
-      Date:
-      - Sun, 18 Jan 2015 14:09:26 GMT
       Content-Length:
       - '153692'
+      Cache-Control:
+      - public, must-revalidate, max-age=6521
+      Expires:
+      - Sun, 18 Jan 2015 16:33:09 GMT
+      Date:
+      - Sun, 18 Jan 2015 14:44:28 GMT
       Connection:
       - keep-alive
       Access-Control-Max-Age:
@@ -2377,7 +2377,7 @@ http_interactions:
         37,\n\t\t\t\"turn\": 1,\n\t\t\t\"heat\": \"1.7,0.09\",\n\t\t\t\"minTons\":
         20,\n\t\t\t\"maxTons\": 40\n\t\t},\n\t\t\"cost\": null\n\t}\n}"
     http_version: 
-  recorded_at: Sun, 18 Jan 2015 14:09:29 GMT
+  recorded_at: Sun, 18 Jan 2015 14:44:30 GMT
 - request:
     method: get
     uri: http://static.mwomercs.com/api/items/list/full.json
@@ -2407,11 +2407,11 @@ http_interactions:
       Content-Length:
       - '153692'
       Cache-Control:
-      - public, must-revalidate, max-age=8597
+      - public, must-revalidate, max-age=6517
       Expires:
-      - Sun, 18 Jan 2015 16:32:44 GMT
+      - Sun, 18 Jan 2015 16:33:05 GMT
       Date:
-      - Sun, 18 Jan 2015 14:09:27 GMT
+      - Sun, 18 Jan 2015 14:44:28 GMT
       Connection:
       - keep-alive
       Access-Control-Max-Age:
@@ -4755,5 +4755,5 @@ http_interactions:
         37,\n\t\t\t\"turn\": 1,\n\t\t\t\"heat\": \"1.7,0.09\",\n\t\t\t\"minTons\":
         20,\n\t\t\t\"maxTons\": 40\n\t\t},\n\t\t\"cost\": null\n\t}\n}"
     http_version: 
-  recorded_at: Sun, 18 Jan 2015 14:09:29 GMT
+  recorded_at: Sun, 18 Jan 2015 14:44:31 GMT
 recorded_with: VCR 2.9.2

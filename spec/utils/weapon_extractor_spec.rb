@@ -35,8 +35,8 @@ describe WeaponExtractor do
         f = File.read(filepath)
         expect(f).to_not be_empty
         expect(JSON.parse(f)).
-          to include( { "3" => {"weapon_ids" => ['1005', '1008', '1010', '1213', '1216'], "ghost_heat_trigger" => '3' },
-                        "6" => {"weapon_ids" => ['1219', '1220', '1221', '1223', '1224', '1225'], "ghost_heat_trigger" => '3' }}
+          to include( { "3" => {"weapon_ids" => ["1005", "1008", "1010", "1213", "1216"], "ghost_heat_trigger" => '3' },
+                        "6" => {"weapon_ids" => ["1218", "1219", "1220", "1221", "1222", "1223", "1224", "1225"], "ghost_heat_trigger" => '4' }}
                     )
 
         # negative test
@@ -47,7 +47,7 @@ describe WeaponExtractor do
       end
     end
 
-    context "payload are weapon cooldowns and the format is json" do
+    context "payload are weapon cooldowns and the format is json", vcr: {cassette_name: 'load_weapons_4'} do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted_cooldown.js" }
       let(:format) {:json}
       let(:payload) { described_class.get_cooldown(described_class.get_json, format) }
@@ -74,7 +74,7 @@ describe WeaponExtractor do
 
     end
 
-    context "payload are weapons and the format is json" do
+    context "payload are weapons and the format is json", vcr: {cassette_name: 'load_weapons_4'} do
       let(:filepath) { "#{Dir.pwd}/test_extracted/extracted.js" }
       let(:format) {:json}
       let(:payload) { described_class.pre_format(described_class.get_json, format) }
@@ -87,10 +87,10 @@ describe WeaponExtractor do
         expect(f).to_not be_empty
         expect(JSON.parse(f)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil  }},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil}},
-            {"1002" => {'name' => 'LRM20', 'damage' => 22, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2, 'cooldown' => 4}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil, 'cooldown' => 2.25  }},
+            {"1203" => {'name' => 'ClanLBXAutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil, 'cooldown' => 4}},
+            {"1002" => {'name' => 'LRM20', 'damage' => 20, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3, 'cooldown' => 4.75}}
         )
 
         # a failing example just to see that the above assertion is working
@@ -114,10 +114,10 @@ describe WeaponExtractor do
       it "formats the weapon data" do
         expect(subject).
           to include(
-            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24  ,:ghost_heat_group => nil, :ghost_heat_trigger => 2}},
-            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil , :ghost_heat_group => nil, :ghost_heat_trigger => nil}},
-            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6 , :multiplier => nil ,:ghost_heat_group => nil, :ghost_heat_trigger => nil}},
-            {"1002" => {:name => 'LRM20', :damage => 22.0, :heat => 6, :multiplier => 2.8 , :ghost_heat_group => 2, :ghost_heat_trigger => 3}}
+            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6, multiplier: 24, ghost_heat_group: nil, ghost_heat_trigger: 2, cooldown: 4}},
+            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2, multiplier: nil, ghost_heat_group: nil, ghost_heat_trigger: nil, cooldown: 2.25  }},
+            {"1203" => {name: 'ClanLBXAutoCannon20', damage: 20, heat: 6, multiplier: nil, ghost_heat_group: nil, ghost_heat_trigger: nil, cooldown: 4}},
+            {"1002" => {name: 'LRM20', damage: 20, heat: 6, multiplier: 2.8, ghost_heat_group: 2, ghost_heat_trigger: 3, cooldown:  4.75}}
         )
       end
     end
@@ -127,10 +127,10 @@ describe WeaponExtractor do
       it "should be yaml" do
         expect(YAML.load(subject)).
           to include(
-            {"1000" => {:name => 'AutoCannon20', :damage => 20, :heat => 6, :multiplier => 24  ,:ghost_heat_group => nil, :ghost_heat_trigger => 2}},
-            {"1003" => {:name => 'SmallLaser', :damage => 3, :heat => 2, :multiplier => nil , :ghost_heat_group => nil, :ghost_heat_trigger => nil}},
-            {"1203" => {:name => 'ClanLB20XAutoCannon', :damage => 20, :heat => 6 , :multiplier => nil ,:ghost_heat_group => nil, :ghost_heat_trigger => nil}},
-            {"1002" => {:name => 'LRM20', :damage => 22.0, :heat => 6, :multiplier => 2.8 , :ghost_heat_group => 2, :ghost_heat_trigger => 3}}
+            {"1000" => {name: 'AutoCannon20', damage: 20, heat: 6, multiplier: 24, ghost_heat_group: nil, ghost_heat_trigger: 2, cooldown: 4}},
+            {"1003" => {name: 'SmallLaser', damage: 3, heat: 2, multiplier: nil, ghost_heat_group: nil, ghost_heat_trigger: nil, cooldown: 2.25  }},
+            {"1203" => {name: 'ClanLBXAutoCannon20', damage: 20, heat: 6, multiplier: nil, ghost_heat_group: nil, ghost_heat_trigger: nil, cooldown: 4}},
+            {"1002" => {name: 'LRM20', damage: 20, heat: 6, multiplier: 2.8, ghost_heat_group: 2, ghost_heat_trigger: 3, cooldown:  4.75}}
         )
       end
     end
@@ -140,10 +140,10 @@ describe WeaponExtractor do
       it "should be json" do
         expect(JSON.parse(subject)).
           to include(
-            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2}},
-            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil  }},
-            {"1203" => {'name' => 'ClanLB20XAutoCannon', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil}},
-            {"1002" => {'name' => 'LRM20', 'damage' => 22, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3}}
+            {"1000" => {'name' => 'AutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => 24, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => 2, 'cooldown' => 4}},
+            {"1003" => {'name' => 'SmallLaser', 'damage' => 3, 'heat' => 2, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil, 'cooldown' => 2.25  }},
+            {"1203" => {'name' => 'ClanLBXAutoCannon20', 'damage' => 20, 'heat' => 6, 'multiplier' => nil, 'ghost_heat_group' => nil, 'ghost_heat_trigger' => nil, 'cooldown' => 4}},
+            {"1002" => {'name' => 'LRM20', 'damage' => 20, 'heat' => 6, 'multiplier' => 2.8, 'ghost_heat_group' => 2, 'ghost_heat_trigger' => 3, 'cooldown' => 4.75}}
         )
       end
     end
