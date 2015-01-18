@@ -288,15 +288,17 @@
         return false;
       },
       disableWeapon: function(weapon) {
-        var cstime, progress,
+        var basecooldown, cooldown_time, progress, weapon_id,
           _this = this;
         weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');
         progress.attr('aria-valuenow', '0');
-        cstime = window.weaponsList[$(weapon).data('weapon-id')].cooldown;
-        $(progress).css(Modernizr.prefixed('transition'), "width " + cstime + "s ease-in-out");
+        weapon_id = $(weapon).data('weapon-id');
+        basecooldown = window.weaponsList[weapon_id].cooldown;
+        cooldown_time = basecooldown - (basecooldown * quirks.weaponcooldown(weapon_id));
+        $(progress).css(Modernizr.prefixed('transition'), "width " + cooldown_time + "s ease-in-out");
         $(progress).css('width', '0%');
         return window.setTimeout((function() {
           return _this.enableWeapon(weapon);
@@ -559,6 +561,36 @@
           window.mech.refit();
           return false;
         });
+      },
+      cooldown: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#cooldown-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          return modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          return modifier = quirk_value / 100;
+        }
+      },
+      weaponcooldown: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#cooldown-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          modifier = quirk_value / 100;
+        }
+        console.log("modifier is " + modifier);
+        return modifier;
       },
       weaponheat: function(weapon_id) {
         var modifier, quirk_value, weapon_quirk;

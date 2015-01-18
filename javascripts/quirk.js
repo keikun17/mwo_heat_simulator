@@ -40,6 +40,36 @@
           return false;
         });
       },
+      cooldown: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#cooldown-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          return modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          return modifier = quirk_value / 100;
+        }
+      },
+      weaponcooldown: function(weapon_id) {
+        var modifier, quirk_value, weapon_quirk;
+        weapon_quirk = $("#cooldown-quirk-" + weapon_id);
+        modifier = 0;
+        if (weapon_quirk.length === 0) {
+          modifier = 0;
+        } else {
+          quirk_value = weapon_quirk.data("value");
+          if (quirk_value > 100) {
+            quirk_value = 100;
+          }
+          modifier = quirk_value / 100;
+        }
+        console.log("modifier is " + modifier);
+        return modifier;
+      },
       weaponheat: function(weapon_id) {
         var modifier, quirk_value, weapon_quirk;
         weapon_quirk = $("#heat-quirk-" + weapon_id);

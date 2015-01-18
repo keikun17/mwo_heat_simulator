@@ -157,15 +157,17 @@
         return false;
       },
       disableWeapon: function(weapon) {
-        var cstime, progress,
+        var basecooldown, cooldown_time, progress, weapon_id,
           _this = this;
         weapon.removeClass("btn-danger").addClass("btn-default").removeClass("ready").addClass("not_ready");
         progress = $(weapon).parent().siblings('.weapon-cooldown-container').find('.progress .cooldown-meter');
         progress.addClass('quick-reset');
         progress.removeClass('progress-bar-success').addClass('progress-bar-danger');
         progress.attr('aria-valuenow', '0');
-        cstime = window.weaponsList[$(weapon).data('weapon-id')].cooldown;
-        $(progress).css(Modernizr.prefixed('transition'), "width " + cstime + "s ease-in-out");
+        weapon_id = $(weapon).data('weapon-id');
+        basecooldown = window.weaponsList[weapon_id].cooldown;
+        cooldown_time = basecooldown - (basecooldown * quirks.weaponcooldown(weapon_id));
+        $(progress).css(Modernizr.prefixed('transition'), "width " + cooldown_time + "s ease-in-out");
         $(progress).css('width', '0%');
         return window.setTimeout((function() {
           return _this.enableWeapon(weapon);
