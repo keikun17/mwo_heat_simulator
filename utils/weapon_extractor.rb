@@ -56,7 +56,8 @@ class WeaponExtractor
         heat: weapon.heat,
         multiplier: weapon.heatpenalty,
         ghost_heat_group: weapon.heat_penalty_id,
-        ghost_heat_trigger: weapon.minheatpenaltylevel
+        ghost_heat_trigger: weapon.minheatpenaltylevel,
+        cooldown: weapon.cooldown
       }
 
     end
