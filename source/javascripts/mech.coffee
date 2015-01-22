@@ -13,6 +13,7 @@ $ ->
     init: ->
       window.heatsink.init()
       window.weapons.init()
+      window.weapons.ghostHeat.init()
       window.quirks.init()
       window.engine.init()
       window.skills.init()

@@ -1,6 +1,10 @@
 $ ->
   window.weapons.ghostHeat=
 
+    init: ->
+      $('#ghost_heat').on 'change', ->
+        window.persistence.rebuildPermalink()
+
     is_enabled: ->
      $('#ghost_heat').is(':checked')
 

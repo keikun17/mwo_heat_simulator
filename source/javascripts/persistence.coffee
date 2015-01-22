@@ -56,6 +56,12 @@ $ ->
       if elite_mech
         $('#skill_elite').prop('checked', true)
 
+
+      ghost_heat_status = url.param('gh_on')
+
+      if ghost_heat_status and ghost_heat_status == 'true'
+        $('#ghost_heat').prop('checked', true)
+
       # Reset Mech quirks
       _.each url.param('quirks'), (quirk) ->
         window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value)
@@ -85,6 +91,9 @@ $ ->
 
       # collect engine
       str = "#{str}engine=#{window.engine.rating()}&"
+
+      # ghost heat enabled/disabled
+      str = "#{str}gh_on=#{window.weapons.ghostHeat.is_enabled()}&"
 
       # collect quirks
       quirks_str = ""
