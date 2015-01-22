@@ -318,6 +318,11 @@
 (function() {
   $(function() {
     return window.weapons.ghostHeat = {
+      init: function() {
+        return $('#ghost_heat').on('change', function() {
+          return window.persistence.rebuildPermalink();
+        });
+      },
       is_enabled: function() {
         return $('#ghost_heat').is(':checked');
       },
@@ -633,7 +638,7 @@
       },
       resetEngineFromParams: function() {},
       resetLoadoutFromParams: function() {
-        var cool_run, elite_mech, engine_rating, heat_containment, heatsink_count, heatsink_type, url, url_params, weapon_params;
+        var cool_run, elite_mech, engine_rating, ghost_heat_status, heat_containment, heatsink_count, heatsink_type, url, url_params, weapon_params;
         url = $.url(location);
         url_params = url.param();
         weapon_params = _.intersection(Object.keys(url_params), Object.keys(window.weaponsList));
@@ -671,6 +676,10 @@
         if (elite_mech) {
           $('#skill_elite').prop('checked', true);
         }
+        ghost_heat_status = url.param('gh_on');
+        if (ghost_heat_status && ghost_heat_status === 'true') {
+          $('#ghost_heat').prop('checked', true);
+        }
         return _.each(url.param('quirks'), function(quirk) {
           return window.mech.quirks.insert_quirk(quirk.weapon_id, quirk.quirk_type, quirk.reduction_value);
         });
@@ -693,6 +702,7 @@
           str = "" + str + "ms_heatc=1&";
         }
         str = "" + str + "engine=" + (window.engine.rating()) + "&";
+        str = "" + str + "gh_on=" + (window.weapons.ghostHeat.is_enabled()) + "&";
         quirks_str = "";
         quirks_list = window.quirks.listAll();
         _.each(quirks_list, function(quirk) {
@@ -722,6 +732,7 @@
       init: function() {
         window.heatsink.init();
         window.weapons.init();
+        window.weapons.ghostHeat.init();
         window.quirks.init();
         window.engine.init();
         window.skills.init();

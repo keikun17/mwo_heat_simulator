@@ -1,6 +1,11 @@
 (function() {
   $(function() {
     return window.weapons.ghostHeat = {
+      init: function() {
+        return $('#ghost_heat').on('change', function() {
+          return window.persistence.rebuildPermalink();
+        });
+      },
       is_enabled: function() {
         return $('#ghost_heat').is(':checked');
       },
