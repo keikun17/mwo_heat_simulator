@@ -16,9 +16,16 @@
                 = link_to "1LVcZrW9pkiAgH3EX3AXSkWeQU3kUdunQh", "bitcoin:1LVcZrW9pkiAgH3EX3AXSkWeQU3kUdunQh?label=Mechwarrior+Online+Heat+Simulator"
 
     .col-lg-6
+
       .alert.alert-success
-        Share this build:
-        %span= link_to 'Right click and copy this link', '/', id: 'permalink', class: 'btn btn-success', data: {toggle: 'tooltip', placement: 'right', 'original-title' => 'Autosaved as you go'}
+        .div
+          %label
+            Import from Smurfy
+            %input#import_from_smurfy{size: '40', type: 'text'}
+            %span= link_to 'Import', '/', id: 'permalink', class: 'btn btn-success'
+        .div
+          Share this build:
+          %span= link_to 'Right click and copy this link', '/', id: 'permalink', class: 'btn btn-success', data: {toggle: 'tooltip', placement: 'right', 'original-title' => 'Autosaved as you go'}
 
   .row
     .col-lg-3.col-md-3.col-sm-3
