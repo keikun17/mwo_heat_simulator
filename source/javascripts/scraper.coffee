@@ -33,22 +33,43 @@ $ ->
         scraped_json = $.parseJSON $(scraped_html[5]).text()
         kek_json = scraped_json
 
-        weapon_quantities = scraper.extract_weapon_quantites(scraped_json)
+        # just get the stuff we need and format it
+        needed_values = scraper.extract_needed_values(scraped_json)
 
-        _.each weapon_quantities, (qty, weapon_id, list) ->
+        console.log needed_values
+
+        # Equip Extracted Weapons
+        _.each needed_values.extracted_weapons, (qty, weapon_id, list) ->
           _.times qty, ->
             window.weapons.equip(weapon_id)
 
 
 
-    extract_weapon_quantites: (mech_json) ->
+    # Returns
+    # {extracted_weapons: {1002: 10, 1003, 2}, extracted_engine: 300, extracted_external_heatsink: 5}
+    extract_needed_values: (mech_json) ->
       console.log mech_json
+
       extracted_weapons = {}
+      extracted_engine = ""
+      extracted_external_heatsinks = 0
+
       _.each mech_json.configuration, (mech_part) ->
         console.log("diving into mech part")
 
         _.each mech_part.items, (item) ->
           console.log("into mech item")
+
+          if item.type == "module"
+
+            # Engines
+            if parseInt(item.id) in [3218..3478]
+              console.log "It's an ENGINE! #{item.id}"
+              extracted_engine = window.engine.get_rating_from_id(item.id)
+
+            # Heatsinks
+            if parseInt(item.id) in [3000,3001,3004]
+              extracted_external_heatsinks++
 
           if item.type == "weapon"
 
@@ -90,9 +111,10 @@ $ ->
               extracted_weapons[item.id] = 0
             extracted_weapons[item.id] = extracted_weapons[item.id] + 1
 
-
-      console.log extracted_weapons
-      extracted_weapons
+      needed_values =
+        extracted_weapons: extracted_weapons
+        extracted_engine: extracted_engine
+        extracted_external_heatsinks: extracted_external_heatsinks
 
 
 
