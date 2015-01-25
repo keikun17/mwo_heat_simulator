@@ -23,7 +23,6 @@ $ ->
     init: ->
 
       $('#add_quirk').submit (e) ->
-        console.log 'something'
         e.preventDefault()
 
         weapon_id  = quirks.form.weapon_id()
