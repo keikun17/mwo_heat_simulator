@@ -5,6 +5,7 @@
 #= require skills
 #= require map
 #= require quirk
+#= require scraper
 #= require persistence
 
 $ ->
@@ -17,6 +18,7 @@ $ ->
       window.quirks.init()
       window.engine.init()
       window.skills.init()
+      window.scraper.init()
       window.persistence.init()
       window.map.init()
 
