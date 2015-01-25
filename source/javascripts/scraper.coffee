@@ -51,6 +51,41 @@ $ ->
           console.log("into mech item")
 
           if item.type == "weapon"
+
+            # Hack for normalizing Artemis Missiles
+            switch item.id
+              when '1038' #SRM2-A
+                item.id = 1030
+              when '1039' #SRM4-A
+                item.id = 1004
+              when '1040' #SRM6-A
+                item.id = 1031
+
+              when '1041' #LRM5-A
+                item.id = 1026
+              when '1042' #LRM10-A
+                item.id = 1027
+              when '1043' #LRM15-A
+                item.id = 1028
+              when '1044' #LRM20-A
+                item.id = 1002
+
+              when '1222' #CLRM5-A
+                item.id = 1218
+              when '1223' #CLRM10-A
+                item.id = 1219
+              when '1224' #CLRM15-A
+                item.id = 1220
+              when '1225' #CLRM20-A
+                item.id = 1221
+
+              when '1229' #CSRM2-A
+                item.id = 1226
+              when '1230' #CSRM4-A
+                item.id = 1227
+              when '1231' #CSRM6-A
+                item.id = 1228
+
             if !extracted_weapons[item.id]
               extracted_weapons[item.id] = 0
             extracted_weapons[item.id] = extracted_weapons[item.id] + 1
