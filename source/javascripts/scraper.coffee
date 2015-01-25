@@ -43,6 +43,10 @@ $ ->
           _.times qty, ->
             window.weapons.equip(weapon_id)
 
+        # Equip Extracted Heatsink
+        $('#heatsink-count').val(needed_values.extracted_external_heatsinks)
+
+
 
 
     # Returns
