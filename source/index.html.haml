@@ -6,12 +6,20 @@
       %small
         .alert.alert-info
           %ul
-            %li This tool was last updated @ January 19, 2015 (Heat and Cooldown quirks)
+            %li This tool was last updated @ January 25, 2015 : Import from #{link_to "Smurfy's mechlab!","http://mwo.smurfy-net.de/mechlab"}
+            %li Also last January 19, 2015 : Quirks (both heat and cooldown)
             %li
               Comment/Discuss on :
               %a.alert-link.text-warning{href: "http://mwomercs.com/forums/topic/135725-mechwarrior-online-heat-simulator/"} MWO Heat Simulator Thread
             %li
-              Accepting Bitcoin donations @ address :
+              Accepting Donations
+              %form{:action => "https://www.paypal.com/cgi-bin/webscr", :method => "post", :target => "_top"}
+                Paypal :
+                %input{:name => "cmd", :type => "hidden", :value => "_s-xclick"}/
+                %input{:name => "hosted_button_id", :type => "hidden", :value => "EETP968KGKX4N"}/
+                %input{:alt => "PayPal - The safer, easier way to pay online!", :border => "0", :name => "submit", :src => "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif", :type => "image"}/
+                %img{:alt => "", :border => "0", :height => "1", :src => "https://www.paypalobjects.com/en_US/i/scr/pixel.gif", :width => "1"}/
+              Bitcoin :
               %strong
                 = link_to "1LVcZrW9pkiAgH3EX3AXSkWeQU3kUdunQh", "bitcoin:1LVcZrW9pkiAgH3EX3AXSkWeQU3kUdunQh?label=Mechwarrior+Online+Heat+Simulator"
 
