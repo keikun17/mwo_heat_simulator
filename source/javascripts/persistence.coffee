@@ -24,7 +24,7 @@ $ ->
           count = url.param(val)
 
           _(count).times ->
-            $('#armory').find("a[data-weapon-id='#{val}']").click()
+            window.weapons.equip(val)
 
       # Reset Heatsink
       heatsink_count = url.param('hs')

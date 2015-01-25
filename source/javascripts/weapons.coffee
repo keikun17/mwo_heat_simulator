@@ -150,6 +150,9 @@ $ ->
 
     weaponStats: window.weaponsList
 
+    equip: (weapon_id) ->
+      $('#armory').find("a[data-weapon-id='#{weapon_id}']").click()
+
     applyHeat: (val) ->
       val = val * 100
       towards = val + window.mech.heatsink.getCurrentHeat()
