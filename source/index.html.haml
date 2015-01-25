@@ -19,10 +19,11 @@
 
       .alert.alert-success
         .div
-          %label
-            Import from Smurfy
-            %input#import_from_smurfy{size: '40', type: 'text'}
-            %span= link_to 'Import', '/', id: 'permalink', class: 'btn btn-success'
+          %form#import_from_smurfy
+            %label
+              Import from Smurfy
+              %input#smurfy_url{size: '30', type: 'text'}
+              %span= submit_tag 'Import', class: 'btn btn-primary'
         .div
           Share this build:
           %span= link_to 'Right click and copy this link', '/', id: 'permalink', class: 'btn btn-success', data: {toggle: 'tooltip', placement: 'right', 'original-title' => 'Autosaved as you go'}
