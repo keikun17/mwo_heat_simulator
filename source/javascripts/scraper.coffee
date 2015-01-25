@@ -46,7 +46,8 @@ $ ->
         # Equip Extracted Heatsink
         $('#heatsink-count').val(needed_values.extracted_external_heatsinks)
 
-
+        # Equip Engine
+        $('#engine_type').val(needed_values.extracted_engine)
 
 
     # Returns
