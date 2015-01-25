@@ -45,9 +45,13 @@ $ ->
 
         # Equip Extracted Heatsink
         $('#heatsink-count').val(needed_values.extracted_external_heatsinks)
+        $('#heatsink_type').val(needed_values.extracted_heatsink_type)
 
         # Equip Engine
         $('#engine_type').val(needed_values.extracted_engine)
+
+        window.mech.refit()
+        window.persistence.rebuildPermalink()
 
 
     # Returns
@@ -58,9 +62,15 @@ $ ->
       extracted_weapons = {}
       extracted_engine = ""
       extracted_external_heatsinks = 0
+      extracted_heatsink_type = "single"
 
+      # Upgrades
+      _.each mech_json.upgrades, (upgrade) ->
+        if upgrade.id in ["3002", "3005"]
+          extracted_heatsink_type = "double"
+
+      # Items
       _.each mech_json.configuration, (mech_part) ->
-        console.log("diving into mech part")
 
         _.each mech_part.items, (item) ->
           console.log("into mech item")
@@ -120,6 +130,8 @@ $ ->
         extracted_weapons: extracted_weapons
         extracted_engine: extracted_engine
         extracted_external_heatsinks: extracted_external_heatsinks
+        extracted_heatsink_type: extracted_heatsink_type
+
 
 
 
