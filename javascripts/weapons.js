@@ -131,6 +131,9 @@
         });
       },
       weaponStats: window.weaponsList,
+      equip: function(weapon_id) {
+        return $('#armory').find("a[data-weapon-id='" + weapon_id + "']").click();
+      },
       applyHeat: function(val) {
         var towards;
         val = val * 100;

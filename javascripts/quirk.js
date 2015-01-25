@@ -27,7 +27,6 @@
       init: function() {
         $('#add_quirk').submit(function(e) {
           var quirk_type, value, weapon_id;
-          console.log('something');
           e.preventDefault();
           weapon_id = quirks.form.weapon_id();
           quirk_type = quirks.form.quirk_type();

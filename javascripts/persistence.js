@@ -17,7 +17,7 @@
             var count;
             count = url.param(val);
             return _(count).times(function() {
-              return $('#armory').find("a[data-weapon-id='" + val + "']").click();
+              return window.weapons.equip(val);
             });
           });
         }
