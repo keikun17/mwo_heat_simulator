@@ -48,7 +48,8 @@ $ ->
         $('#heatsink_type').val(needed_values.extracted_heatsink_type)
 
         # Equip Engine
-        $('#engine_type').val(needed_values.extracted_engine)
+        if needed_values.extracted_engine != ""
+          $('#engine_type').val(needed_values.extracted_engine)
 
         window.mech.refit()
         window.persistence.rebuildPermalink()
