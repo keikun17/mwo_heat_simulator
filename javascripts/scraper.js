@@ -39,7 +39,9 @@
           });
           $('#heatsink-count').val(needed_values.extracted_external_heatsinks);
           $('#heatsink_type').val(needed_values.extracted_heatsink_type);
-          $('#engine_type').val(needed_values.extracted_engine);
+          if (needed_values.extracted_engine !== "") {
+            $('#engine_type').val(needed_values.extracted_engine);
+          }
           window.mech.refit();
           return window.persistence.rebuildPermalink();
         });
