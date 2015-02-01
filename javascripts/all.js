@@ -14790,7 +14790,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
       timeToZero: function() {
         var time;
         time = this.getCurrentHeat() / (this.getCoolRate() * 100);
-        time = time.toPrecision(2);
+        time = Math.floor(time);
         if (time < 0) {
           time = 0;
         }
