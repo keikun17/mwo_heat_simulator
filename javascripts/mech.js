@@ -937,12 +937,14 @@
         value: 0,
         incrementTimer: function() {
           mech.dps.uptime = mech.dps.uptime + 1;
-          return mech.dps.recompute();
+          mech.dps.recompute();
+          return $('#dps-elapsed').text(mech.dps.uptime);
         },
         resetTimer: function() {
           mech.dps.value = 0;
           mech.dps.uptime = 0;
           mech.dps.clock = clearInterval(mech.dps.clock);
+          $('#dps-elapsed').text(0);
           return $('#dps').text('0.00');
         },
         recompute: function() {
