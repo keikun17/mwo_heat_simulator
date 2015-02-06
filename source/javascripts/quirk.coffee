@@ -14,7 +14,7 @@ $ ->
       quirk_id = "#{ quirk_type }-quirk-#{ weapon_id }"
       quirk_text = "#{ weapon_name } #{value}% #{quirk_type} reduction"
       remove_link = "<a href='#' class='js_remove_quirk btn-xs btn-warning' ><span class='glyphicon glyphicon-remove'/></a>"
-      compiled = "<li class='js-quirk_item' id='#{ quirk_id }' data-value='#{ value }' data-quirk_type='#{quirk_type}' data-weapon_id='#{weapon_id}'>#{quirk_text} #{remove_link}</li>"
+      compiled = "<li class='js-quirk_item' id='#{ quirk_id }' data-value='#{ value }' data-quirk_type='#{quirk_type}' data-weapon_id='#{weapon_id}'>#{remove_link} #{quirk_text} </li>"
 
       unless document.getElementById(quirk_id) or isNaN(value)
         $('ul#quirks-list').append(compiled)
