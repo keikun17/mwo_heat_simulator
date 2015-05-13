@@ -30,8 +30,15 @@ $ ->
         # console.log(response)
         @scrapedData = response.responseText
         scraped_html = ($.parseHTML @scrapedData)
-        scraped_json = $.parseJSON $(scraped_html[5]).text()
-        kek_json = scraped_json
+
+        # console.log "scraped HTML is"
+        # console.log(scraped_html)
+
+        window.x = scraped_html
+        scraped_json = $.parseJSON $(scraped_html[0]).text()
+
+        # console.log "scraped JSON is"
+        # console.log(scraped_json)
 
         # just get the stuff we need and format it
         needed_values = scraper.extract_needed_values(scraped_json)
