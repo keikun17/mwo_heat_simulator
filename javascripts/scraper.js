@@ -25,11 +25,11 @@
         smurfy_url = smurfy_url.replace('&l=', '/');
         console.log("new url is " + smurfy_url);
         return $.get(smurfy_url, function(response) {
-          var kek_json, needed_values, scraped_html, scraped_json;
+          var needed_values, scraped_html, scraped_json;
           _this.scrapedData = response.responseText;
           scraped_html = $.parseHTML(_this.scrapedData);
-          scraped_json = $.parseJSON($(scraped_html[5]).text());
-          kek_json = scraped_json;
+          window.x = scraped_html;
+          scraped_json = $.parseJSON($(scraped_html[0]).text());
           needed_values = scraper.extract_needed_values(scraped_json);
           console.log(needed_values);
           _.each(needed_values.extracted_weapons, function(qty, weapon_id, list) {
