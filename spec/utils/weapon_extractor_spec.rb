@@ -35,7 +35,7 @@ describe WeaponExtractor do
         f = File.read(filepath)
         expect(f).to_not be_empty
         expect(JSON.parse(f)).
-          to include( { "3" => {"weapon_ids" => ["1005", "1008", "1010", "1213", "1216"], "ghost_heat_trigger" => '3' },
+          to include( { "3" => {"weapon_ids" => ["1005", "1008", "1010", "1213", "1216"], "ghost_heat_trigger" => '4' },
                         "6" => {"weapon_ids" => ["1218", "1219", "1220", "1221", "1222", "1223", "1224", "1225"], "ghost_heat_trigger" => '4' }}
                     )
 

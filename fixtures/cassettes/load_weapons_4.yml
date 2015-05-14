@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - nginx/1.6.2
+      - nginx/1.6.3
       Content-Type:
       - application/json
       Strict-Transport-Security:
@@ -27,13 +27,13 @@ http_interactions:
       Pragma:
       - public
       Content-Length:
-      - '153692'
+      - '153869'
       Cache-Control:
-      - public, must-revalidate, max-age=6521
+      - public, must-revalidate, max-age=9000
       Expires:
-      - Sun, 18 Jan 2015 16:33:09 GMT
+      - Thu, 14 May 2015 06:52:42 GMT
       Date:
-      - Sun, 18 Jan 2015 14:44:28 GMT
+      - Thu, 14 May 2015 04:22:42 GMT
       Connection:
       - keep-alive
       Access-Control-Max-Age:
@@ -109,8 +109,8 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Energy\",\n\t\t\t\"projectileclass\": \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\":
-        9,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\":
-        3,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 8,\n\t\t\t\"cooldown\":
+        9,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\":
+        4,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 8,\n\t\t\t\"cooldown\":
         3.25,\n\t\t\t\"ammoType\": \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\":
         0,\n\t\t\t\"longRange\": 675,\n\t\t\t\"maxRange\": 1350,\n\t\t\t\"visRange\":
         1500,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 1.25,\n\t\t\t\"lifetime\":
@@ -141,7 +141,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\": \"Energy\",\n\t\t\t\"projectileclass\":
         \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\": 9,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\": 3,\n\t\t\t\"impulse\":
+        0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
         0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\": 3.25,\n\t\t\t\"ammoType\":
         \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         450,\n\t\t\t\"maxRange\": 900,\n\t\t\t\"visRange\": 1500,\n\t\t\t\"tons\":
@@ -161,8 +161,8 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Energy\",\n\t\t\t\"projectileclass\": \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\":
-        11,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\":
-        3,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\":
+        11,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\":
+        4,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\":
         3.25,\n\t\t\t\"ammoType\": \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\":
         0,\n\t\t\t\"longRange\": 365,\n\t\t\t\"maxRange\": 730,\n\t\t\t\"visRange\":
         1500,\n\t\t\t\"tons\": 7,\n\t\t\t\"duration\": 0.67,\n\t\t\t\"lifetime\":
@@ -199,8 +199,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 1,\n\t\t\t\"type\": \"Ballistic\",\n\t\t\t\"projectileclass\":
         \"bullet\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\": 2,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
-        0.0375,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
+        0,\n\t\t\t\"impulse\": 0.0375,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
         \"AC2Ammo\",\n\t\t\t\"ammoPerShot\": 1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         720,\n\t\t\t\"maxRange\": 1440,\n\t\t\t\"tons\": 6,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\":
         10,\n\t\t\t\"speed\": 2000,\n\t\t\t\"volleydelay\": 0,\n\t\t\t\"gravity\":
@@ -505,8 +504,7 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Ballistic\",\n\t\t\t\"projectileclass\": \"bullet\",\n\t\t\t\"numFiring\":
-        2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\":
-        0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\":
+        2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\":
         1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\": \"ClanUltraAC2Ammo\",\n\t\t\t\"ammoPerShot\":
         1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\": 810,\n\t\t\t\"maxRange\":
         1620,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\": 10,\n\t\t\t\"speed\":
@@ -912,8 +910,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\": false\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 3,\n\t\t\t\"type\": \"Ballistic\",\n\t\t\t\"projectileclass\":
         \"bullet\",\n\t\t\t\"numFiring\": 2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
-        0.03,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
+        0,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
         \"ClanAC2Ammo\",\n\t\t\t\"ammoPerShot\": 1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         900,\n\t\t\t\"maxRange\": 1800,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\":
         10,\n\t\t\t\"speed\": 2000,\n\t\t\t\"volleydelay\": 0.14,\n\t\t\t\"gravity\":
@@ -1048,27 +1045,27 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"LRMAmmo\",\n\t\t\t\"internalDamage\":
-        0.7,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2028\":
+        1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2028\":
         {\n\t\t\"name\": \"SRMAmmo\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"SRMAmmo\",\n\t\t\t\"internalDamage\":
-        1.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2029\":
+        2.15,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2029\":
         {\n\t\t\"name\": \"StreakSRMAmmo\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\":
-        2.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2030\":
+        2,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2030\":
         {\n\t\t\"name\": \"LRMAmmoArtemis\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\":
-        1.8,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2031\":
+        1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2031\":
         {\n\t\t\"name\": \"SRMAmmoArtemis\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\":
-        2.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2032\":
+        2.15,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2032\":
         {\n\t\t\"name\": \"AC20AmmoHalf\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
@@ -1122,28 +1119,28 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"LRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"LRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2043\": {\n\t\t\"name\": \"SRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"SRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"SRMAmmo\",\n\t\t\t\"internalDamage\": 2.15,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2044\": {\n\t\t\"name\": \"StreakSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2045\": {\n\t\t\"name\": \"LRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2046\": {\n\t\t\"name\": \"SRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2200\": {\n\t\t\"name\": \"ClanLB2-XACAmmo\",\n\t\t\"category\":
+        \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.15,\n\t\t\t\"numShots\":
+        50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2200\": {\n\t\t\"name\": \"ClanLB2-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
@@ -1152,7 +1149,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
+        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2202\": {\n\t\t\"name\": \"ClanLB5-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -1162,7 +1159,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2204\": {\n\t\t\"name\": \"ClanLB10-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -1172,37 +1169,37 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\": 60\n\t\t},\n\t\t\"cost\":
+        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 60\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2206\": {\n\t\t\"name\": \"ClanLB20-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
         7\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2207\": {\n\t\t\"name\": \"ClanAC20Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\": 35\n\t\t},\n\t\t\"cost\":
+        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\": 35\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2208\": {\n\t\t\"name\": \"ClanUltraAC2Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
+        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2209\": {\n\t\t\"name\": \"ClanUltraAC5Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2210\": {\n\t\t\"name\": \"ClanUltraAC10Ammo\",\n\t\t\"category\":
+        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\":
+        90\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2210\": {\n\t\t\"name\": \"ClanUltraAC10Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
         60\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2211\": {\n\t\t\"name\": \"ClanUltraAC20Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
+        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\":
         35\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2212\": {\n\t\t\"name\": \"ClanGaussAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -1217,27 +1214,27 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\":
+        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2215\": {\n\t\t\"name\": \"ClanLRMAmmoArtemis\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\":
+        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\":
         180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2216\": {\n\t\t\"name\": \"ClanSRMAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\":
+        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2217\": {\n\t\t\"name\": \"ClanSRMAmmoArtemis\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2218\": {\n\t\t\"name\": \"ClanStreakSRMAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2219\": {\n\t\t\"name\": \"ClanNARCAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -1257,7 +1254,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
+        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2222\": {\n\t\t\"name\": \"ClanLB5-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -1267,7 +1264,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
+        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2224\": {\n\t\t\"name\": \"ClanLB10-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -1277,37 +1274,37 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\": 28\n\t\t},\n\t\t\"cost\":
+        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 28\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2226\": {\n\t\t\"name\": \"ClanLB20-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
         3\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2227\": {\n\t\t\"name\": \"ClanAC20AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\": 15\n\t\t},\n\t\t\"cost\":
+        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\": 15\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2228\": {\n\t\t\"name\": \"ClanUltraAC2AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
+        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2229\": {\n\t\t\"name\": \"ClanUltraAC5AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2230\": {\n\t\t\"name\": \"ClanUltraAC10AmmoHalf\",\n\t\t\"category\":
+        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\":
+        45\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2230\": {\n\t\t\"name\": \"ClanUltraAC10AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
         28\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2231\": {\n\t\t\"name\": \"ClanUltraAC20AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
+        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\":
         15\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2232\": {\n\t\t\"name\": \"ClanGaussAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -1322,27 +1319,27 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2235\": {\n\t\t\"name\": \"ClanLRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\":
+        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\":
         90\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2236\": {\n\t\t\"name\": \"ClanSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2237\": {\n\t\t\"name\": \"ClanSRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2238\": {\n\t\t\"name\": \"ClanStreakSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2239\": {\n\t\t\"name\": \"ClanNARCAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -1353,7 +1350,12 @@ http_interactions:
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
         \"ClanAMSAmmo\",\n\t\t\t\"internalDamage\": 0.024,\n\t\t\t\"numShots\": 1000\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"3218\": {\n\t\t\"name\": \"Engine_Std_100\",\n\t\t\"category\":
+        null\n\t},\n\t\"3210\": {\n\t\t\"name\": \"Engine_Std_60\",\n\t\t\"category\":
+        \"engine\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
+        true\n\t\t},\n\t\t\"ctype\": \"CEngineStats\",\n\t\t\"enginestats\": {\n\t\t\t\"slots\":
+        6,\n\t\t\t\"sideSlots\": 0,\n\t\t\t\"sidesToDie\": 0,\n\t\t\t\"rating\": 60,\n\t\t\t\"weight\":
+        -2.5,\n\t\t\t\"heatsinks\": 2,\n\t\t\t\"health\": 15,\n\t\t\t\"movementHeatMultiplier\":
+        1\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"3218\": {\n\t\t\"name\": \"Engine_Std_100\",\n\t\t\"category\":
         \"engine\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"ctype\": \"CEngineStats\",\n\t\t\"enginestats\": {\n\t\t\t\"slots\":
         6,\n\t\t\t\"sideSlots\": 0,\n\t\t\t\"sidesToDie\": 0,\n\t\t\t\"rating\": 100,\n\t\t\t\"weight\":
@@ -2377,7 +2379,7 @@ http_interactions:
         37,\n\t\t\t\"turn\": 1,\n\t\t\t\"heat\": \"1.7,0.09\",\n\t\t\t\"minTons\":
         20,\n\t\t\t\"maxTons\": 40\n\t\t},\n\t\t\"cost\": null\n\t}\n}"
     http_version: 
-  recorded_at: Sun, 18 Jan 2015 14:44:30 GMT
+  recorded_at: Thu, 14 May 2015 04:22:53 GMT
 - request:
     method: get
     uri: http://static.mwomercs.com/api/items/list/full.json
@@ -2397,7 +2399,7 @@ http_interactions:
       message: OK
     headers:
       Server:
-      - nginx/1.6.2
+      - nginx/1.6.3
       Content-Type:
       - application/json
       Strict-Transport-Security:
@@ -2405,13 +2407,13 @@ http_interactions:
       Pragma:
       - public
       Content-Length:
-      - '153692'
+      - '153869'
       Cache-Control:
-      - public, must-revalidate, max-age=6517
+      - public, must-revalidate, max-age=9000
       Expires:
-      - Sun, 18 Jan 2015 16:33:05 GMT
+      - Thu, 14 May 2015 06:52:54 GMT
       Date:
-      - Sun, 18 Jan 2015 14:44:28 GMT
+      - Thu, 14 May 2015 04:22:54 GMT
       Connection:
       - keep-alive
       Access-Control-Max-Age:
@@ -2487,8 +2489,8 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Energy\",\n\t\t\t\"projectileclass\": \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\":
-        9,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\":
-        3,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 8,\n\t\t\t\"cooldown\":
+        9,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\":
+        4,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 8,\n\t\t\t\"cooldown\":
         3.25,\n\t\t\t\"ammoType\": \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\":
         0,\n\t\t\t\"longRange\": 675,\n\t\t\t\"maxRange\": 1350,\n\t\t\t\"visRange\":
         1500,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 1.25,\n\t\t\t\"lifetime\":
@@ -2519,7 +2521,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\": \"Energy\",\n\t\t\t\"projectileclass\":
         \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\": 9,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\": 3,\n\t\t\t\"impulse\":
+        0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
         0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\": 3.25,\n\t\t\t\"ammoType\":
         \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         450,\n\t\t\t\"maxRange\": 900,\n\t\t\t\"visRange\": 1500,\n\t\t\t\"tons\":
@@ -2539,8 +2541,8 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Energy\",\n\t\t\t\"projectileclass\": \"\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\":
-        11,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 2.8,\n\t\t\t\"minheatpenaltylevel\":
-        3,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\":
+        11,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\": 4,\n\t\t\t\"minheatpenaltylevel\":
+        4,\n\t\t\t\"impulse\": 0,\n\t\t\t\"heatPenaltyID\": 3,\n\t\t\t\"heat\": 7,\n\t\t\t\"cooldown\":
         3.25,\n\t\t\t\"ammoType\": \"\",\n\t\t\t\"ammoPerShot\": 0,\n\t\t\t\"minRange\":
         0,\n\t\t\t\"longRange\": 365,\n\t\t\t\"maxRange\": 730,\n\t\t\t\"visRange\":
         1500,\n\t\t\t\"tons\": 7,\n\t\t\t\"duration\": 0.67,\n\t\t\t\"lifetime\":
@@ -2577,8 +2579,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 1,\n\t\t\t\"type\": \"Ballistic\",\n\t\t\t\"projectileclass\":
         \"bullet\",\n\t\t\t\"numFiring\": 1,\n\t\t\t\"damage\": 2,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
-        0.0375,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
+        0,\n\t\t\t\"impulse\": 0.0375,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
         \"AC2Ammo\",\n\t\t\t\"ammoPerShot\": 1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         720,\n\t\t\t\"maxRange\": 1440,\n\t\t\t\"tons\": 6,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\":
         10,\n\t\t\t\"speed\": 2000,\n\t\t\t\"volleydelay\": 0,\n\t\t\t\"gravity\":
@@ -2883,8 +2884,7 @@ http_interactions:
         \"weapon\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 2,\n\t\t\t\"type\":
         \"Ballistic\",\n\t\t\t\"projectileclass\": \"bullet\",\n\t\t\t\"numFiring\":
-        2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"heatpenalty\":
-        0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\":
+        2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\": 0,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\":
         1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\": \"ClanUltraAC2Ammo\",\n\t\t\t\"ammoPerShot\":
         1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\": 810,\n\t\t\t\"maxRange\":
         1620,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\": 10,\n\t\t\t\"speed\":
@@ -3290,8 +3290,7 @@ http_interactions:
         {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\": false\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"Health\": 10,\n\t\t\t\"slots\": 3,\n\t\t\t\"type\": \"Ballistic\",\n\t\t\t\"projectileclass\":
         \"bullet\",\n\t\t\t\"numFiring\": 2,\n\t\t\t\"damage\": 1,\n\t\t\t\"heatdamage\":
-        0,\n\t\t\t\"heatpenalty\": 0.6,\n\t\t\t\"minheatpenaltylevel\": 4,\n\t\t\t\"impulse\":
-        0.03,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
+        0,\n\t\t\t\"impulse\": 0.03,\n\t\t\t\"heat\": 1,\n\t\t\t\"cooldown\": 0.72,\n\t\t\t\"ammoType\":
         \"ClanAC2Ammo\",\n\t\t\t\"ammoPerShot\": 1,\n\t\t\t\"minRange\": 0,\n\t\t\t\"longRange\":
         900,\n\t\t\t\"maxRange\": 1800,\n\t\t\t\"tons\": 5,\n\t\t\t\"duration\": 0,\n\t\t\t\"lifetime\":
         10,\n\t\t\t\"speed\": 2000,\n\t\t\t\"volleydelay\": 0.14,\n\t\t\t\"gravity\":
@@ -3426,27 +3425,27 @@ http_interactions:
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"LRMAmmo\",\n\t\t\t\"internalDamage\":
-        0.7,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2028\":
+        1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2028\":
         {\n\t\t\"name\": \"SRMAmmo\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"SRMAmmo\",\n\t\t\t\"internalDamage\":
-        1.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2029\":
+        2.15,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2029\":
         {\n\t\t\"name\": \"StreakSRMAmmo\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\":
-        2.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2030\":
+        2,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2030\":
         {\n\t\t\"name\": \"LRMAmmoArtemis\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\":
-        1.8,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2031\":
+        1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2031\":
         {\n\t\t\"name\": \"SRMAmmoArtemis\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
         \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\": \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\":
-        2.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2032\":
+        2.15,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2032\":
         {\n\t\t\"name\": \"AC20AmmoHalf\",\n\t\t\"category\": \"ammo\",\n\t\t\"factions\":
         {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\": true\n\t\t},\n\t\t\"stats\":
         {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\": 10\n\t\t},\n\t\t\"ctype\":
@@ -3500,28 +3499,28 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"LRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"LRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2043\": {\n\t\t\"name\": \"SRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"SRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"SRMAmmo\",\n\t\t\t\"internalDamage\": 2.15,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2044\": {\n\t\t\"name\": \"StreakSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"StreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2045\": {\n\t\t\"name\": \"LRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"LRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2046\": {\n\t\t\"name\": \"SRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2200\": {\n\t\t\"name\": \"ClanLB2-XACAmmo\",\n\t\t\"category\":
+        \"SRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.15,\n\t\t\t\"numShots\":
+        50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2200\": {\n\t\t\"name\": \"ClanLB2-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
@@ -3530,7 +3529,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
+        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2202\": {\n\t\t\"name\": \"ClanLB5-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -3540,7 +3539,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2204\": {\n\t\t\"name\": \"ClanLB10-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -3550,37 +3549,37 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\": 60\n\t\t},\n\t\t\"cost\":
+        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 60\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2206\": {\n\t\t\"name\": \"ClanLB20-XACAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
         7\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2207\": {\n\t\t\"name\": \"ClanAC20Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\": 35\n\t\t},\n\t\t\"cost\":
+        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\": 35\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2208\": {\n\t\t\"name\": \"ClanUltraAC2Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
+        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 150\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2209\": {\n\t\t\"name\": \"ClanUltraAC5Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2210\": {\n\t\t\"name\": \"ClanUltraAC10Ammo\",\n\t\t\"category\":
+        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\":
+        90\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2210\": {\n\t\t\"name\": \"ClanUltraAC10Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
         60\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2211\": {\n\t\t\"name\": \"ClanUltraAC20Ammo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
+        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\":
         35\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2212\": {\n\t\t\"name\": \"ClanGaussAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -3595,27 +3594,27 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\":
+        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 180\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2215\": {\n\t\t\"name\": \"ClanLRMAmmoArtemis\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\":
+        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\":
         180\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2216\": {\n\t\t\"name\": \"ClanSRMAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\":
+        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 100\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2217\": {\n\t\t\"name\": \"ClanSRMAmmoArtemis\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2218\": {\n\t\t\"name\": \"ClanStreakSRMAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         100\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2219\": {\n\t\t\"name\": \"ClanNARCAmmo\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 1,\n\t\t\t\"health\":
@@ -3635,7 +3634,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
+        \"ClanAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2222\": {\n\t\t\"name\": \"ClanLB5-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -3645,7 +3644,7 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
+        \"ClanAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2224\": {\n\t\t\"name\": \"ClanLB10-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -3655,37 +3654,37 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\": 28\n\t\t},\n\t\t\"cost\":
+        \"ClanAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\": 28\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2226\": {\n\t\t\"name\": \"ClanLB20-XACAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanLB20-XACAmmo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
         3\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2227\": {\n\t\t\"name\": \"ClanAC20AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\": 15\n\t\t},\n\t\t\"cost\":
+        \"ClanAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\": 15\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2228\": {\n\t\t\"name\": \"ClanUltraAC2AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
+        \"ClanUltraAC2Ammo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 74\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2229\": {\n\t\t\"name\": \"ClanUltraAC5AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 5,\n\t\t\t\"numShots\": 45\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"2230\": {\n\t\t\"name\": \"ClanUltraAC10AmmoHalf\",\n\t\t\"category\":
+        \"ClanUltraAC5Ammo\",\n\t\t\t\"internalDamage\": 1.667,\n\t\t\t\"numShots\":
+        45\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2230\": {\n\t\t\"name\": \"ClanUltraAC10AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 10,\n\t\t\t\"numShots\":
+        \"ClanUltraAC10Ammo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
         28\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2231\": {\n\t\t\"name\": \"ClanUltraAC20AmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 20,\n\t\t\t\"numShots\":
+        \"ClanUltraAC20Ammo\",\n\t\t\t\"internalDamage\": 4,\n\t\t\t\"numShots\":
         15\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2232\": {\n\t\t\"name\": \"ClanGaussAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -3700,27 +3699,27 @@ http_interactions:
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 0.7,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
+        \"ClanLRMAmmo\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\": 90\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2235\": {\n\t\t\"name\": \"ClanLRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1.8,\n\t\t\t\"numShots\":
+        \"ClanLRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 1,\n\t\t\t\"numShots\":
         90\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2236\": {\n\t\t\"name\": \"ClanSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 1.5,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
+        \"ClanSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\": 50\n\t\t},\n\t\t\"cost\":
         null\n\t},\n\t\"2237\": {\n\t\t\"name\": \"ClanSRMAmmoArtemisHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanSRMAmmoArtemis\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2238\": {\n\t\t\"name\": \"ClanStreakSRMAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
-        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2.5,\n\t\t\t\"numShots\":
+        \"ClanStreakSRMAmmo\",\n\t\t\t\"internalDamage\": 2,\n\t\t\t\"numShots\":
         50\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"2239\": {\n\t\t\"name\": \"ClanNARCAmmoHalf\",\n\t\t\"category\":
         \"ammo\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": true,\n\t\t\t\"InnerSphere\":
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
@@ -3731,7 +3730,12 @@ http_interactions:
         false\n\t\t},\n\t\t\"stats\": {\n\t\t\t\"slots\": 1,\n\t\t\t\"tons\": 0.5,\n\t\t\t\"health\":
         10\n\t\t},\n\t\t\"ctype\": \"CAmmoTypeStats\",\n\t\t\"ammotypestats\": {\n\t\t\t\"type\":
         \"ClanAMSAmmo\",\n\t\t\t\"internalDamage\": 0.024,\n\t\t\t\"numShots\": 1000\n\t\t},\n\t\t\"cost\":
-        null\n\t},\n\t\"3218\": {\n\t\t\"name\": \"Engine_Std_100\",\n\t\t\"category\":
+        null\n\t},\n\t\"3210\": {\n\t\t\"name\": \"Engine_Std_60\",\n\t\t\"category\":
+        \"engine\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
+        true\n\t\t},\n\t\t\"ctype\": \"CEngineStats\",\n\t\t\"enginestats\": {\n\t\t\t\"slots\":
+        6,\n\t\t\t\"sideSlots\": 0,\n\t\t\t\"sidesToDie\": 0,\n\t\t\t\"rating\": 60,\n\t\t\t\"weight\":
+        -2.5,\n\t\t\t\"heatsinks\": 2,\n\t\t\t\"health\": 15,\n\t\t\t\"movementHeatMultiplier\":
+        1\n\t\t},\n\t\t\"cost\": null\n\t},\n\t\"3218\": {\n\t\t\"name\": \"Engine_Std_100\",\n\t\t\"category\":
         \"engine\",\n\t\t\"factions\": {\n\t\t\t\"Clan\": false,\n\t\t\t\"InnerSphere\":
         true\n\t\t},\n\t\t\"ctype\": \"CEngineStats\",\n\t\t\"enginestats\": {\n\t\t\t\"slots\":
         6,\n\t\t\t\"sideSlots\": 0,\n\t\t\t\"sidesToDie\": 0,\n\t\t\t\"rating\": 100,\n\t\t\t\"weight\":
@@ -4755,5 +4759,5 @@ http_interactions:
         37,\n\t\t\t\"turn\": 1,\n\t\t\t\"heat\": \"1.7,0.09\",\n\t\t\t\"minTons\":
         20,\n\t\t\t\"maxTons\": 40\n\t\t},\n\t\t\"cost\": null\n\t}\n}"
     http_version: 
-  recorded_at: Sun, 18 Jan 2015 14:44:31 GMT
+  recorded_at: Thu, 14 May 2015 04:22:59 GMT
 recorded_with: VCR 2.9.2
